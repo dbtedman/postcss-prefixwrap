@@ -1,0 +1,21 @@
+#
+# ESLint Configuration, http://eslint.org/docs/user-guide/configuring.
+#
+
+extends:
+  - "defaults"
+
+parserOptions:
+  ecmaVersion: 5
+
+env:
+  node: true
+
+rules:
+  quotes:
+    - "error"
+    - "double"
+
+  strict:
+    - "error"
+    - "function"
