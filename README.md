@@ -3,7 +3,19 @@
 
 A [PostCSS](http://postcss.org) plugin used to wrap css styles with a css selector used to constrain their affect on parent elements in a page for use when embedding an html interface inside an application container you do not control.
 
+## Dependencies
+
+* [Node (v6)](https://nodejs.org)
+* [NPM (v3)](https://www.npmjs.com)
+
+## Contributors
+
+* [Daniel Tedman](http://danieltedman.com)
+* Jeff Teng
+
 ## Getting Started
+
+0\. Ensure all [Dependencies](#dependencies) have been resolved.
 
 1\. Install the Node module:
 
@@ -17,7 +29,7 @@ npm install postcss-prefixwrap
 var prefixwrap = require("postcss-prefixwrap");
 ```
 
-3\. Instantiate the postcss plugin:
+3\. Instantiate the [PostCSS](http://postcss.org) plugin:
 
 ```javascript
 // This will be a class on the container div.
@@ -31,12 +43,38 @@ var wrapSelector = ".my-custom-wrap";
 }
 ```
 
-4\. Add the container to your markup.
+4\. Add the container to your markup:
 
 ```html
 <div class="my-custom-wrap">
 <!-- Your existing markup. -->
 </div>
+```
+
+5\. Your css will now be contained:
+
+```css
+/* Before */
+
+p {
+  color: red;
+}
+
+body {
+  font-size: 16px;
+}
+```
+
+```css
+/* After */
+
+.my-custom-wrap p {
+  color: red;
+}
+
+.my-custom-wrap {
+  font-size: 16px;
+}
 ```
 
 ## Testing
