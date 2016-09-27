@@ -20,7 +20,7 @@ A [PostCSS](http://postcss.org) plugin used to wrap css styles with a css select
 1\. Install the Node module:
 
 ```
-npm install postcss-prefixwrap
+npm install --save-dev postcss-prefixwrap
 ```
 
 2\. Load the module in your build configuration:
