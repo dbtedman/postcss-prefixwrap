@@ -7,3 +7,6 @@
 
 # Node dependencies.
 /node_modules/
+
+# IDE Files, npm does not pay attention to user level ignores.
+/.idea/
