@@ -12,7 +12,8 @@ module.exports = postcss.plugin("postcss-prefixwrap", function (selector) {
       if (rule.selector.match(/^ *(body|html).*$/)) {
         rule.selector = rule.selector.replace(/^ *(body|html)/, selector);
 
-      } else {
+      // Prepend selector unless our first rule is a combination of this selector and another rule.
+      } else if (!rule.selector.match(new RegExp("^ *[^ ]*" + selector + ".*$"))) {
         rule.selector = selector + " " + rule.selector;
       }
     });
