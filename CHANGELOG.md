@@ -3,6 +3,12 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
+## 0.2.1 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=0.2.1)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+
+## Features and Improvements
+
+* Added test for our container selector matching existing selector.
+
 ## 0.2.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=0.2.0)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 
 ## Features and Improvements

@@ -1,0 +1,9 @@
+/* Ensure is left. */
+.my-container {
+  color: red;
+}
+
+/* Ensure is prefixed as is not first selector. */
+.my-container p .my-container {
+  color: red;
+}

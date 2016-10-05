@@ -41,4 +41,13 @@ describe("PostCSS Prefix Wrap", function () {
       );
     });
   });
+
+  describe("Leave Our Container", function () {
+    it("leaves selectors that contain our selector in the left most location", function () {
+      assert.equal(
+        fs.readFileSync(__dirname + "/fixtures/leave-expected.css", "UTF-8"),
+        postCSS.process(fs.readFileSync(__dirname + "/fixtures/leave-raw.css", "UTF-8")).css
+      );
+    });
+  });
 });
