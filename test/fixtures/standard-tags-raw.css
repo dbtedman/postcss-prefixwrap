@@ -1,0 +1,17 @@
+/* Ensure works with single tags. */
+a {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+h1 {
+  color: green;
+}
+
+/* Ensure works for tags with sudo selectors. */
+a:hover {
+  text-decoration: underline;
+}

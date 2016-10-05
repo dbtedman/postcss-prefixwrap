@@ -1,0 +1,17 @@
+/* Ensure works with single tags. */
+.my-container a {
+  color: red;
+}
+
+.my-container p {
+  color: blue;
+}
+
+.my-container h1 {
+  color: green;
+}
+
+/* Ensure works for tags with sudo selectors. */
+.my-container a:hover {
+  text-decoration: underline;
+}

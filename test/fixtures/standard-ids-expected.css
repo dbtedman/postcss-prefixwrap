@@ -1,0 +1,9 @@
+/* Ensure IDs are prefixed. */
+.my-container #something {
+  color: aqua;
+}
+
+/* Ensure nested selectors are not messed with. */
+.my-container #something p {
+  font-size: 30px;
+}

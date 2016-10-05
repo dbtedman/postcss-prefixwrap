@@ -1,0 +1,13 @@
+/* Ensure that these top level tags are replaced. */
+html {
+  font-size: 16px;
+}
+
+body {
+  color: green;
+}
+
+/* Ensure their child selectors are not replaced. */
+html p {
+  font-style: italic;
+}

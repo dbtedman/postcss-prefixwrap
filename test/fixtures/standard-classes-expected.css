@@ -1,0 +1,9 @@
+/* Ensure classes are prefixed. */
+.my-container .something {
+  font-size: 40px;
+}
+
+/* Ensure child selectors are kept. */
+.my-container .something p {
+  color: red;
+}
