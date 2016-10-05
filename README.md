@@ -3,47 +3,41 @@
 
 A [PostCSS](http://postcss.org) plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.
 
-## Dependencies
+## Is it open?
 
-* [Node (v6)](https://nodejs.org)
-* [NPM (v3)](https://www.npmjs.com)
+Yes, it is released under the MIT License, See [LICENSE.md](LICENSE.md).
 
-## Contributors
+## Where do I start?
 
-* [Daniel Tedman](http://danieltedman.com)
-* Jeff Teng
+> These instructions are only for this plugin, see [PostCSS](http://postcss.org) website for framework information.
 
-## Getting Started
+1\. Install the plugin.
 
-0\. Ensure all [Dependencies](#dependencies) have been resolved.
-
-1\. Install the Node module:
-
-```
+```bash
 npm install --save-dev postcss-prefixwrap
 ```
 
-2\. Load the module in your build configuration:
+2\. Add to your [PostCSS](http://postcss.org) configuration.
+
 
 ```javascript
-var prefixwrap = require("postcss-prefixwrap");
+// Example using Gulp.js, based on https://github.com/postcss/gulp-postcss README.md.
+
+var gulp = require('gulp');
+var postcss = require('gulp-postcss');
+var prefixwrap = require("postcss-prefixwrap"); // The require for PostCSS Prefix Wrap.
+
+gulp.task("css", function () {
+    var processors = [
+        prefixwrap(".my-custom-wrap")
+    ];
+    return gulp.src("./src/*.css")
+        .pipe(postcss(processors))
+        .pipe(gulp.dest("./dest"));
+});
 ```
 
-3\. Instantiate the [PostCSS](http://postcss.org) plugin:
-
-```javascript
-// This will be a class on the container div.
-var wrapSelector = ".my-custom-wrap";
-
-// Postcss config for some workflow such as webpack.
-{
-  postcss: [
-    prefixwrap(wrapSelector)
-  ]
-}
-```
-
-4\. Add the container to your markup:
+3\. Add the container to your markup.
 
 ```html
 <div class="my-custom-wrap">
@@ -51,7 +45,7 @@ var wrapSelector = ".my-custom-wrap";
 </div>
 ```
 
-5\. Your css will now be contained:
+4\. View your css, now prefix wrapped.
 
 ```css
 /* Before */
@@ -77,30 +71,11 @@ body {
 }
 ```
 
-## Testing
+## Want to learn more?
 
-See [https://travis-ci.org/dbtedman/postcss-prefixwrap](https://travis-ci.org/dbtedman/postcss-prefixwrap) for CI results, run on each commit.
+See our [CONTRIBUTING.md](CONTRIBUTING.md) guide for information regarding:
 
-### Static Analysis
-
-Code is linted using [ESLint](http://eslint.org):
-
-```bash
-npm run test:lint
-```
-
-### Unit Tests
-
-Code is unit tested using [MochaJS](https://mochajs.org).
-
-```bash
-npm run test:unit
-```
-
-## Releasing
-
-Based on the [NPM Publishing Guide](https://docs.npmjs.com/getting-started/publishing-npm-packages), after updating the current version, run the following command:
-
-```
-npm publish
-```
+* project contributors
+* dependencies
+* testing
+* releasing

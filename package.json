@@ -5,7 +5,7 @@
   "main": "./src/main.js",
   "scripts": {
     "test": "npm run test:lint && npm run test:unit",
-    "test:lint": "eslint ./src",
+    "test:lint": "eslint ./src ./test",
     "test:unit": "mocha"
   },
   "authors": [
