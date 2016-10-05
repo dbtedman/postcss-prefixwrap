@@ -7,6 +7,7 @@ describe("PostCSS Prefix Wrap", function () {
 
   "use strict";
 
+  // Generate a postcss instance with our plugin enabled.
   var postCSS = postcss([prefixWrap(".my-container")]);
 
   describe("Standard Prefixing", function () {

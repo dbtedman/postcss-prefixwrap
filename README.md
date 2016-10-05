@@ -1,5 +1,5 @@
 
-# [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap) `v0.1.0` [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap) [![NPM Version](https://img.shields.io/npm/v/postcss-prefixwrap.svg)](https://www.npmjs.com/package/postcss-prefixwrap)
+# [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap) `v0.2.0` [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap) [![NPM Version](https://img.shields.io/npm/v/postcss-prefixwrap.svg)](https://www.npmjs.com/package/postcss-prefixwrap)
 
 A [PostCSS](http://postcss.org) plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.
 
@@ -95,4 +95,12 @@ Code is unit tested using [MochaJS](https://mochajs.org).
 
 ```bash
 npm run test:unit
+```
+
+## Releasing
+
+Based on the [NPM Publishing Guide](https://docs.npmjs.com/getting-started/publishing-npm-packages), after updating the current version, run the following command:
+
+```
+npm publish
 ```
