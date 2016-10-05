@@ -88,3 +88,11 @@ Code is linted using [ESLint](http://eslint.org):
 ```bash
 npm run test:lint
 ```
+
+### Unit Tests
+
+Code is unit tested using [MochaJS](https://mochajs.org).
+
+```bash
+npm run test:unit
+```
