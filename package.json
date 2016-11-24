@@ -1,6 +1,6 @@
 {
   "name": "postcss-prefixwrap",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "main": "./src/main.js",
   "scripts": {
@@ -9,17 +9,17 @@
     "test:unit": "mocha"
   },
   "authors": [
-    "Daniel Tedman (http://danieltedman.com)",
+    "Daniel Tedman (https://danieltedman.com)",
     "Jeff Teng"
   ],
   "license": "MIT",
   "repository": "https://github.com/dbtedman/postcss-prefixwrap",
   "dependencies": {
-    "postcss": "^5.2.2"
+    "postcss": "5.2.2"
   },
   "devDependencies": {
-    "eslint": "^3.6.1",
-    "eslint-config-defaults": "^9.0.0",
-    "mocha": "^3.1.0"
+    "eslint": "3.6.1",
+    "eslint-config-defaults": "9.0.0",
+    "mocha": "3.1.0"
   }
 }

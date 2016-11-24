@@ -10,7 +10,7 @@ A guide for contributing to this repository which extends the [README.md](README
 
 ## Contributors
 
-* [Daniel Tedman](http://danieltedman.com)
+* [Daniel Tedman](https://danieltedman.com)
 * Jeff Teng
 
 ## Testing
@@ -19,7 +19,7 @@ See [https://travis-ci.org/dbtedman/postcss-prefixwrap](https://travis-ci.org/db
 
 ### Static Analysis
 
-Code is linted using [ESLint](http://eslint.org):
+Linting support provided by [ESLint](http://eslint.org/) based on rules defined in `.eslintrc.yml`.
 
 ```bash
 npm run test:lint
