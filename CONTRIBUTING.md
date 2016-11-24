@@ -37,6 +37,6 @@ npm run test:unit
 
 Based on the [NPM Publishing Guide](https://docs.npmjs.com/getting-started/publishing-npm-packages), after updating the current version, run the following command:
 
-```
+```bash
 npm publish
 ```
