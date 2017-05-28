@@ -1,18 +1,6 @@
 
 # Contributing
 
-A guide for contributing to this repository which extends the [README.md](README.md) file. 
-
-## Dependencies
-
-* [Node (v6)](https://nodejs.org)
-* [NPM (v3)](https://www.npmjs.com)
-
-## Contributors
-
-* [Daniel Tedman](https://danieltedman.com)
-* Jeff Teng
-
 ## Testing
 
 See [https://travis-ci.org/dbtedman/postcss-prefixwrap](https://travis-ci.org/dbtedman/postcss-prefixwrap) for CI results, run on each commit.

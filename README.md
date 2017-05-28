@@ -1,11 +1,9 @@
 
-# [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap) `v1.0.0` [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap) [![NPM Version](https://img.shields.io/npm/v/postcss-prefixwrap.svg)](https://www.npmjs.com/package/postcss-prefixwrap)
+# [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
+
+[![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap) [![NPM Version](https://img.shields.io/npm/v/postcss-prefixwrap.svg)](https://www.npmjs.com/package/postcss-prefixwrap)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 A [PostCSS](http://postcss.org) plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.
-
-## Is it open?
-
-Yes, it is released under the MIT License, See [LICENSE.md](LICENSE.md).
 
 ## Where do I start?
 
@@ -71,11 +69,8 @@ body {
 }
 ```
 
-## Want to learn more?
+---
 
-See our [CONTRIBUTING.md](CONTRIBUTING.md) guide for information regarding:
+Created [Down Under](https://en.wikipedia.org/wiki/Australia) by [Daniel Tedman](https://danieltedman.com) and [Jeff Teng](https://jafoteng.co).
 
-* project contributors
-* dependencies
-* testing
-* releasing
+[![Australia](https://danieltedman.com/images/Australia.png)](https://en.wikipedia.org/wiki/Australia)
