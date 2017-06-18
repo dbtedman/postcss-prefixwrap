@@ -19,8 +19,6 @@ npm install --save-dev postcss-prefixwrap
 
 
 ```javascript
-// Example using Gulp.js, based on https://github.com/postcss/gulp-postcss README.md.
-
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
 var prefixwrap = require("postcss-prefixwrap"); // The require for PostCSS Prefix Wrap.
@@ -35,6 +33,8 @@ gulp.task("css", function () {
 });
 ```
 
+> The above example is using Gulp.js, and is based on [https://github.com/postcss/gulp-postcss](https://github.com/postcss/gulp-postcss) README.md.
+
 3\. Add the container to your markup.
 
 ```html
@@ -45,9 +45,10 @@ gulp.task("css", function () {
 
 4\. View your css, now prefix wrapped.
 
-```css
-/* Before */
 
+**Before**
+
+```css
 p {
   color: red;
 }
@@ -57,9 +58,9 @@ body {
 }
 ```
 
-```css
-/* After */
+**After**
 
+```css
 .my-custom-wrap p {
   color: red;
 }
@@ -67,6 +68,34 @@ body {
 .my-custom-wrap {
   font-size: 16px;
 }
+```
+
+## Testing
+
+See [https://travis-ci.org/dbtedman/postcss-prefixwrap](https://travis-ci.org/dbtedman/postcss-prefixwrap) for CI results, run on each commit.
+
+### Static Analysis
+
+Linting support provided by [ESLint](http://eslint.org/) based on rules defined in `.eslintrc.yml`.
+
+```bash
+npm run test:lint
+```
+
+### Unit Tests
+
+Code is unit tested using [MochaJS](https://mochajs.org).
+
+```bash
+npm run test:unit
+```
+
+## Releasing
+
+Based on the [NPM Publishing Guide](https://docs.npmjs.com/getting-started/publishing-npm-packages), after updating the current version, run the following command:
+
+```bash
+npm publish
 ```
 
 ---
