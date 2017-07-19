@@ -53,7 +53,7 @@ describe("PostCSS Prefix Wrap", function () {
   describe("Skip html/body replacement", function () {
     it("replaces global selectors with prefix", function () {
       assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8"),
+        fs.readFileSync(__dirname + "/fixtures/leave-body-expected.css", "UTF-8"),
         postCSSSkip.process(fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8")).css
       );
     });

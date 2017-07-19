@@ -8,6 +8,6 @@ html {
 }
 
 /* Ensure is prefixed. */
-p {
+.my-container p {
   color: red;
 }
