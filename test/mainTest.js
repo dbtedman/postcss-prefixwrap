@@ -9,6 +9,7 @@ describe("PostCSS Prefix Wrap", function () {
 
   // Generate a postcss instance with our plugin enabled.
   var postCSS = postcss([prefixWrap(".my-container")]);
+  var postCSSSkip = postcss([prefixWrap(".my-container", {skipRootTags: true})]);
 
   describe("Standard Prefixing", function () {
     it("adds prefix class for tags", function () {
@@ -31,6 +32,13 @@ describe("PostCSS Prefix Wrap", function () {
         postCSS.process(fs.readFileSync(__dirname + "/fixtures/standard-classes-raw.css", "UTF-8")).css
       );
     });
+
+    it("adds prefix class for multiple classes", function () {
+      assert.equal(
+        fs.readFileSync(__dirname + "/fixtures/multiple-classes-expected.css", "UTF-8"),
+        postCSS.process(fs.readFileSync(__dirname + "/fixtures/multiple-classes-raw.css", "UTF-8")).css
+      );
+    });
   });
 
   describe("Replacement Prefixing", function () {
@@ -38,6 +46,15 @@ describe("PostCSS Prefix Wrap", function () {
       assert.equal(
         fs.readFileSync(__dirname + "/fixtures/replacement-tags-expected.css", "UTF-8"),
         postCSS.process(fs.readFileSync(__dirname + "/fixtures/replacement-tags-raw.css", "UTF-8")).css
+      );
+    });
+  });
+
+  describe("Skip html/body replacement", function () {
+    it("replaces global selectors with prefix", function () {
+      assert.equal(
+        fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8"),
+        postCSSSkip.process(fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8")).css
       );
     });
   });

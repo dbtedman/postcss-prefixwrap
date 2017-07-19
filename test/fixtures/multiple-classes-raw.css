@@ -1,0 +1,9 @@
+/* Ensure classes are prefixed. */
+.something, .else {
+  font-size: 40px;
+}
+
+.foo,
+.bar {
+  font-size: 40px;
+}
