@@ -9,7 +9,7 @@ describe("PostCSS Prefix Wrap", function () {
 
   // Generate a postcss instance with our plugin enabled.
   var postCSS = postcss([prefixWrap(".my-container")]);
-  var postCSSSkip = postcss([prefixWrap(".my-container", {skipRootTags: true})]);
+  var postCSSSkip = postcss([prefixWrap(".my-container", {prefixRootTags: true})]);
 
   describe("Standard Prefixing", function () {
     it("adds prefix class for tags", function () {
@@ -50,10 +50,10 @@ describe("PostCSS Prefix Wrap", function () {
     });
   });
 
-  describe("Skip html/body replacement", function () {
-    it("replaces global selectors with prefix", function () {
+  describe("Prefix html/body tags", function () {
+    it("Add prefix to global selectors", function () {
       assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8"),
+        fs.readFileSync(__dirname + "/fixtures/leave-body-expected.css", "UTF-8"),
         postCSSSkip.process(fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8")).css
       );
     });

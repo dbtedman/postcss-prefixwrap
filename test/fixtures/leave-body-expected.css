@@ -1,13 +1,13 @@
 /* Ensure is left. */
-body {
+.my-container .body {
   color: red;
 }
 
-html {
+.my-container .html {
   color: red;
 }
 
 /* Ensure is prefixed. */
-p {
+.my-container p {
   color: red;
 }
