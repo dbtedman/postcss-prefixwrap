@@ -1,0 +1,9 @@
+/* Ensure is left. */
+body {
+  color: red;
+}
+
+/* Ensure is prefixed as is not first selector. */
+html {
+  color: red;
+}
