@@ -3,13 +3,20 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
-## 1.0.1
+## 1.1.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.1.0)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+
+### Features and Improvements
+
+* Updates to support disabling of html/body replacement.
+* Enable support for multiple selectors.
+
+## 1.0.1 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.0.1)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 
 ### Features and Improvements
 
 * Updates to README contents.
 
-## 1.0.0
+## 1.0.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.0.0)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 
 ### Features and Improvements
 
