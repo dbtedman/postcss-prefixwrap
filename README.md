@@ -100,6 +100,6 @@ npm publish
 
 ---
 
-Created [Down Under](https://en.wikipedia.org/wiki/Australia) by [Daniel Tedman](https://danieltedman.com) and [Jeff Teng](https://jafoteng.co).
+Created [Down Under](https://en.wikipedia.org/wiki/Australia) by [Daniel Tedman](https://danieltedman.com) and [Jeff Teng](https://jafoteng.co) with [contributions from around the web](https://github.com/dbtedman/postcss-prefixwrap/graphs/contributors).
 
 [![Australia](https://danieltedman.com/images/Australia.png)](https://en.wikipedia.org/wiki/Australia)
