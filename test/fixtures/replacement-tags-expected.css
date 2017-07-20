@@ -7,6 +7,10 @@
   color: green;
 }
 
+.my-container p, .my-container, .my-container img {
+  color: green;
+}
+
 /* Ensure their child selectors are not replaced. */
 .my-container p {
   font-style: italic;

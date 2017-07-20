@@ -7,6 +7,12 @@ body {
   color: green;
 }
 
+p,
+body,
+img {
+  color: green;
+}
+
 /* Ensure their child selectors are not replaced. */
 html p {
   font-style: italic;
