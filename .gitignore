@@ -10,3 +10,6 @@
 
 # IDE Files, npm does not pay attention to user level ignores.
 /.idea/
+
+# Test runtime and reporting.
+/.nyc_output/
