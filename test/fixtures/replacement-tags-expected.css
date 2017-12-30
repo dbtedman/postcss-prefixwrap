@@ -15,3 +15,8 @@
 .my-container p {
   font-style: italic;
 }
+
+/* Ensure is not confused by body. */
+.my-container tbody {
+  border: 10px solid red;
+}

@@ -17,3 +17,8 @@ img {
 html p {
   font-style: italic;
 }
+
+/* Ensure is not confused by body. */
+tbody {
+  border: 10px solid red;
+}

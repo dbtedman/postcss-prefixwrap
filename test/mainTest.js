@@ -51,7 +51,7 @@ describe("PostCSS Prefix Wrap", function () {
   });
 
   describe("Prefix html/body tags", function () {
-    it("Add prefix to global selectors", function () {
+    it("adds prefix to global selectors", function () {
       assert.equal(
         fs.readFileSync(__dirname + "/fixtures/leave-body-expected.css", "UTF-8"),
         postCSSSkip.process(fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8")).css
