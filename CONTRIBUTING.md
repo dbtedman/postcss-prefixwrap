@@ -18,10 +18,18 @@ npm run test:lint
 
 ### Unit Tests
 
-Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `test/` directory.
+Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `test-unit/` directory.
 
 ```bash
 npm run test:unit
+```
+
+### Integration Tests
+
+Code is integration tested using [MochaJS](https://mochajs.org), using test cases defined in the `test-integration/` directory.
+
+```bash
+npm run test:integration
 ```
 
 ## Releasing
