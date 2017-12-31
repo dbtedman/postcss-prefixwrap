@@ -10,70 +10,51 @@ describe("PostCSS Prefix Wrap", function () {
   // Generate a postcss instance with our plugin enabled.
   var postCSS = postcss([prefixWrap(".my-container")]);
   var postCSSSkip = postcss([prefixWrap(".my-container", {prefixRootTags: true})]);
+  var fixtures = __dirname + "/fixtures";
+
+  function assertActualMatchesExpectedAfterPrefixWrap(postCSS, actualPath, expectedPath) {
+    assert.equal(postCSS.process(fs.readFileSync(actualPath)).css, fs.readFileSync(expectedPath, "UTF-8"));
+  }
 
   describe("Standard Prefixing", function () {
     it("adds prefix class for tags", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/standard-tags-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/standard-tags-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/standard-tags-raw.css", fixtures + "/standard-tags-expected.css");
     });
 
     it("adds prefix class for ids", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/standard-ids-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/standard-ids-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/standard-ids-raw.css", fixtures + "/standard-ids-expected.css");
     });
 
     it("adds prefix class for classes", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/standard-classes-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/standard-classes-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/standard-classes-raw.css", fixtures + "/standard-classes-expected.css");
     });
 
     it("adds prefix class for multiple classes", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/multiple-classes-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/multiple-classes-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/multiple-classes-raw.css", fixtures + "/multiple-classes-expected.css");
     });
   });
 
   describe("Replacement Prefixing", function () {
     it("replaces global selectors with prefix", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/replacement-tags-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/replacement-tags-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/replacement-tags-raw.css", fixtures + "/replacement-tags-expected.css");
     });
   });
 
   describe("Prefix html/body tags", function () {
     it("adds prefix to global selectors", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/leave-body-expected.css", "UTF-8"),
-        postCSSSkip.process(fs.readFileSync(__dirname + "/fixtures/leave-body.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSSSkip, fixtures + "/leave-body-raw.css", fixtures + "/leave-body-expected.css");
     });
   });
 
   describe("Leave Our Container", function () {
     it("leaves selectors that contain our selector in the left most location", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/leave-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/leave-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/leave-raw.css", fixtures + "/leave-expected.css");
     });
   });
 
   describe("Handle Invalid CSS", function () {
     it("ignores empty selectors", function () {
-      assert.equal(
-        fs.readFileSync(__dirname + "/fixtures/empty-selectors-expected.css", "UTF-8"),
-        postCSS.process(fs.readFileSync(__dirname + "/fixtures/empty-selectors-raw.css", "UTF-8")).css
-      );
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/empty-selectors-raw.css", fixtures + "/empty-selectors-expected.css");
     });
   });
 });
