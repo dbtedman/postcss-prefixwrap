@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint --color ./src ./test",
-    "test:unit": "nyc --reporter=text mocha --colors"
+    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors"
   },
   "authors": [
     "Daniel Tedman (https://danieltedman.com)",
