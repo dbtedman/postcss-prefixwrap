@@ -20,12 +20,12 @@
     "postcss": "5.2.2"
   },
   "devDependencies": {
-    "eslint": "3.6.1",
+    "eslint": "4.14.0",
     "eslint-config-defaults": "9.0.0",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "5.0.0",
     "gulp": "3.9.1",
     "gulp-postcss": "7.0.1",
-    "mocha": "3.1.0",
+    "mocha": "4.1.0",
     "nyc": "11.4.1"
   }
 }
