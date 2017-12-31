@@ -1,0 +1,4 @@
+/* Yes this is bad css, but when it is prefixed, the issue will be no longer. */
+p, , a {
+  color: green;
+}

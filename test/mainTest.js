@@ -67,4 +67,13 @@ describe("PostCSS Prefix Wrap", function () {
       );
     });
   });
+
+  describe("Handle Invalid CSS", function () {
+    it("ignores empty selectors", function () {
+      assert.equal(
+        fs.readFileSync(__dirname + "/fixtures/empty-selectors-expected.css", "UTF-8"),
+        postCSS.process(fs.readFileSync(__dirname + "/fixtures/empty-selectors-raw.css", "UTF-8")).css
+      );
+    });
+  });
 });

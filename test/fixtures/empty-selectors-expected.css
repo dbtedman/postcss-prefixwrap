@@ -1,0 +1,4 @@
+/* Yes this is bad css, but when it is prefixed, the issue will be no longer. */
+.my-container p, .my-container a {
+  color: green;
+}

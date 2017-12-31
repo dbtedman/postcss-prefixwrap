@@ -6,6 +6,7 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 ## In Development
 
 * Add code coverage reporting to ensure all parts of the code are being exercised by the tests.
+* Additional test coverage to exercise error condition handling for invalid css.
 
 ## 1.1.3 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.1.3)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 
