@@ -4,9 +4,11 @@
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "main": "./src/main.js",
   "scripts": {
-    "test": "npm run test:lint && npm run test:unit",
-    "test:lint": "eslint --color ./src ./test",
-    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors"
+    "test": "npm run test:lint && npm run test:unit && npm run test:integration",
+    "test:lint": "eslint --color ./src ./test-unit",
+    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./test-unit",
+    "test:integration": "npm run test:integration:prep && mocha --colors ./test-integration",
+    "test:integration:prep": "gulp --gulpfile=./test-integration/fixtures/gulpfile.js css"
   },
   "authors": [
     "Daniel Tedman (https://danieltedman.com)",
@@ -18,9 +20,12 @@
     "postcss": "5.2.2"
   },
   "devDependencies": {
-    "eslint": "3.6.1",
+    "eslint": "4.14.0",
     "eslint-config-defaults": "9.0.0",
-    "mocha": "3.1.0",
+    "fs-extra": "5.0.0",
+    "gulp": "3.9.1",
+    "gulp-postcss": "7.0.1",
+    "mocha": "4.1.0",
     "nyc": "11.4.1"
   }
 }
