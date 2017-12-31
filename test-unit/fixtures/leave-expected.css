@@ -4,6 +4,6 @@
 }
 
 /* Ensure is prefixed as is not first selector. */
-.my-container,  p .my-container {
+.my-container p .my-container {
   color: red;
 }
