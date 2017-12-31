@@ -11,6 +11,14 @@ A [PostCSS](http://postcss.org) plugin that is used to wrap css styles with a cs
 
 1\. Install the plugin.
 
+**[Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap):**
+
+```bash
+yarn add --dev postcss-prefixwrap
+```
+
+**[NPM](https://www.npmjs.com/package/postcss-prefixwrap):**
+
 ```bash
 npm install --save-dev postcss-prefixwrap
 ```
@@ -70,35 +78,11 @@ body {
 }
 ```
 
-## Testing
+## Want to lean more?
 
-See [https://travis-ci.org/dbtedman/postcss-prefixwrap](https://travis-ci.org/dbtedman/postcss-prefixwrap) for CI results, run on each commit.
+See our [Contributing Guide](CONTRIBUTING.md) for details on how the sausage is made.
 
-### Static Analysis
-
-Linting support provided by [ESLint](http://eslint.org/) based on rules defined in `.eslintrc.yml`.
-
-```bash
-npm run test:lint
-```
-
-### Unit Tests
-
-Code is unit tested using [MochaJS](https://mochajs.org).
-
-```bash
-npm run test:unit
-```
-
-## Releasing
-
-Based on the [NPM Publishing Guide](https://docs.npmjs.com/getting-started/publishing-npm-packages), after updating the current version, run the following command:
-
-```bash
-npm publish
-```
-
----
+## Who built it?
 
 Created [Down Under](https://en.wikipedia.org/wiki/Australia) by [Daniel Tedman](https://danieltedman.com) and [Jeff Teng](https://jafoteng.co) with [contributions from around the web](https://github.com/dbtedman/postcss-prefixwrap/graphs/contributors).
 
