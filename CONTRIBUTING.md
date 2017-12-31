@@ -1,9 +1,12 @@
 
 # Contributing Guide for PostCSS Prefix Wrap
 
-## Testing
+## Testing and Code Quality
 
-See [https://travis-ci.org/dbtedman/postcss-prefixwrap](https://travis-ci.org/dbtedman/postcss-prefixwrap) for CI results, run on each commit.
+### Continuous Integration
+
+* [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap) - Used for running the test suite on every commit.
+* [Code Climate](https://codeclimate.com/github/dbtedman/postcss-prefixwrap) - Used for test coverage and maintainability analysis.
 
 ### Static Analysis
 
@@ -15,7 +18,7 @@ npm run test:lint
 
 ### Unit Tests
 
-Code is unit tested using [MochaJS](https://mochajs.org).
+Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `test/` directory.
 
 ```bash
 npm run test:unit
