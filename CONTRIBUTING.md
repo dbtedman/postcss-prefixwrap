@@ -16,6 +16,8 @@ Linting support provided by [ESLint](http://eslint.org/) based on rules defined 
 npm run test:lint
 ```
 
+Dependency version checks are performed by [Dependabot](https://dependabot.com/). Any necessary changes will be requested automatically via pull requests.
+
 ### Unit Tests
 
 Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `test-unit/` directory.

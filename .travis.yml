@@ -12,9 +12,8 @@ env:
     - 'CC_TEST_REPORTER_ID=9b72b16c8c4454b3099977808d6199d1e02aeb2b8f2aa0cd9dceb37c482fcb5a'
 
 node_js:
-  - '6'
-  - '7'
   - '8'
+  - '9'
 
 cache:
   directories:
