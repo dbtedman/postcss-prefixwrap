@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": "https://github.com/dbtedman/postcss-prefixwrap",
   "dependencies": {
-    "postcss": "6.0.14"
+    "postcss": "6.0.16"
   },
   "devDependencies": {
     "eslint": "4.14.0",
