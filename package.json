@@ -20,7 +20,7 @@
     "postcss": "6.0.14"
   },
   "devDependencies": {
-    "eslint": "4.14.0",
+    "eslint": "4.15.0",
     "eslint-config-defaults": "9.0.0",
     "fs-extra": "5.0.0",
     "gulp": "3.9.1",
