@@ -57,4 +57,10 @@ describe("PostCSS Prefix Wrap", function () {
       assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/empty-selectors-raw.css", fixtures + "/empty-selectors-expected.css");
     });
   });
+
+  describe("Leave Keyframe Percentages", function () {
+    it("ignores selectors that are percentages", function () {
+      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/keyframes-raw.css", fixtures + "/keyframes-expected.css");
+    });
+  });
 });

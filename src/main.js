@@ -10,6 +10,7 @@ var postcss = require("postcss");
     this.isRootTag = /^(body|html).*$/;
     this.prefixRootTags = options !== undefined && options.hasOwnProperty("prefixRootTags") ? options.prefixRootTags : false;
     this.prefixSelector = prefixSelector;
+    this.isKeyframePercentage = /\d+%/;
   }
 
   PostCSSPrefixWrap.prototype.invalidCSSSelectors = function (cssSelector) {
@@ -23,6 +24,10 @@ var postcss = require("postcss");
 
     if (cleanSelector === "") {
       return null;
+    }
+
+    if (cleanSelector.match(that.isKeyframePercentage)) {
+      return cleanSelector;
     }
 
     // Anything other than a root tag is always prefixed.
