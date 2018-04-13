@@ -3,11 +3,16 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
-## In Development
+## 1.2.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.1.4)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+
+### Features and Improvements
 
 * Add code coverage reporting to ensure all parts of the code are being exercised by the tests.
 * Additional test coverage to exercise error condition handling for invalid css.
 * Introduction of integration testing suite.
+
+### Bug Fixes
+
 * Keyframe percentages are incorrectly prefixed. [#17](https://github.com/dbtedman/postcss-prefixwrap/issues/17)
 
 ## 1.1.3 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.1.3)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
