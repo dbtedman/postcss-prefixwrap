@@ -5,8 +5,9 @@
 
 ### Continuous Integration
 
-* [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap) - Used for running the test suite on every commit.
-* [Code Climate](https://codeclimate.com/github/dbtedman/postcss-prefixwrap) - Used for test coverage and maintainability analysis.
+* [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap) - *Used for running the test suite on every commit.*
+* [Code Climate](https://codeclimate.com/github/dbtedman/postcss-prefixwrap) - *Used for test coverage and maintainability analysis.*
+* [Synx](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) - *Used to identify security vulnerabilities in package dependencies.*
 
 ### Static Analysis
 
