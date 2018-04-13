@@ -4,6 +4,10 @@ var postcss = require("postcss");
 
   "use strict";
 
+  /**
+   * @param {String} prefixSelector
+   * @param {Object} options
+   */
   function PostCSSPrefixWrap(prefixSelector, options) {
     this.anyWhitespaceAtBeginningOrEnd = /(^\s*|\s*$)/g;
     this.isPrefixSelector = new RegExp("^\s*" + prefixSelector + ".*$");
@@ -13,10 +17,18 @@ var postcss = require("postcss");
     this.isKeyframePercentage = /\d+%/;
   }
 
+  /**
+   * @param {String} cssSelector
+   * @returns {Boolean}
+   */
   PostCSSPrefixWrap.prototype.invalidCSSSelectors = function (cssSelector) {
     return cssSelector !== null;
   };
 
+  /**
+   * @param cssSelector
+   * @returns {null|String}
+   */
   PostCSSPrefixWrap.prototype.prefixWrapCSSSelector = function (cssSelector) {
     var that = this;
 
@@ -44,6 +56,9 @@ var postcss = require("postcss");
     return cleanSelector.replace(/^(body|html)/, that.prefixSelector);
   };
 
+  /**
+   * @param {Rule} cssRule
+   */
   PostCSSPrefixWrap.prototype.prefixWrapCSSRule = function (cssRule) {
     var that = this;
 
