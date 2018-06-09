@@ -29,7 +29,7 @@ var postcss = require("postcss");
    * @param cssSelector
    * @returns {null|String}
    */
-  PostCSSPrefixWrap.prototype.prefixWrapCSSSelector = function (cssSelector) {
+  PostCSSPrefixWrap.prototype.prefixWrapCSSSelector = function (cssSelector, cssRule) {
     var that = this;
 
     var cleanSelector = cssSelector.replace(that.anyWhitespaceAtBeginningOrEnd, "");
@@ -38,7 +38,7 @@ var postcss = require("postcss");
       return null;
     }
 
-    if (cleanSelector.match(that.isKeyframePercentage)) {
+    if (cssRule.parent.type === "atrule" && ["keyframes", "-webkit-keyframes", "-moz-keyframes", "-o-keyframes"].indexOf(cssRule.parent.name) !== -1) {
       return cleanSelector;
     }
 
@@ -67,7 +67,7 @@ var postcss = require("postcss");
       cssRule.selector = cssRule.selector
         .split(",")
         .map(function (cssSelector) {
-          return that.prefixWrapCSSSelector(cssSelector);
+          return that.prefixWrapCSSSelector(cssSelector, cssRule);
         })
         .filter(that.invalidCSSSelectors)
         .join(", ");

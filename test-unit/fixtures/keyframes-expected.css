@@ -1,5 +1,9 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
 @keyframes pulse {
-  0% {
+  from {
+    /* ... */
+  }
+  1% {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -9,9 +13,17 @@
     -webkit-transform: scale(2);
     transform: scale(2);
   }
-  100% {
+  90%, 95% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+  99% {
     opacity: 0;
     -webkit-transform: scale(3);
     transform: scale(3);
+  }
+  to {
+    /* ... */   
   }
 }
