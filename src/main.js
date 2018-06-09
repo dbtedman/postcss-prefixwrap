@@ -14,7 +14,6 @@ var postcss = require("postcss");
     this.isRootTag = /^(body|html).*$/;
     this.prefixRootTags = options !== undefined && options.hasOwnProperty("prefixRootTags") ? options.prefixRootTags : false;
     this.prefixSelector = prefixSelector;
-    this.isKeyframePercentage = /\d+%/;
   }
 
   /**
@@ -27,6 +26,7 @@ var postcss = require("postcss");
 
   /**
    * @param cssSelector
+   * @param cssRule
    * @returns {null|String}
    */
   PostCSSPrefixWrap.prototype.prefixWrapCSSSelector = function (cssSelector, cssRule) {

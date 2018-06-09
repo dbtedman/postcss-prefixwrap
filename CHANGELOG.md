@@ -3,7 +3,17 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
-## 1.2.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.1.4)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+## 1.3.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.3.0)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+
+### Features and Improvements
+
+* Implement a more robust `@keyframes` detection, preserving `from` and `to` inside `@keyframes`. [#22](https://github.com/dbtedman/postcss-prefixwrap/pull/22)
+
+### Bug Fixes
+
+* Stop ESLint from searching for config files in parent folders. [#23](https://github.com/dbtedman/postcss-prefixwrap/pull/23)
+
+## 1.2.0 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=1.2.0)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 
 ### Features and Improvements
 
