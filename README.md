@@ -8,11 +8,11 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fa0627fb4cfdc2a6dd04/test_coverage)](https://codeclimate.com/github/dbtedman/postcss-prefixwrap/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
 
-A [PostCSS](http://postcss.org) plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.
+A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 
 ## Where do I start?
 
-> These instructions are only for this plugin, see [PostCSS](http://postcss.org) website for framework information.
+> These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
 
 1\. Install the plugin.
 
@@ -46,7 +46,7 @@ gulp.task("css", function () {
 });
 ```
 
-> The above example is using Gulp.js, and is based on [https://github.com/postcss/gulp-postcss](https://github.com/postcss/gulp-postcss) README.md.
+> This example uses gulp, and is based on the [gulp-postcss](https://github.com/postcss/gulp-postcss) README.
 
 3\. Add the container to your markup.
 
@@ -56,7 +56,7 @@ gulp.task("css", function () {
 </div>
 ```
 
-4\. View your css, now prefix wrapped.
+4\. View your CSS, now prefix-wrapped.
 
 
 **Before**
