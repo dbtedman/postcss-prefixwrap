@@ -5,10 +5,10 @@
   "main": "./src/main.js",
   "scripts": {
     "test": "npm run test:lint && npm run test:unit && npm run test:integration",
-    "test:lint": "eslint --color ./src ./test-unit",
-    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./test-unit",
-    "test:integration": "npm run test:integration:prep && mocha --colors ./test-integration",
-    "test:integration:prep": "gulp --gulpfile=./test-integration/fixtures/gulpfile.js css"
+    "test:lint": "eslint --color ./src ./unit",
+    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./unit",
+    "test:integration": "npm run test:integration:prep && mocha --colors ./integration",
+    "test:integration:prep": "gulp --gulpfile=./integration/fixtures/gulpfile.js css"
   },
   "authors": [
     "Daniel Tedman (https://danieltedman.com)",
@@ -20,12 +20,13 @@
     "postcss": "6.0.14"
   },
   "devDependencies": {
+    "ajv": "6.5.4",
     "eslint": "4.14.0",
     "eslint-config-defaults": "9.0.0",
     "fs-extra": "5.0.0",
-    "gulp": "3.9.1",
-    "gulp-postcss": "7.0.1",
+    "gulp": "4.0.0",
+    "gulp-postcss": "8.0.0",
     "mocha": "4.1.0",
-    "nyc": "11.4.1"
+    "nyc": "13.1.0"
   }
 }

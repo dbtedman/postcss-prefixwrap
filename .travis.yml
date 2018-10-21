@@ -7,25 +7,16 @@
 language: node_js
 sudo: false
 
-env:
-  global:
-    - 'CC_TEST_REPORTER_ID=9b72b16c8c4454b3099977808d6199d1e02aeb2b8f2aa0cd9dceb37c482fcb5a'
-
 node_js:
-  - '8'
-  - '9'
+- '8'
+- '9'
+- '10'
 
 cache:
   directories:
-    - 'node_modules'
+  - 'node_modules'
 
 before_script:
-  - 'curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter'
-  - 'chmod +x ./cc-test-reporter'
-  - './cc-test-reporter before-build'
-  - 'npm install'
+- 'npm install'
 
 script: 'npm run test'
-
-after_script:
-  - './cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT'

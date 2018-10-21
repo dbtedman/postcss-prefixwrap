@@ -21,7 +21,7 @@ Dependency version checks are performed by [Dependabot](https://dependabot.com/)
 
 ### Unit Tests
 
-Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `test-unit/` directory.
+Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `unit/` directory.
 
 ```bash
 npm run test:unit
@@ -29,7 +29,7 @@ npm run test:unit
 
 ### Integration Tests
 
-Code is integration tested using [MochaJS](https://mochajs.org), using test cases defined in the `test-integration/` directory.
+Code is integration tested using [MochaJS](https://mochajs.org), using test cases defined in the `integration/` directory.
 
 ```bash
 npm run test:integration

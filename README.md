@@ -2,10 +2,6 @@
 # [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
 
 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
-[![NPM Version](https://img.shields.io/npm/v/postcss-prefixwrap.svg)](https://www.npmjs.com/package/postcss-prefixwrap) 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fa0627fb4cfdc2a6dd04/maintainability)](https://codeclimate.com/github/dbtedman/postcss-prefixwrap/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/fa0627fb4cfdc2a6dd04/test_coverage)](https://codeclimate.com/github/dbtedman/postcss-prefixwrap/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
 
 A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
@@ -14,41 +10,34 @@ A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles t
 
 > These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
 
-1\. Install the plugin.
+### Install
 
-**[Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap):**
-
-```bash
-yarn add --dev postcss-prefixwrap
-```
-
-**[NPM](https://www.npmjs.com/package/postcss-prefixwrap):**
+Using [NPM](https://www.npmjs.com)
 
 ```bash
-npm install --save-dev postcss-prefixwrap
+npm install postcss-prefixwrap --save-dev --save-exact
 ```
 
-2\. Add to your [PostCSS](http://postcss.org) configuration.
+### Configure
 
+Add to your [PostCSS](http://postcss.org) configuration.
 
 ```javascript
-var gulp = require('gulp');
-var postcss = require('gulp-postcss');
-var prefixwrap = require("postcss-prefixwrap"); // The require for PostCSS Prefix Wrap.
+const Gulp = require("gulp");
+const PostCSS = require("gulp-postcss");
+const PrefixWrap = require("postcss-prefixwrap");
 
-gulp.task("css", function () {
-    var processors = [
-        prefixwrap(".my-custom-wrap")
-    ];
-    return gulp.src("./src/*.css")
-        .pipe(postcss(processors))
-        .pipe(gulp.dest("./dest"));
-});
+Gulp.task("css", () => Gulp.src("./src/*.css")
+    .pipe(PostCSS([
+        PrefixWrap(".my-custom-wrap")
+    ]))
+    .pipe(Gulp.dest("./dest"))
+);
 ```
 
-> This example uses gulp, and is based on the [gulp-postcss](https://github.com/postcss/gulp-postcss) README.
+### Container
 
-3\. Add the container to your markup.
+Add the container to your markup.
 
 ```html
 <div class="my-custom-wrap">
@@ -56,8 +45,9 @@ gulp.task("css", function () {
 </div>
 ```
 
-4\. View your CSS, now prefix-wrapped.
+### View
 
+View your CSS, now prefix-wrapped.
 
 **Before**
 
@@ -85,10 +75,7 @@ body {
 
 ## Want to lean more?
 
-See our [Contributing Guide](CONTRIBUTING.md) for details on how the sausage is made.
-
-## Who built it?
-
-Created [Down Under](https://en.wikipedia.org/wiki/Australia) by [Daniel Tedman](https://danieltedman.com) and [Jeff Teng](https://jafoteng.co) with [contributions from around the web](https://github.com/dbtedman/postcss-prefixwrap/graphs/contributors).
-
-[![Australia](https://danieltedman.com/images/Australia.png)](https://en.wikipedia.org/wiki/Australia)
+* See our [Contributing Guide](CONTRIBUTING.md) for details on how this repository is developed.
+* See our [Changelog](CHANGELOG.md) for details on which features, improvements, and bug fixes have been implemented
+* See our [License](LICENSE.md) for details on how you can use the code in this repository.
+* See our [Security Guide](SECURITY.md) for details on how security is considered.
