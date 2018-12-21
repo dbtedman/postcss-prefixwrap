@@ -8,6 +8,7 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 ### Features and Improvements
 
 * Project cleanup.
+* Include Current Node Versions in Testing [#30](https://github.com/dbtedman/postcss-prefixwrap/issues/30)
 
 ## 1.3.0
 

@@ -1,13 +1,11 @@
 
-# Contributing Guide for PostCSS Prefix Wrap
+# Contributing Guide
 
 ## Testing and Code Quality
 
 ### Continuous Integration
 
-* [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap) - *Used for running the test suite on every commit.*
-* [Code Climate](https://codeclimate.com/github/dbtedman/postcss-prefixwrap) - *Used for test coverage and maintainability analysis.*
-* [Synx](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) - *Used to identify security vulnerabilities in package dependencies.*
+[Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 
 ### Static Analysis
 
@@ -16,8 +14,6 @@ Linting support provided by [ESLint](http://eslint.org/) based on rules defined 
 ```bash
 npm run test:lint
 ```
-
-Dependency version checks are performed by [Dependabot](https://dependabot.com/). Any necessary changes will be requested automatically via pull requests.
 
 ### Unit Tests
 
