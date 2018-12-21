@@ -6,21 +6,19 @@
 
 root: true
 
-extends:
-  - "defaults"
+extends: "eslint:recommended"
 
 parserOptions:
-  ecmaVersion: 5
+  ecmaVersion: 6
+  impliedStrict: true # All code will be treated as being in strict mode.
+  sourceType: "module" # Indicates that we are using ES6 modules.
 
 env:
-  node: true
+  es6: true
   mocha: true
+  node: true
 
 rules:
   quotes:
     - "error"
     - "double"
-
-  strict:
-    - "error"
-    - "function"

@@ -1,25 +1,22 @@
-var gulp = require("gulp");
-var postcss = require("gulp-postcss");
-var fs = require("fs-extra");
-var prefixwrap = require("../../src/main"); // The require for PostCSS Prefix Wrap.
+const gulp = require("gulp");
+const postcss = require("gulp-postcss");
+const fs = require("fs-extra");
 
-(function () {
+// The require for PostCSS Prefix Wrap.
+const prefixwrap = require("../../src/main");
 
-  "use strict";
+gulp.task("css", done => {
+  // Ensure clean from last run.
+  fs.remove("../.temp", () => {
+    const processors = [
+      prefixwrap(".my-custom-wrap")
+    ];
 
-  gulp.task("css", function (done) {
-    // Ensure clean from last run.
-    fs.remove("../.temp", function () {
-      var processors = [
-        prefixwrap(".my-custom-wrap")
-      ];
-
-      return gulp.src("./css/raw/*.css")
-        .pipe(postcss(processors))
-        .pipe(gulp.dest("../.temp"))
-        .on("end", function () {
-          done();
-        });
-    });
+    return gulp.src("./css/raw/*.css")
+      .pipe(postcss(processors))
+      .pipe(gulp.dest("../.temp"))
+      .on("end", function () {
+        done();
+      });
   });
-})();
+});
