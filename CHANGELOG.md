@@ -10,6 +10,7 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 * Project cleanup.
 * Include Current Node Versions in Testing [#30](https://github.com/dbtedman/postcss-prefixwrap/issues/30)
 * PostCSS Should be a Peer Dependency not Dependency [#28](https://github.com/dbtedman/postcss-prefixwrap/issues/28)
+* Use Modern JS (ES6+) [#29](https://github.com/dbtedman/postcss-prefixwrap/issues/29)
 
 ## 1.3.0
 
