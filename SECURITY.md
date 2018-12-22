@@ -1,4 +1,3 @@
-
 # Security
 
 ## Dependency Vulnerability Scanning

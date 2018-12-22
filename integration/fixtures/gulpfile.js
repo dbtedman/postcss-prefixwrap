@@ -8,14 +8,13 @@ const prefixwrap = require("../../src/main");
 gulp.task("css", done => {
   // Ensure clean from last run.
   fs.remove("../.temp", () => {
-    const processors = [
-      prefixwrap(".my-custom-wrap")
-    ];
+    const processors = [prefixwrap(".my-custom-wrap")];
 
-    return gulp.src("./css/raw/*.css")
+    return gulp
+      .src("./css/raw/*.css")
       .pipe(postcss(processors))
       .pipe(gulp.dest("../.temp"))
-      .on("end", function () {
+      .on("end", function() {
         done();
       });
   });

@@ -8,9 +8,12 @@ class PostCSSPrefixWrap {
   constructor(prefixSelector, options) {
     this.anyWhitespaceAtBeginningOrEnd = /(^\s*|\s*$)/g;
     // eslint-disable-next-line no-useless-escape
-    this.isPrefixSelector = new RegExp("^\s*" + prefixSelector + ".*$");
+    this.isPrefixSelector = new RegExp("^s*" + prefixSelector + ".*$");
     this.isRootTag = /^(body|html).*$/;
-    this.prefixRootTags = (options !== undefined) && options.hasOwnProperty("prefixRootTags") ? options.prefixRootTags : false;
+    this.prefixRootTags =
+      options !== undefined && options.hasOwnProperty("prefixRootTags")
+        ? options.prefixRootTags
+        : false;
     this.prefixSelector = prefixSelector;
   }
 
@@ -29,15 +32,23 @@ class PostCSSPrefixWrap {
    */
   prefixWrapCSSSelector(cssSelector, cssRule) {
     const cleanSelector = cssSelector.replace(
-      this.anyWhitespaceAtBeginningOrEnd, "");
+      this.anyWhitespaceAtBeginningOrEnd,
+      ""
+    );
 
     if (cleanSelector === "") {
       return null;
     }
 
-    if (cssRule.parent.type === "atrule"
-      && ["keyframes", "-webkit-keyframes", "-moz-keyframes", "-o-keyframes"]
-        .indexOf(cssRule.parent.name) !== -1) {
+    if (
+      cssRule.parent.type === "atrule" &&
+      [
+        "keyframes",
+        "-webkit-keyframes",
+        "-moz-keyframes",
+        "-o-keyframes"
+      ].indexOf(cssRule.parent.name) !== -1
+    ) {
       return cleanSelector;
     }
 
@@ -65,7 +76,7 @@ class PostCSSPrefixWrap {
     if (!cssRule.selector.match(this.isPrefixSelector)) {
       cssRule.selector = cssRule.selector
         .split(",")
-        .map((cssSelector) => {
+        .map(cssSelector => {
           return this.prefixWrapCSSSelector(cssSelector, cssRule);
         })
         .filter(this.invalidCSSSelectors)
@@ -74,8 +85,8 @@ class PostCSSPrefixWrap {
   }
 
   asPlugin() {
-    return (css) => {
-      css.walkRules((cssRule) => {
+    return css => {
+      css.walkRules(cssRule => {
         this.prefixWrapCSSRule(cssRule);
       });
     };
@@ -83,6 +94,9 @@ class PostCSSPrefixWrap {
 }
 
 // Expose our class as a PostCSS Plugin.
-module.exports = PostCSS.plugin("postcss-prefixwrap", (prefixSelector, options) => {
-  return new PostCSSPrefixWrap(prefixSelector, options).asPlugin();
-});
+module.exports = PostCSS.plugin(
+  "postcss-prefixwrap",
+  (prefixSelector, options) => {
+    return new PostCSSPrefixWrap(prefixSelector, options).asPlugin();
+  }
+);
