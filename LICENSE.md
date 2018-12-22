@@ -1,4 +1,3 @@
-
 MIT License
 
 Copyright © 2018 [Daniel Tedman](https://danieltedman.com/)

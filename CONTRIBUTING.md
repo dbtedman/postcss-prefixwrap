@@ -1,4 +1,3 @@
-
 # Contributing Guide
 
 ## Testing and Code Quality
@@ -6,6 +5,12 @@
 ### Continuous Integration
 
 [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+
+### Code Formatting
+
+```bash
+npm run format
+```
 
 ### Static Analysis
 

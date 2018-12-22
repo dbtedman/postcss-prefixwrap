@@ -5,14 +5,22 @@ const postcss = require("postcss");
 const prefixWrap = require("../src/main");
 
 describe("PostCSS Prefix Wrap", () => {
-
   // Generate a postcss instance with our plugin enabled.
   const postCSS = postcss([prefixWrap(".my-container")]);
-  const postCSSSkip = postcss([prefixWrap(".my-container", {prefixRootTags: true})]);
+  const postCSSSkip = postcss([
+    prefixWrap(".my-container", { prefixRootTags: true })
+  ]);
   const fixtures = __dirname + "/fixtures";
 
-  function assertActualMatchesExpectedAfterPrefixWrap(postCSS, actualPath, expectedPath) {
-    assert.equal(postCSS.process(fs.readFileSync(actualPath)).css, fs.readFileSync(expectedPath, "UTF-8"));
+  function assertActualMatchesExpectedAfterPrefixWrap(
+    postCSS,
+    actualPath,
+    expectedPath
+  ) {
+    assert.equal(
+      postCSS.process(fs.readFileSync(actualPath)).css,
+      fs.readFileSync(expectedPath, "UTF-8")
+    );
   }
 
   describe("Standard Prefixing", () => {
@@ -33,7 +41,11 @@ describe("PostCSS Prefix Wrap", () => {
     });
 
     it("adds prefix class for classes", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(postCSS, fixtures + "/standard-classes-raw.css", fixtures + "/standard-classes-expected.css");
+      assertActualMatchesExpectedAfterPrefixWrap(
+        postCSS,
+        fixtures + "/standard-classes-raw.css",
+        fixtures + "/standard-classes-expected.css"
+      );
     });
 
     it("adds prefix class for multiple classes", () => {

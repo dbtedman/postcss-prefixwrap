@@ -1,4 +1,3 @@
-
 # [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
 
 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
@@ -27,11 +26,10 @@ const Gulp = require("gulp");
 const PostCSS = require("gulp-postcss");
 const PrefixWrap = require("postcss-prefixwrap");
 
-Gulp.task("css", () => Gulp.src("./src/*.css")
-    .pipe(PostCSS([
-        PrefixWrap(".my-custom-wrap")
-    ]))
-    .pipe(Gulp.dest("./dest"))
+Gulp.task("css", () =>
+    Gulp.src("./src/*.css")
+        .pipe(PostCSS([PrefixWrap(".my-custom-wrap")]))
+        .pipe(Gulp.dest("./dest"))
 );
 ```
 
@@ -40,9 +38,7 @@ Gulp.task("css", () => Gulp.src("./src/*.css")
 Add the container to your markup.
 
 ```html
-<div class="my-custom-wrap">
-<!-- Your existing markup. -->
-</div>
+<div class="my-custom-wrap"><!-- Your existing markup. --></div>
 ```
 
 ### View
@@ -53,11 +49,11 @@ View your CSS, now prefix-wrapped.
 
 ```css
 p {
-  color: red;
+    color: red;
 }
 
 body {
-  font-size: 16px;
+    font-size: 16px;
 }
 ```
 
@@ -65,17 +61,17 @@ body {
 
 ```css
 .my-custom-wrap p {
-  color: red;
+    color: red;
 }
 
 .my-custom-wrap {
-  font-size: 16px;
+    font-size: 16px;
 }
 ```
 
 ## Want to lean more?
 
-* See our [Contributing Guide](CONTRIBUTING.md) for details on how this repository is developed.
-* See our [Changelog](CHANGELOG.md) for details on which features, improvements, and bug fixes have been implemented
-* See our [License](LICENSE.md) for details on how you can use the code in this repository.
-* See our [Security Guide](SECURITY.md) for details on how security is considered.
+-   See our [Contributing Guide](CONTRIBUTING.md) for details on how this repository is developed.
+-   See our [Changelog](CHANGELOG.md) for details on which features, improvements, and bug fixes have been implemented
+-   See our [License](LICENSE.md) for details on how you can use the code in this repository.
+-   See our [Security Guide](SECURITY.md) for details on how security is considered.
