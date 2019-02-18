@@ -23,12 +23,12 @@
   "devDependencies": {
     "@types/mocha": "5.2.5",
     "ajv": "6.5.4",
-    "eslint": "5.7.0",
+    "eslint": "^5.14.0",
     "fs-extra": "5.0.0",
     "gulp": "4.0.0",
     "gulp-postcss": "8.0.0",
     "mocha": "4.1.0",
-    "nyc": "13.1.0",
+    "nyc": "^13.3.0",
     "postcss": "6.0.14",
     "prettier": "1.15.3"
   }
