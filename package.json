@@ -4,31 +4,32 @@
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "main": "./src/main.js",
   "scripts": {
+    "format": "prettier ./**/*.{js,md,yml,yaml,json} --write",
     "test": "npm run test:lint && npm run test:unit && npm run test:integration",
-    "test:lint": "eslint --color ./src ./unit",
-    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./unit",
     "test:integration": "npm run test:integration:prep && mocha --colors ./integration",
     "test:integration:prep": "gulp --gulpfile=./integration/fixtures/gulpfile.js css",
-    "format": "prettier ./**/*.{js,md,yml,yaml,json} --write"
+    "test:lint": "eslint --color ./src ./unit",
+    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./unit"
   },
   "authors": [
     "Daniel Tedman (https://danieltedman.com)",
-    "Jeff Teng (https://jafoteng.co)"
+    "Jeff Teng (https://github.com/aj120426394)"
   ],
   "license": "MIT",
   "repository": "https://github.com/dbtedman/postcss-prefixwrap",
   "peerDependencies": {
-    "postcss": "6.x"
+    "postcss": "*"
   },
   "devDependencies": {
     "@types/mocha": "5.2.5",
     "ajv": "6.5.4",
-    "eslint": "^5.14.0",
+    "codecov": "3.2.0",
+    "eslint": "5.16.0",
     "fs-extra": "5.0.0",
     "gulp": "4.0.0",
     "gulp-postcss": "8.0.0",
     "mocha": "4.1.0",
-    "nyc": "^13.3.0",
+    "nyc": "13.3.0",
     "postcss": "6.0.14",
     "prettier": "1.15.3"
   }
