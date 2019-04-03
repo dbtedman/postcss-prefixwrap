@@ -1,6 +1,6 @@
 MIT License
 
-Copyright © 2018 [Daniel Tedman](https://danieltedman.com/)
+Copyright © 2019 [Daniel Tedman](https://danieltedman.com/) and [Jeff Teng](https://github.com/aj120426394)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
