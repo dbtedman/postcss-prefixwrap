@@ -27,7 +27,7 @@ class Plugin {
 
   /**
    * @param {String} cssSelector
-   * @param {Rule} cssRule
+   * @param {postcss.Rule} cssRule
    * @returns {null|String}
    */
   prefixWrapCSSSelector(cssSelector, cssRule) {
@@ -59,7 +59,7 @@ class Plugin {
   }
 
   /**
-   * @param {Rule} cssRule
+   * @param {postcss.Rule} cssRule
    */
   prefixWrapCSSRule(cssRule) {
     // We have found our prefix selector, we just want to leave it as it is already.
