@@ -6,7 +6,8 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 
 ### Features and Improvements
 
-* Package updates; some to fix audit errors, the rest to bring packages up to latest versions.
+-   Package updates; some to fix audit errors, the rest to bring packages up to latest versions.
+-   Experiment with better `eslint` / `prettier` integration.
 
 ## 1.4.1
 
