@@ -19,7 +19,7 @@ class Selector {
   }
 
   /**
-   * @param {Rule} cssRule
+   * @param {postcss.Rule} cssRule
    * @returns {Boolean}
    */
   static isKeyframes(cssRule) {

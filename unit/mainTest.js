@@ -1,31 +1,19 @@
-const assert = require("assert");
-const fs = require("fs");
-const postcss = require("postcss");
+const PostCSS = require("postcss");
 
-const prefixWrap = require("../src/main");
+const PrefixWrap = require("../src/main");
+const PrefixAssert = require("./support/prefix-assert");
 
 describe("PostCSS Prefix Wrap", () => {
   // Generate a postcss instance with our plugin enabled.
-  const postCSS = postcss([prefixWrap(".my-container")]);
-  const postCSSSkip = postcss([
-    prefixWrap(".my-container", { prefixRootTags: true })
+  const postCSS = PostCSS([PrefixWrap(".my-container")]);
+  const postCSSSkip = PostCSS([
+    PrefixWrap(".my-container", { prefixRootTags: true })
   ]);
   const fixtures = __dirname + "/fixtures";
 
-  function assertActualMatchesExpectedAfterPrefixWrap(
-    postCSS,
-    actualPath,
-    expectedPath
-  ) {
-    assert.equal(
-      postCSS.process(fs.readFileSync(actualPath)).css,
-      fs.readFileSync(expectedPath, "UTF-8")
-    );
-  }
-
   describe("Standard Prefixing", () => {
     it("adds prefix class for tags", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/standard-tags-raw.css",
         fixtures + "/standard-tags-expected.css"
@@ -33,7 +21,7 @@ describe("PostCSS Prefix Wrap", () => {
     });
 
     it("adds prefix class for ids", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/standard-ids-raw.css",
         fixtures + "/standard-ids-expected.css"
@@ -41,7 +29,7 @@ describe("PostCSS Prefix Wrap", () => {
     });
 
     it("adds prefix class for classes", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/standard-classes-raw.css",
         fixtures + "/standard-classes-expected.css"
@@ -49,7 +37,7 @@ describe("PostCSS Prefix Wrap", () => {
     });
 
     it("adds prefix class for multiple classes", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/multiple-classes-raw.css",
         fixtures + "/multiple-classes-expected.css"
@@ -59,7 +47,7 @@ describe("PostCSS Prefix Wrap", () => {
 
   describe("Replacement Prefixing", () => {
     it("replaces global selectors with prefix", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/replacement-tags-raw.css",
         fixtures + "/replacement-tags-expected.css"
@@ -69,7 +57,7 @@ describe("PostCSS Prefix Wrap", () => {
 
   describe("Prefix html/body tags", () => {
     it("adds prefix to global selectors", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSSSkip,
         fixtures + "/leave-body-raw.css",
         fixtures + "/leave-body-expected.css"
@@ -79,7 +67,7 @@ describe("PostCSS Prefix Wrap", () => {
 
   describe("Leave Our Container", () => {
     it("leaves selectors that contain our selector in the left most location", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/leave-raw.css",
         fixtures + "/leave-expected.css"
@@ -89,7 +77,7 @@ describe("PostCSS Prefix Wrap", () => {
 
   describe("Handle Invalid CSS", () => {
     it("ignores empty selectors", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/empty-selectors-raw.css",
         fixtures + "/empty-selectors-expected.css"
@@ -99,7 +87,7 @@ describe("PostCSS Prefix Wrap", () => {
 
   describe("Leave Keyframe Percentages", () => {
     it("ignores selectors that are percentages", () => {
-      assertActualMatchesExpectedAfterPrefixWrap(
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
         fixtures + "/keyframes-raw.css",
         fixtures + "/keyframes-expected.css"
