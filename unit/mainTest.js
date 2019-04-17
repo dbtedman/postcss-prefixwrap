@@ -9,6 +9,11 @@ describe("PostCSS Prefix Wrap", () => {
   const postCSSSkip = PostCSS([
     PrefixWrap(".my-container", { prefixRootTags: true })
   ]);
+  const postCSSIgnore = PostCSS([
+    PrefixWrap(".my-container", {
+      ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/]
+    })
+  ]);
   const fixtures = __dirname + "/fixtures";
 
   describe("Standard Prefixing", () => {
@@ -65,7 +70,7 @@ describe("PostCSS Prefix Wrap", () => {
     });
   });
 
-  describe("Leave Our Container", () => {
+  describe("Root", () => {
     it("leaves selectors that contain our selector in the left most location", () => {
       PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,
@@ -91,6 +96,16 @@ describe("PostCSS Prefix Wrap", () => {
         postCSS,
         fixtures + "/keyframes-raw.css",
         fixtures + "/keyframes-expected.css"
+      );
+    });
+  });
+
+  describe("Ignored Selectors", () => {
+    it("ignores selectors that are in a ignore list", () => {
+      PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+        postCSSIgnore,
+        fixtures + "/ignore-selectors.css",
+        fixtures + "/ignore-selectors-expected.css"
       );
     });
   });
