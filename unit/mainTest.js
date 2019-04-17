@@ -70,7 +70,7 @@ describe("PostCSS Prefix Wrap", () => {
     });
   });
 
-  describe("Root", () => {
+  describe("Leave Our Container", () => {
     it("leaves selectors that contain our selector in the left most location", () => {
       PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
         postCSS,

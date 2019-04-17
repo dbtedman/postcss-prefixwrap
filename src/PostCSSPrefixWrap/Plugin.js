@@ -44,6 +44,7 @@ class Plugin {
       return cleanSelector;
     }
 
+    // Check for matching ignored selectors
     if (this.ignoredSelectors.some(currentValue => cleanSelector.match(currentValue))) {
       return cleanSelector;
     }
