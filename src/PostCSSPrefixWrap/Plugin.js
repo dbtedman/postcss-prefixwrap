@@ -14,6 +14,8 @@ class Plugin {
         ? options.prefixRootTags
         : false;
     this.prefixSelector = prefixSelector;
+    this.ignoredSelectors = options !== undefined && options.hasOwnProperty("ignoredSelectors")
+        ? options.ignoredSelectors : [];
   }
 
   static asPostCSSPlugin() {
@@ -39,6 +41,11 @@ class Plugin {
 
     // Do not prefix keyframes rules.
     if (Selector.isKeyframes(cssRule)) {
+      return cleanSelector;
+    }
+
+    // Check for matching ignored selectors
+    if (this.ignoredSelectors.some(currentValue => cleanSelector.match(currentValue))) {
       return cleanSelector;
     }
 

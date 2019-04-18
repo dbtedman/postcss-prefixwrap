@@ -1,0 +1,12 @@
+:root {
+  --main-color: hotpink;
+  --pane-padding: 5px 42px;
+}
+
+#my-id {
+  font-size: 40px;
+}
+
+.some-class {
+  color: red;
+}
