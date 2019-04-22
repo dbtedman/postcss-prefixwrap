@@ -22,12 +22,14 @@ cache:
   directories:
     - "node_modules"
 
+before_install:
+  - "npm install -g npm@latest"
+
 before_script:
   # Install npm dependencies and skip dependency audit as we will run this
   # explicitly later.
   - "npm install --no-audit"
 
 script:
-  # Ensure returns true even if command not available.
-  - "npm audit || true"
+  - "npm audit"
   - "npm run test"
