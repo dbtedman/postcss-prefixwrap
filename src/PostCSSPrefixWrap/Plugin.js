@@ -50,7 +50,7 @@ class Plugin {
     }
 
     // Anything other than a root tag is always prefixed.
-    if (Selector.isRootTag(cleanSelector)) {
+    if (Selector.isNotRootTag(cleanSelector)) {
       return this.prefixSelector + " " + cleanSelector;
     }
 
@@ -76,7 +76,7 @@ class Plugin {
         .map(cssSelector => {
           return this.prefixWrapCSSSelector(cssSelector, cssRule);
         })
-        .filter(Selector.isInvalid)
+        .filter(Selector.isValid)
         .join(", ");
     }
   }

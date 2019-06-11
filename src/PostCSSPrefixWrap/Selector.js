@@ -6,7 +6,7 @@ class Selector {
    * @param {String} cssSelector
    * @returns {Boolean}
    */
-  static isInvalid(cssSelector) {
+  static isValid(cssSelector) {
     return cssSelector !== null;
   }
 
@@ -38,7 +38,7 @@ class Selector {
    * @param {String} cleanSelector
    * @returns {boolean}
    */
-  static isRootTag(cleanSelector) {
+  static isNotRootTag(cleanSelector) {
     return !cleanSelector.match(IS_ROOT_TAG);
   }
 }
