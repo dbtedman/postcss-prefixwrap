@@ -18,14 +18,6 @@ Code formatting support provided by [Prettier](https://prettier.io/) and [ESLint
 npm run format
 ```
 
-## Static Analysis
-
-Linting support provided by [ESLint](http://eslint.org/) based on rules defined in `.eslintrc.yml`.
-
-```bash
-npm run test:lint
-```
-
 ## Unit Tests
 
 Code is unit tested using [MochaJS](https://mochajs.org), using test cases defined in the `unit/` directory.
@@ -40,4 +32,12 @@ Code is integration tested using [MochaJS](https://mochajs.org), using test case
 
 ```bash
 npm run test:integration
+```
+
+## Acceptance Tests
+
+Code is acceptance tested using [MochaJS](https://mochajs.org), using test cases defined in the `acceptance/` directory.
+
+```bash
+npm run test:acceptance
 ```
