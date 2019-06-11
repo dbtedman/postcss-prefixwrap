@@ -1,7 +1,7 @@
 const PostCSS = require("postcss");
 
 const PrefixWrap = require("../src/main");
-const PrefixAssert = require("./support/prefix-assert");
+const PrefixAssert = require("./support/PrefixAssert");
 
 // Generate a postcss instance with our plugin enabled.
 const postCSS = PostCSS([PrefixWrap(".my-container")]);

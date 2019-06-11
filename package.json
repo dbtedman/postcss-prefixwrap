@@ -19,7 +19,7 @@
     "test": "npm run test:unit && npm run test:integration && npm run test:acceptance",
     "test:acceptance": "nyc --reporter=text --reporter=lcov mocha --colors ./acceptance/**/*Test.js",
     "test:integration": "npm run test:integration:prep && mocha --colors ./integration/**/*Test.js",
-    "test:integration:prep": "gulp --gulpfile=./integration/fixtures/gulpfile.js css",
+    "test:integration:prep": "gulp --gulpfile=./integration/fixtures/Gulpfile.js css",
     "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./unit/**/*Test.js"
   },
   "peerDependencies": {

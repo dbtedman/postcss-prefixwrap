@@ -1,7 +1,7 @@
 const PostCSS = require("postcss");
 
 const PrefixWrap = require("../src/main");
-const PrefixAssert = require("./support/prefix-assert");
+const PrefixAssert = require("./support/PrefixAssert");
 
 const postCSSIgnore = PostCSS([
   PrefixWrap(".my-container", {
