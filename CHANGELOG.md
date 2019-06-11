@@ -2,6 +2,12 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
+## In Development
+
+### Features and Improvements
+
+-   Refactored test implementation with `acceptance`, `integration`, and `unit` kinds.
+
 ## 1.5.1
 
 ### Bug Fixes
