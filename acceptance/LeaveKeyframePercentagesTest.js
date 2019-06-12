@@ -6,7 +6,7 @@ const PrefixAssert = require("./support/PrefixAssert");
 const postCSS = PostCSS([PrefixWrap(".my-container")]);
 const fixtures = __dirname + "/fixtures";
 
-describe("Leave Keyframe Percentages", () => {
+describe("Acceptance: Leave Keyframe Percentages", () => {
   it("ignores selectors that are percentages", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,

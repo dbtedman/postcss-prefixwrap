@@ -2,7 +2,7 @@ const Assert = require("assert");
 
 const Selector = require("../../src/PostCSSPrefixWrap/Selector");
 
-describe("Selector (src/PostCSSPrefixWrap/Selector.js)", () => {
+describe("Unit: Selector (src/PostCSSPrefixWrap/Selector.js)", () => {
   it("isValid() is true for null selector", () => {
     Assert.strictEqual(Selector.isValid(null), false);
   });

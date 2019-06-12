@@ -6,7 +6,7 @@ const PrefixAssert = require("./support/PrefixAssert");
 const postCSS = PostCSS([PrefixWrap(".my-container")]);
 const fixtures = __dirname + "/fixtures";
 
-describe("Leave Our Container", () => {
+describe("Acceptance: Leave Our Container", () => {
   it("leaves selectors that contain our selector in the left most location", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,

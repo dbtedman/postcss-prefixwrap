@@ -6,7 +6,7 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 
 ### Features and Improvements
 
--   Refactored test implementation with `acceptance`, `integration`, and `unit` kinds.
+-   Refactored test implementation with `acceptance`, and `unit` kinds.
 
 ## [1.5.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.5.1)
 

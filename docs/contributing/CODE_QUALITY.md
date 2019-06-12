@@ -4,7 +4,6 @@
 -   [Code Formatting](#code-formatting)
 -   [Static Analysis](#static-analysis)
 -   [Unit Tests](#unit-tests)
--   [Integration Tests](#integration-tests)
 
 ## Continuous Integration
 
@@ -24,14 +23,6 @@ Code is unit tested using [MochaJS](https://mochajs.org), using test cases defin
 
 ```bash
 npm run test:unit
-```
-
-## Integration Tests
-
-Code is integration tested using [MochaJS](https://mochajs.org), using test cases defined in the `integration/` directory.
-
-```bash
-npm run test:integration
 ```
 
 ## Acceptance Tests

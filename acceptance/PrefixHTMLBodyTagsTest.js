@@ -9,7 +9,7 @@ const postCSSSkip = PostCSS([
 
 const fixtures = __dirname + "/fixtures";
 
-describe("Prefix html/body tags", () => {
+describe("Acceptance: Prefix html/body tags", () => {
   it("adds prefix to global selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSSSkip,

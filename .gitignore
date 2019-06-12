@@ -16,4 +16,3 @@
 # Test runtime and reporting.
 /.nyc_output/
 /coverage/
-/integration/.temp/

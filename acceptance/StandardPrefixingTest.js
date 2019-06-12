@@ -7,7 +7,7 @@ const PrefixAssert = require("./support/PrefixAssert");
 const postCSS = PostCSS([PrefixWrap(".my-container")]);
 const fixtures = __dirname + "/fixtures";
 
-describe("Standard Prefixing", () => {
+describe("Acceptance: Standard Prefixing", () => {
   it("adds prefix class for tags", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,

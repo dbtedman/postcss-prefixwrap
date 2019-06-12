@@ -10,7 +10,7 @@ const postCSSIgnore = PostCSS([
 ]);
 const fixtures = __dirname + "/fixtures";
 
-describe("Ignored Selectors", () => {
+describe("Acceptance: Ignored Selectors", () => {
   it("ignores selectors that are in a ignore list", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSSIgnore,

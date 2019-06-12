@@ -6,7 +6,7 @@ const PrefixAssert = require("./support/PrefixAssert");
 const postCSS = PostCSS([PrefixWrap(".my-container")]);
 const fixtures = __dirname + "/fixtures";
 
-describe("Replacement Prefixing", () => {
+describe("Acceptance: Replacement Prefixing", () => {
   it("replaces global selectors with prefix", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,

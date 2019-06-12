@@ -6,7 +6,7 @@ const PrefixAssert = require("./support/PrefixAssert");
 const postCSS = PostCSS([PrefixWrap(".my-container")]);
 const fixtures = __dirname + "/fixtures";
 
-describe("Handle Invalid CSS", () => {
+describe("Acceptance: Handle Invalid CSS", () => {
   it("ignores empty selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
