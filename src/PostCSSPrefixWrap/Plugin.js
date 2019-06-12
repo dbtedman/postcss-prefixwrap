@@ -68,10 +68,10 @@ class Plugin {
 
   /**
    * @param {postcss.Rule} cssRule
-   * @returns {RegExpMatchArray}
+   * @returns {boolean}
    */
   cssRuleMatchesPrefixSelector(cssRule) {
-    return cssRule.selector.match(this.isPrefixSelector);
+    return cssRule.selector.match(this.isPrefixSelector) !== null;
   }
 
   /**
