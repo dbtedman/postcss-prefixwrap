@@ -47,18 +47,20 @@ describe("Unit: PostCSSPrefixWrap/Plugin.js", () => {
     Assert.strictEqual(cssRule.selector, "");
   });
 
-  // it("prefixWrapCSSRule() prefixes non root selectors with prefix Selector", () => {
-  //   const plugin = new OurPlugin(prefixSelector);
-  //
-  //   ["div", "p", "h1"].forEach(selector => {
-  //     const cssRule = PostCSS.rule({
-  //       selector: selector,
-  //       parent: new PostCSS.root()
-  //     });
-  //
-  //     plugin.prefixWrapCSSRule(cssRule);
-  //
-  //     Assert.strictEqual(cssRule.selector, `${prefixSelector} ${selector}`);
-  //   });
-  // });
+  it("prefixWrapCSSRule() prefixes non root selectors with prefix Selector", () => {
+    const plugin = new OurPlugin(prefixSelector);
+
+    ["div", "p", "h1"].forEach(selector => {
+      const parent = PostCSS.root();
+      const cssRule = PostCSS.rule({
+        selector: selector,
+        // @ts-ignore
+        parent: parent
+      });
+
+      plugin.prefixWrapCSSRule(cssRule);
+
+      Assert.strictEqual(cssRule.selector, `${prefixSelector} ${selector}`);
+    });
+  });
 });
