@@ -1,9 +1,9 @@
 const Assert = require("assert");
 
-const Selector = require("../../src/PostCSSPrefixWrap/Selector");
+import Selector from "../../src/PostCSSPrefixWrap/Selector";
 
 describe("Unit: PostCSSPrefixWrap/Selector.js", () => {
-  it("isValid() is true for null selector", () => {
+  it("isValid() is true for null Selector", () => {
     Assert.strictEqual(Selector.isValid(null), false);
   });
 

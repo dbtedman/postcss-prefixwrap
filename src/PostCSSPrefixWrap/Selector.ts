@@ -1,28 +1,18 @@
+import { Rule } from "postcss";
+
 const ANY_WHITESPACE_AT_BEGINNING_OR_END = /(^\s*|\s*$)/g;
 const IS_ROOT_TAG = /^(body|html).*$/;
 
-class Selector {
-  /**
-   * @param {String} cssSelector
-   * @returns {Boolean}
-   */
-  static isValid(cssSelector) {
+export default class Selector {
+  static isValid(cssSelector: string | null): boolean {
     return cssSelector !== null;
   }
 
-  /**
-   * @param {String} cssSelector
-   * @returns {String}
-   */
-  static clean(cssSelector) {
+  static clean(cssSelector: string): string {
     return cssSelector.replace(ANY_WHITESPACE_AT_BEGINNING_OR_END, "");
   }
 
-  /**
-   * @param {postcss.Rule} cssRule
-   * @returns {Boolean}
-   */
-  static isKeyframes(cssRule) {
+  static isKeyframes(cssRule: Rule): boolean {
     return (
       cssRule.parent.type === "atrule" &&
       [
@@ -34,13 +24,7 @@ class Selector {
     );
   }
 
-  /**
-   * @param {String} cleanSelector
-   * @returns {boolean}
-   */
-  static isNotRootTag(cleanSelector) {
+  static isNotRootTag(cleanSelector: string): boolean {
     return !cleanSelector.match(IS_ROOT_TAG);
   }
 }
-
-module.exports = Selector;
