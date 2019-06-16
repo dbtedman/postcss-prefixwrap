@@ -1,6 +1,6 @@
 import PostCSS, { Rule } from "postcss";
-import Selector from "./selector";
-import Hash from "./hash";
+import Selector from "./Selector";
+import Hash from "./Hash";
 
 export default class OurPlugin {
   private ignoredSelectors: Array<string>;
