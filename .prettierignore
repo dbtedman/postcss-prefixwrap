@@ -13,3 +13,6 @@
 # Leave generated code alone.
 /package-lock.json
 /.nyc_output/
+
+# Leave build output alone.
+/build/

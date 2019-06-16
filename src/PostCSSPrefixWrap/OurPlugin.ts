@@ -1,35 +1,32 @@
-const PostCSS = require("postcss");
+import PostCSS, { Rule } from "postcss";
+import Selector from "./Selector";
+import Hash from "./Hash";
 
-const Selector = require("./Selector");
-const Hash = require("./Hash");
+export default class OurPlugin {
+  private ignoredSelectors: Array<string>;
+  private prefixRootTags: boolean;
+  private isPrefixSelector: RegExp;
+  private prefixSelector: string;
 
-class Plugin {
-  /**
-   * @param {String} prefixSelector
-   * @param {Object} options
-   */
-  constructor(prefixSelector, options = {}) {
+  constructor(prefixSelector: string, options = {}) {
     this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
     this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
     this.isPrefixSelector = new RegExp(`^s*${prefixSelector}.*$`);
     this.prefixSelector = prefixSelector;
   }
 
-  /**
-   * @returns {postcss.Plugin<any>}
-   */
-  static asPostCSSPlugin() {
-    return PostCSS.plugin("postcss-prefixwrap", (prefixSelector, options) => {
-      return new Plugin(prefixSelector, options).process();
-    });
+  static asPostCSSPlugin(): PostCSS.Plugin<string> {
+    const initializer = (prefixSelector: string, options: object) => {
+      return new OurPlugin(prefixSelector, options).prefix();
+    };
+
+    // TODO: How can we better avoid needing to ignore here?
+    // @ts-ignore
+    return PostCSS.plugin("postcss-prefixwrap", initializer);
   }
 
-  /**
-   * @param {String} cssSelector
-   * @param {postcss.Rule} cssRule
-   * @returns {null|String}
-   */
-  prefixWrapCSSSelector(cssSelector, cssRule) {
+  // TODO: This function is getting a little too long, I need to consider how best to split it.
+  prefixWrapCSSSelector(cssSelector: string, cssRule: Rule): string | null {
     const cleanSelector = Selector.clean(cssSelector);
 
     if (cleanSelector === "") {
@@ -66,18 +63,11 @@ class Plugin {
     return cleanSelector.replace(/^(body|html)/, this.prefixSelector);
   }
 
-  /**
-   * @param {postcss.Rule} cssRule
-   * @returns {boolean}
-   */
-  cssRuleMatchesPrefixSelector(cssRule) {
+  cssRuleMatchesPrefixSelector(cssRule: Rule): boolean {
     return cssRule.selector.match(this.isPrefixSelector) !== null;
   }
 
-  /**
-   * @param {postcss.Rule} cssRule
-   */
-  prefixWrapCSSRule(cssRule) {
+  prefixWrapCSSRule(cssRule: Rule) {
     if (this.cssRuleMatchesPrefixSelector(cssRule)) {
       return;
     }
@@ -89,16 +79,11 @@ class Plugin {
       .join(", ");
   }
 
-  /**
-   * @returns {Function}
-   */
-  process() {
-    return css => {
-      css.walkRules(cssRule => {
+  prefix(): Function {
+    return (css: Rule) => {
+      css.walkRules((cssRule: Rule) => {
         this.prefixWrapCSSRule(cssRule);
       });
     };
   }
 }
-
-module.exports = Plugin;

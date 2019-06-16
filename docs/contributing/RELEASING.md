@@ -4,8 +4,8 @@
 
 ## Publishing to NPM
 
-Based on the [NPM Publishing Guide](https://docs.npmjs.com/getting-started/publishing-npm-packages), after updating the current version, run the following command:
+After pdating the current version, run the following command:
 
 ```bash
-npm publish
+npm run release
 ```

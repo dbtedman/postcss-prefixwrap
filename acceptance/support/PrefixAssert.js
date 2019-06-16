@@ -7,7 +7,11 @@ class PrefixAssert {
    * @param {String} actualPath
    * @param {String} expectedPath
    */
-  static actualMatchesExpectedAfterPrefixWrap(postCSS, actualPath, expectedPath) {
+  static actualMatchesExpectedAfterPrefixWrap(
+    postCSS,
+    actualPath,
+    expectedPath
+  ) {
     Assert.strictEqual(
       postCSS.process(FileSystem.readFileSync(actualPath)).css,
       FileSystem.readFileSync(expectedPath, "UTF-8")

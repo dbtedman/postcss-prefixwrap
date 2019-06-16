@@ -2,11 +2,12 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
-## In Development
+## [1.6.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.6.0)
 
 ### Features and Improvements
 
 -   Refactored test implementation with `acceptance`, and `unit` kinds.
+-   TypeScript to better handle types.
 
 ## [1.5.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.5.1)
 

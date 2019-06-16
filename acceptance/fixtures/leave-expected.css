@@ -3,7 +3,7 @@
   color: red;
 }
 
-/* Ensure is prefixed as is not first selector. */
+/* Ensure is prefixed as is not first Selector. */
 .my-container p .my-container {
   color: red;
 }

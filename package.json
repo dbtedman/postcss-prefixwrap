@@ -1,35 +1,44 @@
 {
   "name": "postcss-prefixwrap",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "license": "MIT",
-  "author": "Daniel Tedman (https://danieltedman.com)",
+  "author": {
+    "name": "Daniel Tedman",
+    "url": "https://danieltedman.com"
+  },
   "repository": "https://github.com/dbtedman/postcss-prefixwrap",
+  "homepage": "https://github.com/dbtedman/postcss-prefixwrap#readme",
+  "bugs": "https://github.com/dbtedman/postcss-prefixwrap/issues",
   "keywords": [
     "css",
     "javascript",
     "nodejs",
     "npm",
     "postcss",
-    "postcss-plugin"
+    "postcss-plugin",
+    "typescript"
   ],
-  "main": "./src/main.js",
+  "main": "./build/main.js",
   "scripts": {
-    "format": "prettier ./**/*.{md,yml,yaml,json} --write && prettier-eslint ./**/*.js --write",
-    "test": "npm run test:lint && npm run test:unit && npm run test:acceptance",
+    "clean": "rm -rf ./build/",
+    "build": "tsc --build ./tsconfig.json --pretty",
+    "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write",
+    "release": "npm run clean && npm run build && npm publish",
+    "test": "npm run build && npm run test:lint && npm run test:unit && npm run test:acceptance",
     "test:acceptance": "nyc --reporter=text --reporter=lcov mocha --colors ./acceptance/**/*Test.js",
-    "test:lint": "prettier --check ./**/*.{md,yml,yaml,json} --write && prettier-eslint-check ./**/*.js",
-    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors ./unit/**/*Test.js"
+    "test:lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",
+    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors -r ts-node/register ./unit/**/*Test.ts"
   },
   "peerDependencies": {
     "postcss": "*"
   },
   "devDependencies": {
     "@types/mocha": "5.2.7",
+    "@types/node": "12.0.8",
     "ajv": "6.10.0",
     "ajv-keywords": "3.4.0",
     "codecov": "3.5.0",
-    "eslint": "5.16.0",
     "fs-extra": "8.0.1",
     "gulp": "4.0.2",
     "gulp-postcss": "8.0.0",
@@ -38,7 +47,7 @@
     "nyc": "14.1.1",
     "postcss": "7.0.17",
     "prettier": "1.18.2",
-    "prettier-eslint-check": "1.0.3",
-    "prettier-eslint-cli": "4.7.1"
+    "ts-node": "8.3.0",
+    "typescript": "3.5.2"
   }
 }
