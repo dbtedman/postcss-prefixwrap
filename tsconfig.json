@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": ".",
+    "esModuleInterop": true,
     "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
     "outDir": "./build",
+    "paths": {
+      "*": ["node_modules/*", "src/*"]
+    },
+    "sourceMap": true,
     "strict": true,
-    "esModuleInterop": true
+    "target": "es5"
   },
-  "include": ["src/**/*"]
+  "include": ["./src/**/*"]
 }
