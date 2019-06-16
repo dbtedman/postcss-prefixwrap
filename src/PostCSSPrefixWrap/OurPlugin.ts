@@ -1,5 +1,4 @@
-import { PluginInitializer, Rule } from "postcss";
-import PostCSS from "postcss";
+import PostCSS, { Rule } from "postcss";
 import Selector from "./selector";
 import Hash from "./hash";
 
@@ -18,13 +17,15 @@ export default class OurPlugin {
 
   static asPostCSSPlugin(): PostCSS.Plugin<string> {
     const initializer = (prefixSelector: string, options: object) => {
-      return new OurPlugin(prefixSelector, options).process();
+      return new OurPlugin(prefixSelector, options).prefix();
     };
 
+    // TODO: How can we better avoid needing to ignore here?
     // @ts-ignore
     return PostCSS.plugin("postcss-prefixwrap", initializer);
   }
 
+  // TODO: This function is getting a little too long, I need to consider how best to split it.
   prefixWrapCSSSelector(cssSelector: string, cssRule: Rule): string | null {
     const cleanSelector = Selector.clean(cssSelector);
 
@@ -78,7 +79,7 @@ export default class OurPlugin {
       .join(", ");
   }
 
-  process(): Function {
+  prefix(): Function {
     return (css: Rule) => {
       css.walkRules((cssRule: Rule) => {
         this.prefixWrapCSSRule(cssRule);

@@ -13,15 +13,10 @@ export default class Selector {
   }
 
   static isKeyframes(cssRule: Rule): boolean {
-    return (
-      cssRule.parent.type === "atrule" &&
-      [
-        "keyframes",
-        "-webkit-keyframes",
-        "-moz-keyframes",
-        "-o-keyframes"
-      ].indexOf(cssRule.parent.name) !== -1
-    );
+    const { parent } = cssRule;
+
+    // @see https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
+    return parent.type === "atrule" && parent.name.match(/keyframes$/) !== null;
   }
 
   static isNotRootTag(cleanSelector: string): boolean {

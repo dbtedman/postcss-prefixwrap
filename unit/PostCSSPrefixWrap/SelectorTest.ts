@@ -1,4 +1,4 @@
-const Assert = require("assert");
+import Assert from "assert";
 
 import Selector from "../../src/PostCSSPrefixWrap/Selector";
 
