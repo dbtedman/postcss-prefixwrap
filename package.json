@@ -3,15 +3,21 @@
   "version": "1.5.1",
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "license": "MIT",
-  "author": "Daniel Tedman (https://danieltedman.com)",
+  "author": {
+    "name": "Daniel Tedman",
+    "url": "https://danieltedman.com"
+  },
   "repository": "https://github.com/dbtedman/postcss-prefixwrap",
+  "homepage": "https://github.com/dbtedman/postcss-prefixwrap#readme",
+  "bugs": "https://github.com/dbtedman/postcss-prefixwrap/issues",
   "keywords": [
     "css",
     "javascript",
     "nodejs",
     "npm",
     "postcss",
-    "postcss-plugin"
+    "postcss-plugin",
+    "typescript"
   ],
   "main": "./build/main.js",
   "scripts": {
