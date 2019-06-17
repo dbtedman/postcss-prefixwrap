@@ -1,6 +1,7 @@
 # [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
 
 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
+[![Build Status](https://dev.azure.com/dbtedman0861/dbtedman/_apis/build/status/dbtedman.postcss-prefixwrap?branchName=master)](https://dev.azure.com/dbtedman0861/dbtedman/_build/latest?definitionId=1&branchName=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
 
 A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
