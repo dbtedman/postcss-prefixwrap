@@ -18,5 +18,4 @@ steps:
 - script: |
     npm install --no-audit
     npm audit
-    npm run test
   displayName: 'npm install and test'
