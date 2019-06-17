@@ -21,5 +21,5 @@ steps:
     npm run build
     # npm run test:lint
     npm run test:unit
-    # npm run test:acceptance
+    npm run test:acceptance
   displayName: 'npm install and test'
