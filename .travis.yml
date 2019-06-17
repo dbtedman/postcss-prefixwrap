@@ -30,4 +30,7 @@ before_script:
 
 script:
   - "npm audit"
-  - "npm run test"
+  - "npm run build"
+  # - "npm run test:lint"
+  - "npm run test:unit"
+  - "npm run test:acceptance"
