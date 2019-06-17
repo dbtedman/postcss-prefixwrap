@@ -18,8 +18,8 @@ steps:
 - script: |
     npm install --no-audit
     npm audit
-    # npm run build
+    npm run build
     # npm run test:lint
-    # npm run test:unit
-    npm run test:acceptance
+    npm run test:unit
+    # npm run test:acceptance
   displayName: 'npm install and test'
