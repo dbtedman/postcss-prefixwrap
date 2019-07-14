@@ -1,4 +1,4 @@
-# [PostCSS Prefix Wrap](../../README.md) / [Contributing Guide](../../CONTRIBUTING.md) / Code Quality
+# [PostCSS Prefix Wrap](../README.md) / [Contributing Guide](../CONTRIBUTING.md) / Code Quality
 
 -   [Continuous Integration](#continuous-integration)
 -   [Code Formatting](#code-formatting)
