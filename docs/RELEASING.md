@@ -1,4 +1,4 @@
-# [PostCSS Prefix Wrap](../../README.md) / [Contributing Guide](../../CONTRIBUTING.md) / Releasing
+# [PostCSS Prefix Wrap](../README.md) / [Contributing Guide](../CONTRIBUTING.md) / Releasing
 
 -   [Publishing to NPM](#publishing-to-npm)
 
