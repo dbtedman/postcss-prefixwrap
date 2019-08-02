@@ -39,7 +39,7 @@
     "ajv": "6.10.0",
     "ajv-keywords": "3.4.0",
     "codecov": "3.5.0",
-    "fs-extra": "8.0.1",
+    "fs-extra": "8.1.0",
     "gulp": "4.0.2",
     "gulp-postcss": "8.0.0",
     "husky": "2.4.1",
