@@ -48,6 +48,6 @@
     "postcss": "7.0.17",
     "prettier": "1.18.2",
     "ts-node": "8.3.0",
-    "typescript": "3.5.2"
+    "typescript": "3.5.3"
   }
 }
