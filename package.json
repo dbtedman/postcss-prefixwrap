@@ -28,7 +28,7 @@
     "test": "npm run build && npm run test:lint && npm run test:unit && npm run test:acceptance",
     "test:acceptance": "nyc --reporter=text --reporter=lcov mocha --colors ./acceptance/**/*Test.js",
     "test:lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",
-    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors -r ts-node/register ./unit/**/*Test.ts"
+    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors -r ts-node/register ./src/**/*.spec.ts"
   },
   "peerDependencies": {
     "postcss": "*"
