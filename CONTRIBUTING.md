@@ -1,6 +1,45 @@
 # [PostCSS Prefix Wrap](./README.md) / Contributing Guide
 
+-   [Thanks](#thanks)
+-   [Continuous Integration](#continuous-integration)
+-   [Code Formatting](#code-formatting)
+-   [Test](#test)
+-   [Publishing](#publishing)
+
+## Thanks
+
 Thanks to all of the [Contributors](https://github.com/dbtedman/postcss-prefixwrap/graphs/contributors) who maintain PostCSS Prefix Wrap and [Jeff Teng](https://github.com/aj120426394) for contributing to the initial design.
 
--   [Testing and Code Quality](docs/CODE_QUALITY.md)
--   [Releasing](docs/RELEASING.md)
+## Continuous Integration
+
+Provided by [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap), run on every commit and pull request.
+
+## Code Formatting
+
+Code formatting support provided by [Prettier](https://prettier.io/) and [ESLint](http://eslint.org/).
+
+```bash
+yarn format
+```
+
+## Test
+
+Tested using [Jest](https://jestjs.io/), using test cases defined in the `src/` directory matching `*.spec.ts` pattern.
+
+```bash
+yarn test
+```
+
+## Publishing
+
+After updating the current version, run the following command:
+
+```bash
+yarn release
+```
+
+You can test what will be published, run the following command:
+
+```bash
+yarn pack
+```

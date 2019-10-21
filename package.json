@@ -14,39 +14,35 @@
     "css",
     "javascript",
     "nodejs",
-    "npm",
+    "yarn",
     "postcss",
     "postcss-plugin",
     "typescript"
   ],
-  "main": "./build/main.js",
+  "main": "./dist/main.js",
+  "files": [
+    "*.md",
+    "./build"
+  ],
   "scripts": {
     "clean": "rm -rf ./build/",
-    "build": "tsc --build ./tsconfig.json --pretty",
+    "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance",
     "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write",
-    "release": "npm run clean && npm run build && npm publish",
-    "test": "npm run build && npm run test:lint && npm run test:unit && npm run test:acceptance",
-    "test:acceptance": "nyc --reporter=text --reporter=lcov mocha --colors ./acceptance/**/*Test.js",
-    "test:lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",
-    "test:unit": "nyc --reporter=text --reporter=lcov mocha --colors -r ts-node/register ./src/**/*.spec.ts"
+    "release": "yarn clean && yarn build && yarn publish",
+    "test": "jest --coverage",
+    "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check"
   },
   "peerDependencies": {
     "postcss": "*"
   },
   "devDependencies": {
-    "@types/mocha": "5.2.7",
+    "@types/jest": "24.0.19",
     "@types/node": "12.7.1",
-    "ajv": "6.10.2",
-    "ajv-keywords": "3.4.1",
-    "codecov": "3.5.0",
-    "fs-extra": "8.1.0",
-    "gulp": "4.0.2",
-    "gulp-postcss": "8.0.0",
     "husky": "3.0.3",
-    "mocha": "6.2.0",
-    "nyc": "14.1.1",
+    "jest": "24.8.0",
     "postcss": "7.0.17",
     "prettier": "1.18.2",
+    "ts-jest": "24.0.2",
     "ts-node": "8.3.0",
     "typescript": "3.5.3"
   }

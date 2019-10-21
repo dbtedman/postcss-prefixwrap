@@ -1,16 +1,13 @@
+import * as postcss from "postcss";
+
 const Assert = require("assert");
 const FileSystem = require("fs");
 
-class PrefixAssert {
-  /**
-   * @param {postcss.Processor} postCSS
-   * @param {String} actualPath
-   * @param {String} expectedPath
-   */
+export default class PrefixAssert {
   static actualMatchesExpectedAfterPrefixWrap(
-    postCSS,
-    actualPath,
-    expectedPath
+    postCSS: postcss.Processor,
+    actualPath: string,
+    expectedPath: string
   ) {
     Assert.strictEqual(
       postCSS.process(FileSystem.readFileSync(actualPath)).css,
@@ -18,5 +15,3 @@ class PrefixAssert {
     );
   }
 }
-
-module.exports = PrefixAssert;

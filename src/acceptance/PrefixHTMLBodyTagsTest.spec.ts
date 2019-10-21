@@ -1,15 +1,15 @@
-const PostCSS = require("postcss");
+import PostCSS from "postcss";
 
-const PrefixWrap = require("../build/main");
-const PrefixAssert = require("./support/PrefixAssert");
-
-const postCSSSkip = PostCSS([
-  PrefixWrap(".my-container", { prefixRootTags: true })
-]);
-
-const fixtures = __dirname + "/fixtures";
+import PrefixWrap from "../";
+import PrefixAssert from "./support/PrefixAssert";
 
 describe("Acceptance: Prefix html/body tags", () => {
+  const postCSSSkip = PostCSS([
+    // @ts-ignore
+    PrefixWrap(".my-container", { prefixRootTags: true })
+  ]);
+  const fixtures = __dirname + "/fixtures";
+
   it("adds prefix to global selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSSSkip,
