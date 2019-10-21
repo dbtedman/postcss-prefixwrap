@@ -25,12 +25,12 @@
     "./build"
   ],
   "scripts": {
-    "clean": "rm -rf ./build/",
     "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance",
+    "clean": "rm -rf ./build/",
     "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write",
+    "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",
     "release": "yarn clean && yarn build && yarn publish",
-    "test": "jest --coverage",
-    "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check"
+    "test": "jest --coverage"
   },
   "peerDependencies": {
     "postcss": "*"
