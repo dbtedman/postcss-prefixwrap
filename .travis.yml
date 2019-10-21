@@ -18,16 +18,13 @@ node_js:
 
 cache: "yarn"
 
-#before_install:
-#  - "yarn install -g npm@latest"
-
 before_script:
-  # Install npm dependencies and skip dependency audit as we will run this
+  # Install yarn dependencies and skip dependency audit as we will run this
   # explicitly later.
   - "yarn install --no-audit"
 
 script:
-  - "npm audit"
+  - "yarn audit"
   - "yarn build"
   - "yarn lint"
   - "yarn test"
