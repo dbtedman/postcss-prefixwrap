@@ -6,6 +6,6 @@
 
 module.exports = {
   hooks: {
-    "pre-commit": "npm test"
+    "pre-commit": "yarn test"
   }
 };

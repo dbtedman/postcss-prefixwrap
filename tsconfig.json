@@ -9,7 +9,7 @@
     "paths": {
       "*": ["node_modules/*", "src/*"]
     },
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "target": "es5"
   },

@@ -1,7 +1,7 @@
-const PostCSS = require("postcss");
+import PostCSS from "postcss";
 
-const PrefixWrap = require("../build/main");
-const PrefixAssert = require("./support/PrefixAssert");
+import PrefixWrap from "../";
+import PrefixAssert from "./support/PrefixAssert";
 
 const postCSS = PostCSS([PrefixWrap(".my-container")]);
 const fixtures = __dirname + "/fixtures";

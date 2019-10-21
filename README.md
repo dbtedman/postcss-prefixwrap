@@ -11,6 +11,12 @@ A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles t
 
 ### Install
 
+Using [Yarn](https://yarnpkg.com)
+
+```bash
+yarn add postcss-prefixwrap --save --exact
+```
+
 Using [NPM](https://www.npmjs.com)
 
 ```bash

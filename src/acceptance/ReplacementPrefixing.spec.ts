@@ -1,12 +1,12 @@
-const PostCSS = require("postcss");
+import PostCSS from "postcss";
 
-const PrefixWrap = require("../build/main");
-const PrefixAssert = require("./support/PrefixAssert");
-
-const postCSS = PostCSS([PrefixWrap(".my-container")]);
-const fixtures = __dirname + "/fixtures";
+import PrefixWrap from "../";
+import PrefixAssert from "./support/PrefixAssert";
 
 describe("Acceptance: Replacement Prefixing", () => {
+  const postCSS = PostCSS([PrefixWrap(".my-container")]);
+  const fixtures = __dirname + "/fixtures";
+
   it("replaces global selectors with prefix", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,

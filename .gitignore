@@ -19,3 +19,4 @@
 
 # Build output
 /build/
+postcss-prefixwrap-*.tgz

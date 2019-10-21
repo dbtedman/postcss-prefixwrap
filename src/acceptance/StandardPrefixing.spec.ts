@@ -1,13 +1,13 @@
-const PostCSS = require("postcss");
+import PostCSS from "postcss";
 
-const PrefixWrap = require("../build/main");
-const PrefixAssert = require("./support/PrefixAssert");
-
-// Generate a postcss instance with our plugin enabled.
-const postCSS = PostCSS([PrefixWrap(".my-container")]);
-const fixtures = __dirname + "/fixtures";
+import PrefixWrap from "../";
+import PrefixAssert from "./support/PrefixAssert";
 
 describe("Acceptance: Standard Prefixing", () => {
+  // Generate a postcss instance with our plugin enabled.
+  const postCSS = PostCSS([PrefixWrap(".my-container")]);
+  const fixtures = __dirname + "/fixtures";
+
   it("adds prefix class for tags", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
