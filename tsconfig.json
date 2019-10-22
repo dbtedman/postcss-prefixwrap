@@ -4,6 +4,7 @@
     "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "outDir": "./build",
     "paths": {
@@ -11,7 +12,7 @@
     },
     "sourceMap": false,
     "strict": true,
-    "target": "es5"
+    "target": "es6"
   },
   "include": ["./src/**/*"]
 }

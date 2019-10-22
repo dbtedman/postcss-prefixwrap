@@ -19,9 +19,13 @@
     "postcss-plugin",
     "typescript"
   ],
-  "main": "./dist/main.js",
+  "main": "./build/index.js",
+  "files": [
+    "*.md",
+    "build"
+  ],
   "scripts": {
-    "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance",
+    "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance && rm -rf ./build/integration",
     "clean": "rm -rf ./build/",
     "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write",
     "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",

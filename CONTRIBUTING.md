@@ -32,6 +32,8 @@ yarn test
 
 ## Publishing
 
+> You need to first be logged in to NPM to publish. Try `yarn login` first and if that does not work when running the below commands, try `npm login` instead.
+
 After updating the current version, run the following command:
 
 ```bash
