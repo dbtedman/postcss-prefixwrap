@@ -1,4 +1,4 @@
-# [PostCSS Prefix Wrap](./README.md) / Contributing Guide
+# [PostCSS Prefix Wrap](./README.md) / Contributing
 
 -   [Thanks](#thanks)
 -   [Continuous Integration](#continuous-integration)
@@ -40,7 +40,7 @@ After updating the current version, run the following command:
 yarn release
 ```
 
-You can test what will be published, run the following command:
+You can test what will be published by running the following command:
 
 ```bash
 yarn pack
