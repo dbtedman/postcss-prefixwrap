@@ -34,9 +34,7 @@ const PrefixWrap = require("postcss-prefixwrap");
 
 Gulp.task("css", () =>
     Gulp.src("./src/*.css")
-        .pipe(PostCSS([
-          PrefixWrap(".my-custom-wrap")
-        ]))
+        .pipe(PostCSS([PrefixWrap(".my-custom-wrap")]))
         .pipe(Gulp.dest("./dest"))
 );
 ```
