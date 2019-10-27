@@ -12,10 +12,6 @@ language: node_js
 # Run scripts without elevated access.
 sudo: false
 
-env:
-  global:
-    - "CC_TEST_REPORTER_ID=${CC_TEST_REPORTER_ID}"
-
 node_js:
   - "10"
   - "12"
@@ -23,9 +19,6 @@ node_js:
 cache: "yarn"
 
 before_script:
-  - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter"
-  - "chmod +x ./cc-test-reporter"
-  - "./cc-test-reporter before-build"
   # Install yarn dependencies and skip dependency audit as we will run this
   # explicitly later.
   - "yarn install --no-audit"
@@ -37,4 +30,4 @@ script:
   - "yarn test"
 
 after_script:
-  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+  - 'codecov --token="${CODECOV_TOKEN}"'
