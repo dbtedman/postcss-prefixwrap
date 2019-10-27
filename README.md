@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/dbtedman/postcss-prefixwrap.svg?branch=master)](https://travis-ci.org/dbtedman/postcss-prefixwrap)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
 
-A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
+A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 
 ## Where do I start?
 
@@ -11,13 +11,13 @@ A [PostCSS](http://postcss.org) plugin which prepends a selector to CSS styles t
 
 ### Install
 
-Using [Yarn](https://yarnpkg.com)
+Using [Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap)
 
 ```bash
-yarn add postcss-prefixwrap --save --exact --dev
+yarn add postcss-prefixwrap --dev --exact
 ```
 
-Using [NPM](https://www.npmjs.com)
+Using [NPM](https://www.npmjs.com/package/postcss-prefixwrap)
 
 ```bash
 npm install postcss-prefixwrap --save-dev --save-exact
@@ -34,7 +34,9 @@ const PrefixWrap = require("postcss-prefixwrap");
 
 Gulp.task("css", () =>
     Gulp.src("./src/*.css")
-        .pipe(PostCSS([PrefixWrap(".my-custom-wrap")]))
+        .pipe(PostCSS([
+          PrefixWrap(".my-custom-wrap")
+        ]))
         .pipe(Gulp.dest("./dest"))
 );
 ```
