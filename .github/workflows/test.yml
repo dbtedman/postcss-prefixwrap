@@ -40,7 +40,7 @@ jobs:
           CI: true
 
       - name: "Test"
-        run: 'yarn test && codecov --token="${CODECOV_TOKEN}"'
+        run: 'yarn test && yarn codecov --token="${CODECOV_TOKEN}"'
         env:
           CI: true
           CODECOV_TOKEN: "${{ secrets. CODECOV_TOKEN }}"
