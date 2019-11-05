@@ -27,6 +27,7 @@
   "scripts": {
     "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance && rm -rf ./build/integration",
     "clean": "rm -rf ./build/",
+    "codecov": "codecov",
     "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write",
     "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",
     "release": "yarn clean && yarn build && yarn publish",
