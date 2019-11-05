@@ -12,7 +12,7 @@ Thanks to all of the [Contributors](https://github.com/dbtedman/postcss-prefixwr
 
 ## Continuous Integration
 
-Provided by [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap), run on every commit and pull request.
+Provided by [Travis CI](https://travis-ci.org/dbtedman/postcss-prefixwrap) and [GitHub Actions](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=Test), run on every commit and pull request.
 
 ## Code Formatting
 
