@@ -24,8 +24,28 @@ jobs:
         with:
           node-version: "${{ matrix.node-version }}"
 
-      - name: "Run Test Suite"
-        run: |
-          yarn --version
+      - name: "Install"
+        run: "yarn install --no-audit"
+        env:
+          CI: true
+
+      - name: "Audit"
+        run: "yarn audit"
+        env:
+          CI: true
+
+      - name: "Lint"
+        run: "yarn lint"
+        env:
+          CI: true
+
+      - name: "Test"
+        run: 'yarn test && codecov --token="${CODECOV_TOKEN}"'
+        env:
+          CI: true
+          CODECOV_TOKEN: "${{ secrets. CODECOV_TOKEN }}"
+
+      - name: "Build"
+        run: "yarn build"
         env:
           CI: true
