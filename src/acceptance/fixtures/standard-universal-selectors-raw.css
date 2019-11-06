@@ -1,0 +1,23 @@
+a[title] {
+  color: purple;
+}
+
+a[href="https://example.org"] {
+  color: green;
+}
+
+a[href*="example"] {
+  font-size: 2em;
+}
+
+a[href$=".org"] {
+  font-style: italic;
+}
+
+a[class~="logo"] {
+  padding: 2px;
+}
+
+[class~="something"] {
+  padding: 2px;
+}

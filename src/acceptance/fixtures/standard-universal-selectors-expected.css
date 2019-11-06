@@ -1,0 +1,23 @@
+.my-container a[title] {
+  color: purple;
+}
+
+.my-container a[href="https://example.org"] {
+  color: green;
+}
+
+.my-container a[href*="example"] {
+  font-size: 2em;
+}
+
+.my-container a[href$=".org"] {
+  font-style: italic;
+}
+
+.my-container a[class~="logo"] {
+  padding: 2px;
+}
+
+.my-container [class~="something"] {
+  padding: 2px;
+}

@@ -3,6 +3,11 @@ import PostCSS, { Rule } from "postcss";
 import Selector from "./Selector";
 import Hash from "./Hash";
 
+interface OurPluginOptions {
+  ignoredSelectors?: Array<string>;
+  prefixRootTags?: boolean;
+}
+
 export default class OurPlugin {
   private ignoredSelectors: Array<string>;
   private prefixRootTags: boolean;
@@ -17,7 +22,7 @@ export default class OurPlugin {
   }
 
   static asPostCSSPlugin(): PostCSS.Plugin<string> {
-    const initializer = (prefixSelector: string, options: object) => {
+    const initializer = (prefixSelector: string, options: OurPluginOptions) => {
       return new OurPlugin(prefixSelector, options).prefix();
     };
 

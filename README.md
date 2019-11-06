@@ -78,6 +78,38 @@ body {
 }
 ```
 
+## Options
+
+### Minimal
+
+The minimal required configuration is the prefix selector, as shown in the above example.
+
+```javascript
+PrefixWrap(".my-custom-wrap");
+```
+
+### Ignored Selectors
+
+You may want to exclude some selectors from being prefixed, this is enabled using the `ignoredSelectors` option.
+
+```javascript
+PrefixWrap(".my-custom-wrap", {
+    ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/]
+});
+```
+
+### Prefix Root Tags
+
+> Need to add details on the original reason for this being added.
+
+You may want root tags, like `body` and `html` to be converted to classes, then prefixed, this is enabled using the `prefixRootTags` option.
+
+```javascript
+PrefixWrap(".my-container", {
+    prefixRootTags: true
+});
+```
+
 ## Want to lean more?
 
 -   See our [Contributing Guide](CONTRIBUTING.md) for details on how this repository is developed.
