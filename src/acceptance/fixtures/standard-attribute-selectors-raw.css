@@ -1,0 +1,11 @@
+* [lang^="en"] {
+  color: green;
+}
+
+*.warning {
+  color: red;
+}
+
+*#maincontent {
+  border: 1px solid blue;
+}

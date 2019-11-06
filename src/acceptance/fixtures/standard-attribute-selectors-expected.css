@@ -1,0 +1,11 @@
+.my-container * [lang^="en"] {
+  color: green;
+}
+
+.my-container *.warning {
+  color: red;
+}
+
+.my-container *#maincontent {
+  border: 1px solid blue;
+}

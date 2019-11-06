@@ -39,4 +39,22 @@ describe("Acceptance: Standard Prefixing", () => {
       fixtures + "/multiple-classes-expected.css"
     );
   });
+
+  // @see https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)
+  it("adds prefix class for universal selectors", () => {
+    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+      postCSS,
+      fixtures + "/standard-universal-selectors-raw.css",
+      fixtures + "/standard-universal-selectors-expected.css"
+    );
+  });
+
+  // @see https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+  it("adds prefix class for attribute selectors", () => {
+    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+      postCSS,
+      fixtures + "/standard-attribute-selectors-raw.css",
+      fixtures + "/standard-attribute-selectors-expected.css"
+    );
+  });
 });
