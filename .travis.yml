@@ -25,7 +25,6 @@ before_script:
   - "yarn install --no-audit"
 
 script:
-  - "yarn audit || true"
   - "yarn build"
   - "yarn lint"
   - "yarn test"
