@@ -14,13 +14,16 @@ on:
     branches:
       - "master"
 
+env:
+  CI: true
+
 jobs:
   build:
     runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 13.x]
+        node-version: ["10.x", "12.x", "13.x"]
 
     steps:
       - uses: "actions/checkout@v1"
@@ -32,26 +35,17 @@ jobs:
 
       - name: "Install"
         run: "yarn install --no-audit"
-        env:
-          CI: true
 
       - name: "Audit"
         run: "yarn audit"
-        env:
-          CI: true
 
       - name: "Lint"
         run: "yarn lint"
-        env:
-          CI: true
 
       - name: "Test"
         run: 'yarn test && yarn codecov --token="${CODECOV_TOKEN}"'
         env:
-          CI: true
           CODECOV_TOKEN: "${{ secrets. CODECOV_TOKEN }}"
 
       - name: "Build"
         run: "yarn build"
-        env:
-          CI: true
