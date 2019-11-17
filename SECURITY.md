@@ -10,20 +10,20 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
 
-Provided by [Snyk](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) for validating NPM dependencies.
+Provided by [Snyk](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) for validating package dependencies.
 
 ## Security Disclosure Policy
 
-Email [dbtedman@gmail.com](mailto:dbtedman@gmail.com) with details about the security issue.
+Email [dbtedman@gmail.com](mailto:dbtedman@gmail.com) with details about the security issue or raise a [GitHub Issue](https://github.com/dbtedman/postcss-prefixwrap/issues) and tag it as **Security**.
 
 ## Security Update Policy
 
-_Content to come._
+Best efforts will be taken to apply code fixes or update vulnerable packages as soon as is possible, this will usually be within a couple of days.
 
 ## Security Related Configuration
 
-_Content to come._
+None currently.
 
 ## Known Security Gaps and Future Enhancements
 
-_Content to come._
+Look at [GitHub issues tagged **Security**](https://github.com/dbtedman/postcss-prefixwrap/labels/security).
