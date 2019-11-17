@@ -37,10 +37,6 @@ jobs:
       - name: "Install"
         run: "yarn install --no-audit"
 
-      - name: "Audit"
-        run: "yarn audit"
-        continue-on-error: true
-
       - name: "Lint"
         run: "yarn lint"
 
