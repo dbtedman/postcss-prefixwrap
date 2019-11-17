@@ -10,6 +10,10 @@
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 
+-   [Where do I start?](#where-do-i-start)
+-   [What options does it have?](#what-options-does-it-have)
+-   [Want to lean more?](#want-to-lean-more)
+
 ## Where do I start?
 
 > These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
@@ -80,7 +84,7 @@ body {
 }
 ```
 
-## Options
+## What options does it have?
 
 ### Minimal
 
