@@ -1,7 +1,7 @@
 # [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
 
 [![Package Version](https://badgen.net/npm/v/postcss-prefixwrap?label=Latest&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
-[![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=Downloads&style=flat&color=blue)](https://www.npmjs.com/package/postcss-prefixwrap)
+[![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=Downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Package License](https://badgen.net/npm/license/postcss-prefixwrap?label=License&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg?style=flat-square)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
 [![Maintainability](https://api.codeclimate.com/v1/badges/fa0627fb4cfdc2a6dd04/maintainability)](https://codeclimate.com/github/dbtedman/postcss-prefixwrap/maintainability)
