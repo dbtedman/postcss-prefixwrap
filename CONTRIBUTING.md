@@ -32,16 +32,6 @@ yarn test
 
 ## Publishing
 
-> You need to first be logged in to NPM to publish. Try `yarn login` first and if that does not work when running the below commands, try `npm login` instead.
+Update `CHANGELOG.md` and `package.json` with details on the updated release version.
 
-After updating the current version, run the following command:
-
-```bash
-yarn release
-```
-
-You can test what will be published by running the following command:
-
-```bash
-yarn pack
-```
+Then [Publish a new release](https://github.com/dbtedman/postcss-prefixwrap/releases/new) to trigger publishing a new version of this package.

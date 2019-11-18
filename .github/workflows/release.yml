@@ -1,0 +1,36 @@
+#-------------------------------------------------------------------------------
+#
+# GitHub Actions Release Configuration
+#
+#-------------------------------------------------------------------------------
+---
+name: "Release"
+
+on:
+  release:
+    types: ["published"]
+
+env:
+  CI: true
+  NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
+
+jobs:
+  release:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "actions/checkout@v1"
+
+      - name: "Use Node.js 12.x"
+        uses: "actions/setup-node@v1"
+        with:
+          node-version: "12.x"
+
+      - name: "Install"
+        run: "yarn install --no-audit"
+
+      - name: "Prepare"
+        run: "yarn clean && yarn build"
+
+      - name: "Release"
+        run: "yarn publish --not-interactive"

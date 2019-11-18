@@ -19,7 +19,7 @@ env:
   CI: true
 
 jobs:
-  build:
+  test:
     runs-on: "ubuntu-latest"
 
     strategy:
@@ -43,7 +43,7 @@ jobs:
       - name: "Test"
         run: 'yarn test && yarn codecov --token="${CODECOV_TOKEN}"'
         env:
-          CODECOV_TOKEN: "${{ secrets. CODECOV_TOKEN }}"
+          CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
 
       - name: "Build"
         run: "yarn build"
