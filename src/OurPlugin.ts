@@ -6,14 +6,15 @@ import Hash from "./Hash";
 interface OurPluginOptions {
   ignoredSelectors?: Array<string>;
   prefixRootTags?: boolean;
+  whitelist?: Array<string>;
 }
 
 export default class OurPlugin {
   private ignoredSelectors: Array<string>;
   private prefixRootTags: boolean;
+  private whitelist: Array<string>;
   private isPrefixSelector: RegExp;
   private prefixSelector: string;
-  private whitelist: Array<string>;
 
   constructor(prefixSelector: string, options = {}) {
     this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
@@ -89,7 +90,12 @@ export default class OurPlugin {
 
   prefix(): Function {
     return (css: Rule) => {
-      if (!this.whitelist.length || css.source.input.file.includes(this.whitelist)) {
+      if (
+        !this.whitelist.length ||
+        this.whitelist.some(currentValue =>
+          css.source?.input.file?.match(currentValue)
+        )
+      ) {
         css.walkRules((cssRule: Rule) => {
           this.prefixWrapCSSRule(cssRule);
         });
