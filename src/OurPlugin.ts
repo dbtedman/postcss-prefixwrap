@@ -13,12 +13,14 @@ export default class OurPlugin {
   private prefixRootTags: boolean;
   private isPrefixSelector: RegExp;
   private prefixSelector: string;
+  private whitelist: Array<string>;
 
   constructor(prefixSelector: string, options = {}) {
     this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
     this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
     this.isPrefixSelector = new RegExp(`^s*${prefixSelector}.*$`);
     this.prefixSelector = prefixSelector;
+    this.whitelist = Hash.value(options, "whitelist", []);
   }
 
   static asPostCSSPlugin(): PostCSS.Plugin<string> {
@@ -87,9 +89,11 @@ export default class OurPlugin {
 
   prefix(): Function {
     return (css: Rule) => {
-      css.walkRules((cssRule: Rule) => {
-        this.prefixWrapCSSRule(cssRule);
-      });
+      if (! this.whitelist.length || css.source.input.file.includes(this.whitelist)) {
+        css.walkRules((cssRule: Rule) => {
+          this.prefixWrapCSSRule(cssRule);
+        });
+      }
     };
   }
 }
