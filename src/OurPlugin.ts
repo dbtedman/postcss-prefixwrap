@@ -12,9 +12,9 @@ interface OurPluginOptions {
 export default class OurPlugin {
   private ignoredSelectors: Array<string>;
   private prefixRootTags: boolean;
-  private whitelist: Array<string>;
   private isPrefixSelector: RegExp;
   private prefixSelector: string;
+  private whitelist: Array<string>;
 
   constructor(prefixSelector: string, options = {}) {
     this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
