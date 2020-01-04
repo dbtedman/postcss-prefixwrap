@@ -89,7 +89,7 @@ export default class OurPlugin {
 
   prefix(): Function {
     return (css: Rule) => {
-      if (! this.whitelist.length || css.source.input.file.includes(this.whitelist)) {
+      if (!this.whitelist.length || css.source.input.file.includes(this.whitelist)) {
         css.walkRules((cssRule: Rule) => {
           this.prefixWrapCSSRule(cssRule);
         });
