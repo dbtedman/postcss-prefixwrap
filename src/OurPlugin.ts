@@ -19,9 +19,9 @@ export default class OurPlugin {
   constructor(prefixSelector: string, options = {}) {
     this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
     this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
-    this.whitelist = Hash.value(options, "whitelist", []);
     this.isPrefixSelector = new RegExp(`^s*${prefixSelector}.*$`);
     this.prefixSelector = prefixSelector;
+    this.whitelist = Hash.value(options, "whitelist", []);
   }
 
   static asPostCSSPlugin(): PostCSS.Plugin<string> {
