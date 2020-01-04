@@ -116,11 +116,11 @@ PrefixWrap(".my-container", {
 
 ### File Whitelist
 
-In certain scenarios, you may only want `PrefixWrap()` to wrap specific CSS file(s). This is done using the `whitelist` option.
+In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS file(s). This is done using the `whitelist` option.
 
 ```javascript
 PrefixWrap(".my-custom-wrap", {
-    whitelist: ['editor.css']
+    whitelist: ["editor.css"]
 });
 ```
 
