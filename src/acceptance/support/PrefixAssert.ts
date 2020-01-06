@@ -10,8 +10,20 @@ export default class PrefixAssert {
     expectedPath: string
   ) {
     Assert.strictEqual(
-      postCSS.process(FileSystem.readFileSync(actualPath)).css,
+      postCSS.process(FileSystem.readFileSync(actualPath), { from: actualPath })
+        .css,
       FileSystem.readFileSync(expectedPath, "UTF-8")
+    );
+  }
+
+  static noChangeAfterPrefixWrap(
+    postCSS: postcss.Processor,
+    actualPath: string
+  ) {
+    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+      postCSS,
+      actualPath,
+      actualPath
     );
   }
 }
