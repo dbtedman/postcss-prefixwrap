@@ -86,6 +86,12 @@ body {
 
 ## What options does it have?
 
+-   [Minimal](#minimal)
+-   [Ignored Selectors](#ignored-selectors)
+-   [Prefix Root Tags](#prefix-root-tags)
+-   [File Whitelist](#file-whitelist)
+-   [File Blacklist](#file-blacklist)
+
 ### Minimal
 
 The minimal required configuration is the prefix selector, as shown in the above example.
@@ -116,11 +122,23 @@ PrefixWrap(".my-container", {
 
 ### File Whitelist
 
-In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS file(s). This is done using the `whitelist` option.
+In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files. This is done using the `whitelist` option.
 
 ```javascript
 PrefixWrap(".my-custom-wrap", {
     whitelist: ["editor.css"]
+});
+```
+
+### File Blacklist
+
+In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS files. This is done using the `blacklist` option.
+
+> If `whitelist` option is also included, `blacklist` will be ignored.
+
+```javascript
+PrefixWrap(".my-custom-wrap", {
+    blacklist: ["colours.css"]
 });
 ```
 
