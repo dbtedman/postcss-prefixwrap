@@ -10,18 +10,20 @@ interface OurPluginOptions {
 }
 
 export default class OurPlugin {
-  private ignoredSelectors: Array<string>;
-  private prefixRootTags: boolean;
-  private whitelist: Array<string>;
-  private isPrefixSelector: RegExp;
-  private prefixSelector: string;
+  private readonly blacklist: Array<string>;
+  private readonly ignoredSelectors: Array<string>;
+  private readonly isPrefixSelector: RegExp;
+  private readonly prefixRootTags: boolean;
+  private readonly prefixSelector: string;
+  private readonly whitelist: Array<string>;
 
   constructor(prefixSelector: string, options = {}) {
+    this.blacklist = Hash.value(options, "blacklist", []);
     this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
-    this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
-    this.whitelist = Hash.value(options, "whitelist", []);
     this.isPrefixSelector = new RegExp(`^s*${prefixSelector}.*$`);
+    this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
     this.prefixSelector = prefixSelector;
+    this.whitelist = Hash.value(options, "whitelist", []);
   }
 
   static asPostCSSPlugin(): PostCSS.Plugin<string> {
@@ -29,12 +31,10 @@ export default class OurPlugin {
       return new OurPlugin(prefixSelector, options).prefix();
     };
 
-    // TODO: How can we better avoid needing to ignore here?
     // @ts-ignore
     return PostCSS.plugin("postcss-prefixwrap", initializer);
   }
 
-  // TODO: This function is getting a little too long, I need to consider how best to split it.
   prefixWrapCSSSelector(cssSelector: string, cssRule: Rule): string | null {
     const cleanSelector = Selector.clean(cssSelector);
 
@@ -88,14 +88,28 @@ export default class OurPlugin {
       .join(", ");
   }
 
+  includeRule(css: Rule): boolean {
+    // If whitelist exists, check if rule is contained within it.
+    if (this.whitelist.length > 0) {
+      return this.whitelist.some(currentValue =>
+        css.source?.input.file?.match(currentValue)
+      );
+    }
+
+    // If blacklist exists, check if rule is not contained within it.
+    if (this.blacklist.length > 0) {
+      return !this.blacklist.some(currentValue =>
+        css.source?.input.file?.match(currentValue)
+      );
+    }
+
+    // In all other cases, presume rule should be prefixed.
+    return true;
+  }
+
   prefix(): Function {
     return (css: Rule) => {
-      if (
-        !this.whitelist.length ||
-        this.whitelist.some(currentValue =>
-          css.source?.input.file?.match(currentValue)
-        )
-      ) {
+      if (this.includeRule(css)) {
         css.walkRules((cssRule: Rule) => {
           this.prefixWrapCSSRule(cssRule);
         });
