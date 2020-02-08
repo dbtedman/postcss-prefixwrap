@@ -1,17 +1,14 @@
-import PostCSS from "postcss";
-
-import PrefixWrap from "../";
 import PrefixAssert from "./support/PrefixAssert";
-
-const postCSS = PostCSS([PrefixWrap(".my-container")]);
-const fixtures = __dirname + "/fixtures";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Leave Our Container", () => {
+  const postCSS = postCSSWithPlugin();
+
   it("leaves selectors that contain our Selector in the left most location", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/leave-raw.css",
-      fixtures + "/leave-expected.css"
+      `${__dirname}/fixtures/leave-raw.css`,
+      `${__dirname}/fixtures/leave-expected.css`
     );
   });
 });

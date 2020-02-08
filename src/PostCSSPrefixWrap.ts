@@ -1,15 +1,18 @@
-import PostCSS, { Rule } from "postcss";
+import { Rule } from "postcss";
 
 import Selector from "./Selector";
 import Hash from "./Hash";
 
-interface OurPluginOptions {
-  ignoredSelectors?: Array<string>;
+export const PLUGIN_NAME = "postcss-prefixwrap";
+
+export interface PostCSSPrefixWrapOptions {
+  ignoredSelectors?: (string | RegExp)[];
   prefixRootTags?: boolean;
   whitelist?: Array<string>;
+  blacklist?: Array<string>;
 }
 
-export default class OurPlugin {
+export default class PostCSSPrefixWrap {
   private readonly blacklist: Array<string>;
   private readonly ignoredSelectors: Array<string>;
   private readonly isPrefixSelector: RegExp;
@@ -24,15 +27,6 @@ export default class OurPlugin {
     this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
     this.prefixSelector = prefixSelector;
     this.whitelist = Hash.value(options, "whitelist", []);
-  }
-
-  static asPostCSSPlugin(): PostCSS.Plugin<string> {
-    const initializer = (prefixSelector: string, options: OurPluginOptions) => {
-      return new OurPlugin(prefixSelector, options).prefix();
-    };
-
-    // @ts-ignore
-    return PostCSS.plugin("postcss-prefixwrap", initializer);
   }
 
   prefixWrapCSSSelector(cssSelector: string, cssRule: Rule): string | null {

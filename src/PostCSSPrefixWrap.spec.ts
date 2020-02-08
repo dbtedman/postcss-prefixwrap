@@ -1,13 +1,13 @@
 import Assert from "assert";
 import PostCSS from "postcss";
 
-import OurPlugin from "./OurPlugin";
+import PostCSSPrefixWrap from "./PostCSSPrefixWrap";
 
 describe("Plugin", () => {
   const prefixSelector = ".my-custom-wrap";
 
   it("Plugin.cssRuleMatchesPrefixSelector() correctly identifies our prefix Selector", () => {
-    const plugin = new OurPlugin(prefixSelector);
+    const plugin = new PostCSSPrefixWrap(prefixSelector);
     const cssRule = PostCSS.rule({
       selector: prefixSelector
     });
@@ -16,7 +16,7 @@ describe("Plugin", () => {
   });
 
   it("Plugin.cssRuleMatchesPrefixSelector() correctly ignores another Selector", () => {
-    const plugin = new OurPlugin(prefixSelector);
+    const plugin = new PostCSSPrefixWrap(prefixSelector);
     const selector = ".not-my-custom-wrap";
     const cssRule = PostCSS.rule({
       selector: selector
@@ -26,7 +26,7 @@ describe("Plugin", () => {
   });
 
   it("Plugin.prefixWrapCSSRule() leaves prefix Selector alone", () => {
-    const plugin = new OurPlugin(prefixSelector);
+    const plugin = new PostCSSPrefixWrap(prefixSelector);
     const cssRule = PostCSS.rule({
       selector: prefixSelector
     });
@@ -37,7 +37,7 @@ describe("Plugin", () => {
   });
 
   it("Plugin.prefixWrapCSSRule() does not change for empty Selector", () => {
-    const plugin = new OurPlugin(prefixSelector);
+    const plugin = new PostCSSPrefixWrap(prefixSelector);
     const cssRule = PostCSS.rule({
       selector: ""
     });
@@ -48,7 +48,7 @@ describe("Plugin", () => {
   });
 
   it("Plugin.prefixWrapCSSRule() prefixes non root selectors with prefix Selector", () => {
-    const plugin = new OurPlugin(prefixSelector);
+    const plugin = new PostCSSPrefixWrap(prefixSelector);
 
     ["div", "p", "h1"].forEach(selector => {
       const parent = PostCSS.root();
