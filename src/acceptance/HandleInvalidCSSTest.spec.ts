@@ -1,17 +1,14 @@
-import PostCSS from "postcss";
-
-import PrefixWrap from "../";
 import PrefixAssert from "./support/PrefixAssert";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Handle Invalid CSS", () => {
-  const postCSS = PostCSS([PrefixWrap(".my-container")]);
-  const fixtures = __dirname + "/fixtures";
+  const postCSS = postCSSWithPlugin();
 
   it("ignores empty selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/empty-selectors-raw.css",
-      fixtures + "/empty-selectors-expected.css"
+      `${__dirname}/fixtures/empty-selectors-raw.css`,
+      `${__dirname}/fixtures/empty-selectors-expected.css`
     );
   });
 });
