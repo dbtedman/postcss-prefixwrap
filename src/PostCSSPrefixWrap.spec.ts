@@ -63,4 +63,56 @@ describe("Plugin", () => {
       Assert.strictEqual(cssRule.selector, `${prefixSelector} ${selector}`);
     });
   });
+
+  it("handles includeRule with whitelist when missing source input data", () => {
+    const plugin = new PostCSSPrefixWrap(prefixSelector, {
+      whitelist: [".something"]
+    });
+
+    Assert.strictEqual(
+      // @ts-ignore
+      plugin.includeRule({
+        source: undefined
+      }),
+      false
+    );
+
+    Assert.strictEqual(
+      plugin.includeRule({
+        // @ts-ignore
+        source: {
+          input: {
+            file: undefined
+          }
+        }
+      }),
+      false
+    );
+  });
+
+  it("handles includeRule with blacklist when missing source input data", () => {
+    const plugin = new PostCSSPrefixWrap(prefixSelector, {
+      blacklist: [".something"]
+    });
+
+    Assert.strictEqual(
+      // @ts-ignore
+      plugin.includeRule({
+        source: undefined
+      }),
+      true
+    );
+
+    Assert.strictEqual(
+      plugin.includeRule({
+        // @ts-ignore
+        source: {
+          input: {
+            file: undefined
+          }
+        }
+      }),
+      true
+    );
+  });
 });
