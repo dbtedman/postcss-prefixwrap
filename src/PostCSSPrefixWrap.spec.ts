@@ -81,6 +81,7 @@ describe("Plugin", () => {
       plugin.includeRule({
         // @ts-ignore
         source: {
+          // @ts-ignore
           input: {
             file: undefined
           }
@@ -107,6 +108,7 @@ describe("Plugin", () => {
       plugin.includeRule({
         // @ts-ignore
         source: {
+          // @ts-ignore
           input: {
             file: undefined
           }
