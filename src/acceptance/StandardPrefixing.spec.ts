@@ -1,42 +1,38 @@
-import PostCSS from "postcss";
-
-import PrefixWrap from "../";
 import PrefixAssert from "./support/PrefixAssert";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Standard Prefixing", () => {
-  // Generate a postcss instance with our plugin enabled.
-  const postCSS = PostCSS([PrefixWrap(".my-container")]);
-  const fixtures = __dirname + "/fixtures";
+  const postCSS = postCSSWithPlugin();
 
   it("adds prefix class for tags", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/standard-tags-raw.css",
-      fixtures + "/standard-tags-expected.css"
+      `${__dirname}/fixtures/standard-tags-raw.css`,
+      `${__dirname}/fixtures/standard-tags-expected.css`
     );
   });
 
   it("adds prefix class for ids", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/standard-ids-raw.css",
-      fixtures + "/standard-ids-expected.css"
+      `${__dirname}/fixtures/standard-ids-raw.css`,
+      `${__dirname}/fixtures/standard-ids-expected.css`
     );
   });
 
   it("adds prefix class for classes", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/standard-classes-raw.css",
-      fixtures + "/standard-classes-expected.css"
+      `${__dirname}/fixtures/standard-classes-raw.css`,
+      `${__dirname}/fixtures/standard-classes-expected.css`
     );
   });
 
   it("adds prefix class for multiple classes", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/multiple-classes-raw.css",
-      fixtures + "/multiple-classes-expected.css"
+      `${__dirname}/fixtures/multiple-classes-raw.css`,
+      `${__dirname}/fixtures/multiple-classes-expected.css`
     );
   });
 
@@ -44,8 +40,8 @@ describe("Acceptance: Standard Prefixing", () => {
   it("adds prefix class for universal selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/standard-universal-selectors-raw.css",
-      fixtures + "/standard-universal-selectors-expected.css"
+      `${__dirname}/fixtures/standard-universal-selectors-raw.css`,
+      `${__dirname}/fixtures/standard-universal-selectors-expected.css`
     );
   });
 
@@ -53,8 +49,8 @@ describe("Acceptance: Standard Prefixing", () => {
   it("adds prefix class for attribute selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/standard-attribute-selectors-raw.css",
-      fixtures + "/standard-attribute-selectors-expected.css"
+      `${__dirname}/fixtures/standard-attribute-selectors-raw.css`,
+      `${__dirname}/fixtures/standard-attribute-selectors-expected.css`
     );
   });
 });

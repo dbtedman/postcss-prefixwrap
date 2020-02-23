@@ -1,17 +1,14 @@
-import PostCSS from "postcss";
-
-import PrefixWrap from "../";
 import PrefixAssert from "./support/PrefixAssert";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Replacement Prefixing", () => {
-  const postCSS = PostCSS([PrefixWrap(".my-container")]);
-  const fixtures = __dirname + "/fixtures";
+  const postCSS = postCSSWithPlugin();
 
   it("replaces global selectors with prefix", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/replacement-tags-raw.css",
-      fixtures + "/replacement-tags-expected.css"
+      `${__dirname}/fixtures/replacement-tags-raw.css`,
+      `${__dirname}/fixtures/replacement-tags-expected.css`
     );
   });
 });

@@ -1,22 +1,16 @@
-import PostCSS from "postcss";
-
-import PrefixWrap from "../";
 import PrefixAssert from "./support/PrefixAssert";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Ignored Selectors", () => {
-  const postCSSIgnore = PostCSS([
-    // @ts-ignore
-    PrefixWrap(".my-container", {
-      ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/]
-    })
-  ]);
-  const fixtures = __dirname + "/fixtures";
+  const postCSSIgnore = postCSSWithPlugin({
+    ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/]
+  });
 
   it("ignores selectors that are in a ignore list", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSSIgnore,
-      fixtures + "/ignore-selectors.css",
-      fixtures + "/ignore-selectors-expected.css"
+      `${__dirname}/fixtures/ignore-selectors.css`,
+      `${__dirname}/fixtures/ignore-selectors-expected.css`
     );
   });
 });

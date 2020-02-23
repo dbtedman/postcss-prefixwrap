@@ -1,17 +1,14 @@
-import PostCSS from "postcss";
-
-import PrefixWrap from "../";
 import PrefixAssert from "./support/PrefixAssert";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Leave Keyframe Percentages", () => {
-  const postCSS = PostCSS([PrefixWrap(".my-container")]);
-  const fixtures = __dirname + "/fixtures";
+  const postCSS = postCSSWithPlugin();
 
   it("ignores selectors that are percentages", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      fixtures + "/keyframes-raw.css",
-      fixtures + "/keyframes-expected.css"
+      `${__dirname}/fixtures/keyframes-raw.css`,
+      `${__dirname}/fixtures/keyframes-expected.css`
     );
   });
 });
