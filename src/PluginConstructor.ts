@@ -1,7 +1,7 @@
 import PostCSS, { AcceptedPlugin } from "postcss";
 import PostCSSPrefixWrap, {
   PostCSSPrefixWrapOptions,
-  PLUGIN_NAME
+  PLUGIN_NAME,
 } from "./PostCSSPrefixWrap";
 
 export default class PluginConstructor {

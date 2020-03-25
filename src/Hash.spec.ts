@@ -6,7 +6,7 @@ describe("Hash", () => {
     const key = "thing";
     const value = "other";
     const data = {
-      [key]: value
+      [key]: value,
     };
 
     Assert.strictEqual(Hash.value(data, key), value);
