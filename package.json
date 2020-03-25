@@ -1,6 +1,6 @@
 {
   "name": "postcss-prefixwrap",
-  "version": "1.13.1",
+  "version": "1.13.2",
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "license": "MIT",
   "author": {
@@ -27,7 +27,6 @@
   "scripts": {
     "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance && rm -rf ./build/integration",
     "clean": "rm -rf ./build/",
-    "codecov": "codecov",
     "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write",
     "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check",
     "test": "jest --coverage"
@@ -36,15 +35,15 @@
     "postcss": "*"
   },
   "devDependencies": {
-    "@types/jest": "25.1.3",
+    "@types/jest": "25.1.4",
     "@types/node": "13.7.4",
     "codecov": "3.6.5",
     "husky": "4.2.3",
     "jest": "25.1.0",
     "postcss": "7.0.21",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "ts-jest": "25.2.1",
-    "ts-node": "8.6.2",
-    "typescript": "3.8.2"
+    "ts-node": "8.8.1",
+    "typescript": "3.8.3"
   }
 }
