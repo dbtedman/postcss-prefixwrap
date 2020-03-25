@@ -43,7 +43,7 @@ export default class PostCSSPrefixWrap {
 
     // Check for matching ignored selectors
     if (
-      this.ignoredSelectors.some(currentValue =>
+      this.ignoredSelectors.some((currentValue) =>
         cleanSelector.match(currentValue)
       )
     ) {
@@ -77,7 +77,7 @@ export default class PostCSSPrefixWrap {
 
     cssRule.selector = cssRule.selector
       .split(",")
-      .map(cssSelector => this.prefixWrapCSSSelector(cssSelector, cssRule))
+      .map((cssSelector) => this.prefixWrapCSSSelector(cssSelector, cssRule))
       .filter(Selector.isValid)
       .join(", ");
   }
@@ -85,14 +85,14 @@ export default class PostCSSPrefixWrap {
   includeRule(css: Rule): boolean {
     // If whitelist exists, check if rule is contained within it.
     if (this.whitelist.length > 0) {
-      return this.whitelist.some(currentValue =>
+      return this.whitelist.some((currentValue) =>
         css.source?.input.file?.match(currentValue)
       );
     }
 
     // If blacklist exists, check if rule is not contained within it.
     if (this.blacklist.length > 0) {
-      return !this.blacklist.some(currentValue =>
+      return !this.blacklist.some((currentValue) =>
         css.source?.input.file?.match(currentValue)
       );
     }

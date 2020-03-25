@@ -3,7 +3,7 @@ import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Whitelist", () => {
   const postCSS = postCSSWithPlugin({
-    whitelist: [`${__dirname}/fixtures/standard-tags-raw.css`]
+    whitelist: [`${__dirname}/fixtures/standard-tags-raw.css`],
   });
 
   it("ignores file not whitelisted", () => {

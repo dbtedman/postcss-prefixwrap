@@ -106,7 +106,7 @@ You may want to exclude some selectors from being prefixed, this is enabled usin
 
 ```javascript
 PrefixWrap(".my-custom-wrap", {
-    ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/]
+    ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/],
 });
 ```
 
@@ -116,7 +116,7 @@ You may want root tags, like `body` and `html` to be converted to classes, then 
 
 ```javascript
 PrefixWrap(".my-container", {
-    prefixRootTags: true
+    prefixRootTags: true,
 });
 ```
 
@@ -126,7 +126,7 @@ In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files
 
 ```javascript
 PrefixWrap(".my-custom-wrap", {
-    whitelist: ["editor.css"]
+    whitelist: ["editor.css"],
 });
 ```
 
@@ -138,7 +138,7 @@ In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS files. 
 
 ```javascript
 PrefixWrap(".my-custom-wrap", {
-    blacklist: ["colours.css"]
+    blacklist: ["colours.css"],
 });
 ```
 

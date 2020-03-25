@@ -8,7 +8,7 @@ describe("PostCSS", () => {
     execSync(
       "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
       {
-        stdio: "pipe"
+        stdio: "pipe",
       }
     );
   });
@@ -45,7 +45,7 @@ describe("PostCSS", () => {
 
   afterAll(() => {
     execSync("rm -rf ./package", {
-      stdio: "pipe"
+      stdio: "pipe",
     });
   });
 });
