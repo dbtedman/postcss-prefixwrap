@@ -5,7 +5,7 @@ import { PostCSSPrefixWrapOptions } from "PostCSSPrefixWrap";
 
 export const postCSSWithPlugin = (
   options: PostCSSPrefixWrapOptions = {},
-  selector: string = ".my-container"
-) => {
+  selector = ".my-container"
+): PostCSS.Processor => {
   return PostCSS([PrefixWrap(selector, options)]);
 };

@@ -2,6 +2,12 @@
 
 Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **Features and Improvements** and **Bug Fixes** sections.
 
+## In Development
+
+### Features and Improvements
+
+-   [ESLint](https://eslint.org/) support to improve code quality
+
 ## [1.13.2](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.13.2)
 
 ### Bug Fixes
