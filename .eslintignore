@@ -1,14 +1,19 @@
 #-------------------------------------------------------------------------------
 #
-# ESLint Ignores
+# ESLint Ignore Configuration, https://eslint.org/docs/user-guide/configuring#eslintignore
 #
 #-------------------------------------------------------------------------------
 
-# Don't ever lint node_modules
+# Don't lint fixtures used in testing that must retain current configuration
+/src/acceptance/fixtures/
+
+# Don't lint node_modules
 /node_modules/
 
-# Don't lint coverage output
+# Don't lint test
+/.nyc_output/
 /coverage/
 
 # Don't lint build output
 /build/
+/package/

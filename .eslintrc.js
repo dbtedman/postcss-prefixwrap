@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 //
-// ESLint Configuration
+// ESLint Configuration, https://eslint.org/docs/user-guide/configuring
 //
 // Based on https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md
 //

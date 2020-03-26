@@ -4,17 +4,17 @@
 #
 #-------------------------------------------------------------------------------
 
-# Fixtures used in testing that must retain current configuration
-/acceptance/fixtures/
+# Don't lint fixtures used in testing that must retain current configuration
+/src/acceptance/fixtures/
 
-# No need to touch any library code
+# Don't lint Node dependencies
 /node_modules/
+/yarn.lock
 
-# Leave generated code alone
-/package-lock.json
+# Don't lint test
 /.nyc_output/
-
-# Leave build output alone
-/build/
-
 /coverage/
+
+# Don't lint build output
+/build/
+/package/

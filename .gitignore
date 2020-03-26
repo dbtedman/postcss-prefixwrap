@@ -1,23 +1,20 @@
 #-------------------------------------------------------------------------------
 #
-# Git Ignore Config, https://git-scm.com/docs/gitignore.
+# Git Ignore Config, https://git-scm.com/docs/gitignore
 #
 #-------------------------------------------------------------------------------
 
-# Keep this file even if directory has been ignored.
+# Keep this file even if directory has been ignored
 !.keep
 
-# Node dependencies.
+# Don't commit Node dependencies
 /node_modules/
 
-# IDE Files, npm does not pay attention to user level ignores.
-/.idea/
-
-# Test runtime and reporting.
+# Don't commit test runtime and reporting
 /.nyc_output/
 /coverage/
 
-# Build output
+# Don't commit build output
 /build/
 postcss-prefixwrap-*.tgz
 /package/
