@@ -36,7 +36,7 @@ describe("PostCSS", () => {
       "../../package/",
       packageJSON.main
     );
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
     const postCSSPrefixWrap = require(packagePath);
     const plugin = postCSSPrefixWrap(".my-custom-wrap");
 

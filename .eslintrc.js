@@ -8,19 +8,21 @@
 //  - https://www.npmjs.com/package/@typescript-eslint/parser
 //  - https://www.npmjs.com/package/eslint-config-prettier
 //  - https://www.npmjs.com/package/eslint-plugin-jest
+//  - https://www.npmjs.com/package/eslint-plugin-security-node
 //
 //------------------------------------------------------------------------------
 
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "jest"],
+  plugins: ["@typescript-eslint", "jest", "security-node"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
     "plugin:jest/recommended",
+    "plugin:security-node/recommended",
   ],
   rules: {
     // Our tests rely frequently on assertions defined in external file.
