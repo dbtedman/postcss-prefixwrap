@@ -70,7 +70,7 @@ export default class PostCSSPrefixWrap {
     return cssRule.selector.match(this.isPrefixSelector) !== null;
   }
 
-  prefixWrapCSSRule(cssRule: Rule) {
+  prefixWrapCSSRule(cssRule: Rule): void {
     if (this.cssRuleMatchesPrefixSelector(cssRule)) {
       return;
     }
@@ -102,7 +102,7 @@ export default class PostCSSPrefixWrap {
   }
 
   prefix(): Function {
-    return (css: Rule) => {
+    return (css: Rule): void => {
       if (this.includeRule(css)) {
         css.walkRules((cssRule: Rule) => {
           this.prefixWrapCSSRule(cssRule);

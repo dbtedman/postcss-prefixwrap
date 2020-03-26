@@ -54,6 +54,7 @@ describe("Plugin", () => {
       const parent = PostCSS.root();
       const cssRule = PostCSS.rule({
         selector: selector,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         parent: parent,
       });
@@ -70,6 +71,7 @@ describe("Plugin", () => {
     });
 
     Assert.strictEqual(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       plugin.includeRule({
         source: undefined,
@@ -79,8 +81,10 @@ describe("Plugin", () => {
 
     Assert.strictEqual(
       plugin.includeRule({
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         source: {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           input: {
             file: undefined,
@@ -97,6 +101,7 @@ describe("Plugin", () => {
     });
 
     Assert.strictEqual(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
       plugin.includeRule({
         source: undefined,
@@ -106,8 +111,10 @@ describe("Plugin", () => {
 
     Assert.strictEqual(
       plugin.includeRule({
+        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
         source: {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           input: {
             file: undefined,

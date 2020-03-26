@@ -4,15 +4,17 @@
 #
 #-------------------------------------------------------------------------------
 
-# Fixtures used in testing that must retain current configuration.
+# Fixtures used in testing that must retain current configuration
 /acceptance/fixtures/
 
-# No need to touch any library code.
+# No need to touch any library code
 /node_modules/
 
-# Leave generated code alone.
+# Leave generated code alone
 /package-lock.json
 /.nyc_output/
 
-# Leave build output alone.
+# Leave build output alone
 /build/
+
+/coverage/
