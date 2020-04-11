@@ -8,6 +8,10 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 
 -   [ESLint](https://eslint.org/) support to improve code quality
 
+### Bug Fixes
+
+-   Dependency updates
+
 ## [1.13.2](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.13.2)
 
 ### Bug Fixes
