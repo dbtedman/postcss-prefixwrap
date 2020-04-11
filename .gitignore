@@ -16,5 +16,8 @@
 
 # Don't commit build output
 /build/
-postcss-prefixwrap-*.tgz
+/postcss-prefixwrap-*.tgz
 /package/
+
+# Don't commit any log files
+*.log
