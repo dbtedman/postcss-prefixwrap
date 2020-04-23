@@ -120,6 +120,8 @@ PrefixWrap(".my-container", {
 });
 ```
 
+With this option, a selector like `html` will be converted to `.my-container .html`, rather than the default `.my-container`.
+
 ### File Whitelist
 
 In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files. This is done using the `whitelist` option.
