@@ -7,6 +7,7 @@
 [![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=Downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Package License](https://badgen.net/npm/license/postcss-prefixwrap?label=License&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Package Version](https://badgen.net/npm/v/postcss-prefixwrap?label=Latest&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B17877%2Fgit%40github.com%3Adbtedman%2Fpostcss-prefixwrap.git.svg?type=shield)](https://app.fossa.com/projects/custom%2B17877%2Fgit%40github.com%3Adbtedman%2Fpostcss-prefixwrap.git?ref=badge_shield)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 

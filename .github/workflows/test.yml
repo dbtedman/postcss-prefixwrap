@@ -41,5 +41,8 @@ jobs:
       - name: "Verify"
         run: 'yarn lint && yarn test && yarn codecov --token="${CODECOV_TOKEN}"'
 
+      - name: "License Check"
+        run: "FOSSA_API_KEY=${FOSSA_API_KEY} fossa analyze"
+
       - name: "Build"
         run: "yarn build"
