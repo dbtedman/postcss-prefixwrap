@@ -42,7 +42,7 @@ jobs:
         run: 'yarn lint && yarn test && yarn codecov --token="${CODECOV_TOKEN}"'
 
       - name: "License Check"
-        run: "FOSSA_API_KEY=${FOSSA_API_KEY} fossa analyze"
+        run: "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash && FOSSA_API_KEY=${FOSSA_API_KEY} fossa analyze"
 
       - name: "Build"
         run: "yarn build"
