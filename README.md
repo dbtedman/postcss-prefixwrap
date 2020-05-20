@@ -7,6 +7,7 @@
 [![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=Downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Package License](https://badgen.net/npm/license/postcss-prefixwrap?label=License&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Package Version](https://badgen.net/npm/v/postcss-prefixwrap?label=Latest&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdbtedman%2Fpostcss-prefixwrap.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdbtedman%2Fpostcss-prefixwrap?ref=badge_shield)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 
@@ -150,3 +151,7 @@ PrefixWrap(".my-custom-wrap", {
 -   See our [Changelog](CHANGELOG.md) for details on which features, improvements, and bug fixes have been implemented
 -   See our [License](LICENSE.md) for details on how you can use the code in this repository.
 -   See our [Security Guide](SECURITY.md) for details on how security is considered.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdbtedman%2Fpostcss-prefixwrap.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdbtedman%2Fpostcss-prefixwrap?ref=badge_large)
