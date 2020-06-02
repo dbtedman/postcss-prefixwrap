@@ -15,7 +15,7 @@ export default class PluginConstructor {
     // will only happen in a major version change.
     return PostCSS.plugin(
       PLUGIN_NAME,
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       (prefixSelector: string, options?: PostCSSPrefixWrapOptions) => {
         return new PostCSSPrefixWrap(prefixSelector, options).prefix();
