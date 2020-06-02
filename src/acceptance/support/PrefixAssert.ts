@@ -11,7 +11,7 @@ export default class PrefixAssert {
     Assert.strictEqual(
       postCSS.process(FileSystem.readFileSync(actualPath), { from: actualPath })
         .css,
-      FileSystem.readFileSync(expectedPath, "UTF-8")
+      FileSystem.readFileSync(expectedPath, "utf8")
     );
   }
 

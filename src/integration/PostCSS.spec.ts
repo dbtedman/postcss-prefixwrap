@@ -14,7 +14,7 @@ describe("PostCSS", () => {
   });
 
   it("defines main file that exists", () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "UTF-8");
+    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
     const packageJSON = JSON.parse(content.toString());
 
     expect(packageJSON.main).toBeDefined();
@@ -29,7 +29,7 @@ describe("PostCSS", () => {
   });
 
   it("can load main file as postCSS plugin that works", async () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "UTF-8");
+    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,

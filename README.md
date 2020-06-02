@@ -36,6 +36,8 @@ npm install postcss-prefixwrap --save-dev --save-exact
 
 Add to your [PostCSS](http://postcss.org) configuration.
 
+#### With Gulp
+
 ```javascript
 const Gulp = require("gulp");
 const PostCSS = require("gulp-postcss");
@@ -47,6 +49,34 @@ Gulp.task("css", () =>
         .pipe(Gulp.dest("./dest"))
 );
 ```
+
+#### With WebPack
+
+```javascript
+const PrefixWrap = require("postcss-prefixwrap");
+
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader",
+                    { loader: "css-loader", options: { importLoaders: 1 } },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins: [PrefixWrap(".my-custom-wrap")],
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+};
+```
+
+> Based on example from [https://webpack.js.org/loaders/postcss-loader/](https://webpack.js.org/loaders/postcss-loader/).
 
 ### Container
 

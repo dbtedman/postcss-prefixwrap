@@ -1,7 +1,6 @@
 import { Rule } from "postcss";
 
 import Selector from "./Selector";
-import Hash from "./Hash";
 
 export const PLUGIN_NAME = "postcss-prefixwrap";
 
@@ -14,20 +13,20 @@ export interface PostCSSPrefixWrapOptions {
 
 export default class PostCSSPrefixWrap {
   private readonly blacklist: Array<string>;
-  private readonly ignoredSelectors: Array<string>;
+  private readonly ignoredSelectors: (string | RegExp)[];
   private readonly isPrefixSelector: RegExp;
   private readonly prefixRootTags: boolean;
   private readonly prefixSelector: string;
   private readonly whitelist: Array<string>;
 
-  constructor(prefixSelector: string, options = {}) {
-    this.blacklist = Hash.value(options, "blacklist", []);
-    this.ignoredSelectors = Hash.value(options, "ignoredSelectors", []);
+  constructor(prefixSelector: string, options: PostCSSPrefixWrapOptions = {}) {
+    this.blacklist = options.blacklist ?? [];
+    this.ignoredSelectors = options.ignoredSelectors ?? [];
     // eslint-disable-next-line security-node/non-literal-reg-expr
     this.isPrefixSelector = new RegExp(`^s*${prefixSelector}.*$`);
-    this.prefixRootTags = Hash.value(options, "prefixRootTags", false);
+    this.prefixRootTags = options.prefixRootTags ?? false;
     this.prefixSelector = prefixSelector;
-    this.whitelist = Hash.value(options, "whitelist", []);
+    this.whitelist = options.whitelist ?? [];
   }
 
   prefixWrapCSSSelector(cssSelector: string, cssRule: Rule): string | null {
@@ -102,6 +101,7 @@ export default class PostCSSPrefixWrap {
     return true;
   }
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   prefix(): Function {
     return (css: Rule): void => {
       if (this.includeRule(css)) {
