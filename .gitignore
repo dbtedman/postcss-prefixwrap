@@ -13,6 +13,7 @@
 # Don't commit test runtime and reporting
 /.nyc_output/
 /coverage/
+/src/integration/gulp/fixtures/dist/
 
 # Don't commit build output
 /build/

@@ -29,7 +29,9 @@
     "clean": "rm -rf ./build/",
     "format": "prettier './**/*.{md,yml,yaml,json,ts,js}' --write && yarn eslint --fix . --ext .js,.ts",
     "lint": "prettier './**/*.{md,yml,yaml,json,ts,js}' --check && yarn eslint . --ext .js,.ts",
-    "test": "jest --coverage"
+    "test": "yarn test:before && jest --coverage && yarn test:after",
+    "test:before": "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
+    "test:after": "rm -rf ./package"
   },
   "peerDependencies": {
     "postcss": "*"
@@ -46,6 +48,9 @@
     "eslint-plugin-jest": "23.13.2",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-security-node": "1.0.12",
+    "gulp": "4.0.2",
+    "gulp-cli": "2.3.0",
+    "gulp-postcss": "8.0.0",
     "husky": "4.2.5",
     "jest": "26.0.1",
     "postcss": "7.0.21",

@@ -1,27 +1,17 @@
 import postcss from "postcss";
-import { execSync } from "child_process";
 import fs from "fs";
 import * as path from "path";
+import { fileFromBaseAsString } from "../Integration";
 
 describe("PostCSS", () => {
-  beforeAll(() => {
-    execSync(
-      "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
-      {
-        stdio: "pipe",
-      }
-    );
-  });
-
   it("defines main file that exists", () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
-    const packageJSON = JSON.parse(content.toString());
+    const packageJSON = JSON.parse(fileFromBaseAsString("package.json"));
 
     expect(packageJSON.main).toBeDefined();
 
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "../../../package/",
       packageJSON.main
     );
 
@@ -29,11 +19,10 @@ describe("PostCSS", () => {
   });
 
   it("can load main file as postCSS plugin that works", async () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
-    const packageJSON = JSON.parse(content.toString());
+    const packageJSON = JSON.parse(fileFromBaseAsString("./package.json"));
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "../../../package/",
       packageJSON.main
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
@@ -42,11 +31,5 @@ describe("PostCSS", () => {
 
     const result = await postcss([plugin]).process("", { from: "example.css" });
     expect(result).not.toBeNull();
-  });
-
-  afterAll(() => {
-    execSync("rm -rf ./package", {
-      stdio: "pipe",
-    });
   });
 });
