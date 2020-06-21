@@ -1,4 +1,4 @@
-# [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
+# [PostCSS Prefix Wrap](https://danieltedman.com/my-work/postcss-prefixwrap)
 
 [![Codecov](https://codecov.io/gh/dbtedman/postcss-prefixwrap/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
 [![GitHub Actions](https://github.com/dbtedman/postcss-prefixwrap/workflows/Test/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=Test)
