@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------------------------------------
 ---
-name: "Test"
+name: "build-test"
 
 on:
   schedule:
@@ -20,7 +20,7 @@ env:
   CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
 
 jobs:
-  test:
+  run:
     runs-on: "ubuntu-latest"
 
     strategy:
