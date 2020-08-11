@@ -179,7 +179,7 @@ Read our [Contributing Guide](CONTRIBUTING.md) to learn more about how to contri
 
 ## Is this project secure?
 
-Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this tool.
+Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this plugin.
 
 ## How is the project structured?
 
