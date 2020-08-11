@@ -1,20 +1,19 @@
 # [PostCSS Prefix Wrap](https://danieltedman.com/my-work/postcss-prefixwrap)
 
-[![Codecov](https://codecov.io/gh/dbtedman/postcss-prefixwrap/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
-[![GitHub Actions](https://github.com/dbtedman/postcss-prefixwrap/workflows/Test/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=Test)
-[![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg?style=flat-square)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fa0627fb4cfdc2a6dd04/maintainability)](https://codeclimate.com/github/dbtedman/postcss-prefixwrap/maintainability)
+[![CI Build Test](https://github.com/dbtedman/postcss-prefixwrap/workflows/build-test/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=build-test)
+[![Test Code Coverage](https://codecov.io/gh/dbtedman/postcss-prefixwrap/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
 [![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=Downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
-[![Package License](https://badgen.net/npm/license/postcss-prefixwrap?label=License&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
-[![Package Version](https://badgen.net/npm/v/postcss-prefixwrap?label=Latest&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 
--   [Where do I start?](#where-do-i-start)
+-   [How to use this plugin?](#how-to-use-this-plugin)
 -   [What options does it have?](#what-options-does-it-have)
--   [Want to lean more?](#want-to-lean-more)
+-   [How to contribute?](#how-to-contribute)
+-   [Is this project secure?](#is-this-project-secure)
+-   [How is the project structured?](#how-is-the-project-structured)
+-   [License](#license)
 
-## Where do I start?
+## How to use this plugin?
 
 > These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
 
@@ -174,9 +173,18 @@ PrefixWrap(".my-custom-wrap", {
 });
 ```
 
-## Want to lean more?
+## How to contribute?
 
--   See our [Contributing Guide](CONTRIBUTING.md) for details on how this repository is developed.
--   See our [Changelog](CHANGELOG.md) for details on which features, improvements, and bug fixes have been implemented
--   See our [License](LICENSE.md) for details on how you can use the code in this repository.
--   See our [Security Guide](SECURITY.md) for details on how security is considered.
+Read our [Contributing Guide](CONTRIBUTING.md) to learn more about how to contribute to this project.
+
+## Is this project secure?
+
+Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this tool.
+
+## How is the project structured?
+
+Read our [Architecture Document](ARCHITECTURE.md) to learn how this project is structured.
+
+## License
+
+The [MIT License](./LICENSE.md) is used by this project.
