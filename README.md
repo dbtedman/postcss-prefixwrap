@@ -1,5 +1,7 @@
 # [PostCSS Prefix Wrap](https://danieltedman.com/my-work/postcss-prefixwrap)
 
+> ⚠️ WARNING: This plugin does not yet support PostCSS version 8 yet due to a significant difference in the plugin API, an update will be available soon to add this support.
+
 [![CI Build Test](https://github.com/dbtedman/postcss-prefixwrap/workflows/build-test/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=build-test)
 [![Test Code Coverage](https://codecov.io/gh/dbtedman/postcss-prefixwrap/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
 [![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
