@@ -1,6 +1,5 @@
-import { Root, Rule } from "postcss";
-
 import Selector from "./Selector";
+import { PostCSSContainer, PostCSSRule } from "Types";
 
 export const PLUGIN_NAME = "postcss-prefixwrap";
 
@@ -29,7 +28,10 @@ export default class PostCSSPrefixWrap {
     this.whitelist = options.whitelist ?? [];
   }
 
-  prefixWrapCSSSelector(cssSelector: string, cssRule: Rule): string | null {
+  prefixWrapCSSSelector(
+    cssSelector: string,
+    cssRule: PostCSSRule
+  ): string | null {
     const cleanSelector = Selector.clean(cssSelector);
 
     if (cleanSelector === "") {
@@ -66,11 +68,11 @@ export default class PostCSSPrefixWrap {
     return cleanSelector.replace(/^(body|html)/, this.prefixSelector);
   }
 
-  cssRuleMatchesPrefixSelector(cssRule: Rule): boolean {
+  cssRuleMatchesPrefixSelector(cssRule: PostCSSRule): boolean {
     return cssRule.selector.match(this.isPrefixSelector) !== null;
   }
 
-  prefixWrapCSSRule(cssRule: Rule): void {
+  prefixWrapCSSRule(cssRule: PostCSSRule): void {
     if (this.cssRuleMatchesPrefixSelector(cssRule)) {
       return;
     }
@@ -82,7 +84,7 @@ export default class PostCSSPrefixWrap {
       .join(", ");
   }
 
-  includeFile(css: Root): boolean {
+  includeFile(css: PostCSSContainer): boolean {
     // If whitelist exists, check if rule is contained within it.
     if (this.whitelist.length > 0) {
       return this.whitelist.some((currentValue) =>
@@ -101,11 +103,18 @@ export default class PostCSSPrefixWrap {
     return true;
   }
 
-  prefixRoot(css: Root): void {
+  prefixRoot(css: PostCSSContainer): void {
     if (this.includeFile(css)) {
-      css.walkRules((cssRule: Rule) => {
+      css.walkRules((cssRule: PostCSSRule) => {
         this.prefixWrapCSSRule(cssRule);
       });
     }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  prefix(): Function {
+    return (css: PostCSSContainer): void => {
+      this.prefixRoot(css);
+    };
   }
 }

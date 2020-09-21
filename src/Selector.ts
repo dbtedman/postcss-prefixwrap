@@ -1,5 +1,4 @@
-import { Rule } from "postcss";
-import AtRule from "postcss/lib/at-rule";
+import { PostCSSAtRule, PostCSSRule } from "Types";
 
 const ANY_WHITESPACE_AT_BEGINNING_OR_END = /(^\s*|\s*$)/g;
 const IS_ROOT_TAG = /^(body|html).*$/;
@@ -13,9 +12,9 @@ export default class Selector {
     return cssSelector.replace(ANY_WHITESPACE_AT_BEGINNING_OR_END, "");
   }
 
-  static isKeyframes(cssRule: Rule): boolean {
+  static isKeyframes(cssRule: PostCSSRule): boolean {
     const { parent } = cssRule;
-    const parentReal = parent as AtRule;
+    const parentReal = parent as PostCSSAtRule;
 
     // @see https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule
     return (
