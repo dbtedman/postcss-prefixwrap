@@ -81,6 +81,9 @@ describe("Plugin", () => {
 
     Assert.strictEqual(
       plugin.includeFile({
+        walkRules(): void {
+          //
+        },
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         source: {
@@ -111,6 +114,9 @@ describe("Plugin", () => {
 
     Assert.strictEqual(
       plugin.includeFile({
+        walkRules(): void {
+          //
+        },
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         source: {
