@@ -38,9 +38,10 @@ describe("PostCSS", () => {
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
     const postCSSPrefixWrap = require(packagePath);
+
     const plugin = postCSSPrefixWrap(".my-custom-wrap");
 
-    const result = await postcss([plugin]).process("", { from: "example.css" });
+    const result = postcss([plugin]).process("", { from: "example.css" });
     expect(result).not.toBeNull();
   });
 

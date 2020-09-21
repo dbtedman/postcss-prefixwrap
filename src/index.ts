@@ -1,7 +1,20 @@
-import PluginConstructor from "./PluginConstructor";
+import PostCSSPrefixWrap, {
+  PLUGIN_NAME,
+  PostCSSPrefixWrapOptions,
+} from "PostCSSPrefixWrap";
+import { AcceptedPlugin } from "postcss";
+import Root from "postcss/lib/root";
 
-const pluginConstructor = new PluginConstructor();
+export = (
+  prefixSelector: string,
+  options?: PostCSSPrefixWrapOptions
+): AcceptedPlugin => {
+  const plugin = new PostCSSPrefixWrap(prefixSelector, options);
 
-// Expose our class as a PostCSS Plugin.
-const ourPlugin = pluginConstructor.asPostCSSPlugin();
-export = ourPlugin;
+  return {
+    postcssPlugin: PLUGIN_NAME,
+    Root(root: Root): void {
+      plugin.prefixRoot(root);
+    },
+  };
+};

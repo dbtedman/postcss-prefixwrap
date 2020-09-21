@@ -65,7 +65,7 @@ describe("Plugin", () => {
     });
   });
 
-  it("handles includeRule with whitelist when missing source input data", () => {
+  it("handles includeFile with whitelist when missing source input data", () => {
     const plugin = new PostCSSPrefixWrap(prefixSelector, {
       whitelist: [".something"],
     });
@@ -73,14 +73,14 @@ describe("Plugin", () => {
     Assert.strictEqual(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      plugin.includeRule({
+      plugin.includeFile({
         source: undefined,
       }),
       false
     );
 
     Assert.strictEqual(
-      plugin.includeRule({
+      plugin.includeFile({
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         source: {
@@ -95,7 +95,7 @@ describe("Plugin", () => {
     );
   });
 
-  it("handles includeRule with blacklist when missing source input data", () => {
+  it("handles includeFile with blacklist when missing source input data", () => {
     const plugin = new PostCSSPrefixWrap(prefixSelector, {
       blacklist: [".something"],
     });
@@ -103,14 +103,14 @@ describe("Plugin", () => {
     Assert.strictEqual(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      plugin.includeRule({
+      plugin.includeFile({
         source: undefined,
       }),
       true
     );
 
     Assert.strictEqual(
-      plugin.includeRule({
+      plugin.includeFile({
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         source: {
