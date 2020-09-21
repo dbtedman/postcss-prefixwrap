@@ -1,10 +1,10 @@
-import * as postcss from "postcss";
 import Assert from "assert";
 import FileSystem from "fs";
+import Processor from "postcss/lib/processor";
 
 export default class PrefixAssert {
   static actualMatchesExpectedAfterPrefixWrap(
-    postCSS: postcss.Processor,
+    postCSS: Processor,
     actualPath: string,
     expectedPath: string
   ): void {
@@ -15,10 +15,7 @@ export default class PrefixAssert {
     );
   }
 
-  static noChangeAfterPrefixWrap(
-    postCSS: postcss.Processor,
-    actualPath: string
-  ): void {
+  static noChangeAfterPrefixWrap(postCSS: Processor, actualPath: string): void {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
       actualPath,

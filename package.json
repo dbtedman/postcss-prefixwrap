@@ -49,7 +49,7 @@
     "eslint-plugin-security-node": "1.0.12",
     "husky": "4.2.5",
     "jest": "26.4.2",
-    "postcss": "7.0.32",
+    "postcss": "8.0.6",
     "prettier": "2.1.1",
     "ts-jest": "26.3.0",
     "ts-node": "9.0.0",

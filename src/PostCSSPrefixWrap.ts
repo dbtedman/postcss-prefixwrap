@@ -1,4 +1,4 @@
-import { Rule } from "postcss";
+import { Root, Rule } from "postcss";
 
 import Selector from "./Selector";
 
@@ -82,7 +82,7 @@ export default class PostCSSPrefixWrap {
       .join(", ");
   }
 
-  includeRule(css: Rule): boolean {
+  includeFile(css: Root): boolean {
     // If whitelist exists, check if rule is contained within it.
     if (this.whitelist.length > 0) {
       return this.whitelist.some((currentValue) =>
@@ -101,14 +101,11 @@ export default class PostCSSPrefixWrap {
     return true;
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  prefix(): Function {
-    return (css: Rule): void => {
-      if (this.includeRule(css)) {
-        css.walkRules((cssRule: Rule) => {
-          this.prefixWrapCSSRule(cssRule);
-        });
-      }
-    };
+  prefixRoot(css: Root): void {
+    if (this.includeFile(css)) {
+      css.walkRules((cssRule: Rule) => {
+        this.prefixWrapCSSRule(cssRule);
+      });
+    }
   }
 }
