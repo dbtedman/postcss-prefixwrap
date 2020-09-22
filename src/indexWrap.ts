@@ -2,14 +2,22 @@ import PostCSSPrefixWrap, {
   PLUGIN_NAME,
   PostCSSPrefixWrapOptions,
 } from "PostCSSPrefixWrap";
-import { PostCSSAcceptedPlugin, PostCSSContainer } from "Types";
+import {
+  PostCSS7Plugin,
+  PostCSS7PostCSS,
+  PostCSS8Plugin,
+  PostCSS8PostCSS,
+  PostCSSAcceptedPlugin,
+  PostCSSContainer,
+} from "Types";
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types,@typescript-eslint/no-explicit-any
-export = (postcss: any): any => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  if (typeof postcss.plugin !== "function") {
-    // PostCSS v8
+const isPostCSSv8 = (postcss: PostCSS7PostCSS | PostCSS8PostCSS) =>
+  (postcss as PostCSS8PostCSS).Root !== undefined;
+
+export = (
+  postcss: PostCSS7PostCSS | PostCSS8PostCSS
+): PostCSS7Plugin | PostCSS8Plugin => {
+  if (isPostCSSv8(postcss)) {
     return (
       prefixSelector: string,
       options?: PostCSSPrefixWrapOptions
@@ -24,10 +32,7 @@ export = (postcss: any): any => {
       };
     };
   } else {
-    // PostCSS v7
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return postcss.plugin(
+    return (postcss as PostCSS7PostCSS).plugin(
       PLUGIN_NAME,
       (prefixSelector: string, options?: PostCSSPrefixWrapOptions) => {
         return new PostCSSPrefixWrap(prefixSelector, options).prefix();
