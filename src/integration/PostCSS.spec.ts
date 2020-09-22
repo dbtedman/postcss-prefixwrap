@@ -1,11 +1,14 @@
 import postcss from "postcss";
 import postcss7 from "postcss7";
-import { execSync } from "child_process";
+import {execSync} from "child_process";
 import fs from "fs";
 import * as path from "path";
 
-// TODO: Also check the output css too here
 describe("PostCSS", () => {
+
+  const source = "p { color: red; }";
+  const prefixed = ".my-custom-wrap p { color: red; }";
+
   beforeAll(() => {
     execSync(
       "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
@@ -43,8 +46,8 @@ describe("PostCSS", () => {
 
     const plugin = postCSSPrefixWrap(".my-custom-wrap");
 
-    const result = postcss([plugin]).process("", { from: "example.css" });
-    expect(result).not.toBeNull();
+    const result = await postcss([plugin]).process(source, {from: "example.css"});
+    expect(result.css).toEqual(prefixed);
   });
 
   it("can load main file as postCSS 7 plugin that works", async () => {
@@ -65,8 +68,8 @@ describe("PostCSS", () => {
 
     const plugin = postCSSPrefixWrap(".my-custom-wrap");
 
-    const result = postcss7([plugin]).process("", { from: "example.css" });
-    expect(result).not.toBeNull();
+    const result = await postcss7([plugin]).process(source, {from: "example.css"});
+    expect(result.css).toEqual(prefixed);
   });
 
   afterAll(() => {
