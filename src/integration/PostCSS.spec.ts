@@ -1,11 +1,10 @@
 import postcss from "postcss";
 import postcss7 from "postcss7";
-import {execSync} from "child_process";
+import { execSync } from "child_process";
 import fs from "fs";
 import * as path from "path";
 
 describe("PostCSS", () => {
-
   const source = "p { color: red; }";
   const prefixed = ".my-custom-wrap p { color: red; }";
 
@@ -46,7 +45,9 @@ describe("PostCSS", () => {
 
     const plugin = postCSSPrefixWrap(".my-custom-wrap");
 
-    const result = await postcss([plugin]).process(source, {from: "example.css"});
+    const result = await postcss([plugin]).process(source, {
+      from: "example.css",
+    });
     expect(result.css).toEqual(prefixed);
   });
 
@@ -68,7 +69,9 @@ describe("PostCSS", () => {
 
     const plugin = postCSSPrefixWrap(".my-custom-wrap");
 
-    const result = await postcss7([plugin]).process(source, {from: "example.css"});
+    const result = await postcss7([plugin]).process(source, {
+      from: "example.css",
+    });
     expect(result.css).toEqual(prefixed);
   });
 
