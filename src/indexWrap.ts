@@ -1,7 +1,7 @@
 import PostCSSPrefixWrap, {
   PLUGIN_NAME,
   PostCSSPrefixWrapOptions,
-} from "PostCSSPrefixWrap";
+} from "./PostCSSPrefixWrap";
 import {
   PostCSS7Plugin,
   PostCSS7PostCSS,
