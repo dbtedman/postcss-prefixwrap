@@ -7,7 +7,7 @@ describe("indexWrap", () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const plugin = indexWrap(postcss8)(".selector", {});
-    plugin.Root({
+    plugin.Once({
       walkRules: () => {
         // Implementation not important for this test
       },

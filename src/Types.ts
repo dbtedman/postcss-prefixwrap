@@ -28,7 +28,7 @@ export interface PostCSSAtRule extends PostCSSContainer {
 export interface PostCSSAcceptedPlugin {
   postcssPlugin: string;
 
-  Root(root: PostCSSContainer): void;
+  Once(root: PostCSSContainer): void;
 }
 
 export interface PostCSS7PostCSS {

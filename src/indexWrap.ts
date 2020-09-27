@@ -26,7 +26,7 @@ export = (
 
       return {
         postcssPlugin: PLUGIN_NAME,
-        Root(root: PostCSSContainer): void {
+        Once(root: PostCSSContainer): void {
           plugin.prefixRoot(root);
         },
       };
