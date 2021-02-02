@@ -1,6 +1,6 @@
 MIT License
 
-Copyright © 2020 [Daniel Tedman](https://danieltedman.com/my-work/postcss-prefixwrap)
+Copyright © 2021 [Daniel Tedman](https://danieltedman.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

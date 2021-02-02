@@ -1,4 +1,4 @@
-# [PostCSS Prefix Wrap](./README.md) / Contributing
+# [PostCSS Prefix Wrap](./README.md) // Contributing
 
 -   [Thanks](#thanks)
 -   [Continuous Integration](#continuous-integration)
