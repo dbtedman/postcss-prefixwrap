@@ -1,10 +1,5 @@
-#-------------------------------------------------------------------------------
-#
-# GitHub Actions Test Configuration
-#
-#-------------------------------------------------------------------------------
 ---
-name: "build-test"
+name: "ci"
 
 on:
   schedule:
@@ -17,7 +12,6 @@ on:
 
 env:
   CI: true
-  CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}"
 
 jobs:
   run:
@@ -25,8 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        # LTS & Current
-        node-version: ["12.x", "14.x"]
+        node-version: ["12.x", "14.x", "15.x"]
 
     steps:
       - uses: "actions/checkout@v1"
