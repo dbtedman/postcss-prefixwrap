@@ -12,7 +12,6 @@ A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles 
 -   [What options does it have?](#what-options-does-it-have)
 -   [How to contribute?](#how-to-contribute)
 -   [Is this project secure?](#is-this-project-secure)
--   [How is the project structured?](#how-is-the-project-structured)
 -   [License](#license)
 
 ## How to use this plugin?
@@ -37,47 +36,12 @@ npm install postcss-prefixwrap --save-dev --save-exact
 
 Add to your [PostCSS](http://postcss.org) configuration.
 
-#### With Gulp
-
 ```javascript
-const Gulp = require("gulp");
 const PostCSS = require("gulp-postcss");
 const PrefixWrap = require("postcss-prefixwrap");
 
-Gulp.task("css", () =>
-    Gulp.src("./src/*.css")
-        .pipe(PostCSS([PrefixWrap(".my-custom-wrap")]))
-        .pipe(Gulp.dest("./dest"))
-);
+PostCSS([PrefixWrap(".my-custom-wrap")]);
 ```
-
-#### With WebPack
-
-```javascript
-const PrefixWrap = require("postcss-prefixwrap");
-
-module.exports = {
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    "style-loader",
-                    { loader: "css-loader", options: { importLoaders: 1 } },
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            plugins: [PrefixWrap(".my-custom-wrap")],
-                        },
-                    },
-                ],
-            },
-        ],
-    },
-};
-```
-
-> Based on example from [https://webpack.js.org/loaders/postcss-loader/](https://webpack.js.org/loaders/postcss-loader/).
 
 ### Container
 
@@ -182,10 +146,6 @@ Read our [Contributing Guide](CONTRIBUTING.md) to learn more about how to contri
 ## Is this project secure?
 
 Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this plugin.
-
-## How is the project structured?
-
-Read our [Architecture Document](ARCHITECTURE.md) to learn how this project is structured.
 
 ## License
 
