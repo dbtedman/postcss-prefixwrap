@@ -32,7 +32,7 @@
     "test": "jest --coverage"
   },
   "peerDependencies": {
-    "postcss": "7.*.*|^8.1.0"
+    "postcss": "7.*.*|8.*.*"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
