@@ -3,9 +3,9 @@
 ✅ Supports PostCSS v7 or v8
 
 [![CI Build Test](https://github.com/dbtedman/postcss-prefixwrap/workflows/ci/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=ci)
-[![Test Code Coverage](https://codecov.io/gh/dbtedman/postcss-prefixwrap/branch/master/graph/badge.svg)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
 [![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
-[![postcss-prefixwrap](https://snyk.io/advisor/npm-package/postcss-prefixwrap/badge.svg)](https://snyk.io/advisor/npm-package/postcss-prefixwrap)
+[![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
+[![Package Health](https://snyk.io/advisor/npm-package/postcss-prefixwrap/badge.svg)](https://snyk.io/advisor/npm-package/postcss-prefixwrap)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
 
