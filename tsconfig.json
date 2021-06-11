@@ -12,7 +12,9 @@
     },
     "sourceMap": false,
     "strict": true,
-    "target": "es6"
+    "target": "ES2018",
+    "lib": ["es2018"],
+    "declaration": true
   },
   "include": ["./src/**/*"]
 }
