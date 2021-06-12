@@ -23,7 +23,7 @@ elements in a page.
 
 ## How to use this plugin?
 
-> These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
+> ⚠️ These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
 
 ### Install
 

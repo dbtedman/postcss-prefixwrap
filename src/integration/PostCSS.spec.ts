@@ -4,11 +4,17 @@ import { execSync } from "child_process";
 import fs from "fs";
 import * as path from "path";
 
+// The purpose of this collection of tests is to verify that our published plugin can
+// be loaded successfully into postcss and process some trivial css. These tests intend
+// to catch issues with the build process or the external interface we expose to plugin
+// consumers.
 describe("PostCSS", () => {
   const source = "p { color: red; }";
   const prefixed = ".my-custom-wrap p { color: red; }";
 
   beforeAll(() => {
+    // Publish the plugin locally (without uploading to registry), then extract the files
+    // so that we can load them into our tests.
     execSync(
       "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
       {
@@ -76,6 +82,7 @@ describe("PostCSS", () => {
   });
 
   afterAll(() => {
+    // Cleanup locally published files.
     execSync("rm -rf ./package", {
       stdio: "pipe",
     });

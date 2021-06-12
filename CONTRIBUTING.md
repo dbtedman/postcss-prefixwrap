@@ -25,22 +25,36 @@ Provided by [GitHub Actions](https://github.com/dbtedman/postcss-prefixwrap/acti
 
 Code formatting support provided by [Prettier](https://prettier.io/).
 
-```bash
+```shell
 yarn format
+```
+
+Alternatively, you can check if the code is already formatted correctly by executing the lint job instead.
+
+```shell
+yarn lint
 ```
 
 ## Test
 
 Tested using [Jest](https://jestjs.io/), using test cases defined in the `src/` directory matching `*.spec.ts` pattern.
 
-```bash
+```shell
 yarn test
 ```
 
+Our test suite contains the following kinds of tests:
+
+-   **Unit** - Does each unit of code perform its intended purpose, and do we handle potential error cases correctly.
+-   **Integration** - Can our plugin be loaded into PostCSS and then executed correctly.
+-   **Acceptance** - Does our plugin perform the correct operations based on provided configuration.
+
 ## Publishing
 
-> Publishing new releases is completed by the [Core Maintainers](#core-maintainers).
+> ⚠️ Publishing new releases can only be completed by the [Core Maintainers](#core-maintainers).
 
-Update `CHANGELOG.md` and `package.json` with details on the updated release version.
-
-Then [Publish a new release](https://github.com/dbtedman/postcss-prefixwrap/releases/new) to trigger publishing a new version of this package.
+1. Update `CHANGELOG.md` and `package.json` with details on the updated release version.
+2. Commit these changes, and merge them into master via a pull request.
+3. Then [Publish a new release](https://github.com/dbtedman/postcss-prefixwrap/releases/new) to trigger publishing a new version of this package.
+4. GitHub will then trigger the **release** pipeline to publish the release to NPM.
+5. [Core Maintainers](#core-maintainers) will receive a notification from NPM when the package has been published.
