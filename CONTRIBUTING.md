@@ -1,10 +1,17 @@
 # [PostCSS Prefix Wrap](./README.md) // Contributing
 
+Outlines how to contribute to the development of PostCSS Prefix Wrap.
+
+-   [Core Maintainers](#core-maintainers)
 -   [Thanks](#thanks)
 -   [Continuous Integration](#continuous-integration)
 -   [Code Formatting](#code-formatting)
 -   [Test](#test)
 -   [Publishing](#publishing)
+
+## Core Maintainers
+
+-   [Daniel Tedman](https://github.com/dbtedman)
 
 ## Thanks
 
@@ -31,6 +38,8 @@ yarn test
 ```
 
 ## Publishing
+
+> Publishing new releases is completed by the [Core Maintainers](#core-maintainers).
 
 Update `CHANGELOG.md` and `package.json` with details on the updated release version.
 

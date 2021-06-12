@@ -1,7 +1,5 @@
 # [PostCSS Prefix Wrap](https://danieltedman.com/my-work/postcss-prefixwrap)
 
-✅ Supports PostCSS v7 or v8
-
 [![CI Build Test](https://github.com/dbtedman/postcss-prefixwrap/workflows/ci/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=ci)
 [![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
 [![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
@@ -9,7 +7,13 @@
 [![Package Size](https://badgen.net/bundlephobia/min/postcss-prefixwrap)](https://bundlephobia.com/package/postcss-prefixwrap)
 [![Dependency Count](https://badgen.net/bundlephobia/dependency-count/postcss-prefixwrap)](https://bundlephobia.com/package/postcss-prefixwrap)
 
-A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent elements in a page.
+A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
+elements in a page.
+
+| Supports | Versions            |
+| :------- | :------------------ |
+| NodeJS   | `v12`, `v14`, `v16` |
+| PostCSS  | `v7`, `v8`          |
 
 -   [How to use this plugin?](#how-to-use-this-plugin)
 -   [What options does it have?](#what-options-does-it-have)
@@ -23,17 +27,11 @@ A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles 
 
 ### Install
 
-Using [Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap)
-
-```bash
-yarn add postcss-prefixwrap --dev --exact
-```
-
-Using [NPM](https://www.npmjs.com/package/postcss-prefixwrap)
-
-```bash
-npm install postcss-prefixwrap --save-dev --save-exact
-```
+| Package Manager                                           | Command                                                  |
+| :-------------------------------------------------------- | :------------------------------------------------------- |
+| [NPM](https://www.npmjs.com/package/postcss-prefixwrap)   | `npm install postcss-prefixwrap --save-dev --save-exact` |
+| [PNPM](https://pnpm.io)                                   | `pnpm add postcss-prefixwrap --save-dev --save-exact`    |
+| [Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap) | `yarn add postcss-prefixwrap --dev --exact`              |
 
 ### Configure
 
@@ -110,7 +108,8 @@ PrefixWrap(".my-custom-wrap", {
 
 ### Prefix Root Tags
 
-You may want root tags, like `body` and `html` to be converted to classes, then prefixed, this is enabled using the `prefixRootTags` option.
+You may want root tags, like `body` and `html` to be converted to classes, then prefixed, this is enabled using
+the `prefixRootTags` option.
 
 ```javascript
 PrefixWrap(".my-container", {
@@ -118,11 +117,13 @@ PrefixWrap(".my-container", {
 });
 ```
 
-With this option, a selector like `html` will be converted to `.my-container .html`, rather than the default `.my-container`.
+With this option, a selector like `html` will be converted to `.my-container .html`, rather than the
+default `.my-container`.
 
 ### File Whitelist
 
-In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files. This is done using the `whitelist` option.
+In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files. This is done using the `whitelist`
+option.
 
 ```javascript
 PrefixWrap(".my-custom-wrap", {
@@ -132,7 +133,8 @@ PrefixWrap(".my-custom-wrap", {
 
 ### File Blacklist
 
-In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS files. This is done using the `blacklist` option.
+In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS files. This is done using the `blacklist`
+option.
 
 > If `whitelist` option is also included, `blacklist` will be ignored.
 
@@ -148,7 +150,8 @@ Read our [Contributing Guide](CONTRIBUTING.md) to learn more about how to contri
 
 ## Is this project secure?
 
-Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this plugin.
+Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this
+plugin.
 
 ## License
 
