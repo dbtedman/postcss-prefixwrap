@@ -23,7 +23,7 @@ jobs:
         # requirements from the TypeScript config.
         # https://nodejs.org/en/about/releases/
         # https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
-        node-version: ["10.x", "12.x", "14.x", "16.x"]
+        node-version: ["12.x", "14.x", "16.x"]
 
     steps:
       - uses: "actions/checkout@v1"
