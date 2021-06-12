@@ -12,8 +12,8 @@
     },
     "sourceMap": false,
     "strict": true,
-    "target": "ES2018",
-    "lib": ["es2018"],
+    "target": "ES2019",
+    "lib": ["ES2019"],
     "declaration": true
   },
   "include": ["./src/**/*"]
