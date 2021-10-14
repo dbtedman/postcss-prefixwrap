@@ -1,6 +1,14 @@
 # [PostCSS Prefix Wrap](./README.md) // Changelog
 
-Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
+Releases ordered so that the most recent are displayed at the top, with the currently being developed release at the
+top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
+can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
+
+## [1.25.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.25.0)
+
+### 🔧 Maintenance
+
+-   Dependency Updates
 
 ## [1.24.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.24.0)
 
@@ -59,7 +67,8 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 
 ### 🐛 Bug Fixes
 
--   [[107]](https://github.com/dbtedman/postcss-prefixwrap/pull/107) Fix relative path issue `Cannot find module 'PostCSSPrefixWrap'`
+-   [[107]](https://github.com/dbtedman/postcss-prefixwrap/pull/107) Fix relative path
+    issue `Cannot find module 'PostCSSPrefixWrap'`
 
 ## [1.18.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.18.0)
 
@@ -194,11 +203,13 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 
 ### 💡 Features and Improvements
 
--   [[22]](https://github.com/dbtedman/postcss-prefixwrap/pull/22) Implement a more robust `@keyframes` detection, preserving `from` and `to` inside `@keyframes`
+-   [[22]](https://github.com/dbtedman/postcss-prefixwrap/pull/22) Implement a more robust `@keyframes` detection,
+    preserving `from` and `to` inside `@keyframes`
 
 ### 🐛 Bug Fixes
 
--   [[23]](https://github.com/dbtedman/postcss-prefixwrap/pull/23) Stop ESLint from searching for config files in parent folders
+-   [[23]](https://github.com/dbtedman/postcss-prefixwrap/pull/23) Stop ESLint from searching for config files in parent
+    folders
 
 ## [1.2.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.2.0)
 
@@ -216,7 +227,8 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 
 ### 🐛 Bug Fixes
 
--   [[6]](https://github.com/dbtedman/postcss-prefixwrap/issues/6) Selectors containing the word "body" or "html" treated as root
+-   [[6]](https://github.com/dbtedman/postcss-prefixwrap/issues/6) Selectors containing the word "body" or "html" treated
+    as root
 
 ## [1.1.2](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.1.2)
 

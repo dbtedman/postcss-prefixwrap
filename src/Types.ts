@@ -1,7 +1,5 @@
 import { PostCSSPrefixWrapOptions } from "PostCSSPrefixWrap";
 
-// TODO: These types are incomplete for our needs
-
 export interface PostCSSInput {
   file?: string;
 }
