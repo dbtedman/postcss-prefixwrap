@@ -54,7 +54,7 @@ Our test suite contains the following kinds of tests:
 > ⚠️ Publishing new releases can only be completed by the [Core Maintainers](#core-maintainers).
 
 1. Update `CHANGELOG.md` and `package.json` with details on the updated release version.
-2. Commit these changes, and merge them into master via a pull request.
+2. Commit these changes, and merge them into main via a pull request.
 3. Then [Publish a new release](https://github.com/dbtedman/postcss-prefixwrap/releases/new) to trigger publishing a new version of this package.
 4. GitHub will then trigger the **release** pipeline to publish the release to NPM.
 5. [Core Maintainers](#core-maintainers) will receive a notification from NPM when the package has been published.
