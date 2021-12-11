@@ -2,9 +2,6 @@
 name: "ci"
 
 on:
-  schedule:
-    # 11pm UTC (9am Brisbane)
-    - cron: "0 23 * * *"
   pull_request: {}
   push:
     branches:
@@ -23,7 +20,7 @@ jobs:
         # requirements from the TypeScript config.
         # https://nodejs.org/en/about/releases/
         # https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
-        node-version: ["12.x", "14.x", "16.x"]
+        node-version: ["12.x", "14.x", "16.x", "17.x"]
 
     steps:
       - uses: "actions/checkout@v1"
