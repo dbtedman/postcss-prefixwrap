@@ -21,14 +21,18 @@ jobs:
         with:
           node-version: "14.x"
 
+      - uses: "pnpm/action-setup@v2.0.1"
+        with:
+          version: "latest"
+
       - name: "Install"
-        run: "yarn install --no-audit"
+        run: "pnpm install"
 
       - name: "Build"
-        run: "yarn clean && yarn build"
+        run: "pnpm run clean && pnpm run build"
 
       - name: "Verify"
-        run: "yarn lint && yarn test"
+        run: "pnpm run lint && pnpm run test"
 
       - name: "Release"
-        run: "yarn publish --not-interactive"
+        run: "pnpm publish --not-interactive"

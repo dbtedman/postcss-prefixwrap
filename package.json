@@ -28,8 +28,8 @@
   "scripts": {
     "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance && rm -rf ./build/integration",
     "clean": "rm -rf ./build/",
-    "format": "sort-package-json && prettier './**/*.{md,yml,yaml,json,ts,js}' --write && yarn eslint --fix . --ext .js,.ts",
-    "lint": "sort-package-json --check && prettier './**/*.{md,yml,yaml,json,ts,js}' --check && yarn eslint . --ext .js,.ts",
+    "format": "sort-package-json && prettier './**/*.{md,yml,yaml,json,ts,js}' --write && eslint --fix . --ext .js,.ts",
+    "lint": "sort-package-json --check && prettier './**/*.{md,yml,yaml,json,ts,js}' --check & eslint . --ext .js,.ts",
     "test": "jest --coverage"
   },
   "devDependencies": {

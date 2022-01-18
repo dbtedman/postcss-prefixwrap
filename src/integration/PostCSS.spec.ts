@@ -16,7 +16,7 @@ describe("PostCSS", () => {
     // Publish the plugin locally (without uploading to registry), then extract the files
     // so that we can load them into our tests.
     execSync(
-      "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
+      "pnpm run build && pnpm run pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
       {
         stdio: "pipe",
       }
