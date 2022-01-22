@@ -15,3 +15,6 @@
 
 # Don't commit any log files
 *.log
+
+# Don't commit IDE configuration
+/.idea
