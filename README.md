@@ -10,10 +10,10 @@
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
 elements in a page.
 
-| Supports | Versions            |
-| :------- | :------------------ |
-| NodeJS   | `v12`, `v14`, `v16` |
-| PostCSS  | `v7`, `v8`          |
+| Supports | Versions                   |
+| :------- | :------------------------- |
+| NodeJS   | `v12`, `v14`, `v16`, `v17` |
+| PostCSS  | `v7`, `v8`                 |
 
 -   [How to use this plugin?](#how-to-use-this-plugin)
 -   [What options does it have?](#what-options-does-it-have)
