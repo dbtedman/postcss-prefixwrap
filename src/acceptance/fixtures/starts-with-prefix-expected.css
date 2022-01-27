@@ -1,0 +1,27 @@
+.te p {
+  color: #ff0000;
+}
+
+.te .test-4 {
+  color: #ff0000;
+}
+
+.te .test-4, .te .test-5 {
+  color: #ff0000;
+}
+
+.te .test-4, .te .other {
+  color: #ff0000;
+}
+
+.te h1.test-4, .te .test-5 {
+  color: #ff0000;
+}
+
+.te .not-test-4 {
+  color: #ff0000;
+}
+
+.te .other {
+  color: #ff0000;
+}
