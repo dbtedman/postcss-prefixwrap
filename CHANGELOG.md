@@ -8,7 +8,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 🐛 Bug Fixes
 
-- [[146]](https://github.com/dbtedman/postcss-prefixwrap/issues/146) Fix Rule not wrapped when the first selector starts with the prefix
+-   [[146]](https://github.com/dbtedman/postcss-prefixwrap/issues/146) Fix Rule not wrapped when the first selector starts with the prefix
 
 ## [1.27.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.27.0)
 
