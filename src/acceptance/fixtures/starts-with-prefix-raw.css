@@ -1,0 +1,27 @@
+p {
+  color: #ff0000;
+}
+
+.test-4 {
+  color: #ff0000;
+}
+
+.test-4, .test-5 {
+  color: #ff0000;
+}
+
+.test-4, .other {
+  color: #ff0000;
+}
+
+h1.test-4, .test-5 {
+  color: #ff0000;
+}
+
+.not-test-4 {
+  color: #ff0000;
+}
+
+.other {
+  color: #ff0000;
+}
