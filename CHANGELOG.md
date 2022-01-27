@@ -4,13 +4,19 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
-## 🚧 [1.27.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.27.0)
+## [1.28.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.28.0)
+
+### 🐛 Bug Fixes
+
+- [[146]](https://github.com/dbtedman/postcss-prefixwrap/issues/146) Fix Rule not wrapped when the first selector starts with the prefix
+
+## [1.27.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.27.0)
 
 ### 🔧 Maintenance
 
 -   Dependency Updates
 
-## 🚧 [1.26.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.26.0)
+## [1.26.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.26.0)
 
 ### 🔧 Maintenance
 

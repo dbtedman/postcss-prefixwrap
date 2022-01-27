@@ -15,6 +15,15 @@ describe("Plugin", () => {
     Assert.strictEqual(plugin.cssRuleMatchesPrefixSelector(cssRule), true);
   });
 
+  it("Plugin.cssRuleMatchesPrefixSelector() correctly ignores selector that contains our prefix selector", () => {
+    const plugin = new PostCSSPrefixWrap(prefixSelector);
+    const cssRule = PostCSS.rule({
+      selector: `${prefixSelector}something`,
+    });
+
+    Assert.strictEqual(plugin.cssRuleMatchesPrefixSelector(cssRule), false);
+  });
+
   it("Plugin.cssRuleMatchesPrefixSelector() correctly ignores another Selector", () => {
     const plugin = new PostCSSPrefixWrap(prefixSelector);
     const selector = ".not-my-custom-wrap";

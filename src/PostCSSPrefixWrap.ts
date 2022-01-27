@@ -22,7 +22,7 @@ export default class PostCSSPrefixWrap {
     this.blacklist = options.blacklist ?? [];
     this.ignoredSelectors = options.ignoredSelectors ?? [];
     // eslint-disable-next-line security-node/non-literal-reg-expr
-    this.isPrefixSelector = new RegExp(`^s*${prefixSelector}.*$`);
+    this.isPrefixSelector = new RegExp(`^${prefixSelector}$`);
     this.prefixRootTags = options.prefixRootTags ?? false;
     this.prefixSelector = prefixSelector;
     this.whitelist = options.whitelist ?? [];
@@ -68,17 +68,24 @@ export default class PostCSSPrefixWrap {
     return cleanSelector.replace(/^(body|html)/, this.prefixSelector);
   }
 
-  cssRuleMatchesPrefixSelector(cssRule: PostCSSRule): boolean {
-    return cssRule.selector.match(this.isPrefixSelector) !== null;
+  cssRuleMatchesPrefixSelector(cssRule: { selector: string }): boolean {
+    return this.isPrefixSelector.test(cssRule.selector);
   }
 
   prefixWrapCSSRule(cssRule: PostCSSRule): void {
-    if (this.cssRuleMatchesPrefixSelector(cssRule)) {
+    // Check each rule to see if it exactly matches our prefix selector, when
+    // this happens, don't try to prefix that selector.
+    const rules = cssRule.selector
+      .split(",")
+      .filter(
+        (selector) => !this.cssRuleMatchesPrefixSelector({ selector: selector })
+      );
+
+    if (rules.length === 0) {
       return;
     }
 
-    cssRule.selector = cssRule.selector
-      .split(",")
+    cssRule.selector = rules
       .map((cssSelector) => this.prefixWrapCSSSelector(cssSelector, cssRule))
       .filter(Selector.isValid)
       .join(", ");
