@@ -1,11 +1,7 @@
 # [PostCSS Prefix Wrap](https://danieltedman.com/my-work/postcss-prefixwrap)
 
-[![CI Build Test](https://github.com/dbtedman/postcss-prefixwrap/workflows/ci/badge.svg)](https://github.com/dbtedman/postcss-prefixwrap/actions?workflow=ci)
-[![Package Downloads (Weekly)](https://badgen.net/npm/dw/postcss-prefixwrap?label=downloads&style=flat)](https://www.npmjs.com/package/postcss-prefixwrap)
-[![Known Vulnerabilities](https://snyk.io/test/github/dbtedman/postcss-prefixwrap/badge.svg)](https://snyk.io/test/github/dbtedman/postcss-prefixwrap)
-[![Package Health](https://snyk.io/advisor/npm-package/postcss-prefixwrap/badge.svg)](https://snyk.io/advisor/npm-package/postcss-prefixwrap)
-[![Package Size](https://badgen.net/bundlephobia/min/postcss-prefixwrap)](https://bundlephobia.com/package/postcss-prefixwrap)
-[![Dependency Count](https://badgen.net/bundlephobia/dependency-count/postcss-prefixwrap)](https://bundlephobia.com/package/postcss-prefixwrap)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/ci?style=for-the-badge&logo=github)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/cy.yml?query=branch%3Amain)
+[![NPM Downloads Per Week](https://img.shields.io/npm/dw/postcss-prefixwrap?color=blue&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/postcss-prefixwrap)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
 elements in a page.
