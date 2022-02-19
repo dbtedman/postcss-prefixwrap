@@ -8,6 +8,7 @@ export interface PostCSSPrefixWrapOptions {
   prefixRootTags?: boolean;
   whitelist?: Array<string>;
   blacklist?: Array<string>;
+  nested?: string;
 }
 
 export default class PostCSSPrefixWrap {
@@ -17,6 +18,7 @@ export default class PostCSSPrefixWrap {
   private readonly prefixRootTags: boolean;
   private readonly prefixSelector: string;
   private readonly whitelist: Array<string>;
+  private readonly nested: string | null;
 
   constructor(prefixSelector: string, options: PostCSSPrefixWrapOptions = {}) {
     this.blacklist = options.blacklist ?? [];
@@ -26,6 +28,7 @@ export default class PostCSSPrefixWrap {
     this.prefixRootTags = options.prefixRootTags ?? false;
     this.prefixSelector = prefixSelector;
     this.whitelist = options.whitelist ?? [];
+    this.nested = options.nested ?? null;
   }
 
   prefixWrapCSSSelector(
@@ -36,6 +39,11 @@ export default class PostCSSPrefixWrap {
 
     if (cleanSelector === "") {
       return null;
+    }
+
+    // Don't prefix nested selected.
+    if (this.nested !== null && cleanSelector.startsWith(this.nested, 0)) {
+      return cleanSelector;
     }
 
     // Do not prefix keyframes rules.
