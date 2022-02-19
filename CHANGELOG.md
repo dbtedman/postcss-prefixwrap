@@ -4,6 +4,12 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## [1.29.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.29.0)
+
+### 💡 Features and Improvements
+
+-   [[154]](https://github.com/dbtedman/postcss-prefixwrap/issues/154) Add support for nested selectors with new configuration option
+
 ## [1.28.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.28.1)
 
 ### 🐛 Bug Fixes

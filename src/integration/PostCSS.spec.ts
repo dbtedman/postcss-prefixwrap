@@ -1,5 +1,6 @@
 import postcss from "postcss";
 import postcss7 from "postcss7";
+import postcssNested from "postcss-nested";
 import { execSync } from "child_process";
 import fs from "fs";
 import * as path from "path";
@@ -79,6 +80,29 @@ describe("PostCSS", () => {
       from: "example.css",
     });
     expect(result.css).toEqual(prefixed);
+  });
+
+  it("postcss-prefixwrap and postcss-nested play well together (#154)", async () => {
+    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const packageJSON = JSON.parse(content.toString());
+    const packagePath = path.join(
+      __dirname,
+      "../../package/",
+      packageJSON.main
+    );
+    // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
+    const postCSSPrefixWrap = require(packagePath);
+
+    const plugin = postCSSPrefixWrap(".my-custom-wrap", { nested: "&" });
+    const nestedPlugin = postcssNested();
+
+    const nestedSource = ".demo { &--lite { color:red; } }";
+    const nestedPrefixed = ".my-custom-wrap .demo--lite { color:red; }";
+
+    const result = await postcss([nestedPlugin, plugin]).process(nestedSource, {
+      from: "example.css",
+    });
+    expect(result.css).toEqual(nestedPrefixed);
   });
 
   afterAll(() => {

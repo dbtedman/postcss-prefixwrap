@@ -84,6 +84,7 @@ body {
 -   [Prefix Root Tags](#prefix-root-tags)
 -   [File Whitelist](#file-whitelist)
 -   [File Blacklist](#file-blacklist)
+-   [Nesting](#nesting)
 
 ### Minimal
 
@@ -139,6 +140,42 @@ option.
 PrefixWrap(".my-custom-wrap", {
     blacklist: ["colours.css"],
 });
+```
+
+### Nesting
+
+When writing nested css rules, and using a plugin like [postcss-nested](https://www.npmjs.com/package/postcss-nested) to compile them, you will want to ensure that the nested selectors are not prefixed. This is done by defining the `nested` property and setting the value to the selector prefix being used to represent nesting, this is most likely going to be `"&"`.
+
+```javascript
+PrefixWrap(".my-custom-wrap", {
+    nested: "&",
+});
+```
+
+As an example, in the following CSS that contains nested selectors.
+
+```scss
+.demo {
+    &--lite {
+        color: red;
+    }
+}
+```
+
+**❌ Without** the `nested` configuration option defined:
+
+```css
+.root .root .demo--lite {
+    color: red;
+}
+```
+
+**✅ With** the `tested` configuration defined:
+
+```css
+.root .demo--lite {
+    color: red;
+}
 ```
 
 ## How to contribute?

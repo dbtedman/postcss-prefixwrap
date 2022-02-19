@@ -1,6 +1,6 @@
 {
   "name": "postcss-prefixwrap",
-  "version": "1.28.1",
+  "version": "1.29.0",
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "keywords": [
     "css",
@@ -46,6 +46,7 @@
     "eslint-plugin-security-node": "1.1.0",
     "jest": "27.4.7",
     "postcss": "8.4.5",
+    "postcss-nested": "5.0.6",
     "postcss7": "npm:postcss@7.0.34",
     "prettier": "2.5.1",
     "sort-package-json": "1.53.1",
