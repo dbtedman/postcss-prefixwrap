@@ -165,7 +165,7 @@ As an example, in the following CSS that contains nested selectors.
 **❌ Without** the `nested` configuration option defined:
 
 ```css
-.root .root .demo--lite {
+.my-custom-wrap .my-custom-wrap .demo--lite {
     color: red;
 }
 ```
@@ -173,7 +173,7 @@ As an example, in the following CSS that contains nested selectors.
 **✅ With** the `tested` configuration defined:
 
 ```css
-.root .demo--lite {
+.my-custom-wrap .demo--lite {
     color: red;
 }
 ```
