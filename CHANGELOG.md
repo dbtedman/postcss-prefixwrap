@@ -8,7 +8,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 🔧 Maintenance
 
-- Dependency Updates
+-   Dependency Updates
 
 ## [1.29.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.29.0)
 
