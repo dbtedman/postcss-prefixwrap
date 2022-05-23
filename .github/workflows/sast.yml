@@ -12,9 +12,9 @@ on:
 jobs:
   snyk:
     runs-on: "ubuntu-latest"
-#    # Snyk will already run on PRs as its own check, only looking at the changed
-#    # dependencies instead of unchanged ones as this job will do.
-#    if: github.event_name != 'pull_request'
+    # Snyk will already run on PRs as its own check, only looking at the changed
+    # dependencies instead of unchanged ones as this job will do.
+    if: github.event_name != 'pull_request'
 
     steps:
       - uses: "actions/checkout@v3"
