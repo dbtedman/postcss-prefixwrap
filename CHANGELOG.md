@@ -9,6 +9,8 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 💡 Features and Improvements
 
 -   Snyk + CodeQL SAST
+-   Switch to PNPM from Yarn
+-   Introduce Makefile for common commands
 
 ## [1.29.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.29.1)
 
