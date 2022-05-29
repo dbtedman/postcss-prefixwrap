@@ -44,6 +44,9 @@ jobs:
       - uses: "github/codeql-action/init@v2"
         with:
           languages: "javascript"
+      - uses: "pnpm/action-setup@v2.0.1"
+        with:
+          version: "latest"
       - uses: "actions/setup-node@v2"
         with:
           node-version-file: ".nvmrc"

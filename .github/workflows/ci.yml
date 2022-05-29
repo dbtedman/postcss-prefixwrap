@@ -16,11 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        # Includes LTS + Latest, along with earlier versions that map to minimum
-        # requirements from the TypeScript config.
-        # https://nodejs.org/en/about/releases/
-        # https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
-        node-version: ["12.x", "14.x", "16.x", "18.x"]
+        node-version: ["14.x", "16.x", "18.x"]
 
     steps:
       - uses: "actions/checkout@v3"
