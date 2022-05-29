@@ -12,7 +12,7 @@ format:
 	@pnpm run format
 
 build:
-	@pnpm clean && pnpm build
+	@pnpm run clean && pnpm run build
 
 test:
 	@pnpm run test
@@ -21,7 +21,7 @@ publish:
 	@pnpm publish
 
 local_publish:
-	@pnpm build && pnpm pack && tar -xvzf postcss-prefixwrap*.tgz && rm postcss-prefixwrap*.tgz
+	@pnpm run build && pnpm pack && tar -xvzf postcss-prefixwrap*.tgz && rm postcss-prefixwrap*.tgz
 
 local_cleanup:
 	@rm -rf ./package
