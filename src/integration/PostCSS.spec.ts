@@ -16,12 +16,9 @@ describe("PostCSS", () => {
   beforeAll(() => {
     // Publish the plugin locally (without uploading to registry), then extract the files
     // so that we can load them into our tests.
-    execSync(
-      "yarn build && yarn pack --filename=pack.tgz && tar -xvzf pack.tgz && rm pack.tgz",
-      {
-        stdio: "pipe",
-      }
-    );
+    execSync("make local_publish", {
+      stdio: "pipe",
+    });
   });
 
   it("defines main file that exists", () => {
@@ -107,7 +104,7 @@ describe("PostCSS", () => {
 
   afterAll(() => {
     // Cleanup locally published files.
-    execSync("rm -rf ./package", {
+    execSync("make local_cleanup", {
       stdio: "pipe",
     });
   });

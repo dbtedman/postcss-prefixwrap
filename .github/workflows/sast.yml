@@ -24,9 +24,9 @@ jobs:
       - uses: "actions/setup-node@v2"
         with:
           node-version-file: ".nvmrc"
-          cache: "yarn"
+          cache: "pnpm"
       - uses: "snyk/actions/setup@master"
-      - run: "yarn install --no-audit"
+      - run: "make install"
       - run: "snyk test --all-projects"
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -47,6 +47,6 @@ jobs:
       - uses: "actions/setup-node@v2"
         with:
           node-version-file: ".nvmrc"
-          cache: "yarn"
-      - run: "yarn install --no-audit"
+          cache: "pnpm"
+      - run: "make install"
       - uses: "github/codeql-action/analyze@v2"

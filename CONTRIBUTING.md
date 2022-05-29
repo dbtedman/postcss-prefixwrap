@@ -26,13 +26,13 @@ Provided by [GitHub Actions](https://github.com/dbtedman/postcss-prefixwrap/acti
 Code formatting support provided by [Prettier](https://prettier.io/).
 
 ```shell
-yarn format
+make format
 ```
 
 Alternatively, you can check if the code is already formatted correctly by executing the lint job instead.
 
 ```shell
-yarn lint
+make lint
 ```
 
 ## Test
@@ -40,7 +40,7 @@ yarn lint
 Tested using [Jest](https://jestjs.io/), using test cases defined in the `src/` directory matching `*.spec.ts` pattern.
 
 ```shell
-yarn test
+make test
 ```
 
 Our test suite contains the following kinds of tests:
