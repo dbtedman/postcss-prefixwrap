@@ -5,10 +5,6 @@ on:
   release:
     types: ["published"]
 
-env:
-  CI: true
-  NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
-
 jobs:
   run:
     runs-on: "ubuntu-latest"
@@ -26,4 +22,7 @@ jobs:
       - run: "make build"
       - run: "make lint"
       - run: "make test"
+      - run: "pnpm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN"
+        env:
+          NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
       - run: "make publish"
