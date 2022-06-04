@@ -73,7 +73,7 @@ export default class PostCSSPrefixWrap {
 
     // HTML and Body elements cannot be contained within our container so lets
     // extract their styles.
-    return cleanSelector.replace(/^(body|html)/, this.prefixSelector);
+    return cleanSelector.replace(/^(body|html|:root)/, this.prefixSelector);
   }
 
   cssRuleMatchesPrefixSelector(cssRule: { selector: string }): boolean {

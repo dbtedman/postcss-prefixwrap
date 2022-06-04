@@ -16,6 +16,7 @@ describe("Selector", () => {
   it("Selector.isNotRootTag() is true for root tags", () => {
     Assert.strictEqual(Selector.isNotRootTag("html"), false);
     Assert.strictEqual(Selector.isNotRootTag("body"), false);
+    Assert.strictEqual(Selector.isNotRootTag(":root"), false);
   });
 
   it("Selector.isNotRootTag() is false for non root tags", () => {
