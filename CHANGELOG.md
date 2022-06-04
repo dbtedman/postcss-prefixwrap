@@ -4,13 +4,17 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
-## In Development
+## [1.30.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.30.0)
 
 ### 💡 Features and Improvements
 
 -   Snyk + CodeQL SAST
 -   Switch to PNPM from Yarn
 -   Introduce Makefile for common commands
+
+### 🐛 Bug Fixes
+
+-   `:root` missing from list of root tags
 
 ## [1.29.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.29.1)
 

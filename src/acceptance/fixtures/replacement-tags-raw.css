@@ -7,6 +7,10 @@ body {
   color: green;
 }
 
+:root {
+  background-color: orange;
+}
+
 p,
 body,
 img {
