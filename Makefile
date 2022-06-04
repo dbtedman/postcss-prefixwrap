@@ -18,7 +18,7 @@ test:
 	@pnpm run test
 
 publish:
-	@pnpm publish
+	@pnpm publish --no-git-checks
 
 local_publish:
 	@pnpm run build && pnpm pack && tar -xvzf postcss-prefixwrap*.tgz && rm postcss-prefixwrap*.tgz
