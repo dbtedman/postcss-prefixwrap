@@ -4,6 +4,9 @@ import postcssNested from "postcss-nested";
 import { execSync } from "child_process";
 import fs from "fs";
 import * as path from "path";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import less from "less";
 
 // The purpose of this collection of tests is to verify that our published plugin can
 // be loaded successfully into postcss and process some trivial css. These tests intend
@@ -100,6 +103,36 @@ describe("PostCSS", () => {
       from: "example.css",
     });
     expect(result.css).toEqual(nestedPrefixed);
+  });
+
+  it("postcss-prefixwrap and less play well together (#167)", async () => {
+    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const packageJSON = JSON.parse(content.toString());
+    const packagePath = path.join(
+      __dirname,
+      "../../package/",
+      packageJSON.main
+    );
+    // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
+    const postCSSPrefixWrap = require(packagePath);
+
+    const plugin = postCSSPrefixWrap(".my-custom-wrap > :not(.something)", {});
+
+    const source = ".Something{" +
+      ".other{" +
+      "  width: 100%; }" +
+      "}";
+    const { css } = await less.render(source);
+
+    const expected =
+      ".my-custom-wrap > :not(.something) .Something .other {\n" +
+      "  width: 100%;\n" +
+      "}\n";
+
+    const result = await postcss([plugin]).process(css, {
+      from: "example.css",
+    });
+    expect(result.css).toEqual(expected);
   });
 
   afterAll(() => {

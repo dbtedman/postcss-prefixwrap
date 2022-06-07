@@ -46,6 +46,7 @@
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-security-node": "1.1.1",
     "jest": "28.1.0",
+    "less": "4.1.2",
     "postcss": "8.4.14",
     "postcss-nested": "5.0.6",
     "postcss7": "npm:postcss@7.0.34",
