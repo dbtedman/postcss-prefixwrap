@@ -118,10 +118,7 @@ describe("PostCSS", () => {
 
     const plugin = postCSSPrefixWrap(".my-custom-wrap > :not(.something)", {});
 
-    const source = ".Something{" +
-      ".other{" +
-      "  width: 100%; }" +
-      "}";
+    const source = ".Something{" + ".other{" + "  width: 100%; }" + "}";
     const { css } = await less.render(source);
 
     const expected =
