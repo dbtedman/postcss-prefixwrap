@@ -25,3 +25,6 @@ local_publish:
 
 local_cleanup:
 	@rm -rf ./package
+
+update_and_verify:
+	@pnpm update && make && ncu --reject postcss7
