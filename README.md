@@ -4,16 +4,14 @@
 [![SAST GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
 [![Release GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/release?style=for-the-badge&logo=github&label=release)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/release.yml)
 [![NPM Downloads Per Week](https://img.shields.io/npm/dw/postcss-prefixwrap?color=blue&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/postcss-prefixwrap)
-![language: typescript](https://img.shields.io/badge/language-typescript-blue.svg?style=for-the-badge)
-[![MIT License](https://img.shields.io/github/license/dbtedman/postcss-prefixwrap?color=orange&style=for-the-badge)](https://github.com/dbtedman/postcss-prefixwrap/blob/main/LICENSE.md)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
 elements in a page.
 
-| Supports | Versions            |
-| :------- | :------------------ |
-| NodeJS   | `v14`, `v16`, `v17` |
-| PostCSS  | `v7`, `v8`          |
+| Supports | Versions                          |
+| :------- | :-------------------------------- |
+| NodeJS   | `v14`, `v15`, `v16`, `v17`, `v18` |
+| PostCSS  | `v7`, `v8`                        |
 
 -   [How to use this plugin?](#how-to-use-this-plugin)
 -   [What options does it have?](#what-options-does-it-have)
