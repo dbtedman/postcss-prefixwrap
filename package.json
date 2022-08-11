@@ -27,10 +27,10 @@
     "build"
   ],
   "scripts": {
-    "build": "tsc --build ./tsconfig.json && rm -rf ./build/{**/*,*}.spec.js && rm -rf ./build/acceptance && rm -rf ./build/integration",
-    "clean": "rm -rf ./build/",
-    "format": "sort-package-json && prettier './**/*.{md,yml,yaml,json,ts,js}' --write && pnpm eslint --fix . --ext .js,.ts",
-    "lint": "sort-package-json --check && prettier './**/*.{md,yml,yaml,json,ts,js}' --check && pnpm eslint . --ext .js,.ts",
+    "build": "tsc --build tsconfig.json && node automation-post-compile.js",
+    "clean": "node automation-clean.js",
+    "format": "sort-package-json && prettier . --write && pnpm eslint --fix . --ext .js,.ts",
+    "lint": "sort-package-json --check && prettier . --check && pnpm eslint . --ext .js,.ts",
     "test": "jest"
   },
   "devDependencies": {
@@ -45,6 +45,7 @@
     "eslint-plugin-jest": "26.7.0",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-security-node": "1.1.1",
+    "glob": "8.0.3",
     "jest": "28.1.3",
     "less": "4.1.3",
     "postcss": "8.4.14",
