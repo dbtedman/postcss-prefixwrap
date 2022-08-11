@@ -8,7 +8,7 @@ on:
       - "main"
 
 jobs:
-  run:
+  linux:
     runs-on: "ubuntu-latest"
 
     strategy:
@@ -24,6 +24,23 @@ jobs:
         uses: "actions/setup-node@v1"
         with:
           node-version: "${{ matrix.node-version }}"
+          cache: "pnpm"
+      - run: "make install"
+      - run: "make lint"
+      - run: "make test"
+      - run: "make build"
+
+  windows:
+    runs-on: "windows-latest"
+
+    steps:
+      - uses: "actions/checkout@v3"
+      - uses: "pnpm/action-setup@v2.0.1"
+        with:
+          version: "latest"
+      - uses: "actions/setup-node@v2"
+        with:
+          node-version-file: ".nvmrc"
           cache: "pnpm"
       - run: "make install"
       - run: "make lint"

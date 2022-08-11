@@ -125,6 +125,8 @@ default `.my-container`.
 In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files. This is done using the `whitelist`
 option.
 
+> ⚠️ **Please note** that each item in the `whitelist` is parsed as a regular expression. This will impact how file paths are matched when you need to support both Windows and Unix like operating systems which use different path separators.
+
 ```javascript
 PrefixWrap(".my-custom-wrap", {
     whitelist: ["editor.css"],
@@ -135,6 +137,8 @@ PrefixWrap(".my-custom-wrap", {
 
 In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS files. This is done using the `blacklist`
 option.
+
+> ⚠️ **Please note** that each item in the `blacklist` is parsed as a regular expression. This will impact how file paths are matched when you need to support both Windows and Unix like operating systems which use different path separators.
 
 > If `whitelist` option is also included, `blacklist` will be ignored.
 
