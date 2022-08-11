@@ -15,6 +15,7 @@ import less from "less";
 describe("PostCSS", () => {
   const source = "p { color: red; }";
   const prefixed = ".my-custom-wrap p { color: red; }";
+  const packageJSONPath = path.join(__dirname, "..", "..", "package.json");
 
   beforeAll(() => {
     // Publish the plugin locally (without uploading to registry), then extract the files
@@ -25,7 +26,7 @@ describe("PostCSS", () => {
   });
 
   it("defines main file that exists", () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const content = fs.readFileSync(packageJSONPath, "utf8");
     const packageJSON = JSON.parse(content.toString());
 
     expect(packageJSON.main).toBeDefined();
@@ -40,7 +41,7 @@ describe("PostCSS", () => {
   });
 
   it("can load main file as postCSS plugin that works", async () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const content = fs.readFileSync(packageJSONPath, "utf8");
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
@@ -59,7 +60,7 @@ describe("PostCSS", () => {
   });
 
   it("can load main file as postCSS 7 plugin that works", async () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const content = fs.readFileSync(packageJSONPath, "utf8");
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
@@ -83,7 +84,7 @@ describe("PostCSS", () => {
   });
 
   it("postcss-prefixwrap and postcss-nested play well together (#154)", async () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const content = fs.readFileSync(packageJSONPath, "utf8");
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
@@ -106,7 +107,7 @@ describe("PostCSS", () => {
   });
 
   it("postcss-prefixwrap and less play well together (#167)", async () => {
-    const content = fs.readFileSync(`${__dirname}/../../package.json`, "utf8");
+    const content = fs.readFileSync(packageJSONPath, "utf8");
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
