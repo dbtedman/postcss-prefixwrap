@@ -44,5 +44,4 @@ jobs:
           cache: "pnpm"
       - run: "make install"
       - run: "make lint"
-      - run: "make test"
       - run: "make build"
