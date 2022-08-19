@@ -8,8 +8,8 @@ describe("Acceptance: Starts with prefix", () => {
   it("does not get confused", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSSSkip,
-      path.join(__dirname, "fixtures", "..", "starts-with-prefix-raw.css"),
-      path.join(__dirname, "fixtures", "..", "starts-with-prefix-expected.css")
+      path.join(__dirname, "fixtures", "starts-with-prefix-raw.css"),
+      path.join(__dirname, "fixtures", "starts-with-prefix-expected.css")
     );
   });
 });

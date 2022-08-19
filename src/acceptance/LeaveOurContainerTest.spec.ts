@@ -8,8 +8,8 @@ describe("Acceptance: Leave Our Container", () => {
   it("leaves selectors that contain our Selector in the left most location", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      path.join(__dirname, "fixtures", "..", "leave-raw.css"),
-      path.join(__dirname, "fixtures", "..", "leave-expected.css")
+      path.join(__dirname, "fixtures", "leave-raw.css"),
+      path.join(__dirname, "fixtures", "leave-expected.css")
     );
   });
 });
