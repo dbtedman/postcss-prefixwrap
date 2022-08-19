@@ -8,8 +8,8 @@ describe("Acceptance: Replacement Prefixing", () => {
   it("replaces global selectors with prefix", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSS,
-      path.join(__dirname, "fixtures", "..", "replacement-tags-raw.css"),
-      path.join(__dirname, "fixtures", "..", "replacement-tags-expected.css")
+      path.join(__dirname, "fixtures", "replacement-tags-raw.css"),
+      path.join(__dirname, "fixtures", "replacement-tags-expected.css")
     );
   });
 });

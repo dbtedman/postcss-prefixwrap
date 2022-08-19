@@ -8,8 +8,8 @@ describe("Acceptance: Prefix html/body tags", () => {
   it("adds prefix to global selectors", () => {
     PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
       postCSSSkip,
-      path.join(__dirname, "fixtures", "..", "leave-body-raw.css"),
-      path.join(__dirname, "fixtures", "..", "leave-body-expected.css")
+      path.join(__dirname, "fixtures", "leave-body-raw.css"),
+      path.join(__dirname, "fixtures", "leave-body-expected.css")
     );
   });
 });
