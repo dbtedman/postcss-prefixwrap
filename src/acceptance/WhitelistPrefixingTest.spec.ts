@@ -4,7 +4,7 @@ import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Whitelist", () => {
   const postCSS = postCSSWithPlugin({
-    whitelist: ["fixtures[\\/]standard-tags-raw.css"],
+    whitelist: ["standard-tags-raw.css"],
   });
 
   it("ignores file not whitelisted", () => {
