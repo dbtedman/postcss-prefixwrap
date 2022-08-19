@@ -33,7 +33,9 @@ describe("PostCSS", () => {
 
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "..",
+      "..",
+      "package",
       packageJSON.main
     );
 
@@ -45,7 +47,9 @@ describe("PostCSS", () => {
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "..",
+      "..",
+      "package",
       packageJSON.main
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
@@ -64,7 +68,9 @@ describe("PostCSS", () => {
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "..",
+      "..",
+      "package",
       packageJSON.main
     );
 
@@ -88,7 +94,9 @@ describe("PostCSS", () => {
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "..",
+      "..",
+      "package",
       packageJSON.main
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
@@ -111,7 +119,9 @@ describe("PostCSS", () => {
     const packageJSON = JSON.parse(content.toString());
     const packagePath = path.join(
       __dirname,
-      "../../package/",
+      "..",
+      "..",
+      "package",
       packageJSON.main
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
