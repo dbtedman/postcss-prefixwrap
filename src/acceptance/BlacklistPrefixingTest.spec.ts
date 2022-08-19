@@ -4,7 +4,7 @@ import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Blacklist", () => {
   const postCSS = postCSSWithPlugin({
-    blacklist: [path.join(__dirname, "fixtures", "standard-classes-raw.css")],
+    blacklist: ["fixtures[\\/]standard-classes-raw.css"],
   });
 
   it("ignores file in blacklist", () => {
