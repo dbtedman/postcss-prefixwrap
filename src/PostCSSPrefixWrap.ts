@@ -23,8 +23,11 @@ export default class PostCSSPrefixWrap {
   constructor(prefixSelector: string, options: PostCSSPrefixWrapOptions = {}) {
     this.blacklist = options.blacklist ?? [];
     this.ignoredSelectors = options.ignoredSelectors ?? [];
+ 
+    const escaped = prefixSelector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
     // eslint-disable-next-line security-node/non-literal-reg-expr
-    this.isPrefixSelector = new RegExp(`^${prefixSelector}$`);
+    this.isPrefixSelector = new RegExp(`^${escaped}$`);
     this.prefixRootTags = options.prefixRootTags ?? false;
     this.prefixSelector = prefixSelector;
     this.whitelist = options.whitelist ?? [];
