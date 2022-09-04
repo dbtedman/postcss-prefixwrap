@@ -30,6 +30,10 @@ jobs:
       - run: "make install"
       - run: "make lint"
       - run: "make test"
+      - uses: "codecov/codecov-action@v3"
+        if: matrix.node-version == "16.x"
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - run: "make build"
 
   windows:
@@ -47,7 +51,4 @@ jobs:
       - run: "make install"
       - run: "make lint"
       - run: "make test"
-      - uses: "codecov/codecov-action@v3"
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
       - run: "make build"
