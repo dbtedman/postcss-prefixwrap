@@ -1,0 +1,17 @@
+/* Ensure works with single tags. */
+.my-custom-selector[id^=my-id-starts-with-] a {
+  color: red;
+}
+
+.my-custom-selector[id^=my-id-starts-with-] p {
+  color: blue;
+}
+
+.my-custom-selector[id^=my-id-starts-with-] h1 {
+  color: green;
+}
+
+/* Ensure works for tags with sudo selectors. */
+.my-custom-selector[id^=my-id-starts-with-] a:hover {
+  text-decoration: underline;
+}
