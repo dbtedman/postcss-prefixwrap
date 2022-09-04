@@ -31,7 +31,7 @@ jobs:
       - run: "make lint"
       - run: "make test"
       - uses: "codecov/codecov-action@v3"
-        if: ${{ matrix.node-version == "16.x" }}
+        if: "contains(matrix.node-version, '16')"
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - run: "make build"
