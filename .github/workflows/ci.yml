@@ -47,4 +47,7 @@ jobs:
       - run: "make install"
       - run: "make lint"
       - run: "make test"
+      - uses: "codecov/codecov-action@v3"
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - run: "make build"
