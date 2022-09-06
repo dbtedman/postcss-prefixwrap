@@ -1,7 +1,7 @@
 import Assert from "assert";
 import PostCSS from "postcss";
 
-import PostCSSPrefixWrap from "./PostCSSPrefixWrap";
+import PostCSSPrefixWrap from "../../../src/plugin/PostCSSPrefixWrap";
 
 describe("Plugin", () => {
   const prefixSelector = ".my-custom-wrap";

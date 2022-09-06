@@ -1,4 +1,4 @@
-import { PostCSSPrefixWrapOptions } from "PostCSSPrefixWrap";
+import { PostCSSPrefixWrapOptions } from "plugin/PostCSSPrefixWrap";
 
 export interface PostCSSInput {
   file?: string;

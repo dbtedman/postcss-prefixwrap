@@ -1,5 +1,5 @@
 # Don't lint fixtures used in testing that must retain current configuration
-/src/acceptance/fixtures/
+/test/acceptance/fixtures/
 
 # Don't lint node_modules
 /node_modules/
