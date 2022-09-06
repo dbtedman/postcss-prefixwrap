@@ -1,4 +1,4 @@
 import postcss from "postcss";
-import indexWrap from "./indexWrap";
+import indexWrap from "./plugin/indexWrap";
 
 export = indexWrap(postcss);

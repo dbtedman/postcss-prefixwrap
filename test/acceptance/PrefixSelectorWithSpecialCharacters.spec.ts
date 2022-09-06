@@ -1,5 +1,5 @@
-import { postCSSWithPlugin } from "acceptance/support/PluginBootstrap";
-import PrefixAssert from "acceptance/support/PrefixAssert";
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
+import PrefixAssert from "../acceptance/support/PrefixAssert";
 import path from "path";
 
 describe("Acceptance: Prefix selector with special characters", () => {

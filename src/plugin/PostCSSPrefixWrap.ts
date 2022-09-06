@@ -1,4 +1,4 @@
-import Selector from "./Selector";
+import Selector from "../internal/domain/Selector";
 import { PostCSSContainer, PostCSSRule } from "Types";
 
 export const PLUGIN_NAME = "postcss-prefixwrap";
