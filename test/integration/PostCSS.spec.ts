@@ -76,9 +76,10 @@ describe("PostCSS", () => {
 
     // Call wrapper directly as we can modify the postcss version provided to it
     // eslint-disable-next-line @typescript-eslint/no-var-requires,security-node/detect-non-literal-require-calls
-    const postCSSPrefixWrap = require(packagePath.replace(
-      "index.js",
-      "indexWrap.js"
+    const postCSSPrefixWrap = require(path.join(
+      packagePath.replace("index.js", ""),
+      "plugin",
+      "PostCSSPlugin.js"
     ))(postcss7);
 
     const plugin = postCSSPrefixWrap(".my-custom-wrap");

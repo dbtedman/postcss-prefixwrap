@@ -1,4 +1,4 @@
-import indexWrap from "../../../src/plugin/indexWrap";
+import indexWrap from "../../../src/plugin/PostCSSPlugin";
 import * as postcss8 from "postcss";
 import * as postcss7 from "postcss7";
 
