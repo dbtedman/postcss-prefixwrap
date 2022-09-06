@@ -34,46 +34,6 @@ describe("Plugin", () => {
     Assert.strictEqual(plugin.cssRuleMatchesPrefixSelector(cssRule), false);
   });
 
-  it("Plugin.prefixWrapCSSRule() leaves prefix Selector alone", () => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector);
-    const cssRule = PostCSS.rule({
-      selector: prefixSelector,
-    });
-
-    plugin.prefixWrapCSSRule(cssRule);
-
-    Assert.strictEqual(cssRule.selector, prefixSelector);
-  });
-
-  it("Plugin.prefixWrapCSSRule() does not change for empty Selector", () => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector);
-    const cssRule = PostCSS.rule({
-      selector: "",
-    });
-
-    plugin.prefixWrapCSSRule(cssRule);
-
-    Assert.strictEqual(cssRule.selector, "");
-  });
-
-  it("Plugin.prefixWrapCSSRule() prefixes non root selectors with prefix Selector", () => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector);
-
-    ["div", "p", "h1"].forEach((selector) => {
-      const parent = PostCSS.root();
-      const cssRule = PostCSS.rule({
-        selector: selector,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        parent: parent,
-      });
-
-      plugin.prefixWrapCSSRule(cssRule);
-
-      Assert.strictEqual(cssRule.selector, `${prefixSelector} ${selector}`);
-    });
-  });
-
   it("handles includeFile with whitelist when missing source input data", () => {
     const plugin = new PostCSSPrefixWrap(prefixSelector, {
       whitelist: [".something"],

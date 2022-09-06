@@ -4,7 +4,8 @@ import Selector from "../../../../src/internal/domain/Selector";
 
 describe("Selector", () => {
   it("Selector.isValid() is true for null Selector", () => {
-    strictEqual(Selector.isValid(null), false);
+    // strictEqual(Selector.isValid(null), false);
+    expect(Selector.isValid(null)).toStrictEqual(false);
   });
 
   it("Selector.clean() removes extra space padding", () => {

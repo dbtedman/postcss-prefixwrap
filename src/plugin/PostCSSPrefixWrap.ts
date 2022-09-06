@@ -1,5 +1,6 @@
 import Selector from "../internal/domain/Selector";
 import { PostCSSContainer, PostCSSRule } from "Types";
+import { prefixWrapCSSRule } from "internal/domain/CSSRuleWrapper";
 
 export const PLUGIN_NAME = "postcss-prefixwrap";
 
@@ -37,6 +38,7 @@ export default class PostCSSPrefixWrap {
     this.nested = options.nested ?? null;
   }
 
+  // TODO: Move to CSSRuleWrapper
   prefixWrapCSSSelector(
     cssSelector: string,
     cssRule: PostCSSRule
@@ -82,27 +84,9 @@ export default class PostCSSPrefixWrap {
     return cleanSelector.replace(/^(body|html|:root)/, this.prefixSelector);
   }
 
+  // TODO: Move to CSSRuleWrapper
   cssRuleMatchesPrefixSelector(cssRule: { selector: string }): boolean {
     return this.isPrefixSelector.test(cssRule.selector);
-  }
-
-  prefixWrapCSSRule(cssRule: PostCSSRule): void {
-    // Check each rule to see if it exactly matches our prefix selector, when
-    // this happens, don't try to prefix that selector.
-    const rules = cssRule.selector
-      .split(",")
-      .filter(
-        (selector) => !this.cssRuleMatchesPrefixSelector({ selector: selector })
-      );
-
-    if (rules.length === 0) {
-      return;
-    }
-
-    cssRule.selector = rules
-      .map((cssSelector) => this.prefixWrapCSSSelector(cssSelector, cssRule))
-      .filter(Selector.isValid)
-      .join(", ");
   }
 
   includeFile(css: PostCSSContainer): boolean {
@@ -127,13 +111,19 @@ export default class PostCSSPrefixWrap {
   prefixRoot(css: PostCSSContainer): void {
     if (this.includeFile(css)) {
       css.walkRules((cssRule: PostCSSRule) => {
-        this.prefixWrapCSSRule(cssRule);
+        prefixWrapCSSRule(
+          cssRule,
+          (cssRule: { selector: string }) =>
+            this.cssRuleMatchesPrefixSelector(cssRule),
+          (cssSelector: string, cssRule: PostCSSRule) =>
+            this.prefixWrapCSSSelector(cssSelector, cssRule)
+        );
       });
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  prefix(): Function {
+  // path consumed just by v7
+  prefix() {
     return (css: PostCSSContainer): void => {
       this.prefixRoot(css);
     };
