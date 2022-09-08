@@ -1,30 +1,37 @@
 import { strictEqual } from "assert";
 import PostCSS from "postcss";
 
-import CSSSelector, {
+import {
+  cleanSelector,
   cssRuleMatchesPrefixSelector,
   isNotRootTag,
+  isValidCSSSelector,
 } from "../../../../src/internal/domain/CSSSelector";
 
-describe("Selector", () => {
-  it("Selector.isValid() is true for null Selector", () => {
-    // strictEqual(Selector.isValid(null), false);
-    expect(CSSSelector.isValid(null)).toStrictEqual(false);
+describe("isValidCSSSelector", () => {
+  it("is true for null Selector", () => {
+    expect(isValidCSSSelector(null)).toStrictEqual(false);
   });
+});
 
-  it("Selector.clean() removes extra space padding", () => {
-    strictEqual(CSSSelector.clean(" div "), "div");
-    strictEqual(CSSSelector.clean(" div"), "div");
-    strictEqual(CSSSelector.clean("div "), "div");
+describe("cleanSelector", () => {
+  it("removes extra space padding", () => {
+    strictEqual(cleanSelector(" div "), "div");
+    strictEqual(cleanSelector(" div"), "div");
+    strictEqual(cleanSelector("div "), "div");
   });
+});
 
-  it("Selector.isNotRootTag() is true for root tags", () => {
+// TODO: isKeyframes
+
+describe("isNotRootTag", () => {
+  it("is true for root tags", () => {
     strictEqual(isNotRootTag("html"), false);
     strictEqual(isNotRootTag("body"), false);
     strictEqual(isNotRootTag(":root"), false);
   });
 
-  it("Selector.isNotRootTag() is false for non root tags", () => {
+  it("is false for non root tags", () => {
     strictEqual(isNotRootTag("div"), true);
     strictEqual(isNotRootTag("p"), true);
     strictEqual(isNotRootTag("span"), true);

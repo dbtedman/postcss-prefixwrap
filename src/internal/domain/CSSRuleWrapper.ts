@@ -1,5 +1,5 @@
 import { PostCSSRule } from "Types";
-import CSSSelector from "internal/domain/CSSSelector";
+import { isValidCSSSelector } from "internal/domain/CSSSelector";
 
 export const prefixWrapCSSRule = (
   cssRule: PostCSSRule,
@@ -23,6 +23,6 @@ export const prefixWrapCSSRule = (
 
   cssRule.selector = rules
     .map((cssSelector) => prefixWrapCSSSelector(cssSelector, cssRule))
-    .filter(CSSSelector.isValid)
+    .filter(isValidCSSSelector)
     .join(", ");
 };

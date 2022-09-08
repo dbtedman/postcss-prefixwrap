@@ -1,5 +1,7 @@
-import CSSSelector, {
+import {
+  cleanSelector,
   cssRuleMatchesPrefixSelector,
+  isKeyframes,
   isNotRootTag,
 } from "../internal/domain/CSSSelector";
 import { PostCSSContainer, PostCSSRule } from "Types";
@@ -46,45 +48,45 @@ export default class PostCSSPrefixWrap {
     cssSelector: string,
     cssRule: PostCSSRule
   ): string | null {
-    const cleanSelector = CSSSelector.clean(cssSelector);
+    const cleanedSelector = cleanSelector(cssSelector);
 
-    if (cleanSelector === "") {
+    if (cleanedSelector === "") {
       return null;
     }
 
     // Don't prefix nested selected.
-    if (this.nested !== null && cleanSelector.startsWith(this.nested, 0)) {
-      return cleanSelector;
+    if (this.nested !== null && cleanedSelector.startsWith(this.nested, 0)) {
+      return cleanedSelector;
     }
 
     // Do not prefix keyframes rules.
-    if (CSSSelector.isKeyframes(cssRule)) {
-      return cleanSelector;
+    if (isKeyframes(cssRule)) {
+      return cleanedSelector;
     }
 
     // Check for matching ignored selectors
     if (
       this.ignoredSelectors.some((currentValue) =>
-        cleanSelector.match(currentValue)
+        cleanedSelector.match(currentValue)
       )
     ) {
-      return cleanSelector;
+      return cleanedSelector;
     }
 
     // Anything other than a root tag is always prefixed.
-    if (isNotRootTag(cleanSelector)) {
-      return this.prefixSelector + " " + cleanSelector;
+    if (isNotRootTag(cleanedSelector)) {
+      return this.prefixSelector + " " + cleanedSelector;
     }
 
     // Handle special case where root tags should be converted into classes
     // rather than being replaced.
     if (this.prefixRootTags) {
-      return this.prefixSelector + " ." + cleanSelector;
+      return this.prefixSelector + " ." + cleanedSelector;
     }
 
     // HTML and Body elements cannot be contained within our container so lets
     // extract their styles.
-    return cleanSelector.replace(/^(body|html|:root)/, this.prefixSelector);
+    return cleanedSelector.replace(/^(body|html|:root)/, this.prefixSelector);
   }
 
   includeFile(css: PostCSSContainer): boolean {
