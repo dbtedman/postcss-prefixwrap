@@ -1,4 +1,4 @@
-# [PostCSS Prefix Wrap](https://danieltedman.com/my-work/postcss-prefixwrap)
+# [PostCSS Prefix Wrap](https://github.com/dbtedman/postcss-prefixwrap)
 
 [![CI GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/ci?style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/ci.yml?query=branch%3Amain)
 [![Test Code Coverage](https://img.shields.io/codecov/c/gh/dbtedman/postcss-prefixwrap?token=xW7qNp0GdB&style=for-the-badge)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
