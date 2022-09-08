@@ -1,7 +1,13 @@
 import postcss from "postcss";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import postcss7 from "postcss7";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import postcssNested from "postcss-nested";
 import { execSync } from "child_process";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import fs from "fs";
 import * as path from "path";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
