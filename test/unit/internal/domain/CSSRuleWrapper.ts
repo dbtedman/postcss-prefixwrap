@@ -2,6 +2,7 @@ import PostCSS from "postcss";
 import PostCSSPrefixWrap from "../../../../src/plugin/PostCSSPrefixWrap";
 import { prefixWrapCSSRule } from "../../../../src/internal/domain/CSSRuleWrapper";
 import { PostCSSRule } from "../../../../src/Types";
+import { cssRuleMatchesPrefixSelector } from "../../../../src/internal/domain/CSSSelector";
 
 describe("CSSRuleWrapper", () => {
   const prefixSelector = ".my-custom-wrap";
@@ -15,7 +16,7 @@ describe("CSSRuleWrapper", () => {
     prefixWrapCSSRule(
       cssRule,
       (cssRule: { selector: string }) =>
-        plugin.cssRuleMatchesPrefixSelector(cssRule),
+        cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
       (cssSelector: string, cssRule: PostCSSRule) =>
         plugin.prefixWrapCSSSelector(cssSelector, cssRule)
     );
@@ -32,7 +33,7 @@ describe("CSSRuleWrapper", () => {
     prefixWrapCSSRule(
       cssRule,
       (cssRule: { selector: string }) =>
-        plugin.cssRuleMatchesPrefixSelector(cssRule),
+        cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
       (cssSelector: string, cssRule: PostCSSRule) =>
         plugin.prefixWrapCSSSelector(cssSelector, cssRule)
     );
@@ -55,7 +56,7 @@ describe("CSSRuleWrapper", () => {
       prefixWrapCSSRule(
         cssRule,
         (cssRule: { selector: string }) =>
-          plugin.cssRuleMatchesPrefixSelector(cssRule),
+          cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
         (cssSelector: string, cssRule: PostCSSRule) =>
           plugin.prefixWrapCSSSelector(cssSelector, cssRule)
       );

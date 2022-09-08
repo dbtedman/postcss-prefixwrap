@@ -1,4 +1,6 @@
-import Selector from "../internal/domain/Selector";
+import CSSSelector, {
+  cssRuleMatchesPrefixSelector,
+} from "../internal/domain/CSSSelector";
 import { PostCSSContainer, PostCSSRule } from "Types";
 import { prefixWrapCSSRule } from "internal/domain/CSSRuleWrapper";
 
@@ -43,7 +45,7 @@ export default class PostCSSPrefixWrap {
     cssSelector: string,
     cssRule: PostCSSRule
   ): string | null {
-    const cleanSelector = Selector.clean(cssSelector);
+    const cleanSelector = CSSSelector.clean(cssSelector);
 
     if (cleanSelector === "") {
       return null;
@@ -55,7 +57,7 @@ export default class PostCSSPrefixWrap {
     }
 
     // Do not prefix keyframes rules.
-    if (Selector.isKeyframes(cssRule)) {
+    if (CSSSelector.isKeyframes(cssRule)) {
       return cleanSelector;
     }
 
@@ -69,7 +71,7 @@ export default class PostCSSPrefixWrap {
     }
 
     // Anything other than a root tag is always prefixed.
-    if (Selector.isNotRootTag(cleanSelector)) {
+    if (CSSSelector.isNotRootTag(cleanSelector)) {
       return this.prefixSelector + " " + cleanSelector;
     }
 
@@ -82,11 +84,6 @@ export default class PostCSSPrefixWrap {
     // HTML and Body elements cannot be contained within our container so lets
     // extract their styles.
     return cleanSelector.replace(/^(body|html|:root)/, this.prefixSelector);
-  }
-
-  // TODO: Move to CSSRuleWrapper
-  cssRuleMatchesPrefixSelector(cssRule: { selector: string }): boolean {
-    return this.isPrefixSelector.test(cssRule.selector);
   }
 
   includeFile(css: PostCSSContainer): boolean {
@@ -114,7 +111,7 @@ export default class PostCSSPrefixWrap {
         prefixWrapCSSRule(
           cssRule,
           (cssRule: { selector: string }) =>
-            this.cssRuleMatchesPrefixSelector(cssRule),
+            cssRuleMatchesPrefixSelector(cssRule, this.prefixSelector),
           (cssSelector: string, cssRule: PostCSSRule) =>
             this.prefixWrapCSSSelector(cssSelector, cssRule)
         );
