@@ -24,11 +24,11 @@ export default class CSSSelector {
       parentReal.name.match(/keyframes$/) !== null
     );
   }
-
-  static isNotRootTag(cleanSelector: string): boolean {
-    return !cleanSelector.match(IS_ROOT_TAG);
-  }
 }
+
+export const isNotRootTag = (cleanSelector: string): boolean => {
+  return !cleanSelector.match(IS_ROOT_TAG);
+};
 
 export const cssRuleMatchesPrefixSelector = (
   cssRule: { selector: string },

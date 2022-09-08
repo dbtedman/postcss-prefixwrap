@@ -3,6 +3,7 @@ import PostCSS from "postcss";
 
 import CSSSelector, {
   cssRuleMatchesPrefixSelector,
+  isNotRootTag,
 } from "../../../../src/internal/domain/CSSSelector";
 
 describe("Selector", () => {
@@ -18,15 +19,15 @@ describe("Selector", () => {
   });
 
   it("Selector.isNotRootTag() is true for root tags", () => {
-    strictEqual(CSSSelector.isNotRootTag("html"), false);
-    strictEqual(CSSSelector.isNotRootTag("body"), false);
-    strictEqual(CSSSelector.isNotRootTag(":root"), false);
+    strictEqual(isNotRootTag("html"), false);
+    strictEqual(isNotRootTag("body"), false);
+    strictEqual(isNotRootTag(":root"), false);
   });
 
   it("Selector.isNotRootTag() is false for non root tags", () => {
-    strictEqual(CSSSelector.isNotRootTag("div"), true);
-    strictEqual(CSSSelector.isNotRootTag("p"), true);
-    strictEqual(CSSSelector.isNotRootTag("span"), true);
+    strictEqual(isNotRootTag("div"), true);
+    strictEqual(isNotRootTag("p"), true);
+    strictEqual(isNotRootTag("span"), true);
   });
 });
 

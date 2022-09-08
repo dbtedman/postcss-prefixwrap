@@ -1,5 +1,6 @@
 import CSSSelector, {
   cssRuleMatchesPrefixSelector,
+  isNotRootTag,
 } from "../internal/domain/CSSSelector";
 import { PostCSSContainer, PostCSSRule } from "Types";
 import { prefixWrapCSSRule } from "internal/domain/CSSRuleWrapper";
@@ -71,7 +72,7 @@ export default class PostCSSPrefixWrap {
     }
 
     // Anything other than a root tag is always prefixed.
-    if (CSSSelector.isNotRootTag(cleanSelector)) {
+    if (isNotRootTag(cleanSelector)) {
       return this.prefixSelector + " " + cleanSelector;
     }
 
