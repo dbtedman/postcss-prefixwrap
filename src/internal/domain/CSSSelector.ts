@@ -3,7 +3,7 @@ import { PostCSSAtRule, PostCSSRule } from "Types";
 const ANY_WHITESPACE_AT_BEGINNING_OR_END = /(^\s*|\s*$)/g;
 const IS_ROOT_TAG = /^(body|html|:root).*$/;
 
-export default class Selector {
+export default class CSSSelector {
   static isValid(cssSelector: string | null): boolean {
     return cssSelector !== null;
   }
@@ -29,3 +29,18 @@ export default class Selector {
     return !cleanSelector.match(IS_ROOT_TAG);
   }
 }
+
+export const cssRuleMatchesPrefixSelector = (
+  cssRule: { selector: string },
+  prefixSelector: string
+): boolean => {
+  const escapedPrefixSelector = prefixSelector.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    "\\$&"
+  );
+
+  // eslint-disable-next-line security-node/non-literal-reg-expr
+  const isPrefixSelector = new RegExp(`^${escapedPrefixSelector}$`);
+
+  return isPrefixSelector.test(cssRule.selector);
+};
