@@ -22,8 +22,6 @@ describe("cleanSelector", () => {
   });
 });
 
-// TODO: isKeyframes
-
 describe("isNotRootTag", () => {
   it("is true for root tags", () => {
     strictEqual(isNotRootTag("html"), false);

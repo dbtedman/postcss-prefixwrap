@@ -1,49 +1,30 @@
 import PostCSS from "postcss";
-import PostCSSPrefixWrap from "../../../../src/plugin/PostCSSPrefixWrap";
 import { prefixWrapCSSRule } from "../../../../src/internal/domain/CSSRuleWrapper";
-import { PostCSSRule } from "../../../../src/Types";
-import { cssRuleMatchesPrefixSelector } from "../../../../src/internal/domain/CSSSelector";
 
-describe("CSSRuleWrapper", () => {
+describe("prefixWrapCSSRule()", () => {
   const prefixSelector = ".my-custom-wrap";
 
-  it("prefixWrapCSSRule() leaves prefix Selector alone", () => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector);
+  it("leaves prefix Selector alone", () => {
     const cssRule = PostCSS.rule({
       selector: prefixSelector,
     });
 
-    prefixWrapCSSRule(
-      cssRule,
-      (cssRule: { selector: string }) =>
-        cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
-      (cssSelector: string, cssRule: PostCSSRule) =>
-        plugin.prefixWrapCSSSelector(cssSelector, cssRule)
-    );
+    prefixWrapCSSRule(cssRule, null, [], prefixSelector, false);
 
     expect(cssRule.selector).toStrictEqual(prefixSelector);
   });
 
-  it("prefixWrapCSSRule() does not change for empty Selector", () => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector);
+  it("does not change for empty Selector", () => {
     const cssRule = PostCSS.rule({
       selector: "",
     });
 
-    prefixWrapCSSRule(
-      cssRule,
-      (cssRule: { selector: string }) =>
-        cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
-      (cssSelector: string, cssRule: PostCSSRule) =>
-        plugin.prefixWrapCSSSelector(cssSelector, cssRule)
-    );
+    prefixWrapCSSRule(cssRule, null, [], "", false);
 
     expect(cssRule.selector).toStrictEqual("");
   });
 
-  it("prefixWrapCSSRule() prefixes non root selectors with prefix Selector", () => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector);
-
+  it("prefixes non root selectors with prefix Selector", () => {
     ["div", "p", "h1"].forEach((selector) => {
       const parent = PostCSS.root();
       const cssRule = PostCSS.rule({
@@ -53,13 +34,7 @@ describe("CSSRuleWrapper", () => {
         parent: parent,
       });
 
-      prefixWrapCSSRule(
-        cssRule,
-        (cssRule: { selector: string }) =>
-          cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
-        (cssSelector: string, cssRule: PostCSSRule) =>
-          plugin.prefixWrapCSSSelector(cssSelector, cssRule)
-      );
+      prefixWrapCSSRule(cssRule, null, [], selector, false);
 
       expect(cssRule.selector).toStrictEqual(`${prefixSelector} ${selector}`);
     });
