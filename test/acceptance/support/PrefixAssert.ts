@@ -1,25 +1,17 @@
-import Assert from "assert";
-import FileSystem from "fs";
+import fs from "fs";
 import Processor from "postcss/lib/processor";
 
-export default class PrefixAssert {
-  static actualMatchesExpectedAfterPrefixWrap(
-    postCSS: Processor,
-    actualPath: string,
-    expectedPath: string
-  ): void {
-    Assert.strictEqual(
-      postCSS.process(FileSystem.readFileSync(actualPath), { from: actualPath })
-        .css,
-      FileSystem.readFileSync(expectedPath, "utf8")
-    );
-  }
+export const assertNoChangeAfterPrefixWrap = (
+  postCSS: Processor,
+  actualPath: string
+) =>
+  assertActualMatchesExpectedAfterPrefixWrap(postCSS, actualPath, actualPath);
 
-  static noChangeAfterPrefixWrap(postCSS: Processor, actualPath: string): void {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
-      postCSS,
-      actualPath,
-      actualPath
-    );
-  }
-}
+export const assertActualMatchesExpectedAfterPrefixWrap = (
+  postCSS: Processor,
+  actualPath: string,
+  expectedPath: string
+) =>
+  expect(
+    postCSS.process(fs.readFileSync(actualPath), { from: actualPath }).css
+  ).toEqual(fs.readFileSync(expectedPath, "utf8"));

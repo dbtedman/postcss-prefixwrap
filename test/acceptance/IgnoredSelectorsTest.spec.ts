@@ -1,5 +1,5 @@
 import * as path from "path";
-import PrefixAssert from "./support/PrefixAssert";
+import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Ignored Selectors", () => {
@@ -8,7 +8,7 @@ describe("Acceptance: Ignored Selectors", () => {
   });
 
   it("ignores selectors that are in a ignore list", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSSIgnore,
       path.join(__dirname, "fixtures", "ignore-selectors.css"),
       path.join(__dirname, "fixtures", "ignore-selectors-expected.css")
