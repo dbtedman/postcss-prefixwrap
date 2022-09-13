@@ -1,12 +1,12 @@
 import * as path from "path";
-import PrefixAssert from "./support/PrefixAssert";
+import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Standard Prefixing", () => {
   const postCSS = postCSSWithPlugin();
 
   it("adds prefix class for tags", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-tags-raw.css"),
       path.join(__dirname, "fixtures", "standard-tags-expected.css")
@@ -14,7 +14,7 @@ describe("Acceptance: Standard Prefixing", () => {
   });
 
   it("adds prefix class for ids", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-ids-raw.css"),
       path.join(__dirname, "fixtures", "standard-ids-expected.css")
@@ -22,7 +22,7 @@ describe("Acceptance: Standard Prefixing", () => {
   });
 
   it("adds prefix class for classes", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-classes-raw.css"),
       path.join(__dirname, "fixtures", "standard-classes-expected.css")
@@ -30,7 +30,7 @@ describe("Acceptance: Standard Prefixing", () => {
   });
 
   it("adds prefix class for multiple classes", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "multiple-classes-raw.css"),
       path.join(__dirname, "fixtures", "multiple-classes-expected.css")
@@ -39,7 +39,7 @@ describe("Acceptance: Standard Prefixing", () => {
 
   // @see https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)
   it("adds prefix class for universal selectors", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-universal-selectors-raw.css"),
       path.join(
@@ -52,7 +52,7 @@ describe("Acceptance: Standard Prefixing", () => {
 
   // @see https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
   it("adds prefix class for attribute selectors", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-attribute-selectors-raw.css"),
       path.join(

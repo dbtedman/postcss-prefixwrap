@@ -1,0 +1,6 @@
+codecov:
+  status:
+    patch:
+      default:
+        # https://docs.codecov.com/docs/commit-status#patch-status
+        target: 70%

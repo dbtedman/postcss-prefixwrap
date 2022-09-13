@@ -1,5 +1,5 @@
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
-import PrefixAssert from "../acceptance/support/PrefixAssert";
+import { assertActualMatchesExpectedAfterPrefixWrap } from "../acceptance/support/PrefixAssert";
 import path from "path";
 
 describe("Acceptance: Prefix selector with special characters", () => {
@@ -8,7 +8,7 @@ describe("Acceptance: Prefix selector with special characters", () => {
       {},
       ".my-custom-selector[id^=my-id-starts-with-]"
     );
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "selector-special-characters-raw.css"),
       path.join(

@@ -1,5 +1,8 @@
 import * as path from "path";
-import PrefixAssert from "./support/PrefixAssert";
+import {
+  assertActualMatchesExpectedAfterPrefixWrap,
+  assertNoChangeAfterPrefixWrap,
+} from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Blacklist", () => {
@@ -8,14 +11,14 @@ describe("Acceptance: Blacklist", () => {
   });
 
   it("ignores file in blacklist", () => {
-    PrefixAssert.noChangeAfterPrefixWrap(
+    assertNoChangeAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-classes-raw.css")
     );
   });
 
   it("prefixes non blacklisted file", () => {
-    PrefixAssert.actualMatchesExpectedAfterPrefixWrap(
+    assertActualMatchesExpectedAfterPrefixWrap(
       postCSS,
       path.join(__dirname, "fixtures", "standard-tags-raw.css"),
       path.join(__dirname, "fixtures", "standard-tags-expected.css")
