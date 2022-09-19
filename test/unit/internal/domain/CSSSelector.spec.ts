@@ -1,4 +1,3 @@
-import { strictEqual } from "assert";
 import PostCSS from "postcss";
 
 import {
@@ -16,23 +15,23 @@ describe("isValidCSSSelector", () => {
 
 describe("cleanSelector", () => {
   it("removes extra space padding", () => {
-    strictEqual(cleanSelector(" div "), "div");
-    strictEqual(cleanSelector(" div"), "div");
-    strictEqual(cleanSelector("div "), "div");
+    expect(cleanSelector(" div ")).toStrictEqual("div");
+    expect(cleanSelector(" div")).toStrictEqual("div");
+    expect(cleanSelector("div ")).toStrictEqual("div");
   });
 });
 
 describe("isNotRootTag", () => {
   it("is true for root tags", () => {
-    strictEqual(isNotRootTag("html"), false);
-    strictEqual(isNotRootTag("body"), false);
-    strictEqual(isNotRootTag(":root"), false);
+    expect(isNotRootTag("html")).toStrictEqual(false);
+    expect(isNotRootTag("body")).toStrictEqual(false);
+    expect(isNotRootTag(":root")).toStrictEqual(false);
   });
 
   it("is false for non root tags", () => {
-    strictEqual(isNotRootTag("div"), true);
-    strictEqual(isNotRootTag("p"), true);
-    strictEqual(isNotRootTag("span"), true);
+    expect(isNotRootTag("div")).toStrictEqual(true);
+    expect(isNotRootTag("p")).toStrictEqual(true);
+    expect(isNotRootTag("span")).toStrictEqual(true);
   });
 });
 
@@ -43,7 +42,9 @@ describe("cssRuleMatchesPrefixSelector", () => {
       selector: prefixSelector,
     });
 
-    strictEqual(cssRuleMatchesPrefixSelector(cssRule, prefixSelector), true);
+    expect(cssRuleMatchesPrefixSelector(cssRule, prefixSelector)).toStrictEqual(
+      true
+    );
   });
 
   it("correctly ignores selector that contains our prefix selector", () => {
@@ -53,7 +54,9 @@ describe("cssRuleMatchesPrefixSelector", () => {
       selector: selector,
     });
 
-    strictEqual(cssRuleMatchesPrefixSelector(cssRule, prefixSelector), false);
+    expect(cssRuleMatchesPrefixSelector(cssRule, prefixSelector)).toStrictEqual(
+      false
+    );
   });
 
   it("correctly ignores another Selector", () => {
@@ -61,6 +64,8 @@ describe("cssRuleMatchesPrefixSelector", () => {
     const selector = ".not-my-custom-wrap";
     const cssRule = PostCSS.rule({ selector: selector });
 
-    strictEqual(cssRuleMatchesPrefixSelector(cssRule, prefixSelector), false);
+    expect(cssRuleMatchesPrefixSelector(cssRule, prefixSelector)).toStrictEqual(
+      false
+    );
   });
 });
