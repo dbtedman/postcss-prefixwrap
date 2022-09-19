@@ -1,12 +1,15 @@
-import { strictEqual } from "assert";
 import { shouldIncludeFilePath } from "../../../../src/internal/domain/FileIncludeList";
 
 describe("shouldIncludeFilePath", () => {
   it("handles includeFile with whitelist when missing source input data", () => {
-    strictEqual(shouldIncludeFilePath(undefined, [".something"], []), false);
+    expect(shouldIncludeFilePath(undefined, [".something"], [])).toStrictEqual(
+      false
+    );
   });
 
   it("handles includeFile with blacklist when missing source input data", () => {
-    strictEqual(shouldIncludeFilePath(undefined, [], [".something"]), true);
+    expect(shouldIncludeFilePath(undefined, [], [".something"])).toStrictEqual(
+      true
+    );
   });
 });
