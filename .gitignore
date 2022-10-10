@@ -3,6 +3,7 @@
 
 # Don't commit Node dependencies
 /node_modules/
+**/node_modules/
 
 # Don't commit test runtime and reporting
 /.nyc_output/
