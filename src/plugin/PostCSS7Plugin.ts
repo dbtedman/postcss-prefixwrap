@@ -1,8 +1,8 @@
-import { PostCSS7PostCSS } from "Types";
+import { PostCSS7PostCSS } from "../Types";
 import PostCSSPrefixWrap, {
   PLUGIN_NAME,
   PostCSSPrefixWrapOptions,
-} from "plugin/PostCSSPrefixWrap";
+} from "./PostCSSPrefixWrap";
 
 export const asPostCSSv7PluginGenerator = (postcss: PostCSS7PostCSS) => {
   return postcss.plugin(

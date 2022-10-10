@@ -1,6 +1,6 @@
-import { PostCSSContainer, PostCSSRule } from "Types";
-import { prefixWrapCSSRule } from "internal/domain/CSSRuleWrapper";
-import { shouldIncludeFilePath } from "internal/domain/FileIncludeList";
+import { PostCSSContainer, PostCSSRule } from "../Types";
+import { prefixWrapCSSRule } from "../internal/domain/CSSRuleWrapper";
+import { shouldIncludeFilePath } from "../internal/domain/FileIncludeList";
 
 export const PLUGIN_NAME = "postcss-prefixwrap";
 
