@@ -1,11 +1,11 @@
-import { PostCSSRule } from "Types";
+import { PostCSSRule } from "../../Types";
 import {
   cleanSelector,
   cssRuleMatchesPrefixSelector,
   isKeyframes,
   isNotRootTag,
   isValidCSSSelector,
-} from "internal/domain/CSSSelector";
+} from "./CSSSelector";
 
 export const prefixWrapCSSRule = (
   cssRule: PostCSSRule,

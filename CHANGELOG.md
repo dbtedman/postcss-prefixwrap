@@ -4,6 +4,12 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## [1.35.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.35.1)
+
+### 🐛 Bug Fixes
+
+- [#185](https://github.com/dbtedman/postcss-prefixwrap/issues/185) Don't use alias `*` selector as will break imports when used outside of config without it.
+
 ## [1.35.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.35.0)
 
 ### 💡 Features and Improvements

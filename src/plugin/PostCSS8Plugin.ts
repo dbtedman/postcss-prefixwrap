@@ -3,11 +3,11 @@ import {
   PostCSS8PostCSS,
   PostCSSAcceptedPlugin,
   PostCSSContainer,
-} from "Types";
+} from "../Types";
 import PostCSSPrefixWrap, {
   PLUGIN_NAME,
   PostCSSPrefixWrapOptions,
-} from "plugin/PostCSSPrefixWrap";
+} from "./PostCSSPrefixWrap";
 
 export const isPostCSSv8 = (postcss: PostCSS7PostCSS | PostCSS8PostCSS) =>
   (postcss as PostCSS8PostCSS).Root !== undefined;
