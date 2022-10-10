@@ -3,6 +3,9 @@
 .PHONY: all
 all: install lint test build
 
+./PHONY: pre_commit
+pre_commit: test_fast
+
 .PHONY: install
 install:
 	@pnpm install
@@ -21,6 +24,10 @@ build:
 
 .PHONY: test
 test:
+	@pnpm run test --coverage
+
+.PHONY: test_fast
+test_fast:
 	@pnpm run test
 
 .PHONY: publish
