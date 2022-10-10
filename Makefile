@@ -4,7 +4,7 @@
 all: install lint test build
 
 ./PHONY: pre_commit
-pre_commit: test_fast
+pre_commit: lint test_fast
 
 .PHONY: install
 install:
