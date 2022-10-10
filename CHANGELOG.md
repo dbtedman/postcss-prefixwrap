@@ -8,7 +8,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 🐛 Bug Fixes
 
-- [#185](https://github.com/dbtedman/postcss-prefixwrap/issues/185) Don't use alias `*` selector as will break imports when used outside of config without it.
+-   [#185](https://github.com/dbtedman/postcss-prefixwrap/issues/185) Don't use alias `*` selector as will break imports when used outside of config without it.
 
 ## [1.35.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.35.0)
 
