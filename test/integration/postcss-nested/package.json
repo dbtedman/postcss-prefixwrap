@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "dependencies": {
+    "postcss": "8.*",
+    "postcss-nested": "*",
+    "postcss-prefixwrap": "file:../../../build"
+  }
+}

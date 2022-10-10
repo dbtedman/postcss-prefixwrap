@@ -11,3 +11,5 @@
 # Don't lint build output
 /build/
 /package/
+
+/test/integration/*/
