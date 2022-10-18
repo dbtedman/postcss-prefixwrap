@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "node ./build.js"
+    "build": "lessc source.less compiled.css && node ./build.js"
   },
   "dependencies": {
     "postcss": "8.*",
