@@ -1,0 +1,72 @@
+lockfileVersion: 5.4
+
+specifiers:
+  "@types/node": "*"
+  postcss: 8.*
+  postcss-prefixwrap: file:../../../build
+  typescript: "*"
+
+dependencies:
+  "@types/node": 18.11.2
+  postcss: 8.4.18
+  postcss-prefixwrap: file:../../../build
+  typescript: 4.8.4
+
+packages:
+  /@types/node/18.11.2:
+    resolution:
+      {
+        integrity: sha512-BWN3M23gLO2jVG8g/XHIRFWiiV4/GckeFIqbU/C4V3xpoBBWSMk4OZomouN0wCkfQFPqgZikyLr7DOYDysIkkw==,
+      }
+    dev: false
+
+  /nanoid/3.3.4:
+    resolution:
+      {
+        integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==,
+      }
+    engines: { node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1 }
+    hasBin: true
+    dev: false
+
+  /picocolors/1.0.0:
+    resolution:
+      {
+        integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==,
+      }
+    dev: false
+
+  /postcss/8.4.18:
+    resolution:
+      {
+        integrity: sha512-Wi8mWhncLJm11GATDaQKobXSNEYGUHeQLiQqDFG1qQ5UTDPTEvKw0Xt5NsTpktGTwLps3ByrWsBrG0rB8YQ9oA==,
+      }
+    engines: { node: ^10 || ^12 || >=14 }
+    dependencies:
+      nanoid: 3.3.4
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: false
+
+  /source-map-js/1.0.2:
+    resolution:
+      {
+        integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==,
+      }
+    engines: { node: ">=0.10.0" }
+    dev: false
+
+  /typescript/4.8.4:
+    resolution:
+      {
+        integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==,
+      }
+    engines: { node: ">=4.2.0" }
+    hasBin: true
+    dev: false
+
+  file:../../../build:
+    resolution: { directory: ../../../build, type: directory }
+    name: build
+    version: 0.0.0
+    dev: false

@@ -49,6 +49,10 @@ test_integration_postcss8:
 test_integration_postcss_nested:
 	@cd test/integration/postcss-nested && pnpm install && pnpm run build
 
+.PHONY: test_integration_typescript
+test_integration_typescript:
+	@cd test/integration/typescript && pnpm install && pnpm run build
+
 .PHONY: publish
 publish:
 	@pnpm publish --no-git-checks
