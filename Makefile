@@ -31,7 +31,7 @@ test_fast:
 	@pnpm run test
 
 .PHONY: test_integration
-test_integration: build test_integration_less test_integration_postcss7 test_integration_postcss8 test_integration_postcss_nested
+test_integration: build test_integration_less test_integration_postcss7 test_integration_postcss8 test_integration_postcss_nested test_integration_typescript
 
 .PHONY: test_integration_less
 test_integration_less:
