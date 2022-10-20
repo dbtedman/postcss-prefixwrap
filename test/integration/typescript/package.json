@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "build2": "tsc -h",
     "build": "tsc --esModuleInterop true ./build.ts && node ./build.js"
   },
   "dependencies": {
