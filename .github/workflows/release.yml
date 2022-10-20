@@ -6,7 +6,7 @@ on:
     types: ["published"]
 
 jobs:
-  run:
+  release:
     runs-on: "ubuntu-latest"
 
     steps:
