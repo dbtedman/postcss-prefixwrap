@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 💡 Features and Improvements
 
 -   [#187](https://github.com/dbtedman/postcss-prefixwrap/issues/187) Integration Test Rethink
+-   [#189](https://github.com/dbtedman/postcss-prefixwrap/issues/189) Fix typescript broken import path
 
 ## [1.35.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.35.1)
 

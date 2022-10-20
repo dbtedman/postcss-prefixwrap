@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "build2": "tsc -h",
+    "build": "tsc --esModuleInterop true ./build.ts && node ./build.js"
+  },
+  "dependencies": {
+    "postcss": "8.*",
+    "@types/node": "*",
+    "typescript": "*",
+    "postcss-prefixwrap": "file:../../../build"
+  }
+}
