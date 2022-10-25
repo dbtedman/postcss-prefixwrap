@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - uses: "actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b"
-      - uses: "github/codeql-action/init@v2"
+      - uses: "github/codeql-action/init@e0e5ded33cabb451ae0a9768fc7b0410bad9ad44"
         with:
           languages: "typescript"
       - uses: "pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d"
