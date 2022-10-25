@@ -1,0 +1,7 @@
+version: 2
+updates:
+  # NOTE: "pnpm" is currently not supported by Dependabot, only "npm" or "yarn"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
