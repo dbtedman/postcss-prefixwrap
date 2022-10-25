@@ -1,5 +1,9 @@
 # [PostCSS Prefix Wrap](./README.md) // Security
 
+[![SAST GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap)
+[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6622/badge)](https://bestpractices.coreinfrastructure.org/projects/6622)
+
 Outlines how security is considered during the development of PostCSS Prefix Wrap.
 
 -   [Dependency Vulnerability Scanning](#dependency-vulnerability-scanning)
@@ -9,9 +13,6 @@ Outlines how security is considered during the development of PostCSS Prefix Wra
 -   [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
 
 ## Dependency Vulnerability Scanning
-
-[![SAST GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap)
 
 Provided by [Snyk](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) for validating package dependencies and [Dependabot](https://dependabot.com) for automated package updates.
 
