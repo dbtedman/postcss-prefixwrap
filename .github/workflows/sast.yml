@@ -47,20 +47,20 @@ jobs:
       security-events: "write"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@v3"
-      - uses: "pnpm/action-setup@v2.2.4"
+      - uses: "actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b"
+      - uses: "pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d"
         with:
           version: "latest"
-      - uses: "actions/setup-node@v3"
+      - uses: "actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b"
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
-      - uses: "snyk/actions/setup@master"
+      - uses: "snyk/actions/setup@4259725f0dd662aa764d82760cca8959888a595c"
       - run: "make install"
       - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      - uses: "github/codeql-action/upload-sarif@v2"
+      - uses: "github/codeql-action/upload-sarif@e0e5ded33cabb451ae0a9768fc7b0410bad9ad44"
         with:
           sarif_file: "snyk.sarif"
 
@@ -73,16 +73,16 @@ jobs:
       security-events: write
 
     steps:
-      - uses: "actions/checkout@v3"
+      - uses: "actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b"
       - uses: "github/codeql-action/init@v2"
         with:
           languages: "typescript"
-      - uses: "pnpm/action-setup@v2.2.4"
+      - uses: "pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d"
         with:
           version: "latest"
-      - uses: "actions/setup-node@v3"
+      - uses: "actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b"
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
       - run: "make install"
-      - uses: "github/codeql-action/analyze@v2"
+      - uses: "github/codeql-action/analyze@e0e5ded33cabb451ae0a9768fc7b0410bad9ad44"

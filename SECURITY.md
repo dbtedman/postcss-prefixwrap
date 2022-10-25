@@ -11,6 +11,7 @@ Outlines how security is considered during the development of PostCSS Prefix Wra
 ## Dependency Vulnerability Scanning
 
 [![SAST GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/postcss-prefixwrap/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap)
 
 Provided by [Snyk](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) for validating package dependencies and [Dependabot](https://dependabot.com) for automated package updates.
 
