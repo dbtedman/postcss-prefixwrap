@@ -11,6 +11,8 @@ on:
   schedule:
     - cron: "19 19 * * 4"
 
+permissions: "read-all"
+
 jobs:
   ossf:
     runs-on: "ubuntu-latest"
