@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 💡 Features and Improvements
 
 -   OpenSSF Scorecard
+-   Rethink focus on Code Coverage, instead focus on developing with TDD
 
 ## [1.36.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.36.0)
 
