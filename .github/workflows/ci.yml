@@ -32,10 +32,6 @@ jobs:
       - run: "make install"
       - run: "make lint"
       - run: "make test"
-      - uses: "codecov/codecov-action@d9f34f8cd5cb3b3eb79b3e4b5dae3a16df499a70"
-        if: "contains(matrix.node-version, '16')"
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
       - run: "make build"
       - run: "make test_integration"
 

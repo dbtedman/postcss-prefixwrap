@@ -41,8 +41,6 @@ make lint
 
 ## Test
 
-[![Test Code Coverage](https://img.shields.io/codecov/c/gh/dbtedman/postcss-prefixwrap?token=xW7qNp0GdB&style=for-the-badge)](https://codecov.io/gh/dbtedman/postcss-prefixwrap)
-
 Tested using [Jest](https://jestjs.io/), using test cases defined in the `src/` directory matching `*.spec.ts` pattern.
 
 ```shell
