@@ -55,7 +55,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
-      - uses: "snyk/actions/setup@4259725f0dd662aa764d82760cca8959888a595c"
+      - uses: "snyk/actions/setup@a8dd587d8a94f5663fa3d67d51abd0cc66aff244"
       - run: "make install"
       - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
         env:
