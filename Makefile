@@ -3,7 +3,7 @@
 .PHONY: all
 all: install lint test build
 
-./PHONY: pre_commit
+.PHONY: pre_commit
 pre_commit: lint test_fast
 
 .PHONY: install
