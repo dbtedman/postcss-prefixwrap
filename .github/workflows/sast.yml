@@ -37,7 +37,7 @@ jobs:
           name: "SARIF file"
           path: "results.sarif"
           retention-days: 5
-      - uses: "github/codeql-action/upload-sarif@b2a92eb56d8cb930006a1c6ed86b0782dd8a4297"
+      - uses: "github/codeql-action/upload-sarif@a669cc5936cc5e1b6a362ec1ff9e410dc570d190"
         with:
           sarif_file: "results.sarif"
 
@@ -60,7 +60,7 @@ jobs:
       - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      - uses: "github/codeql-action/upload-sarif@b2a92eb56d8cb930006a1c6ed86b0782dd8a4297"
+      - uses: "github/codeql-action/upload-sarif@a669cc5936cc5e1b6a362ec1ff9e410dc570d190"
         with:
           sarif_file: "snyk.sarif"
 
@@ -74,7 +74,7 @@ jobs:
 
     steps:
       - uses: "actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8"
-      - uses: "github/codeql-action/init@b2a92eb56d8cb930006a1c6ed86b0782dd8a4297"
+      - uses: "github/codeql-action/init@a669cc5936cc5e1b6a362ec1ff9e410dc570d190"
         with:
           languages: "typescript"
       - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
@@ -85,4 +85,4 @@ jobs:
           node-version-file: ".nvmrc"
           cache: "pnpm"
       - run: "make install"
-      - uses: "github/codeql-action/analyze@b2a92eb56d8cb930006a1c6ed86b0782dd8a4297"
+      - uses: "github/codeql-action/analyze@a669cc5936cc5e1b6a362ec1ff9e410dc570d190"
