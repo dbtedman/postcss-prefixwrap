@@ -69,6 +69,13 @@ local_cleanup:
 upgrade:
 	@pnpm dlx npm-check-updates --reject postcss7 -u && pnpm upgrade
 
+.PHONY: sast
+sast: sast_snyk sast_osv
+
+.PHONY: sast_snyk
+sast_snyk:
+	snyk test --all-projects --detection-depth=1
+
 .PHONY: sast_osv
 sast_osv:
 	osv-scanner ./
