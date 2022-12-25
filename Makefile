@@ -68,3 +68,7 @@ local_cleanup:
 .PHONY: upgrade
 upgrade:
 	@pnpm dlx npm-check-updates --reject postcss7 -u && pnpm upgrade
+
+.PHONY: sast_osv
+sast_osv:
+	osv-scanner ./

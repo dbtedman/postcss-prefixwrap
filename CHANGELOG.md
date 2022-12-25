@@ -4,6 +4,12 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## 🚧 In Development
+
+### 💡 Features and Improvements
+
+-   [OSV Scanning](https://osv.dev/) in SAST Pipeline
+
 ## [1.38.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.38.1)
 
 ### 🐛 Bug Fixes
