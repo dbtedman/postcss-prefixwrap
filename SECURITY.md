@@ -14,11 +14,17 @@ Outlines how security is considered during the development of PostCSS Prefix Wra
 
 ## Dependency Vulnerability Scanning
 
-Provided by [Snyk](https://snyk.io/test/github/dbtedman/postcss-prefixwrap) for validating package dependencies and [Dependabot](https://dependabot.com) for automated package updates.
+-   [GitHub code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning) via [CodeQL](https://codeql.github.com) and [Snyk](https://snyk.io)
+-   [GitHub dependabot alerts](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
+-   [GitHub dependabot security updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
+-   [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
+-   [OSV Scanning](https://osv.dev/)
+-   [Snyk code analysis](https://snyk.io/product/snyk-code/)
+-   [Snyk dependency scanning](https://snyk.io/product/open-source-security-management/)
 
 ## Security Disclosure Policy
 
-Email [dbtedman@gmail.com](mailto:dbtedman@gmail.com) with details about the security issue or raise a [GitHub Issue](https://github.com/dbtedman/postcss-prefixwrap/issues) and tag it as **Security**.
+Privately report a vulnerability using [GitHub Security Advisories](https://github.com/dbtedman/postcss-prefixwrap/security/advisories).
 
 ## Security Update Policy
 
