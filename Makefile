@@ -1,10 +1,10 @@
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: install lint test build
+all: install lint build test sast
 
 .PHONY: pre_commit
-pre_commit: lint test_fast
+pre_commit: lint test_fast sast
 
 .PHONY: install
 install:

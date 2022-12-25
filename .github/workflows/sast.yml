@@ -44,7 +44,6 @@ jobs:
   osv:
     permissions:
       contents: "read"
-      security-events: "write"
     runs-on: "ubuntu-latest"
     steps:
       - uses: "actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8"
@@ -60,9 +59,6 @@ jobs:
       - uses: "google/osv-scanner@e20621776bbd2e799537eb3b0328398ccd5e9fdb"
         with:
           to-scan: "./"
-  #      - uses: "github/codeql-action/upload-sarif@a669cc5936cc5e1b6a362ec1ff9e410dc570d190"
-  #        with:
-  #          sarif_file: "osv.sarif"
 
   snyk:
     permissions:
