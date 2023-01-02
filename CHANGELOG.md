@@ -10,6 +10,10 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 -   [OSV Scanning](https://osv.dev/) in SAST Pipeline
 
+### 🔧 Maintenance
+
+-   Dependency Updates
+
 ## [1.38.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.38.1)
 
 ### 🐛 Bug Fixes
