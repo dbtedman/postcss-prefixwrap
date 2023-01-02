@@ -1,1 +1,4 @@
 # https://github.com/google/osv-scanner
+[[IgnoredVulns]]
+id = "GHSA-9c47-m6qq-7p4h"
+reason = "No upgrade path availalbe as is included as transitive dependency."
