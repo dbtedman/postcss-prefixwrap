@@ -24,7 +24,7 @@ jobs:
       contents: "read"
       actions: "read"
     steps:
-      - uses: "actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b"
+      - uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c"
         with:
           persist-credentials: false
       - uses: "ossf/scorecard-action@e38b1902ae4f44df626f11ba0734b14fb91f8f86"
@@ -46,7 +46,7 @@ jobs:
       contents: "read"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b"
+      - uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c"
       - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
         with:
           version: "latest"
@@ -66,7 +66,7 @@ jobs:
       security-events: "write"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b"
+      - uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c"
       - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
         with:
           version: "latest"
@@ -92,7 +92,7 @@ jobs:
       security-events: write
 
     steps:
-      - uses: "actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b"
+      - uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c"
       - uses: "github/codeql-action/init@959cbb7472c4d4ad70cdfe6f4976053fe48ab394"
         with:
           languages: "typescript"
