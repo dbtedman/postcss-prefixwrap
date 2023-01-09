@@ -18,7 +18,7 @@
   "license": "MIT",
   "author": {
     "name": "Daniel Tedman",
-    "url": "https://danieltedman.com"
+    "url": "https://tedman.dev"
   },
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
