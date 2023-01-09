@@ -54,7 +54,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
-      - uses: "snyk/actions/setup@1cc9026f51d822442cb4b872d8d7ead8cc69a018"
+      - uses: "snyk/actions/setup@e25b2e6f5658d1bb7a6671b113260f13134cc3af"
       - run: "make install"
       - uses: "google/osv-scanner@e20621776bbd2e799537eb3b0328398ccd5e9fdb"
         with:
@@ -74,7 +74,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
-      - uses: "snyk/actions/setup@1cc9026f51d822442cb4b872d8d7ead8cc69a018"
+      - uses: "snyk/actions/setup@e25b2e6f5658d1bb7a6671b113260f13134cc3af"
       - run: "make install"
       - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
         env:
