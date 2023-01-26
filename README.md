@@ -185,19 +185,10 @@ As an example, in the following CSS that contains nested selectors.
 
 ## What problems can it solve?
 
-> 💡 Hi there! If you have a problem that you have used this plugin for, I would like to hear so I can list it here to share with the community.
+PostCSS Prefix Wrap can be used to solve multiple different problems. The following articles give some concrete examples:
 
-### Embedding content within an existing site
-
-You may be asked to develop a piece of interactivity that needs to live within a content management system that you do not control. You may find that your styles are impacted by the CSS already on the site, or that your newly included CSS now impacts the rest of the page it is embedded in.
-
-PostCSS Prefix Wrap solves this problem by prefixing your CSS selectors so that they only apply to HTML contained within a parent containing element. Your styles will now take precedence over those of the parent page.
-
-On the flip side, your styles wont negatively impact the site your content is hosted on as its scoped to that parent container.
-
-This is in fact the origin story for this plugin, for developing interactive content to live within the Blackboard LMS.
-
-> 🤔 You might wonder why its necessary to use this plugin when you could just prefix your styles yourself. Yes, this is correct, but does not apply to any 3rd party code you include such as a CSS framework like Bootstrap.
+-   [Embedding Content Within an Existing Site With PostCSS Prefix Wrap (tedman.dev)](https://tedman.dev/posts/embedding-content-within-an-existing-site-with-postcss-prefix-wrap/)
+-   [Maintainable Legacy CSS With PostCSS Prefix Wrap (tedman.dev)](https://tedman.dev/posts/maintainable-legacy-css-with-postcss-prefix-wrap/)
 
 ## How to contribute?
 
