@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 💡 Features and Improvements
 
 -   [OSV Scanning](https://osv.dev/) in SAST Pipeline
+-   Link to external articles for **What problems can it solve?**
 
 ### 🔧 Maintenance
 
