@@ -29,6 +29,9 @@ jobs:
         with:
           node-version: "${{ matrix.node-version }}"
           cache: "pnpm"
+      - run: "pnpm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN && pnpm login"
+        env:
+          NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
       - run: "make install"
       - run: "make lint"
       - run: "make test"
