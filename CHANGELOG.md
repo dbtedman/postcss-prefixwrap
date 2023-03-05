@@ -10,6 +10,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 -   [OSV Scanning](https://osv.dev/) in SAST Pipeline
 -   Link to external articles for **What problems can it solve?**
+-   Include Node v19 support
 
 ### 🔧 Maintenance
 
