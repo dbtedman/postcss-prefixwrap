@@ -4,7 +4,7 @@
 all: install lint build test sast
 
 .PHONY: pre_commit
-pre_commit: lint test_fast sast
+pre_commit: lint test_fast
 
 .PHONY: install
 install:
