@@ -3,7 +3,7 @@
 
 # Don't lint Node dependencies
 /node_modules/
-/pnpm-lock.yaml
+/**/pnpm-lock.yaml
 
 # Don't lint test
 /.nyc_output/

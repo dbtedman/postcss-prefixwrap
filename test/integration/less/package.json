@@ -4,8 +4,8 @@
     "build": "lessc source.less compiled.css && node ./build.js"
   },
   "dependencies": {
-    "postcss": "8.*",
-    "less": "*",
+    "less": "^4.1.3",
+    "postcss": "~8.4.21",
     "postcss-prefixwrap": "file:../../../build"
   }
 }

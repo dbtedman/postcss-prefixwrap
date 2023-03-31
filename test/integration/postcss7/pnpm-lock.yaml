@@ -1,42 +1,34 @@
-lockfileVersion: 5.4
-
-specifiers:
-  postcss: 7.*
-  postcss-prefixwrap: file:../../../build
+lockfileVersion: '6.0'
 
 dependencies:
-  postcss: 7.0.39
-  postcss-prefixwrap: file:../../../build
+  postcss:
+    specifier: ~7.0.39
+    version: 7.0.39
+  postcss-prefixwrap:
+    specifier: file:../../../build
+    version: file:../../../build
 
 packages:
-  /picocolors/0.2.1:
-    resolution:
-      {
-        integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==,
-      }
+
+  /picocolors@0.2.1:
+    resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
     dev: false
 
-  /postcss/7.0.39:
-    resolution:
-      {
-        integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==,
-      }
-    engines: { node: ">=6.0.0" }
+  /postcss@7.0.39:
+    resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==}
+    engines: {node: '>=6.0.0'}
     dependencies:
       picocolors: 0.2.1
       source-map: 0.6.1
     dev: false
 
-  /source-map/0.6.1:
-    resolution:
-      {
-        integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==,
-      }
-    engines: { node: ">=0.10.0" }
+  /source-map@0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    engines: {node: '>=0.10.0'}
     dev: false
 
   file:../../../build:
-    resolution: { directory: ../../../build, type: directory }
+    resolution: {directory: ../../../build, type: directory}
     name: build
     version: 0.0.0
     dev: false
