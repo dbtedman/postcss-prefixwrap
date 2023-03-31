@@ -4,9 +4,9 @@
     "build": "tsc --esModuleInterop true ./build.ts && node ./build.js"
   },
   "dependencies": {
-    "postcss": "8.*",
-    "@types/node": "*",
-    "typescript": "*",
-    "postcss-prefixwrap": "file:../../../build"
+    "@types/node": "^18.15.11",
+    "postcss": "~8.4.21",
+    "postcss-prefixwrap": "file:../../../build",
+    "typescript": "^5.0.3"
   }
 }

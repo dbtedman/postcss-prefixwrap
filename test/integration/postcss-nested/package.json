@@ -4,8 +4,8 @@
     "build": "node ./build.js"
   },
   "dependencies": {
-    "postcss": "8.*",
-    "postcss-nested": "*",
+    "postcss": "~8.4.21",
+    "postcss-nested": "^6.0.1",
     "postcss-prefixwrap": "file:../../../build"
   }
 }
