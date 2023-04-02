@@ -1264,7 +1264,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001473
-      electron-to-chromium: 1.4.347
+      electron-to-chromium: 1.4.348
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
     dev: true
@@ -1497,8 +1497,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.347:
-    resolution: {integrity: sha512-LNi3+/9nV0vT6Bz1OsSoZ/w7IgNuWdefZ7mjKNjZxyRlI/ag6uMXxsxAy5Etvuixq3Q26exw2fc4bNYvYQqXSw==}
+  /electron-to-chromium@1.4.348:
+    resolution: {integrity: sha512-gM7TdwuG3amns/1rlgxMbeeyNoBFPa+4Uu0c7FeROWh4qWmvSOnvcslKmWy51ggLKZ2n/F/4i2HJ+PVNxH9uCQ==}
     dev: true
 
   /emittery@0.13.1:
@@ -2045,7 +2045,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       fs.realpath: 1.0.0
-      minimatch: 7.4.3
+      minimatch: 7.4.4
       minipass: 4.2.5
       path-scurry: 1.6.3
     dev: true
@@ -2976,8 +2976,8 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
-  /minimatch@7.4.3:
-    resolution: {integrity: sha512-5UB4yYusDtkRPbRiy1cqZ1IpGNcJCGlEMG17RKzPddpyiPKoCdwohbED8g4QXT0ewCt8LTkQXuljsUfQ3FKM4A==}
+  /minimatch@7.4.4:
+    resolution: {integrity: sha512-T+8B3kNrLP7jDb5eaC4rUIp6DKoeTSb6f9SwF2phcY2gxJUA0GEf1i29/FHxBMEfx0ppWlr434/D0P+6jb8bOQ==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
