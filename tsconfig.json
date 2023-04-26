@@ -1,20 +1,20 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "outDir": "./build",
-    "paths": {
-      "*": ["node_modules/*"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "outDir": "./build",
+        "paths": {
+            "*": ["node_modules/*"]
+        },
+        "sourceMap": false,
+        "strict": true,
+        "target": "ES2021",
+        "lib": ["ES2021"],
+        "declaration": true
     },
-    "sourceMap": false,
-    "strict": true,
-    "target": "ES2021",
-    "lib": ["ES2021"],
-    "declaration": true
-  },
-  "include": ["./src/**/*", "./test/**/*"]
+    "include": ["./src/**/*", "./test/**/*"]
 }

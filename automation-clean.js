@@ -6,5 +6,5 @@ const fs = require("fs");
 const buildPath = path.join(__dirname, "build");
 
 if (fs.existsSync(buildPath)) {
-  fs.rmSync(buildPath, { recursive: true });
+    fs.rmSync(buildPath, { recursive: true });
 }

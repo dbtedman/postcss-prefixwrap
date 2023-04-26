@@ -6,13 +6,13 @@ import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAsse
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Leave Our Container", () => {
-  const postCSS = postCSSWithPlugin();
+    const postCSS = postCSSWithPlugin();
 
-  it("leaves selectors that contain our Selector in the left most location", () => {
-    assertActualMatchesExpectedAfterPrefixWrap(
-      postCSS,
-      path.join(__dirname, "fixtures", "leave-raw.css"),
-      path.join(__dirname, "fixtures", "leave-expected.css")
-    );
-  });
+    it("leaves selectors that contain our Selector in the left most location", () => {
+        assertActualMatchesExpectedAfterPrefixWrap(
+            postCSS,
+            path.join(__dirname, "fixtures", "leave-raw.css"),
+            path.join(__dirname, "fixtures", "leave-expected.css")
+        );
+    });
 });

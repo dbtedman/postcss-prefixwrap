@@ -6,13 +6,13 @@ import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAsse
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Handle Invalid CSS", () => {
-  const postCSS = postCSSWithPlugin();
+    const postCSS = postCSSWithPlugin();
 
-  it("ignores empty selectors", () => {
-    assertActualMatchesExpectedAfterPrefixWrap(
-      postCSS,
-      path.join(__dirname, "fixtures", "empty-selectors-raw.css"),
-      path.join(__dirname, "fixtures", "empty-selectors-expected.css")
-    );
-  });
+    it("ignores empty selectors", () => {
+        assertActualMatchesExpectedAfterPrefixWrap(
+            postCSS,
+            path.join(__dirname, "fixtures", "empty-selectors-raw.css"),
+            path.join(__dirname, "fixtures", "empty-selectors-expected.css")
+        );
+    });
 });

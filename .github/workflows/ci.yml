@@ -2,53 +2,53 @@
 name: "ci"
 
 on:
-  pull_request:
-    branches:
-      - "main"
-  push:
-    branches:
-      - "main"
+    pull_request:
+        branches:
+            - "main"
+    push:
+        branches:
+            - "main"
 
 permissions: "read-all"
 
 jobs:
-  linux:
-    runs-on: "ubuntu-latest"
+    linux:
+        runs-on: "ubuntu-latest"
 
-    strategy:
-      matrix:
-        node-version: ["16.x", "17.x", "18.x", "19.x", "20.x"]
+        strategy:
+            matrix:
+                node-version: ["16.x", "17.x", "18.x", "19.x", "20.x"]
 
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-      - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
-        with:
-          version: "latest"
-      - name: "Use Node.js ${{ matrix.node-version }}"
-        uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-        with:
-          node-version: "${{ matrix.node-version }}"
-          cache: "pnpm"
-      - run: "make install"
-      - run: "make lint"
-      - run: "make test"
-      - run: "make build"
-      - run: "make test_integration"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+              with:
+                  version: "latest"
+            - name: "Use Node.js ${{ matrix.node-version }}"
+              uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
+              with:
+                  node-version: "${{ matrix.node-version }}"
+                  cache: "pnpm"
+            - run: "make install"
+            - run: "make lint"
+            - run: "make test"
+            - run: "make build"
+            - run: "make test_integration"
 
-  windows:
-    runs-on: "windows-latest"
+    windows:
+        runs-on: "windows-latest"
 
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-      - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
-        with:
-          version: "latest"
-      - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - run: "make install"
-      - run: "make lint"
-      - run: "make test"
-      - run: "make build"
-      - run: "make test_integration"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+              with:
+                  version: "latest"
+            - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: "pnpm"
+            - run: "make install"
+            - run: "make lint"
+            - run: "make test"
+            - run: "make build"
+            - run: "make test_integration"

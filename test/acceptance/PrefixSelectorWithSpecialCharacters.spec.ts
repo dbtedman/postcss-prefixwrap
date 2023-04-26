@@ -7,19 +7,23 @@ import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAsse
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Prefix selector with special characters", () => {
-  it("handles .my-custom-selector[id^=my-id-starts-with-]", () => {
-    const postCSS = postCSSWithPlugin(
-      {},
-      ".my-custom-selector[id^=my-id-starts-with-]"
-    );
-    assertActualMatchesExpectedAfterPrefixWrap(
-      postCSS,
-      path.join(__dirname, "fixtures", "selector-special-characters-raw.css"),
-      path.join(
-        __dirname,
-        "fixtures",
-        "selector-special-characters-expected.css"
-      )
-    );
-  });
+    it("handles .my-custom-selector[id^=my-id-starts-with-]", () => {
+        const postCSS = postCSSWithPlugin(
+            {},
+            ".my-custom-selector[id^=my-id-starts-with-]"
+        );
+        assertActualMatchesExpectedAfterPrefixWrap(
+            postCSS,
+            path.join(
+                __dirname,
+                "fixtures",
+                "selector-special-characters-raw.css"
+            ),
+            path.join(
+                __dirname,
+                "fixtures",
+                "selector-special-characters-expected.css"
+            )
+        );
+    });
 });

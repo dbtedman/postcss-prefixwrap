@@ -2,107 +2,107 @@
 name: "sast"
 
 on:
-  pull_request:
-    branches:
-      - "main"
-  push:
-    branches:
-      - "main"
-  schedule:
-    - cron: "19 19 * * 4"
+    pull_request:
+        branches:
+            - "main"
+    push:
+        branches:
+            - "main"
+    schedule:
+        - cron: "19 19 * * 4"
 
 permissions: "read-all"
 
 jobs:
-  ossf:
-    runs-on: "ubuntu-latest"
-    # ossf scorecard only supported on main branch
-    if: github.event_name != 'pull_request'
-    permissions:
-      security-events: "write"
-      id-token: "write"
-      contents: "read"
-      actions: "read"
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-        with:
-          persist-credentials: false
-      - uses: "ossf/scorecard-action@80e868c13c90f172d68d1f4501dee99e2479f7af"
-        with:
-          results_file: "results.sarif"
-          results_format: "sarif"
-          publish_results: true
-      - uses: "actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce"
-        with:
-          name: "SARIF file"
-          path: "results.sarif"
-          retention-days: 5
-      - uses: "github/codeql-action/upload-sarif@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
-        with:
-          sarif_file: "results.sarif"
+    ossf:
+        runs-on: "ubuntu-latest"
+        # ossf scorecard only supported on main branch
+        if: github.event_name != 'pull_request'
+        permissions:
+            security-events: "write"
+            id-token: "write"
+            contents: "read"
+            actions: "read"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+              with:
+                  persist-credentials: false
+            - uses: "ossf/scorecard-action@80e868c13c90f172d68d1f4501dee99e2479f7af"
+              with:
+                  results_file: "results.sarif"
+                  results_format: "sarif"
+                  publish_results: true
+            - uses: "actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce"
+              with:
+                  name: "SARIF file"
+                  path: "results.sarif"
+                  retention-days: 5
+            - uses: "github/codeql-action/upload-sarif@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
+              with:
+                  sarif_file: "results.sarif"
 
-  osv:
-    permissions:
-      contents: "read"
-    runs-on: "ubuntu-latest"
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-      - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
-        with:
-          version: "latest"
-      - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - uses: "snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb"
-      - run: "make install"
-      - uses: "google/osv-scanner@e20621776bbd2e799537eb3b0328398ccd5e9fdb"
-        continue-on-error: true
-        with:
-          to-scan: "./"
+    osv:
+        permissions:
+            contents: "read"
+        runs-on: "ubuntu-latest"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+              with:
+                  version: "latest"
+            - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: "pnpm"
+            - uses: "snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb"
+            - run: "make install"
+            - uses: "google/osv-scanner@e20621776bbd2e799537eb3b0328398ccd5e9fdb"
+              continue-on-error: true
+              with:
+                  to-scan: "./"
 
-  snyk:
-    permissions:
-      contents: "read"
-      security-events: "write"
-    runs-on: "ubuntu-latest"
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-      - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
-        with:
-          version: "latest"
-      - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - uses: "snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb"
-      - run: "make install"
-      - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      - uses: "github/codeql-action/upload-sarif@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
-        with:
-          sarif_file: "snyk.sarif"
+    snyk:
+        permissions:
+            contents: "read"
+            security-events: "write"
+        runs-on: "ubuntu-latest"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+              with:
+                  version: "latest"
+            - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: "pnpm"
+            - uses: "snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb"
+            - run: "make install"
+            - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
+              env:
+                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            - uses: "github/codeql-action/upload-sarif@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
+              with:
+                  sarif_file: "snyk.sarif"
 
-  codeql:
-    runs-on: "ubuntu-latest"
+    codeql:
+        runs-on: "ubuntu-latest"
 
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+        permissions:
+            actions: read
+            contents: read
+            security-events: write
 
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-      - uses: "github/codeql-action/init@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
-        with:
-          languages: "typescript"
-      - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
-        with:
-          version: "latest"
-      - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - run: "make install"
-      - uses: "github/codeql-action/analyze@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "github/codeql-action/init@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"
+              with:
+                  languages: "typescript"
+            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+              with:
+                  version: "latest"
+            - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: "pnpm"
+            - run: "make install"
+            - uses: "github/codeql-action/analyze@b2c19fb9a2a485599ccf4ed5d65527d94bc57226"

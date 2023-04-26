@@ -3,41 +3,43 @@ import PostCSS from "postcss";
 import { prefixWrapCSSRule } from "../../../../src/internal/domain/CSSRuleWrapper";
 
 describe("prefixWrapCSSRule()", () => {
-  const prefixSelector = ".my-custom-wrap";
+    const prefixSelector = ".my-custom-wrap";
 
-  it("leaves prefix Selector alone", () => {
-    const cssRule = PostCSS.rule({
-      selector: prefixSelector,
+    it("leaves prefix Selector alone", () => {
+        const cssRule = PostCSS.rule({
+            selector: prefixSelector,
+        });
+
+        prefixWrapCSSRule(cssRule, null, [], prefixSelector, false);
+
+        expect(cssRule.selector).toStrictEqual(prefixSelector);
     });
 
-    prefixWrapCSSRule(cssRule, null, [], prefixSelector, false);
+    it("does not change for empty Selector", () => {
+        const cssRule = PostCSS.rule({
+            selector: "",
+        });
 
-    expect(cssRule.selector).toStrictEqual(prefixSelector);
-  });
+        prefixWrapCSSRule(cssRule, null, [], "", false);
 
-  it("does not change for empty Selector", () => {
-    const cssRule = PostCSS.rule({
-      selector: "",
+        expect(cssRule.selector).toStrictEqual("");
     });
 
-    prefixWrapCSSRule(cssRule, null, [], "", false);
+    it("prefixes non root selectors with prefix Selector", () => {
+        ["div", "p", "h1"].forEach((selector) => {
+            const parent = PostCSS.root();
+            const cssRule = PostCSS.rule({
+                selector: selector,
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                parent: parent,
+            });
 
-    expect(cssRule.selector).toStrictEqual("");
-  });
+            prefixWrapCSSRule(cssRule, null, [], selector, false);
 
-  it("prefixes non root selectors with prefix Selector", () => {
-    ["div", "p", "h1"].forEach((selector) => {
-      const parent = PostCSS.root();
-      const cssRule = PostCSS.rule({
-        selector: selector,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        parent: parent,
-      });
-
-      prefixWrapCSSRule(cssRule, null, [], selector, false);
-
-      expect(cssRule.selector).toStrictEqual(`${prefixSelector} ${selector}`);
+            expect(cssRule.selector).toStrictEqual(
+                `${prefixSelector} ${selector}`
+            );
+        });
     });
-  });
 });
