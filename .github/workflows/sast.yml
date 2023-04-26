@@ -52,7 +52,6 @@ jobs:
                   go-version: "stable"
             - run: "go install github.com/google/osv-scanner/cmd/osv-scanner@v1.3.2"
             - run: "make sast_osv"
-              continue-on-error: true
 
     snyk:
         permissions:
