@@ -60,6 +60,7 @@ jobs:
               continue-on-error: true
               with:
                   to-scan: "./"
+                  version: "1.3.2"
 
     snyk:
         permissions:
