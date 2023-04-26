@@ -1,4 +1,5 @@
 import { PostCSSRule } from "../../Types";
+
 import {
   cleanSelector,
   cssRuleMatchesPrefixSelector,
