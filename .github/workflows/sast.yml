@@ -47,19 +47,12 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+            - uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
               with:
-                  version: "latest"
-            - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-              with:
-                  node-version-file: ".nvmrc"
-                  cache: "pnpm"
-            - uses: "snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb"
-            - run: "make install"
-            - uses: "google/osv-scanner@e20621776bbd2e799537eb3b0328398ccd5e9fdb"
+                  go-version: "stable"
+            - run: "go install github.com/google/osv-scanner/cmd/osv-scanner@v1.3.2"
+            - run: "make sast_osv"
               continue-on-error: true
-              with:
-                  to-scan: "./"
 
     snyk:
         permissions:
