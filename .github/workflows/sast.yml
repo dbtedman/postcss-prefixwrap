@@ -56,7 +56,7 @@ jobs:
                   cache: "pnpm"
             - uses: "snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb"
             - run: "make install"
-            - uses: "google/osv-scanner@e20621776bbd2e799537eb3b0328398ccd5e9fdb"
+            - uses: "google/osv-scanner@c6d02d122f65ce3550eb002e4cbff6f1307aaa6a"
               continue-on-error: true
               with:
                   to-scan: "./"
