@@ -2,29 +2,29 @@
 name: "release"
 
 on:
-  release:
-    types: ["published"]
+    release:
+        types: ["published"]
 
 permissions: "read-all"
 
 jobs:
-  release:
-    runs-on: "ubuntu-latest"
+    release:
+        runs-on: "ubuntu-latest"
 
-    steps:
-      - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
-      - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
-        with:
-          version: "latest"
-      - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - run: "make install"
-      - run: "make build"
-      - run: "make lint"
-      - run: "make test"
-      - run: "pnpm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN"
-        env:
-          NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
-      - run: "make publish"
+        steps:
+            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
+              with:
+                  version: "latest"
+            - uses: "actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c"
+              with:
+                  node-version-file: ".nvmrc"
+                  cache: "pnpm"
+            - run: "make install"
+            - run: "make build"
+            - run: "make lint"
+            - run: "make test"
+            - run: "pnpm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN"
+              env:
+                  NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
+            - run: "make publish"

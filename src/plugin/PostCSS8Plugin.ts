@@ -1,30 +1,30 @@
 import {
-  PostCSS7PostCSS,
-  PostCSS8PostCSS,
-  PostCSSAcceptedPlugin,
-  PostCSSContainer,
+    PostCSS7PostCSS,
+    PostCSS8PostCSS,
+    PostCSSAcceptedPlugin,
+    PostCSSContainer,
 } from "../Types";
 
 import PostCSSPrefixWrap, {
-  PLUGIN_NAME,
-  PostCSSPrefixWrapOptions,
+    PLUGIN_NAME,
+    PostCSSPrefixWrapOptions,
 } from "./PostCSSPrefixWrap";
 
 export const isPostCSSv8 = (postcss: PostCSS7PostCSS | PostCSS8PostCSS) =>
-  (postcss as PostCSS8PostCSS).Root !== undefined;
+    (postcss as PostCSS8PostCSS).Root !== undefined;
 
 export const asPostCSSv8PluginGenerator = () => {
-  return (
-    prefixSelector: string,
-    options?: PostCSSPrefixWrapOptions
-  ): PostCSSAcceptedPlugin => {
-    const plugin = new PostCSSPrefixWrap(prefixSelector, options);
+    return (
+        prefixSelector: string,
+        options?: PostCSSPrefixWrapOptions
+    ): PostCSSAcceptedPlugin => {
+        const plugin = new PostCSSPrefixWrap(prefixSelector, options);
 
-    return {
-      postcssPlugin: PLUGIN_NAME,
-      Once(root: PostCSSContainer): void {
-        plugin.prefixRoot(root);
-      },
+        return {
+            postcssPlugin: PLUGIN_NAME,
+            Once(root: PostCSSContainer): void {
+                plugin.prefixRoot(root);
+            },
+        };
     };
-  };
 };

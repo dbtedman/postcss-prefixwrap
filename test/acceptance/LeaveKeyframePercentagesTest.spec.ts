@@ -6,13 +6,13 @@ import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAsse
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Leave Keyframe Percentages", () => {
-  const postCSS = postCSSWithPlugin();
+    const postCSS = postCSSWithPlugin();
 
-  it("ignores selectors that are percentages", () => {
-    assertActualMatchesExpectedAfterPrefixWrap(
-      postCSS,
-      path.join(__dirname, "fixtures", "keyframes-raw.css"),
-      path.join(__dirname, "fixtures", "keyframes-expected.css")
-    );
-  });
+    it("ignores selectors that are percentages", () => {
+        assertActualMatchesExpectedAfterPrefixWrap(
+            postCSS,
+            path.join(__dirname, "fixtures", "keyframes-raw.css"),
+            path.join(__dirname, "fixtures", "keyframes-expected.css")
+        );
+    });
 });
