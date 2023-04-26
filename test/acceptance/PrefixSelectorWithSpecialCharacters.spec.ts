@@ -1,6 +1,10 @@
-import { postCSSWithPlugin } from "./support/PluginBootstrap";
-import { assertActualMatchesExpectedAfterPrefixWrap } from "../acceptance/support/PrefixAssert";
 import path from "path";
+
+import { describe, it } from "@jest/globals";
+
+import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
+
+import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
 describe("Acceptance: Prefix selector with special characters", () => {
   it("handles .my-custom-selector[id^=my-id-starts-with-]", () => {

@@ -1,6 +1,8 @@
-import indexWrap from "../../../src/plugin/PostCSSPlugin";
+import { describe, expect, it } from "@jest/globals";
 import * as postcss8 from "postcss";
 import * as postcss7 from "postcss7";
+
+import indexWrap from "../../../src/plugin/PostCSSPlugin";
 
 describe("indexWrap", () => {
   it("works with PostCSS v8", () => {

@@ -1,4 +1,5 @@
 import PostCSS from "postcss";
+
 import { prefixWrapCSSRule } from "../../../../src/internal/domain/CSSRuleWrapper";
 
 describe("prefixWrapCSSRule()", () => {

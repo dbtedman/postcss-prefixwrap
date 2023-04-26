@@ -10,10 +10,24 @@ module.exports = {
     "plugin:jest/recommended",
     "plugin:security-node/recommended",
     "plugin:promise/recommended",
+    "plugin:import/recommended",
   ],
+  settings: {
+    "import/resolver": {
+      typescript: true,
+      node: true,
+    },
+  },
   rules: {
     // Our tests rely frequently on assertions defined in external file.
     "jest/expect-expect": "off",
+    // Consistent import order and spacing of imports.
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+      },
+    ],
   },
   env: {
     browser: true,

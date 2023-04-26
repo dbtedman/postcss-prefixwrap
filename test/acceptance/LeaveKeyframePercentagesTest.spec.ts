@@ -1,4 +1,7 @@
 import * as path from "path";
+
+import { describe, it } from "@jest/globals";
+
 import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 

@@ -4,6 +4,14 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## In Development
+
+### 🔧 Maintenance
+
+-   Fix TypeScript config for updated NodeJS support.
+-   Update use of Jest directives to definitions file.
+-   Update import formats.
+
 ## [1.39.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.39.1)
 
 ### 🔧 Maintenance
@@ -55,7 +63,8 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 🐛 Bug Fixes
 
--   [#185](https://github.com/dbtedman/postcss-prefixwrap/issues/185) Don't use alias `*` selector as will break imports when used outside of config without it.
+-   [#185](https://github.com/dbtedman/postcss-prefixwrap/issues/185) Don't use alias `*` selector as will break imports
+    when used outside of config without it.
 
 ## [1.35.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.35.0)
 
@@ -82,7 +91,8 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 🐛 Bug Fixes
 
--   [#176](https://github.com/dbtedman/postcss-prefixwrap/issues/176) Update instructions on `whitelist` and `blacklist` to clarify regular expression usage
+-   [#176](https://github.com/dbtedman/postcss-prefixwrap/issues/176) Update instructions on `whitelist` and `blacklist`
+    to clarify regular expression usage
 -   Expand CI support to run on windows host to assist in identifying cross-platform issues
 
 ## [1.32.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.32.0)
@@ -123,13 +133,15 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 💡 Features and Improvements
 
--   [[154]](https://github.com/dbtedman/postcss-prefixwrap/issues/154) Add support for nested selectors with new configuration option
+-   [[154]](https://github.com/dbtedman/postcss-prefixwrap/issues/154) Add support for nested selectors with new
+    configuration option
 
 ## [1.28.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.28.1)
 
 ### 🐛 Bug Fixes
 
--   [[146]](https://github.com/dbtedman/postcss-prefixwrap/issues/146) Fix Rule not wrapped when the first selector starts with the prefix
+-   [[146]](https://github.com/dbtedman/postcss-prefixwrap/issues/146) Fix Rule not wrapped when the first selector starts
+    with the prefix
 
 ## [1.27.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.27.0)
 

@@ -6,4 +6,5 @@ module.exports = {
   },
   coverageReporters: ["text", "cobertura"],
   collectCoverageFrom: ["<rootDir>/src/**"],
+  injectGlobals: false,
 };
