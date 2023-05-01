@@ -50,7 +50,10 @@ jobs:
             - uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
               with:
                   go-version: "stable"
-            - run: "curl -o /usr/local/bin/osv-scanner https://github.com/google/osv-scanner/releases/download/v1.3.2/osv-scanner_1.3.2_linux_amd64"
+            - run: |
+                  curl -o /usr/local/bin/osv-scanner https://github.com/google/osv-scanner/releases/download/v1.3.2/osv-scanner_1.3.2_linux_amd64 \
+                    && chmod +x /usr/local/bin/osv-scanner \
+                    && /usr/local/bin/osv-scanner -version
             - run: "make sast_osv"
 
     snyk:
