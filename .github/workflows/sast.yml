@@ -24,7 +24,7 @@ jobs:
             contents: "read"
             actions: "read"
         steps:
-            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
               with:
                   persist-credentials: false
             - uses: "ossf/scorecard-action@80e868c13c90f172d68d1f4501dee99e2479f7af"
@@ -46,7 +46,7 @@ jobs:
             contents: "read"
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
             - uses: "actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753"
               with:
                   go-version: "stable"
@@ -62,7 +62,7 @@ jobs:
             security-events: "write"
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
             - uses: "pnpm/action-setup@c3b53f6a16e57305370b4ae5a540c2077a1d50dd"
               with:
                   version: "latest"
@@ -88,7 +88,7 @@ jobs:
             security-events: write
 
         steps:
-            - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            - uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
             - uses: "github/codeql-action/init@83f0fe6c4988d98a455712a27f0255212bba9bd4"
               with:
                   languages: "typescript"
