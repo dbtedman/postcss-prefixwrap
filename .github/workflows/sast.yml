@@ -27,7 +27,7 @@ jobs:
             - uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
               with:
                   persist-credentials: false
-            - uses: "ossf/scorecard-action@80e868c13c90f172d68d1f4501dee99e2479f7af"
+            - uses: "ossf/scorecard-action@08b4669551908b1024bb425080c797723083c031"
               with:
                   results_file: "results.sarif"
                   results_format: "sarif"
