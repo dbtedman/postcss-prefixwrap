@@ -16,7 +16,7 @@ export const isPostCSSv8 = (postcss: PostCSS7PostCSS | PostCSS8PostCSS) =>
 export const asPostCSSv8PluginGenerator = () => {
     return (
         prefixSelector: string,
-        options?: PostCSSPrefixWrapOptions
+        options?: PostCSSPrefixWrapOptions,
     ): PostCSSAcceptedPlugin => {
         const plugin = new PostCSSPrefixWrap(prefixSelector, options);
 

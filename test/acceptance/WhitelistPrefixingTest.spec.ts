@@ -16,7 +16,7 @@ describe("Acceptance: Whitelist", () => {
     it("ignores file not whitelisted", () => {
         assertNoChangeAfterPrefixWrap(
             postCSS,
-            path.join(__dirname, "fixtures", "standard-classes-raw.css")
+            path.join(__dirname, "fixtures", "standard-classes-raw.css"),
         );
     });
 
@@ -24,7 +24,7 @@ describe("Acceptance: Whitelist", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "standard-tags-raw.css"),
-            path.join(__dirname, "fixtures", "standard-tags-expected.css")
+            path.join(__dirname, "fixtures", "standard-tags-expected.css"),
         );
     });
 });
