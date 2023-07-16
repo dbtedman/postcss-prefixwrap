@@ -38,7 +38,7 @@ describe("prefixWrapCSSRule()", () => {
             prefixWrapCSSRule(cssRule, null, [], selector, false);
 
             expect(cssRule.selector).toStrictEqual(
-                `${prefixSelector} ${selector}`
+                `${prefixSelector} ${selector}`,
             );
         });
     });

@@ -12,7 +12,7 @@ describe("Acceptance: Handle Invalid CSS", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "empty-selectors-raw.css"),
-            path.join(__dirname, "fixtures", "empty-selectors-expected.css")
+            path.join(__dirname, "fixtures", "empty-selectors-expected.css"),
         );
     });
 });

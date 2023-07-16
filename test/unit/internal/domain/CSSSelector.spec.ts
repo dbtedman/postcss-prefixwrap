@@ -44,7 +44,7 @@ describe("cssRuleMatchesPrefixSelector", () => {
         });
 
         expect(
-            cssRuleMatchesPrefixSelector(cssRule, prefixSelector)
+            cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
         ).toStrictEqual(true);
     });
 
@@ -56,7 +56,7 @@ describe("cssRuleMatchesPrefixSelector", () => {
         });
 
         expect(
-            cssRuleMatchesPrefixSelector(cssRule, prefixSelector)
+            cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
         ).toStrictEqual(false);
     });
 
@@ -66,7 +66,7 @@ describe("cssRuleMatchesPrefixSelector", () => {
         const cssRule = PostCSS.rule({ selector: selector });
 
         expect(
-            cssRuleMatchesPrefixSelector(cssRule, prefixSelector)
+            cssRuleMatchesPrefixSelector(cssRule, prefixSelector),
         ).toStrictEqual(false);
     });
 });

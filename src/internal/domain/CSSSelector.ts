@@ -30,11 +30,11 @@ export const isNotRootTag = (cleanSelector: string): boolean => {
 
 export const cssRuleMatchesPrefixSelector = (
     cssRule: { selector: string },
-    prefixSelector: string
+    prefixSelector: string,
 ): boolean => {
     const escapedPrefixSelector = prefixSelector.replace(
         /[.*+?^${}()|[\]\\]/g,
-        "\\$&"
+        "\\$&",
     );
 
     // eslint-disable-next-line security-node/non-literal-reg-expr
