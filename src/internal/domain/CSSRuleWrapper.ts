@@ -13,7 +13,7 @@ export const prefixWrapCSSRule = (
     nested: string | null,
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
-    prefixRootTags: boolean
+    prefixRootTags: boolean,
 ): void => {
     // Check each rule to see if it exactly matches our prefix selector, when
     // this happens, don't try to prefix that selector.
@@ -23,8 +23,8 @@ export const prefixWrapCSSRule = (
             (selector) =>
                 !cssRuleMatchesPrefixSelector(
                     { selector: selector },
-                    prefixSelector
-                )
+                    prefixSelector,
+                ),
         );
 
     if (rules.length === 0) {
@@ -39,8 +39,8 @@ export const prefixWrapCSSRule = (
                 nested,
                 ignoredSelectors,
                 prefixSelector,
-                prefixRootTags
-            )
+                prefixRootTags,
+            ),
         )
         .filter(isValidCSSSelector)
         .join(", ");
@@ -52,7 +52,7 @@ export const prefixWrapCSSSelector = (
     nested: string | null,
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
-    prefixRootTags: boolean
+    prefixRootTags: boolean,
 ): string | null => {
     const cleanedSelector = cleanSelector(cssSelector);
 
@@ -73,7 +73,7 @@ export const prefixWrapCSSSelector = (
     // Check for matching ignored selectors
     if (
         ignoredSelectors.some((currentValue) =>
-            cleanedSelector.match(currentValue)
+            cleanedSelector.match(currentValue),
         )
     ) {
         return cleanedSelector;

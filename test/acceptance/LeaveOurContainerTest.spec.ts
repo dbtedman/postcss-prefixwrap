@@ -12,7 +12,7 @@ describe("Acceptance: Leave Our Container", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "leave-raw.css"),
-            path.join(__dirname, "fixtures", "leave-expected.css")
+            path.join(__dirname, "fixtures", "leave-expected.css"),
         );
     });
 });

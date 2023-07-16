@@ -12,7 +12,7 @@ describe("Acceptance: Standard Prefixing", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "standard-tags-raw.css"),
-            path.join(__dirname, "fixtures", "standard-tags-expected.css")
+            path.join(__dirname, "fixtures", "standard-tags-expected.css"),
         );
     });
 
@@ -20,7 +20,7 @@ describe("Acceptance: Standard Prefixing", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "standard-ids-raw.css"),
-            path.join(__dirname, "fixtures", "standard-ids-expected.css")
+            path.join(__dirname, "fixtures", "standard-ids-expected.css"),
         );
     });
 
@@ -28,7 +28,7 @@ describe("Acceptance: Standard Prefixing", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "standard-classes-raw.css"),
-            path.join(__dirname, "fixtures", "standard-classes-expected.css")
+            path.join(__dirname, "fixtures", "standard-classes-expected.css"),
         );
     });
 
@@ -36,7 +36,7 @@ describe("Acceptance: Standard Prefixing", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "multiple-classes-raw.css"),
-            path.join(__dirname, "fixtures", "multiple-classes-expected.css")
+            path.join(__dirname, "fixtures", "multiple-classes-expected.css"),
         );
     });
 
@@ -47,13 +47,13 @@ describe("Acceptance: Standard Prefixing", () => {
             path.join(
                 __dirname,
                 "fixtures",
-                "standard-universal-selectors-raw.css"
+                "standard-universal-selectors-raw.css",
             ),
             path.join(
                 __dirname,
                 "fixtures",
-                "standard-universal-selectors-expected.css"
-            )
+                "standard-universal-selectors-expected.css",
+            ),
         );
     });
 
@@ -64,13 +64,13 @@ describe("Acceptance: Standard Prefixing", () => {
             path.join(
                 __dirname,
                 "fixtures",
-                "standard-attribute-selectors-raw.css"
+                "standard-attribute-selectors-raw.css",
             ),
             path.join(
                 __dirname,
                 "fixtures",
-                "standard-attribute-selectors-expected.css"
-            )
+                "standard-attribute-selectors-expected.css",
+            ),
         );
     });
 });

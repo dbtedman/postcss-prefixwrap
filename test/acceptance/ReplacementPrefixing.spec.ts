@@ -12,7 +12,7 @@ describe("Acceptance: Replacement Prefixing", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "replacement-tags-raw.css"),
-            path.join(__dirname, "fixtures", "replacement-tags-expected.css")
+            path.join(__dirname, "fixtures", "replacement-tags-expected.css"),
         );
     });
 });

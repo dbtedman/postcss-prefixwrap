@@ -14,7 +14,7 @@ describe("Acceptance: Ignored Selectors", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSSIgnore,
             path.join(__dirname, "fixtures", "ignore-selectors.css"),
-            path.join(__dirname, "fixtures", "ignore-selectors-expected.css")
+            path.join(__dirname, "fixtures", "ignore-selectors-expected.css"),
         );
     });
 });

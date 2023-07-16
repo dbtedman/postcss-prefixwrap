@@ -10,7 +10,7 @@ import { PostCSSPrefixWrapOptions } from "../../../src/plugin/PostCSSPrefixWrap"
 
 export const postCSSWithPlugin = (
     options: PostCSSPrefixWrapOptions = {},
-    selector = ".my-container"
+    selector = ".my-container",
 ): Processor => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore

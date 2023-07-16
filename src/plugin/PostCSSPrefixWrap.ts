@@ -23,13 +23,13 @@ export default class PostCSSPrefixWrap {
 
     constructor(
         prefixSelector: string,
-        options: PostCSSPrefixWrapOptions = {}
+        options: PostCSSPrefixWrapOptions = {},
     ) {
         this.blacklist = options.blacklist ?? [];
         this.ignoredSelectors = options.ignoredSelectors ?? [];
         this.isPrefixSelector = new RegExp(
             // eslint-disable-next-line security-node/non-literal-reg-expr
-            `^${prefixSelector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`
+            `^${prefixSelector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`,
         );
         this.prefixRootTags = options.prefixRootTags ?? false;
         this.prefixSelector = prefixSelector;
@@ -42,7 +42,7 @@ export default class PostCSSPrefixWrap {
             shouldIncludeFilePath(
                 css.source?.input?.file,
                 this.whitelist,
-                this.blacklist
+                this.blacklist,
             )
         ) {
             css.walkRules((cssRule: PostCSSRule) => {
@@ -51,7 +51,7 @@ export default class PostCSSPrefixWrap {
                     this.nested,
                     this.ignoredSelectors,
                     this.prefixSelector,
-                    this.prefixRootTags
+                    this.prefixRootTags,
                 );
             });
         }
