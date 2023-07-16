@@ -9,7 +9,7 @@ import { asPostCSSv8PluginGenerator, isPostCSSv8 } from "./PostCSS8Plugin";
 import { asPostCSSv7PluginGenerator } from "./PostCSS7Plugin";
 
 export = (
-    postcss: PostCSS7PostCSS | PostCSS8PostCSS
+    postcss: PostCSS7PostCSS | PostCSS8PostCSS,
 ): PostCSS7Plugin | PostCSS8Plugin => {
     if (isPostCSSv8(postcss)) {
         return asPostCSSv8PluginGenerator();
