@@ -10,6 +10,6 @@ export const asPostCSSv7PluginGenerator = (postcss: PostCSS7PostCSS) => {
         PLUGIN_NAME,
         (prefixSelector: string, options?: PostCSSPrefixWrapOptions) => {
             return new PostCSSPrefixWrap(prefixSelector, options).prefix();
-        }
+        },
     );
 };

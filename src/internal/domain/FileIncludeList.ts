@@ -1,7 +1,7 @@
 export const shouldIncludeFilePath = (
     filePath: string | undefined,
     whitelist: Array<string>,
-    blacklist: Array<string>
+    blacklist: Array<string>,
 ): boolean => {
     // If whitelist exists, check if rule is contained within it.
     if (whitelist.length > 0) {

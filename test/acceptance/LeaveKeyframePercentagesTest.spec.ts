@@ -12,7 +12,7 @@ describe("Acceptance: Leave Keyframe Percentages", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "keyframes-raw.css"),
-            path.join(__dirname, "fixtures", "keyframes-expected.css")
+            path.join(__dirname, "fixtures", "keyframes-expected.css"),
         );
     });
 });

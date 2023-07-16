@@ -16,7 +16,7 @@ describe("Acceptance: Blacklist", () => {
     it("ignores file in blacklist", () => {
         assertNoChangeAfterPrefixWrap(
             postCSS,
-            path.join(__dirname, "fixtures", "standard-classes-raw.css")
+            path.join(__dirname, "fixtures", "standard-classes-raw.css"),
         );
     });
 
@@ -24,7 +24,7 @@ describe("Acceptance: Blacklist", () => {
         assertActualMatchesExpectedAfterPrefixWrap(
             postCSS,
             path.join(__dirname, "fixtures", "standard-tags-raw.css"),
-            path.join(__dirname, "fixtures", "standard-tags-expected.css")
+            path.join(__dirname, "fixtures", "standard-tags-expected.css"),
         );
     });
 });
