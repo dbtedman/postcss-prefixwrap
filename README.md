@@ -2,6 +2,7 @@
 
 [![CI GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/postcss-prefixwrap/ci.yml?branch=main&style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/ci.yml?query=branch%3Amain)
 [![SAST GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/postcss-prefixwrap/sast.yml?branch=main&style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
+[![Latest Release](https://img.shields.io/github/v/release/dbtedman/postcss-prefixwrap?style=for-the-badge&logo=github&color=43cc11)](https://github.com/dbtedman/postcss-prefixwrap/releases)
 [![NPM Downloads Per Week](https://img.shields.io/npm/dw/postcss-prefixwrap?color=blue&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/postcss-prefixwrap)
 
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
