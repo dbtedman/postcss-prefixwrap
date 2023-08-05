@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 🔧 Maintenance
 
 -   NodeJS Update
+-   Dependency Updates
 
 ## [1.40.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.40.0)
 
