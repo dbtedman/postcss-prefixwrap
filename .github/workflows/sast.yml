@@ -66,7 +66,7 @@ jobs:
             - uses: "pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598"
               with:
                   version: "latest"
-            - uses: "actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8"
+            - uses: "actions/setup-node@bea5baf987ba7aa777a8a0b4ace377a21c45c381"
               with:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
@@ -95,7 +95,7 @@ jobs:
             - uses: "pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598"
               with:
                   version: "latest"
-            - uses: "actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8"
+            - uses: "actions/setup-node@bea5baf987ba7aa777a8a0b4ace377a21c45c381"
               with:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
