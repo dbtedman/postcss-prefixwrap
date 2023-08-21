@@ -16,7 +16,7 @@ jobs:
             - uses: "pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598"
               with:
                   version: "latest"
-            - uses: "actions/setup-node@bea5baf987ba7aa777a8a0b4ace377a21c45c381"
+            - uses: "actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d"
               with:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
