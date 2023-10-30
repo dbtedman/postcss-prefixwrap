@@ -20,7 +20,7 @@ jobs:
                 node-version: ["16.x", "17.x", "18.x", "19.x", "20.x", "21.x"]
 
         steps:
-            - uses: "actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608"
+            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
             - uses: "pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598"
               with:
                   version: "latest"
@@ -39,7 +39,7 @@ jobs:
         runs-on: "windows-latest"
 
         steps:
-            - uses: "actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608"
+            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
             - uses: "pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598"
               with:
                   version: "latest"
