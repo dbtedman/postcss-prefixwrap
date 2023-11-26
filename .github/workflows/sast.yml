@@ -51,7 +51,7 @@ jobs:
               with:
                   go-version: "stable"
             - run: |
-                  curl -o /usr/local/bin/osv-scanner https://github.com/google/osv-scanner/releases/download/v1.3.2/osv-scanner_1.3.2_linux_amd64 \
+                  curl -o /usr/local/bin/osv-scanner https://github.com/google/osv-scanner/releases/download/v1.4.3/osv-scanner_1.4.3_linux_amd64 \
                     && chmod +x /usr/local/bin/osv-scanner \
                     && /usr/local/bin/osv-scanner -version
             - run: "make sast_osv"
