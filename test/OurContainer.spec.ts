@@ -5,12 +5,12 @@ import { it } from "@jest/globals";
 import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
-const postCSSSkip = postCSSWithPlugin({}, ".te");
+const postCSS = postCSSWithPlugin();
 
-it("does not get confused", () => {
+it("leaves selectors that contain our Selector in the left most location", () => {
     assertActualMatchesExpectedAfterPrefixWrap(
-        postCSSSkip,
-        path.join(__dirname, "fixtures", "starts-with-prefix-raw.css"),
-        path.join(__dirname, "fixtures", "starts-with-prefix-expected.css"),
+        postCSS,
+        path.join(__dirname, "fixtures", "leave-raw.css"),
+        path.join(__dirname, "fixtures", "leave-expected.css"),
     );
 });

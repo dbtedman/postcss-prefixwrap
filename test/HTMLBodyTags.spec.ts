@@ -5,12 +5,12 @@ import { it } from "@jest/globals";
 import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";
 
-const postCSSSkip = postCSSWithPlugin({}, ".te");
+const postCSSSkip = postCSSWithPlugin({ prefixRootTags: true });
 
-it("does not get confused", () => {
+it("adds prefix to global selectors", () => {
     assertActualMatchesExpectedAfterPrefixWrap(
         postCSSSkip,
-        path.join(__dirname, "fixtures", "starts-with-prefix-raw.css"),
-        path.join(__dirname, "fixtures", "starts-with-prefix-expected.css"),
+        path.join(__dirname, "fixtures", "leave-body-raw.css"),
+        path.join(__dirname, "fixtures", "leave-body-expected.css"),
     );
 });
