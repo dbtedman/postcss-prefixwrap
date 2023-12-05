@@ -10,6 +10,11 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 -   Testing Strategy Rethink
 
+### 🔧 Maintenance
+
+-   Drop support for unmaintained NodeJS versions according to [Release Schedule (nodejs.org)](https://nodejs.org/en/about/previous-releases).
+-   Drop support for postcss v7 in test cases as it includes vulnerabilities that won't be fixed.
+
 ## [1.43.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.43.0)
 
 ### 🔧 Maintenance

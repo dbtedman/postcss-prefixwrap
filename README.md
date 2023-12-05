@@ -8,10 +8,12 @@
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
 elements in a page.
 
-| Supports | Versions                                 |
-| :------- | :--------------------------------------- |
-| NodeJS   | `v16`, `v17`, `v18`, `v19`, `v20`, `v21` |
-| PostCSS  | `v7`, `v8`                               |
+| Supports | Versions                   |
+| :------- | :------------------------- |
+| NodeJS   | `v18`, `v19`, `v20`, `v21` |
+| PostCSS  | `v7`, `v8`                 |
+
+> ⚠️ PostCSS v7 support is no longer validated in automated test cases, and will be removed entirely in a future release.
 
 -   [How to use this plugin?](#how-to-use-this-plugin)
 -   [What options does it have?](#what-options-does-it-have)
