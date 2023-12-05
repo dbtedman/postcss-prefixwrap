@@ -1,0 +1,37 @@
+---
+root: true
+
+parser: "@typescript-eslint/parser"
+
+plugins:
+    - "unused-imports"
+
+extends:
+    - "eslint:recommended"
+    - "plugin:@typescript-eslint/eslint-recommended"
+    - "plugin:@typescript-eslint/recommended"
+    - "prettier"
+    - "plugin:jest/recommended"
+    - "plugin:security-node/recommended"
+    - "plugin:promise/recommended"
+    - "plugin:import/recommended"
+    - "plugin:jsx-a11y/recommended"
+
+settings:
+    import/resolver:
+        typescript: true
+        node: true
+
+rules:
+    # Our tests rely frequently on assertions defined in external file.
+    "jest/expect-expect": "off"
+    # Consistent import order and spacing of imports.
+    "import/order":
+        - "error"
+        - "newlines-between": "always-and-inside-groups"
+    "unused-imports/no-unused-imports": "error"
+    "unused-imports/no-unused-vars": "warn"
+
+env:
+    browser: true
+    node: true
