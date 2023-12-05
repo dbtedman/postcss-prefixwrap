@@ -4,9 +4,9 @@ import PostCSS from "postcss";
 // @ts-ignore
 import Processor from "postcss/lib/processor";
 
-import PrefixWrap from "../../../src";
+import PrefixWrap from "../../src";
 
-import { PostCSSPrefixWrapOptions } from "../../../src/plugin/PostCSSPrefixWrap";
+import { PostCSSPrefixWrapOptions } from "../../src/plugin/PostCSSPrefixWrap";
 
 export const postCSSWithPlugin = (
     options: PostCSSPrefixWrapOptions = {},
