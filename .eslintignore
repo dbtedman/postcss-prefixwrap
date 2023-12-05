@@ -5,11 +5,8 @@
 /node_modules/
 
 # Don't lint test
-/.nyc_output/
 /coverage/
 
 # Don't lint build output
 /build/
 /package/
-
-/test/integration/*/
