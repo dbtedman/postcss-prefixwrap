@@ -49,12 +49,6 @@ Tested using [Jest](https://jestjs.io/), using test cases defined in the `src/` 
 make test
 ```
 
-Our test suite contains the following kinds of tests:
-
--   **Unit** - Does each unit of code perform its intended purpose, and do we handle potential error cases correctly.
--   **Integration** - Can our plugin be loaded into PostCSS and then executed correctly.
--   **Acceptance** - Does our plugin perform the correct operations based on provided configuration.
-
 ## Publishing
 
 [![NPM Downloads Per Week](https://img.shields.io/npm/dw/postcss-prefixwrap?color=blue&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/postcss-prefixwrap)

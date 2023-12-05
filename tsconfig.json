@@ -1,9 +1,8 @@
 {
+    "extends": "@tsconfig/node18/tsconfig.json",
+    "include": ["./src/**/*", "./test/**/*"],
     "compilerOptions": {
         "baseUrl": ".",
-        "esModuleInterop": true,
-        "module": "commonjs",
-        "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "noImplicitAny": true,
         "outDir": "./build",
@@ -11,10 +10,6 @@
             "*": ["node_modules/*"]
         },
         "sourceMap": false,
-        "strict": true,
-        "target": "ES2021",
-        "lib": ["ES2021"],
         "declaration": true
-    },
-    "include": ["./src/**/*", "./test/**/*"]
+    }
 }

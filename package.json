@@ -29,14 +29,15 @@
   "scripts": {
     "build": "tsc --build tsconfig.app.json",
     "clean": "node automation-clean.js",
-    "format": "sort-package-json && prettier . --write && pnpm eslint --fix . --ext .js,.ts",
-    "lint": "sort-package-json --check && prettier . --check && pnpm eslint . --ext .js,.ts",
+    "format": "sort-package-json && prettier . --write && eslint --fix . --ext .js,.ts",
+    "lint": "sort-package-json --check && prettier . --check && eslint . --ext .js,.ts",
     "prepare": "husky install",
     "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "7.23.5",
     "@jest/globals": "29.7.0",
+    "@tsconfig/node18": "18.2.2",
     "@types/jest": "29.5.10",
     "@types/node": "20.10.3",
     "@typescript-eslint/eslint-plugin": "6.13.2",
@@ -46,8 +47,10 @@
     "eslint-import-resolver-typescript": "3.6.1",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jest": "27.6.0",
+    "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-security-node": "1.1.1",
+    "eslint-plugin-unused-imports": "3.0.0",
     "glob": "10.3.10",
     "husky": "8.0.3",
     "jest": "29.7.0",
