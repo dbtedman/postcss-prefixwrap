@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 💡 Features and Improvements
 
 -   Testing Strategy Rethink
+-   Dependabot PNPM Support
 
 ### 🔧 Maintenance
 
