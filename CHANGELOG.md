@@ -8,13 +8,14 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 💡 Features and Improvements
 
--   Testing Strategy Rethink
--   Dependabot PNPM Support
+-   Rethink testing strategy.
+-   Add PNPM support to Dependabot.
 
 ### 🔧 Maintenance
 
 -   Drop support for unmaintained NodeJS versions according to [Release Schedule (nodejs.org)](https://nodejs.org/en/about/previous-releases).
 -   Drop support for postcss v7 in test cases as it includes vulnerabilities that won't be fixed.
+-   Apply dependency updates.
 
 ## [1.43.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.43.0)
 

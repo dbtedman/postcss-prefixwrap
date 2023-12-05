@@ -44,7 +44,7 @@ local_cleanup:
 
 .PHONY: upgrade
 upgrade:
-	@pnpm dlx npm-check-updates --reject postcss7 -u && pnpm upgrade
+	@pnpm dlx npm-check-updates --interactive && pnpm upgrade
 
 .PHONY: sast
 sast: sast_snyk sast_osv
