@@ -35,7 +35,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/core": "7.23.6",
+    "@babel/core": "7.23.7",
     "@jest/globals": "29.7.0",
     "@tsconfig/node18": "18.2.2",
     "@types/jest": "29.5.11",
