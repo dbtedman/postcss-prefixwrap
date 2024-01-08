@@ -51,8 +51,8 @@ devDependencies:
     specifier: 6.1.1
     version: 6.1.1(eslint@8.56.0)
   eslint-plugin-security-node:
-    specifier: 1.1.1
-    version: 1.1.1
+    specifier: 1.1.4
+    version: 1.1.4
   eslint-plugin-unused-imports:
     specifier: 3.0.0
     version: 3.0.0(@typescript-eslint/eslint-plugin@6.16.0)(eslint@8.56.0)
@@ -2050,8 +2050,8 @@ packages:
       eslint: 8.56.0
     dev: true
 
-  /eslint-plugin-security-node@1.1.1:
-    resolution: {integrity: sha512-PXl5uKQOglpIpU13YIwWhhXK9Sw14KHbzCdVthDWoIsUPOuMYbrGOCWJSEVVuZ1uJK2ciN+45ogPeErrKtNm0Q==}
+  /eslint-plugin-security-node@1.1.4:
+    resolution: {integrity: sha512-8+agTMb2glNbP1zFhqo/Ixwtz16Hn0TvJW5KgpoHkAzGjDUhQf9iT+D6OgbhvZCMWRKMjc+5FbJ2Lh0UEUz7fQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
