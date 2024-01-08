@@ -66,8 +66,8 @@ devDependencies:
     specifier: 29.7.0
     version: 29.7.0(@types/node@20.10.7)(ts-node@10.9.2)
   postcss:
-    specifier: 8.4.32
-    version: 8.4.32
+    specifier: 8.4.33
+    version: 8.4.33
   prettier:
     specifier: 3.1.1
     version: 3.1.1
@@ -3691,8 +3691,8 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /postcss@8.4.32:
-    resolution: {integrity: sha512-D/kj5JNu6oo2EIy+XL/26JEDTlIbB8hw85G8StOE6L74RQAVVP5rej6wxCNqyMbR4RkPfqvezVbPw81Ngd6Kcw==}
+  /postcss@8.4.33:
+    resolution: {integrity: sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
