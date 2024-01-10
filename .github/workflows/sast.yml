@@ -22,7 +22,9 @@ jobs:
             contents: "read"
         steps:
             - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
-            - run: "semgrep ci --config auto"
+            - run: "semgrep ci"
+              env:
+                  SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
 
     ossf:
         runs-on: "ubuntu-latest"
