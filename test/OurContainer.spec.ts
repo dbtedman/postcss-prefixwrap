@@ -1,6 +1,6 @@
 import * as path from "path";
 
-import { it } from "@jest/globals";
+import { it } from "vitest";
 
 import { assertActualMatchesExpectedAfterPrefixWrap } from "./support/PrefixAssert";
 import { postCSSWithPlugin } from "./support/PluginBootstrap";

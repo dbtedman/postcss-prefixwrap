@@ -1,6 +1,6 @@
 {
-    "extends": "@tsconfig/node18/tsconfig.json",
-    "include": ["./src/**/*", "./test/**/*"],
+    "extends": "@tsconfig/node20/tsconfig.json",
+    "include": ["./src/**/*", "./test/**/*", "./*.ts"],
     "compilerOptions": {
         "baseUrl": ".",
         "allowSyntheticDefaultImports": true,

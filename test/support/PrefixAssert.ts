@@ -1,6 +1,6 @@
 import fs from "fs";
 
-import { expect } from "@jest/globals";
+import { expect } from "vitest";
 import Processor from "postcss/lib/processor";
 
 export const assertNoChangeAfterPrefixWrap = (
