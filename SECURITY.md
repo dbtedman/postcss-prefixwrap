@@ -6,19 +6,20 @@
 
 Outlines how security is considered during the development of PostCSS Prefix Wrap.
 
--   [Dependency Vulnerability Scanning](#dependency-vulnerability-scanning)
+-   [Dependency Vulnerability and Code Scanning](#dependency-vulnerability-and-code-scanning)
 -   [Security Disclosure Policy](#security-disclosure-policy)
 -   [Security Update Policy](#security-update-policy)
 -   [Security Related Configuration](#security-related-configuration)
 -   [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
 
-## Dependency Vulnerability Scanning
+## Dependency Vulnerability and Code Scanning
 
 -   [GitHub code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning) via [CodeQL](https://codeql.github.com) and [Snyk](https://snyk.io)
 -   [GitHub dependabot alerts](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
 -   [GitHub dependabot security updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
 -   [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
 -   [OSV Scanning](https://osv.dev/)
+-   [Semgrep](https://semgrep.dev)
 -   [Snyk code analysis](https://snyk.io/product/snyk-code/)
 -   [Snyk dependency scanning](https://snyk.io/product/open-source-security-management/)
 
