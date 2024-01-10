@@ -15,7 +15,9 @@ permissions: "read-all"
 
 jobs:
     semgrep:
-        runs-on: "returntocorp/semgrep"
+        runs-on: "ubuntu-latest"
+        container:
+            image: "returntocorp/semgrep:latest"
         permissions:
             contents: "read"
         steps:
