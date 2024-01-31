@@ -1,0 +1,9 @@
+/* Ensure classes are prefixed. */
+.something {
+    font-size: 40px;
+}
+
+/* Ensure child selectors are kept. */
+.something p {
+    color: red;
+}

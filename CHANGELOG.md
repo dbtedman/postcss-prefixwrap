@@ -4,6 +4,12 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## In Development
+
+### 💡 Features and Improvements
+
+-   [#353](https://github.com/dbtedman/postcss-prefixwrap/issues/353) Compound Selector - _Thanks [@oskar-anderson](https://github.com/oskar-anderson) for suggesting this feature._
+
 ## [1.44.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.44.0)
 
 ### 💡 Features and Improvements

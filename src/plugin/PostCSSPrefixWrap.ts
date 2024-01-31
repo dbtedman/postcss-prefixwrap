@@ -10,6 +10,7 @@ export interface PostCSSPrefixWrapOptions {
     whitelist?: Array<string>;
     blacklist?: Array<string>;
     nested?: string;
+    appendCompoundSelector?: boolean;
 }
 
 export default class PostCSSPrefixWrap {
@@ -20,6 +21,7 @@ export default class PostCSSPrefixWrap {
     private readonly prefixSelector: string;
     private readonly whitelist: Array<string>;
     private readonly nested: string | null;
+    private readonly appendCompoundSelector: boolean;
 
     constructor(
         prefixSelector: string,
@@ -35,6 +37,7 @@ export default class PostCSSPrefixWrap {
         this.prefixSelector = prefixSelector;
         this.whitelist = options.whitelist ?? [];
         this.nested = options.nested ?? null;
+        this.appendCompoundSelector = options.appendCompoundSelector === true;
     }
 
     prefixRoot(css: PostCSSContainer): void {
@@ -52,6 +55,7 @@ export default class PostCSSPrefixWrap {
                     this.ignoredSelectors,
                     this.prefixSelector,
                     this.prefixRootTags,
+                    this.appendCompoundSelector,
                 );
             });
         }

@@ -14,6 +14,7 @@ export const prefixWrapCSSRule = (
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
     prefixRootTags: boolean,
+    appendCompoundSelector: boolean,
 ): void => {
     // Check each rule to see if it exactly matches our prefix selector, when
     // this happens, don't try to prefix that selector.
@@ -40,6 +41,7 @@ export const prefixWrapCSSRule = (
                 ignoredSelectors,
                 prefixSelector,
                 prefixRootTags,
+                appendCompoundSelector,
             ),
         )
         .filter(isValidCSSSelector)
@@ -53,6 +55,7 @@ export const prefixWrapCSSSelector = (
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
     prefixRootTags: boolean,
+    appendCompoundSelector: boolean,
 ): string | null => {
     const cleanedSelector = cleanSelector(cssSelector);
 
@@ -81,7 +84,13 @@ export const prefixWrapCSSSelector = (
 
     // Anything other than a root tag is always prefixed.
     if (isNotRootTag(cleanedSelector)) {
-        return prefixSelector + " " + cleanedSelector;
+        let result = prefixSelector + " " + cleanedSelector;
+
+        if (appendCompoundSelector) {
+            result += `, ${prefixSelector}${cleanedSelector}`;
+        }
+
+        return result;
     }
 
     // Handle special case where root tags should be converted into classes

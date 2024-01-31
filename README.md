@@ -89,6 +89,7 @@ body {
 -   [File Whitelist](#file-whitelist)
 -   [File Blacklist](#file-blacklist)
 -   [Nesting](#nesting)
+-   [Compound Selector](#compound-selector)
 
 ### Minimal
 
@@ -183,6 +184,35 @@ As an example, in the following CSS that contains nested selectors.
 ```css
 .my-custom-wrap .demo--lite {
     color: red;
+}
+```
+
+### Compound Selector
+
+The option `appendCompoundSelector` generates two selectors that will allow the style rules to start applying from the prefix level, removing the need to have extra divs.
+
+> See [#353](https://github.com/dbtedman/postcss-prefixwrap/issues/353) for example usage.
+
+```javascript
+PrefixWrap(".my-custom-wrap", {
+    appendCompoundSelector: true,
+});
+```
+
+With the source css:
+
+```css
+.something {
+    font-size: 40px;
+}
+```
+
+The prefixed output looks like:
+
+```css
+.my-container .something,
+.my-container.something {
+    font-size: 40px;
 }
 ```
 
