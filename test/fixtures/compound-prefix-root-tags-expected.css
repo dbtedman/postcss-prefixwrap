@@ -8,10 +8,10 @@
     color: red;
 }
 
-.my-container {
+.my-container .body, .my-container.body {
     background-color: blue;
 }
 
-.my-container {
+.my-container .html, .my-container.html {
     line-height: 16px;
 }

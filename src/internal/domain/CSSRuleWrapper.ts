@@ -84,22 +84,38 @@ export const prefixWrapCSSSelector = (
 
     // Anything other than a root tag is always prefixed.
     if (isNotRootTag(cleanedSelector)) {
-        let result = prefixSelector + " " + cleanedSelector;
-
-        if (appendCompoundSelector) {
-            result += `, ${prefixSelector}${cleanedSelector}`;
-        }
-
-        return result;
+        return appendCompoundSelectorToSelector(
+            prefixSelector,
+            cleanedSelector,
+            appendCompoundSelector,
+        );
     }
 
     // Handle special case where root tags should be converted into classes
     // rather than being replaced.
     if (prefixRootTags) {
-        return prefixSelector + " ." + cleanedSelector;
+        return appendCompoundSelectorToSelector(
+            prefixSelector,
+            `.${cleanedSelector}`,
+            appendCompoundSelector,
+        );
     }
 
     // HTML and Body elements cannot be contained within our container so lets
     // extract their styles.
     return cleanedSelector.replace(/^(body|html|:root)/, prefixSelector);
+};
+
+const appendCompoundSelectorToSelector = (
+    prefixSelector: string,
+    selector: string,
+    appendCompoundSelector: boolean,
+) => {
+    let result = prefixSelector + " " + selector;
+
+    if (appendCompoundSelector) {
+        result += `, ${prefixSelector}${selector}`;
+    }
+
+    return result;
 };
