@@ -31,7 +31,7 @@
     "clean": "node automation-clean.js",
     "format": "sort-package-json && prettier . --write && eslint --fix . --ext .js,.ts",
     "lint": "sort-package-json --check && prettier . --check && eslint . --ext .js,.ts",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "jest"
   },
   "devDependencies": {
