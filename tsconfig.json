@@ -7,9 +7,9 @@
         "noImplicitAny": true,
         "outDir": "./build",
         "paths": {
-            "*": ["node_modules/*"],
+            "*": ["node_modules/*"]
         },
         "sourceMap": false,
-        "declaration": true,
-    },
+        "declaration": true
+    }
 }
