@@ -21,7 +21,7 @@ specifiers:
   eslint-plugin-security-node: 1.1.4
   eslint-plugin-unused-imports: 3.0.0
   glob: 10.3.10
-  husky: 8.0.3
+  husky: 9.0.10
   jest: 29.7.0
   postcss: 8.4.33
   prettier: 3.2.5
@@ -50,7 +50,7 @@ devDependencies:
   eslint-plugin-security-node: 1.1.4
   eslint-plugin-unused-imports: 3.0.0_artud7fwlrteqdb5eyhtthqcei
   glob: 10.3.10
-  husky: 8.0.3
+  husky: 9.0.10
   jest: 29.7.0_7qzi45bbxyunb5yq4nwb3gakci
   postcss: 8.4.33
   prettier: 3.2.5
@@ -2536,9 +2536,9 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
-  /husky/8.0.3:
-    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
-    engines: {node: '>=14'}
+  /husky/9.0.10:
+    resolution: {integrity: sha512-TQGNknoiy6bURzIO77pPRu+XHi6zI7T93rX+QnJsoYFf3xdjKOur+IlfqzJGMHIK/wXrLg+GsvMs8Op7vI2jVA==}
+    engines: {node: '>=18'}
     hasBin: true
     dev: true
 
