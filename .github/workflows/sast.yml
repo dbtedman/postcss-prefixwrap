@@ -21,7 +21,7 @@ jobs:
         permissions:
             contents: "read"
         steps:
-            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
+            - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
             - run: "semgrep ci"
               env:
                   SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
@@ -36,7 +36,7 @@ jobs:
             contents: "read"
             actions: "read"
         steps:
-            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
+            - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
               with:
                   persist-credentials: false
             - uses: "ossf/scorecard-action@0864cf19026789058feabb7e87baa5f140aac736"
@@ -58,7 +58,7 @@ jobs:
             contents: "read"
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
+            - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
             - uses: "actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491"
               with:
                   go-version: "stable"
@@ -74,7 +74,7 @@ jobs:
             security-events: "write"
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
+            - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
             - uses: "pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d"
               with:
                   version: "latest"
@@ -100,7 +100,7 @@ jobs:
             security-events: write
 
         steps:
-            - uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
+            - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
             - uses: "github/codeql-action/init@1b1aada464948af03b950897e5eb522f92603cc2"
               with:
                   languages: "typescript"
