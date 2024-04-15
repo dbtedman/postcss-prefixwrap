@@ -1,6 +1,6 @@
 {
   "name": "postcss-prefixwrap",
-  "version": "1.46.0",
+  "version": "1.47.0",
   "description": "A PostCSS plugin that is used to wrap css styles with a css selector to constrain their affect on parent elements in a page.",
   "keywords": [
     "css",
@@ -65,6 +65,10 @@
   },
   "peerDependencies": {
     "postcss": "*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "pnpm": {
     "overrides": {
