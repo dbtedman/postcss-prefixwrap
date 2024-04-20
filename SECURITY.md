@@ -19,7 +19,6 @@ Outlines how security is considered during the development of PostCSS Prefix Wra
 -   [GitHub dependabot security updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
 -   [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
 -   [OSV Scanning](https://osv.dev/)
--   [Semgrep](https://semgrep.dev)
 -   [Snyk code analysis](https://snyk.io/product/snyk-code/)
 -   [Snyk dependency scanning](https://snyk.io/product/open-source-security-management/)
 
