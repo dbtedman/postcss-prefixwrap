@@ -1,16 +1,20 @@
 # [PostCSS Prefix Wrap](./README.md) // Security
 
 [![SAST GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/postcss-prefixwrap/sast.yml?branch=main&style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap)
-[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6622/badge)](https://bestpractices.coreinfrastructure.org/projects/6622)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap/badge?style=for-the-badge)](https://www.bestpractices.dev/en/projects/6622)
 
 Outlines how security is considered during the development of PostCSS Prefix Wrap.
 
+-   [Provenance](#provenance)
 -   [Dependency Vulnerability and Code Scanning](#dependency-vulnerability-and-code-scanning)
 -   [Security Disclosure Policy](#security-disclosure-policy)
 -   [Security Update Policy](#security-update-policy)
 -   [Security Related Configuration](#security-related-configuration)
 -   [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
+
+## Provenance
+
+Since `v1.47.0`, [provenance attestations (docs.npmjs.com)](https://docs.npmjs.com/generating-provenance-statements) are provided alongside build artefacts.
 
 ## Dependency Vulnerability and Code Scanning
 
