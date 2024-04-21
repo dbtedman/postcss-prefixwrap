@@ -44,6 +44,7 @@ jobs:
     osv:
         permissions:
             contents: "read"
+            security-events: "write"
         runs-on: "ubuntu-latest"
         container:
             image: "ghcr.io/google/osv-scanner:v1.7.2"
