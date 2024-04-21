@@ -199,10 +199,6 @@ Read our [Contributing Guide](CONTRIBUTING.md) to learn more about how to contri
 
 ## Is this project secure?
 
-[![SAST GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/postcss-prefixwrap/sast.yml?branch=main&style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/postcss-prefixwrap/actions/workflows/sast.yml)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/postcss-prefixwrap)
-[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6622/badge)](https://bestpractices.coreinfrastructure.org/projects/6622)
-
 Read our [Security Guide](SECURITY.md) to learn how security is considered during the development and operation of this
 plugin.
 

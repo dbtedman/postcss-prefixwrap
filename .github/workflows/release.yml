@@ -25,6 +25,7 @@ jobs:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
             - run: "make install"
+            - run: "make audit_signatures"
             - run: "make build"
             - run: "make lint"
             - run: "make test"

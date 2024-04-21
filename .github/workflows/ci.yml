@@ -30,6 +30,7 @@ jobs:
                   node-version: "${{ matrix.node-version }}"
                   cache: "pnpm"
             - run: "make install"
+            - run: "make audit_signatures"
             - run: "make lint"
             - run: "make test"
             - run: "make build"

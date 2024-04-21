@@ -14,18 +14,6 @@ on:
 permissions: "read-all"
 
 jobs:
-    semgrep:
-        runs-on: "ubuntu-latest"
-        container:
-            image: "returntocorp/semgrep:develop"
-        permissions:
-            contents: "read"
-        steps:
-            - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
-            - run: "semgrep ci"
-              env:
-                  SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-
     ossf:
         runs-on: "ubuntu-latest"
         # ossf scorecard only supported on main branch
@@ -57,16 +45,14 @@ jobs:
         permissions:
             contents: "read"
         runs-on: "ubuntu-latest"
+        container:
+            image: "ghcr.io/google/osv-scanner:v1.7.2"
         steps:
             - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
-            - uses: "actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491"
+            - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
+            - uses: "github/codeql-action/upload-sarif@4355270be187e1b672a7a1c7c7bae5afdc1ab94a"
               with:
-                  go-version: "stable"
-            - run: |
-                  curl -o /usr/local/bin/osv-scanner https://github.com/google/osv-scanner/releases/download/v1.4.3/osv-scanner_1.4.3_linux_amd64 \
-                    && chmod +x /usr/local/bin/osv-scanner \
-                    && /usr/local/bin/osv-scanner -version
-            - run: "make sast_osv"
+                  sarif_file: "osv.sarif"
 
     snyk:
         permissions:
