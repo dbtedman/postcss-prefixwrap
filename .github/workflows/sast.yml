@@ -37,7 +37,7 @@ jobs:
                   name: "SARIF file"
                   path: "results.sarif"
                   retention-days: 5
-            - uses: "github/codeql-action/upload-sarif@4355270be187e1b672a7a1c7c7bae5afdc1ab94a"
+            - uses: "github/codeql-action/upload-sarif@c7f9125735019aa87cfc361530512d50ea439c71"
               with:
                   sarif_file: "results.sarif"
 
@@ -51,7 +51,7 @@ jobs:
         steps:
             - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
             - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
-            - uses: "github/codeql-action/upload-sarif@4355270be187e1b672a7a1c7c7bae5afdc1ab94a"
+            - uses: "github/codeql-action/upload-sarif@c7f9125735019aa87cfc361530512d50ea439c71"
               with:
                   sarif_file: "osv.sarif"
 
@@ -74,7 +74,7 @@ jobs:
             - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
               env:
                   SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            - uses: "github/codeql-action/upload-sarif@4355270be187e1b672a7a1c7c7bae5afdc1ab94a"
+            - uses: "github/codeql-action/upload-sarif@c7f9125735019aa87cfc361530512d50ea439c71"
               with:
                   sarif_file: "snyk.sarif"
 
@@ -88,7 +88,7 @@ jobs:
 
         steps:
             - uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633"
-            - uses: "github/codeql-action/init@4355270be187e1b672a7a1c7c7bae5afdc1ab94a"
+            - uses: "github/codeql-action/init@c7f9125735019aa87cfc361530512d50ea439c71"
               with:
                   languages: "typescript"
             - uses: "pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d"
@@ -99,4 +99,4 @@ jobs:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
             - run: "make install"
-            - uses: "github/codeql-action/analyze@4355270be187e1b672a7a1c7c7bae5afdc1ab94a"
+            - uses: "github/codeql-action/analyze@c7f9125735019aa87cfc361530512d50ea439c71"
