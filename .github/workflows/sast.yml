@@ -51,15 +51,7 @@ jobs:
         permissions:
             contents: "read"
             security-events: "write"
-        runs-on: "ubuntu-latest"
-        container:
-            image: "ghcr.io/google/osv-scanner:v1.7.2"
-        steps:
-            - uses: "actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f"
-            - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
-            - uses: "github/codeql-action/upload-sarif@c7f9125735019aa87cfc361530512d50ea439c71"
-              with:
-                  sarif_file: "osv.sarif"
+        uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable-pr.yml@1f1242919d8a60496dd1874b24b62b2370ed4c78"
 
     snyk:
         permissions:
