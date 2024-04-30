@@ -17,7 +17,7 @@ jobs:
     trufflehog:
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f"
+            - uses: "actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b"
             - uses: "trufflesecurity/trufflehog@v3.74.0"
 
     ossf:
@@ -30,7 +30,7 @@ jobs:
             contents: "read"
             actions: "read"
         steps:
-            - uses: "actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f"
+            - uses: "actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b"
               with:
                   persist-credentials: false
             - uses: "ossf/scorecard-action@0864cf19026789058feabb7e87baa5f140aac736"
@@ -55,7 +55,7 @@ jobs:
         container:
             image: "ghcr.io/google/osv-scanner:v1.7.2"
         steps:
-            - uses: "actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f"
+            - uses: "actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b"
             - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
             - uses: "github/codeql-action/upload-sarif@c7f9125735019aa87cfc361530512d50ea439c71"
               with:
@@ -67,7 +67,7 @@ jobs:
             security-events: "write"
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f"
+            - uses: "actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b"
             - uses: "pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d"
               with:
                   version: "latest"
@@ -93,7 +93,7 @@ jobs:
             security-events: write
 
         steps:
-            - uses: "actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f"
+            - uses: "actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b"
             - uses: "github/codeql-action/init@c7f9125735019aa87cfc361530512d50ea439c71"
               with:
                   languages: "typescript"
