@@ -17,7 +17,7 @@ jobs:
     trufflehog:
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b"
+            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
             - uses: "trufflesecurity/trufflehog@da25ac2e7f7eef8c2daf1f8b6dae34e780c7fd96"
 
     ossf:
@@ -30,7 +30,7 @@ jobs:
             contents: "read"
             actions: "read"
         steps:
-            - uses: "actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b"
+            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
               with:
                   persist-credentials: false
             - uses: "ossf/scorecard-action@dc50aa9510b46c811795eb24b2f1ba02a914e534"
@@ -55,7 +55,7 @@ jobs:
         container:
             image: "ghcr.io/google/osv-scanner:v1.7.2"
         steps:
-            - uses: "actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b"
+            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
             - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
             - uses: "github/codeql-action/upload-sarif@b7cec7526559c32f1616476ff32d17ba4c59b2d6"
               with:
@@ -67,7 +67,7 @@ jobs:
             security-events: "write"
         runs-on: "ubuntu-latest"
         steps:
-            - uses: "actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b"
+            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
             - uses: "pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2"
               with:
                   version: "latest"
@@ -93,7 +93,7 @@ jobs:
             security-events: write
 
         steps:
-            - uses: "actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b"
+            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
             - uses: "github/codeql-action/init@b7cec7526559c32f1616476ff32d17ba4c59b2d6"
               with:
                   languages: "typescript"
