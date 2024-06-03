@@ -48,8 +48,8 @@ devDependencies:
     specifier: 6.8.0
     version: 6.8.0(eslint@8.57.0)
   eslint-plugin-promise:
-    specifier: 6.1.1
-    version: 6.1.1(eslint@8.57.0)
+    specifier: 6.2.0
+    version: 6.2.0(eslint@8.57.0)
   eslint-plugin-security-node:
     specifier: 1.1.4
     version: 1.1.4
@@ -2019,11 +2019,11 @@ packages:
       object.fromentries: 2.0.8
     dev: true
 
-  /eslint-plugin-promise@6.1.1(eslint@8.57.0):
-    resolution: {integrity: sha512-tjqWDwVZQo7UIPMeDReOpUgHCmCiH+ePnVT+5zVapL0uuHnegBUs2smM13CzOs2Xb5+MHMRFTs9v24yjba4Oig==}
+  /eslint-plugin-promise@6.2.0(eslint@8.57.0):
+    resolution: {integrity: sha512-QmAqwizauvnKOlifxyDj2ObfULpHQawlg/zQdgEixur9vl0CvZGv/LCJV2rtj3210QCoeGBzVMfMXqGAOr/4fA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
+      eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
     dependencies:
       eslint: 8.57.0
     dev: true
