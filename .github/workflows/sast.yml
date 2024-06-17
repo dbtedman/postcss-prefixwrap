@@ -18,7 +18,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
-            - uses: "trufflesecurity/trufflehog@da25ac2e7f7eef8c2daf1f8b6dae34e780c7fd96"
+            - uses: "trufflesecurity/trufflehog@433a57adaf8fedce312630ef593f5142227c5855"
 
     ossf:
         runs-on: "ubuntu-latest"
