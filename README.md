@@ -83,107 +83,43 @@ body {
 
 ## What options does it have?
 
--   [Minimal](#minimal)
--   [Ignored Selectors](#ignored-selectors)
--   [Prefix Root Tags](#prefix-root-tags)
--   [File Whitelist](#file-whitelist)
--   [File Blacklist](#file-blacklist)
--   [Nesting](#nesting)
-
-### Minimal
-
-The minimal required configuration is the prefix selector, as shown in the above example.
-
-```javascript
-PrefixWrap(".my-custom-wrap");
-```
-
-### Ignored Selectors
-
-You may want to exclude some selectors from being prefixed, this is enabled using the `ignoredSelectors` option.
-
-```javascript
+```typescript
 PrefixWrap(".my-custom-wrap", {
+    // You may want to exclude some selectors from being prefixed, this is
+    // enabled using the `ignoredSelectors` option.
     ignoredSelectors: [":root", "#my-id", /^\.some-(.+)$/],
-});
-```
 
-### Prefix Root Tags
-
-You may want root tags, like `body` and `html` to be converted to classes, then prefixed, this is enabled using
-the `prefixRootTags` option.
-
-```javascript
-PrefixWrap(".my-container", {
+    // You may want root tags, like `body` and `html` to be converted to
+    // classes, then prefixed, this is enabled using the `prefixRootTags`
+    // option.
+    // With this option, a selector like `html` will be converted to
+    // `.my-container .html`, rather than the default `.my-container`.
     prefixRootTags: true,
-});
-```
 
-With this option, a selector like `html` will be converted to `.my-container .html`, rather than the
-default `.my-container`.
-
-### File Whitelist
-
-In certain scenarios, you may only want `PrefixWrap()` to wrap certain CSS files. This is done using the `whitelist`
-option.
-
-> ⚠️ **Please note** that each item in the `whitelist` is parsed as a regular expression. This will impact how file paths are matched when you need to support both Windows and Unix like operating systems which use different path separators.
-
-```javascript
-PrefixWrap(".my-custom-wrap", {
+    // In certain scenarios, you may only want `PrefixWrap()` to wrap certain
+    // CSS files. This is done using the `whitelist` option.
+    // ⚠️ **Please note** that each item in the `whitelist` is parsed as a
+    // regular expression. This will impact how file paths are matched when you
+    // need to support both Windows and Unix like operating systems which use
+    // different path separators.
     whitelist: ["editor.css"],
-});
-```
 
-### File Blacklist
-
-In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS files. This is done using the `blacklist`
-option.
-
-> ⚠️ **Please note** that each item in the `blacklist` is parsed as a regular expression. This will impact how file paths are matched when you need to support both Windows and Unix like operating systems which use different path separators.
-
-> If `whitelist` option is also included, `blacklist` will be ignored.
-
-```javascript
-PrefixWrap(".my-custom-wrap", {
+    // In certain scenarios, you may want `PrefixWrap()` to exclude certain CSS
+    // files. This is done using the `blacklist` option.
+    // ⚠️ **Please note** that each item in the `blacklist` is parsed as a
+    // regular expression. This will impact how file paths are matched when you
+    // need to support both Windows and Unix like operating systems which use
+    // different path separators.
+    // If `whitelist` option is also included, `blacklist` will be ignored.
     blacklist: ["colours.css"],
-});
-```
 
-### Nesting
-
-When writing nested css rules, and using a plugin like [postcss-nested](https://www.npmjs.com/package/postcss-nested) to compile them, you will want to ensure that the nested selectors are not prefixed. This is done by defining the `nested` property and setting the value to the selector prefix being used to represent nesting, this is most likely going to be `"&"`.
-
-```javascript
-PrefixWrap(".my-custom-wrap", {
+    // When writing nested css rules, and using a plugin like `postcss-nested`
+    // to compile them, you will want to ensure that the nested selectors are
+    // not prefixed. This is done by defining the `nested` property and setting
+    // the value to the selector prefix being used to represent nesting, this is
+    // most likely going to be `"&"`.
     nested: "&",
 });
-```
-
-As an example, in the following CSS that contains nested selectors.
-
-```scss
-.demo {
-    &--lite {
-        color: red;
-    }
-}
-```
-
-**❌ Without** the `nested` configuration option defined:
-
-```css
-.my-custom-wrap .my-custom-wrap .demo--lite {
-    color: red;
-}
-```
-
-**✅ With** the `tested` configuration defined:
-
-```css
-.my-custom-wrap .demo--lite {
-    color: red;
-}
 ```
 
 ## What problems can it solve?
