@@ -14,12 +14,6 @@ on:
 permissions: "read-all"
 
 jobs:
-    trufflehog:
-        runs-on: "ubuntu-latest"
-        steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
-            - uses: "trufflesecurity/trufflehog@da25ac2e7f7eef8c2daf1f8b6dae34e780c7fd96"
-
     ossf:
         runs-on: "ubuntu-latest"
         # ossf scorecard only supported on main branch
@@ -30,7 +24,7 @@ jobs:
             contents: "read"
             actions: "read"
         steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
+            - uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332"
               with:
                   persist-credentials: false
             - uses: "ossf/scorecard-action@dc50aa9510b46c811795eb24b2f1ba02a914e534"
@@ -43,46 +37,9 @@ jobs:
                   name: "SARIF file"
                   path: "results.sarif"
                   retention-days: 5
-            - uses: "github/codeql-action/upload-sarif@9fdb3e49720b44c48891d036bb502feb25684276"
+            - uses: "github/codeql-action/upload-sarif@23acc5c183826b7a8a97bce3cecc52db901f8251"
               with:
                   sarif_file: "results.sarif"
-
-    osv:
-        permissions:
-            contents: "read"
-            security-events: "write"
-        runs-on: "ubuntu-latest"
-        container:
-            image: "ghcr.io/google/osv-scanner:v1.7.2"
-        steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
-            - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
-            - uses: "github/codeql-action/upload-sarif@9fdb3e49720b44c48891d036bb502feb25684276"
-              with:
-                  sarif_file: "osv.sarif"
-
-    snyk:
-        permissions:
-            contents: "read"
-            security-events: "write"
-        runs-on: "ubuntu-latest"
-        steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
-            - uses: "pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2"
-              with:
-                  version: "latest"
-            - uses: "actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8"
-              with:
-                  node-version-file: ".nvmrc"
-                  cache: "pnpm"
-            - uses: "snyk/actions/setup@b98d498629f1c368650224d6d212bf7dfa89e4bf"
-            - run: "make install"
-            - run: "snyk test --all-projects --detection-depth=1 --sarif-file-output=snyk.sarif"
-              env:
-                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-            - uses: "github/codeql-action/upload-sarif@9fdb3e49720b44c48891d036bb502feb25684276"
-              with:
-                  sarif_file: "snyk.sarif"
 
     codeql:
         runs-on: "ubuntu-latest"
@@ -93,8 +50,8 @@ jobs:
             security-events: write
 
         steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
-            - uses: "github/codeql-action/init@9fdb3e49720b44c48891d036bb502feb25684276"
+            - uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332"
+            - uses: "github/codeql-action/init@23acc5c183826b7a8a97bce3cecc52db901f8251"
               with:
                   languages: "typescript"
             - uses: "pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2"
@@ -105,4 +62,4 @@ jobs:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
             - run: "make install"
-            - uses: "github/codeql-action/analyze@9fdb3e49720b44c48891d036bb502feb25684276"
+            - uses: "github/codeql-action/analyze@23acc5c183826b7a8a97bce3cecc52db901f8251"

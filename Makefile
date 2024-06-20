@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 
 .PHONY: all
-all: install lint build test sast
+all: install lint build test
 
 .PHONY: pre_commit
 pre_commit: lint test_fast
@@ -45,17 +45,6 @@ local_cleanup:
 .PHONY: upgrade
 upgrade:
 	@pnpm dlx npm-check-updates --interactive && pnpm upgrade
-
-.PHONY: sast
-sast: sast_snyk sast_osv
-
-.PHONY: sast_snyk
-sast_snyk:
-	snyk test --all-projects --detection-depth=1
-
-.PHONY: sast_osv
-sast_osv:
-	osv-scanner ./
 
 .PHONY: audit_signatures
 audit_signatures:
