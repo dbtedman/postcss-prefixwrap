@@ -6,6 +6,10 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ## [1.49.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.49.0)
 
+### 💡 Features and Improvements
+
+-   NodeJS v22 Support
+
 ### 🔧 Maintenance
 
 -   Apply dependency updates.
