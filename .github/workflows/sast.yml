@@ -24,7 +24,7 @@ jobs:
             contents: "read"
             actions: "read"
         steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
+            - uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332"
               with:
                   persist-credentials: false
             - uses: "ossf/scorecard-action@dc50aa9510b46c811795eb24b2f1ba02a914e534"
@@ -50,7 +50,7 @@ jobs:
             security-events: write
 
         steps:
-            - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
+            - uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332"
             - uses: "github/codeql-action/init@9fdb3e49720b44c48891d036bb502feb25684276"
               with:
                   languages: "typescript"
