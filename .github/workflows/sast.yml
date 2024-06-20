@@ -53,7 +53,7 @@ jobs:
             security-events: "write"
         runs-on: "ubuntu-latest"
         container:
-            image: "ghcr.io/google/osv-scanner:v1.7.2"
+            image: "ghcr.io/google/osv-scanner:v1.7.4"
         steps:
             - uses: "actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29"
             - run: "/osv-scanner scan --recursive --format sarif --output osv.sarif ./"
