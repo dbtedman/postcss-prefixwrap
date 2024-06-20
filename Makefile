@@ -8,44 +8,43 @@ pre_commit: lint test_fast
 
 .PHONY: install
 install:
-	@pnpm install
+	@bun install
 
 .PHONY: lint
 lint:
-	@pnpm run lint
+	@bun run lint
 
 .PHONY: format
 format:
-	@pnpm run format
+	@bun run format
 
 .PHONY: build
 build:
-	@pnpm run clean && pnpm run build
+	@bun run clean && bun run build
 
 .PHONY: test
 test:
-	@pnpm run test --coverage
+	@bun run test --coverage
 
 .PHONY: test_fast
 test_fast:
-	@pnpm run test
+	@bun run test
 
+# TODO: Fixme
 .PHONY: publish
 publish:
-	@pnpm publish --no-git-checks
+	@bun publish --no-git-checks
 
+# TODO: Fixme
 .PHONY: local_publish
 local_publish:
-	@pnpm run build && pnpm pack && tar -xvzf postcss-prefixwrap*.tgz && rm postcss-prefixwrap*.tgz
+	@bun run build && bun pack && tar -xvzf postcss-prefixwrap*.tgz && rm postcss-prefixwrap*.tgz
 
 .PHONY: local_cleanup
 local_cleanup:
 	@rm -rf ./package
 
-.PHONY: upgrade
-upgrade:
-	@pnpm dlx npm-check-updates --interactive && pnpm upgrade
-
+# TODO: Fixme
 .PHONY: audit_signatures
 audit_signatures:
 	# Not yet available via pnpm as of 21/04/2024.

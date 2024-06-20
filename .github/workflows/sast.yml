@@ -54,12 +54,8 @@ jobs:
             - uses: "github/codeql-action/init@23acc5c183826b7a8a97bce3cecc52db901f8251"
               with:
                   languages: "typescript"
-            - uses: "pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2"
+            - uses: "oven-sh/setup-bun@v1"
               with:
-                  version: "latest"
-            - uses: "actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8"
-              with:
-                  node-version-file: ".nvmrc"
-                  cache: "pnpm"
+                  bun-version: "latest"
             - run: "make install"
             - uses: "github/codeql-action/analyze@23acc5c183826b7a8a97bce3cecc52db901f8251"

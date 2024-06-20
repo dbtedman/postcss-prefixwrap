@@ -21,14 +21,9 @@ jobs:
 
         steps:
             - uses: "actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332"
-            - uses: "pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2"
+            - uses: "oven-sh/setup-bun@v1"
               with:
-                  version: "latest"
-            - name: "Use Node.js ${{ matrix.node-version }}"
-              uses: "actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8"
-              with:
-                  node-version: "${{ matrix.node-version }}"
-                  cache: "pnpm"
+                  bun-version: "latest"
             - run: "make install"
             - run: "make audit_signatures"
             - run: "make lint"
