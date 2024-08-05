@@ -1,4 +1,4 @@
-import { PostCSSRule } from "../../Types";
+import { Rule } from "postcss";
 
 import {
     cleanSelector,
@@ -9,7 +9,7 @@ import {
 } from "./CSSSelector";
 
 export const prefixWrapCSSRule = (
-    cssRule: PostCSSRule,
+    cssRule: Rule,
     nested: string | null,
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
@@ -48,7 +48,7 @@ export const prefixWrapCSSRule = (
 
 export const prefixWrapCSSSelector = (
     cssSelector: string,
-    cssRule: PostCSSRule,
+    cssRule: Rule,
     nested: string | null,
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,

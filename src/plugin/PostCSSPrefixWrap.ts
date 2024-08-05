@@ -1,4 +1,5 @@
-import { PostCSSContainer, PostCSSRule } from "../Types";
+import { Container, Rule } from "postcss";
+
 import { prefixWrapCSSRule } from "../internal/domain/CSSRuleWrapper";
 import { shouldIncludeFilePath } from "../internal/domain/FileIncludeList";
 
@@ -37,7 +38,7 @@ export default class PostCSSPrefixWrap {
         this.nested = options.nested ?? null;
     }
 
-    prefixRoot(css: PostCSSContainer): void {
+    prefixRoot(css: Container): void {
         if (
             shouldIncludeFilePath(
                 css.source?.input?.file,
@@ -45,7 +46,7 @@ export default class PostCSSPrefixWrap {
                 this.blacklist,
             )
         ) {
-            css.walkRules((cssRule: PostCSSRule) => {
+            css.walkRules((cssRule: Rule) => {
                 prefixWrapCSSRule(
                     cssRule,
                     this.nested,
@@ -58,7 +59,7 @@ export default class PostCSSPrefixWrap {
     }
 
     prefix() {
-        return (css: PostCSSContainer): void => {
+        return (css: Container): void => {
             this.prefixRoot(css);
         };
     }
