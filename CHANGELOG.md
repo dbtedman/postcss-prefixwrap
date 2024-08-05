@@ -4,6 +4,12 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## 🚧 In Development
+
+### 💡 Features and Improvements
+
+-   Use real types from plugin source.
+
 ## [1.50.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.50.0)
 
 ### 🔧 Maintenance
