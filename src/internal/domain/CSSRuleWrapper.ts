@@ -17,15 +17,13 @@ export const prefixWrapCSSRule = (
 ): void => {
     // Check each rule to see if it exactly matches our prefix selector, when
     // this happens, don't try to prefix that selector.
-    const rules = cssRule.selector
-        .split(",")
-        .filter(
-            (selector) =>
-                !cssRuleMatchesPrefixSelector(
-                    { selector: selector },
-                    prefixSelector,
-                ),
-        );
+    const rules = cssRule.selectors.filter(
+        (selector) =>
+            !cssRuleMatchesPrefixSelector(
+                { selector: selector },
+                prefixSelector,
+            ),
+    );
 
     if (rules.length === 0) {
         return;

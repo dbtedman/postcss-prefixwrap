@@ -10,6 +10,10 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 -   Use real types from plugin source.
 
+### 🐛 Bug Fixes
+
+-   [#515](https://github.com/dbtedman/postcss-prefixwrap/issues/515) Correctly handle `:where` statement.
+
 ## [1.50.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.50.0)
 
 ### 🔧 Maintenance

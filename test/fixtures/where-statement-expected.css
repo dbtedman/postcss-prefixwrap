@@ -1,0 +1,3 @@
+.my-container .class-a :where(.class-b, .class-c) {
+    color: red;
+}
