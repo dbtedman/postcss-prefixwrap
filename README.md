@@ -8,10 +8,11 @@
 A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
 elements in a page.
 
-| Supports | Versions                          |
-| :------- | :-------------------------------- |
-| NodeJS   | `v18`, `v19`, `v20`, `v21`, `v22` |
-| PostCSS  | `v7`, `v8`                        |
+| Supports           | Versions                          |
+| :----------------- | :-------------------------------- |
+| Bun (experimental) | `v1`                              |
+| NodeJS             | `v18`, `v19`, `v20`, `v21`, `v22` |
+| PostCSS            | `v7`, `v8`                        |
 
 > ⚠️ PostCSS v7 support is no longer validated in automated test cases, and will be removed entirely in a future release.
 
@@ -30,6 +31,7 @@ elements in a page.
 
 | Package Manager                                           | Command                                                  |
 | :-------------------------------------------------------- | :------------------------------------------------------- |
+| Bun (experimental)                                        | `bun add postcss-prefixwrap --dev --exact`               |
 | [NPM](https://www.npmjs.com/package/postcss-prefixwrap)   | `npm install postcss-prefixwrap --save-dev --save-exact` |
 | [PNPM](https://pnpm.io)                                   | `pnpm add postcss-prefixwrap --save-dev --save-exact`    |
 | [Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap) | `yarn add postcss-prefixwrap --dev --exact`              |
