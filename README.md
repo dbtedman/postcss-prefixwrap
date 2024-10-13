@@ -5,13 +5,14 @@
 [![Latest Release](https://img.shields.io/github/v/release/dbtedman/postcss-prefixwrap?style=for-the-badge&logo=github&color=43cc11)](https://github.com/dbtedman/postcss-prefixwrap/releases)
 [![NPM Downloads Per Week](https://img.shields.io/npm/dw/postcss-prefixwrap?color=blue&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/postcss-prefixwrap)
 
-A [PostCSS](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
+A [PostCSS (postcss.org)](https://postcss.org) plugin which prepends a selector to CSS styles to constrain their effect on parent
 elements in a page.
 
-| Supports | Versions                          |
-| :------- | :-------------------------------- |
-| NodeJS   | `v18`, `v19`, `v20`, `v21`, `v22` |
-| PostCSS  | `v7`, `v8`                        |
+| Supports                                         | Versions                          |
+| :----------------------------------------------- | :-------------------------------- |
+| [Bun (bun.sh)](https://bun.sh) (⚠️ experimental) | `latest`                          |
+| [NodeJS (nodejs.org)](https://nodejs.org)        | `v18`, `v19`, `v20`, `v21`, `v22` |
+| [PostCSS (postcss.org)](https://postcss.org)     | `v7`, `v8`                        |
 
 > ⚠️ PostCSS v7 support is no longer validated in automated test cases, and will be removed entirely in a future release.
 
@@ -24,19 +25,20 @@ elements in a page.
 
 ## How to use this plugin?
 
-> ⚠️ These instructions are only for this plugin. See the [PostCSS](http://postcss.org) website for framework information.
+> ⚠️ These instructions are only for this plugin. See the [PostCSS (postcss.org)](https://postcss.org) website for framework information.
 
 ### Install
 
-| Package Manager                                           | Command                                                  |
-| :-------------------------------------------------------- | :------------------------------------------------------- |
-| [NPM](https://www.npmjs.com/package/postcss-prefixwrap)   | `npm install postcss-prefixwrap --save-dev --save-exact` |
-| [PNPM](https://pnpm.io)                                   | `pnpm add postcss-prefixwrap --save-dev --save-exact`    |
-| [Yarn](https://yarnpkg.com/en/package/postcss-prefixwrap) | `yarn add postcss-prefixwrap --dev --exact`              |
+| Package Manager                                                         | Command                                                  |
+| :---------------------------------------------------------------------- | :------------------------------------------------------- |
+| [Bun (bun.sh)](https://bun.sh) (⚠️ experimental)                        | `bun add postcss-prefixwrap --dev --exact`               |
+| [NPM (npmjs.com)](https://www.npmjs.com/package/postcss-prefixwrap)     | `npm install postcss-prefixwrap --save-dev --save-exact` |
+| [PNPM (pnpm.io)](https://pnpm.io)                                       | `pnpm add postcss-prefixwrap --save-dev --save-exact`    |
+| [Yarn (yarnpkg.com)](https://yarnpkg.com/en/package/postcss-prefixwrap) | `yarn add postcss-prefixwrap --dev --exact`              |
 
 ### Configure
 
-Add to your [PostCSS](http://postcss.org) configuration.
+Add to your [PostCSS (postcss.org)](https://postcss.org) configuration.
 
 ```javascript
 const PostCSS = require("gulp-postcss");
