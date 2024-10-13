@@ -10,7 +10,7 @@ elements in a page.
 
 | Supports              | Versions                          |
 | :-------------------- | :-------------------------------- |
-| Bun (⚠️ experimental) | `v1`                              |
+| Bun (⚠️ experimental) | `latest`                          |
 | NodeJS                | `v18`, `v19`, `v20`, `v21`, `v22` |
 | PostCSS               | `v7`, `v8`                        |
 
