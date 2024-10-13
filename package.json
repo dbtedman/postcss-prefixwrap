@@ -59,7 +59,7 @@
     "sort-package-json": "2.10.1",
     "source-map": "0.7.4",
     "source-map-js": "1.2.0",
-    "ts-jest": "29.2.4",
+    "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "typescript": "5.6.2"
   },
