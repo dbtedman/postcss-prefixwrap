@@ -17,7 +17,7 @@ jobs:
 
         strategy:
             matrix:
-                bun-version: ["1.0.11"]
+                bun-version: ["1.x.x"]
 
         steps:
             - uses: "actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871"
