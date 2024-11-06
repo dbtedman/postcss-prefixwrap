@@ -42,9 +42,9 @@ jobs:
               uses: "denoland/setup-deno@v2"
               with: { deno-version: "v${{ matrix.deno-version }}" }
             - run: "deno install"
-            - run: "bun task lint"
-            - run: "bun task test"
-            - run: "bun task build"
+            - run: "deno task lint"
+            - run: "deno task test"
+            - run: "deno task build"
 
     node:
         runs-on: "ubuntu-latest"
