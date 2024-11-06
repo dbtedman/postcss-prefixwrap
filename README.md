@@ -11,6 +11,7 @@ elements in a page.
 | Supports                                     | Versions                          |
 | :------------------------------------------- | :-------------------------------- |
 | [Bun (bun.sh)](https://bun.sh)               | `latest`                          |
+| [Deno (deno.com)](https://deno.com)          | `v2`                              |
 | [NodeJS (nodejs.org)](https://nodejs.org)    | `v18`, `v19`, `v20`, `v21`, `v22` |
 | [PostCSS (postcss.org)](https://postcss.org) | `v7`, `v8`                        |
 
@@ -29,9 +30,10 @@ elements in a page.
 
 ### Install
 
-| Package Manager                                                         | Command                                                  |
+| Package Manager or Runtime                                              | Command                                                  |
 | :---------------------------------------------------------------------- | :------------------------------------------------------- |
 | [Bun (bun.sh)](https://bun.sh)                                          | `bun add postcss-prefixwrap --dev --exact`               |
+| [Deno (deno.com)](https://deno.com)                                     | `deno add npm:postcss-prefixwrap --dev`                  |
 | [NPM (npmjs.com)](https://www.npmjs.com/package/postcss-prefixwrap)     | `npm install postcss-prefixwrap --save-dev --save-exact` |
 | [PNPM (pnpm.io)](https://pnpm.io)                                       | `pnpm add postcss-prefixwrap --save-dev --save-exact`    |
 | [Yarn (yarnpkg.com)](https://yarnpkg.com/en/package/postcss-prefixwrap) | `yarn add postcss-prefixwrap --dev --exact`              |

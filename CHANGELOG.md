@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 💡 Features and Improvements
 
 -   [Bun (bun.sh)](https://bun.sh) support.
+-   [Deno (deno.com)](https://deno.com) support.
 
 ## [1.52.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.52.0)
 
