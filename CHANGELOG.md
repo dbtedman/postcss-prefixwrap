@@ -8,7 +8,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ### 💡 Features and Improvements
 
--   (Experimental) [Bun (bun.sh)](https://bun.sh) support.
+-   [Bun (bun.sh)](https://bun.sh) support.
 
 ## [1.52.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.52.0)
 
