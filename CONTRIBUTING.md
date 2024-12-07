@@ -2,17 +2,17 @@
 
 Outlines how to contribute to the development of PostCSS Prefix Wrap.
 
--   [Core Maintainers](#core-maintainers)
--   [Thanks](#thanks)
--   [Continuous Integration](#continuous-integration)
--   [Code Formatting](#code-formatting)
--   [Test](#test)
--   [Publishing](#publishing)
--   [References](#references)
+- [Core Maintainers](#core-maintainers)
+- [Thanks](#thanks)
+- [Continuous Integration](#continuous-integration)
+- [Code Formatting](#code-formatting)
+- [Test](#test)
+- [Publishing](#publishing)
+- [References](#references)
 
 ## Core Maintainers
 
--   [Daniel Tedman](https://github.com/dbtedman)
+- [Daniel Tedman](https://github.com/dbtedman)
 
 ## Thanks
 
@@ -66,4 +66,4 @@ make test
 
 > 💡 Resources referenced during the development of this project.
 
--   [TypeScript: Node Target Mapping](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping) - To correctly configure TypeScript to compile JavaScript that works with our target NodeJS versions.
+- [TypeScript: Node Target Mapping](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping) - To correctly configure TypeScript to compile JavaScript that works with our target NodeJS versions.
