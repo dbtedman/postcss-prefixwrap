@@ -37,7 +37,6 @@ export const cssRuleMatchesPrefixSelector = (
         "\\$&",
     );
 
-    // eslint-disable-next-line security-node/non-literal-reg-expr
     const isPrefixSelector = new RegExp(`^${escapedPrefixSelector}$`);
 
     return isPrefixSelector.test(cssRule.selector);
