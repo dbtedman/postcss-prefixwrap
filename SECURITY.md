@@ -5,12 +5,12 @@
 
 Outlines how security is considered during the development of PostCSS Prefix Wrap.
 
--   [Provenance](#provenance)
--   [Dependency Vulnerability and Code Scanning](#dependency-vulnerability-and-code-scanning)
--   [Security Disclosure Policy](#security-disclosure-policy)
--   [Security Update Policy](#security-update-policy)
--   [Security Related Configuration](#security-related-configuration)
--   [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
+- [Provenance](#provenance)
+- [Dependency Vulnerability and Code Scanning](#dependency-vulnerability-and-code-scanning)
+- [Security Disclosure Policy](#security-disclosure-policy)
+- [Security Update Policy](#security-update-policy)
+- [Security Related Configuration](#security-related-configuration)
+- [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
 
 ## Provenance
 
@@ -18,10 +18,10 @@ Since `v1.47.0`, [provenance attestations (docs.npmjs.com)](https://docs.npmjs.c
 
 ## Dependency Vulnerability and Code Scanning
 
--   [GitHub code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning) via [CodeQL](https://codeql.github.com)
--   [GitHub dependabot alerts](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
--   [GitHub dependabot security updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
--   [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
+- [GitHub code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning) via [CodeQL](https://codeql.github.com)
+- [GitHub dependabot alerts](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
+- [GitHub dependabot security updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
+- [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
 
 ## Security Disclosure Policy
 
