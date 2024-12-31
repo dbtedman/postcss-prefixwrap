@@ -17,12 +17,12 @@ elements in a page.
 
 > ⚠️ PostCSS v7 support is no longer validated in automated test cases, and will be removed entirely in a future release.
 
--   [How to use this plugin?](#how-to-use-this-plugin)
--   [What options does it have?](#what-options-does-it-have)
--   [What problems can it solve?](#what-problems-can-it-solve)
--   [How to contribute?](#how-to-contribute)
--   [Is this project secure?](#is-this-project-secure)
--   [License](#license)
+- [How to use this plugin?](#how-to-use-this-plugin)
+- [What options does it have?](#what-options-does-it-have)
+- [What problems can it solve?](#what-problems-can-it-solve)
+- [How to contribute?](#how-to-contribute)
+- [Is this project secure?](#is-this-project-secure)
+- [License](#license)
 
 ## How to use this plugin?
 
@@ -130,8 +130,8 @@ PrefixWrap(".my-custom-wrap", {
 
 PostCSS Prefix Wrap can be used to solve multiple different problems. The following articles give some concrete examples:
 
--   [Embedding Content Within an Existing Site With PostCSS Prefix Wrap (tedman.dev)](https://tedman.dev/posts/embedding-content-within-an-existing-site-with-postcss-prefix-wrap/)
--   [Maintainable Legacy CSS With PostCSS Prefix Wrap (tedman.dev)](https://tedman.dev/posts/maintainable-legacy-css-with-postcss-prefix-wrap/)
+- [Embedding Content Within an Existing Site With PostCSS Prefix Wrap (tedman.dev)](https://tedman.dev/posts/embedding-content-within-an-existing-site-with-postcss-prefix-wrap/)
+- [Maintainable Legacy CSS With PostCSS Prefix Wrap (tedman.dev)](https://tedman.dev/posts/maintainable-legacy-css-with-postcss-prefix-wrap/)
 
 ## How to contribute?
 
