@@ -39,7 +39,7 @@ jobs:
         steps:
             - uses: "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683"
             - name: "Use Deno ${{ matrix.deno-version }}"
-              uses: "denoland/setup-deno@4606d5cc6fb3f673efd4f594850e3f4b3e9d29cd"
+              uses: "denoland/setup-deno@909cc5acb0fdd60627fb858598759246509fa755"
               with: { deno-version: "v${{ matrix.deno-version }}" }
             - run: "deno install"
             - run: "deno task lint"
