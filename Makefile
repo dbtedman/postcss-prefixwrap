@@ -48,5 +48,5 @@ upgrade:
 
 .PHONY: audit_signatures
 audit_signatures:
-	# Not yet available via pnpm as of 21/04/2024.
-	npm audit signatures
+	# Not yet available via pnpm as of 2/02/2025.
+	@npm audit signatures
