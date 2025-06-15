@@ -51,7 +51,8 @@ jobs:
 
         strategy:
             matrix:
-                node-version: ["18.x", "19.x", "20.x", "21.x", "22.x"]
+                # https://nodejs.org/en/about/previous-releases
+                node-version: ["20.x", "22.x", "24.x"]
 
         steps:
             - uses: "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683"
