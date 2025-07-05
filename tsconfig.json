@@ -10,6 +10,7 @@
             "*": ["node_modules/*"]
         },
         "sourceMap": false,
-        "declaration": true
+        "declaration": true,
+        "isolatedModules": true
     }
 }
