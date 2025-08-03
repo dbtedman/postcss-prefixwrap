@@ -4,7 +4,7 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
-## In Development
+## [1.56.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.56.1)
 
 ### 🐛 Bug Fixes
 
