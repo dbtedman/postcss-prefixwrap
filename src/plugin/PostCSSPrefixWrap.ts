@@ -46,13 +46,15 @@ export default class PostCSSPrefixWrap {
             )
         ) {
             css.walkRules((cssRule: Rule) => {
-                prefixWrapCSSRule(
-                    cssRule,
-                    this.nested,
-                    this.ignoredSelectors,
-                    this.prefixSelector,
-                    this.prefixRootTags,
-                );
+                if (cssRule?.parent?.type === "root") {
+                    prefixWrapCSSRule(
+                        cssRule,
+                        this.nested,
+                        this.ignoredSelectors,
+                        this.prefixSelector,
+                        this.prefixRootTags,
+                    );
+                }
             });
         }
     }

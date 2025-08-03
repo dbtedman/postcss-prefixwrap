@@ -4,6 +4,12 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## In Development
+
+### 🐛 Bug Fixes
+
+- [#659](https://github.com/dbtedman/postcss-prefixwrap/issues/659) Nested CSS classes should not be prefixed
+
 ## [1.56.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.56.0)
 
 ### 🔧 Maintenance
