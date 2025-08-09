@@ -46,7 +46,7 @@ export default class PostCSSPrefixWrap {
             )
         ) {
             css.walkRules((cssRule: Rule) => {
-                if (cssRule?.parent?.type === "root") {
+                if (cssRule?.parent?.type !== "rule") {
                     prefixWrapCSSRule(
                         cssRule,
                         this.nested,
