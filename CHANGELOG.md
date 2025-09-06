@@ -6,6 +6,10 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 
 ## 🚧 In Development
 
+### 💡 Features and Improvements
+
+- [#664](https://github.com/dbtedman/postcss-prefixwrap/issues/664) Add an ability to manually specify the place where the prefix should be added.
+
 ### 🐛 Bug Fixes
 
 - [#667](https://github.com/dbtedman/postcss-prefixwrap/issues/667) Use exact match for ignored selectors when is string.
