@@ -4,6 +4,16 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## 🚧 In Development
+
+### 🐛 Bug Fixes
+
+- [#667](https://github.com/dbtedman/postcss-prefixwrap/issues/667) Use exact match for ignored selectors when is string.
+
+### 🔧 Maintenance
+
+- Apply dependency updates.
+
 ## [1.56.2](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.56.2)
 
 ### 🐛 Bug Fixes
