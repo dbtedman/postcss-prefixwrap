@@ -123,6 +123,20 @@ PrefixWrap(".my-custom-wrap", {
     // the value to the selector prefix being used to represent nesting, this is
     // most likely going to be `"&"`.
     nested: "&",
+
+    // A custom transform can be provided that allows your code to determined
+    // how the prefix will be applied to each selector.
+    prefixTransform: (selector: string, prefixSelector: string) => {
+        const insertIndex = selector.indexOf(".m_");
+
+        // If `.m_` not found, just return selector unchanged.
+        if (insertIndex === -1) {
+            return selector;
+        }
+
+        // Place the prefix (with a space) before the `.m_`.
+        return `${selector.slice(0, insertIndex)}${prefixSelector} ${selector.slice(insertIndex)}`;
+    },
 });
 ```
 

@@ -14,6 +14,7 @@ export const prefixWrapCSSRule = (
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
     prefixRootTags: boolean,
+    prefixTransform: null | ((selector: string, prefix: string) => string),
 ): void => {
     // Check each rule to see if it exactly matches our prefix selector, when
     // this happens, don't try to prefix that selector.
@@ -38,6 +39,7 @@ export const prefixWrapCSSRule = (
                 ignoredSelectors,
                 prefixSelector,
                 prefixRootTags,
+                prefixTransform,
             ),
         )
         .filter(isValidCSSSelector)
@@ -51,6 +53,7 @@ export const prefixWrapCSSSelector = (
     ignoredSelectors: (string | RegExp)[],
     prefixSelector: string,
     prefixRootTags: boolean,
+    prefixTransform: null | ((selector: string, prefix: string) => string),
 ): string | null => {
     const cleanedSelector = cleanSelector(cssSelector);
 
@@ -83,13 +86,23 @@ export const prefixWrapCSSSelector = (
 
     // Anything other than a root tag is always prefixed.
     if (isNotRootTag(cleanedSelector)) {
-        return prefixSelector + " " + cleanedSelector;
+        if (prefixTransform) {
+            return prefixTransform(cleanedSelector, prefixSelector);
+        } else {
+            return prefixSelector + " " + cleanedSelector;
+        }
     }
 
     // Handle special case where root tags should be converted into classes
     // rather than being replaced.
     if (prefixRootTags) {
-        return prefixSelector + " ." + cleanedSelector;
+        if (prefixTransform) {
+            // When prefixTransform is defined, we provided cleanedSelector
+            // without the additional "." prepended.
+            return prefixTransform(cleanedSelector, prefixSelector);
+        } else {
+            return prefixSelector + " ." + cleanedSelector;
+        }
     }
 
     // HTML and Body elements cannot be contained within our container so lets
