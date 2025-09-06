@@ -70,9 +70,13 @@ export const prefixWrapCSSSelector = (
 
     // Check for matching ignored selectors
     if (
-        ignoredSelectors.some((currentValue) =>
-            cleanedSelector.match(currentValue),
-        )
+        ignoredSelectors.some((currentValue) => {
+            if (currentValue instanceof RegExp) {
+                return cleanedSelector.match(currentValue);
+            }
+
+            return cleanedSelector === currentValue;
+        })
     ) {
         return cleanedSelector;
     }
