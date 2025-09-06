@@ -9,7 +9,7 @@ const postCSSIgnore = postCSSWithPlugin({
     ignoredSelectors: ["body"],
 });
 
-it("ignores selectors that are in a ignore list", () => {
+it("ignores selectors that are in a ignore list exactly when string", () => {
     assertActualMatchesExpectedAfterPrefixWrap(
         postCSSIgnore,
         path.join(__dirname, "fixtures", "ignore-exact-selectors-raw.css"),
