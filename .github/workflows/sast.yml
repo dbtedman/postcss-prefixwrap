@@ -27,7 +27,7 @@ jobs:
             - uses: "actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8"
               with:
                   persist-credentials: false
-            - uses: "ossf/scorecard-action@05b42c624433fc40578a4040d5cf5e36ddca8cde"
+            - uses: "ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a"
               with:
                   results_file: "results.sarif"
                   results_format: "sarif"
@@ -37,7 +37,7 @@ jobs:
                   name: "SARIF file"
                   path: "results.sarif"
                   retention-days: 5
-            - uses: "github/codeql-action/upload-sarif@192325c86100d080feab897ff886c34abd4c83a3"
+            - uses: "github/codeql-action/upload-sarif@f443b600d91635bebf5b0d9ebc620189c0d6fba5"
               with:
                   sarif_file: "results.sarif"
 
@@ -51,10 +51,10 @@ jobs:
 
         steps:
             - uses: "actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8"
-            - uses: "github/codeql-action/init@192325c86100d080feab897ff886c34abd4c83a3"
+            - uses: "github/codeql-action/init@f443b600d91635bebf5b0d9ebc620189c0d6fba5"
               with:
                   languages: "typescript"
-            - uses: "pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda"
+            - uses: "pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061"
               with:
                   version: "latest"
             - uses: "actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444"
@@ -62,4 +62,4 @@ jobs:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
             - run: "make install"
-            - uses: "github/codeql-action/analyze@192325c86100d080feab897ff886c34abd4c83a3"
+            - uses: "github/codeql-action/analyze@f443b600d91635bebf5b0d9ebc620189c0d6fba5"
