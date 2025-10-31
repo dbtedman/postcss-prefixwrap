@@ -35,11 +35,11 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/core": "7.28.4",
+    "@babel/core": "7.28.5",
     "@jest/globals": "30.2.0",
     "@tsconfig/node18": "18.2.4",
     "@types/jest": "30.0.0",
-    "@types/node": "24.9.0",
+    "@types/node": "24.9.1",
     "glob": "11.0.3",
     "husky": "9.1.7",
     "jest": "30.2.0",
