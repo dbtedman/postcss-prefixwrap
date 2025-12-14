@@ -24,12 +24,10 @@ jobs:
               with:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
+                  registry-url: "https://registry.npmjs.org"
             - run: "make install"
             - run: "make audit_signatures"
             - run: "make build"
             - run: "make lint"
             - run: "make test"
-            - run: "pnpm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN"
-              env:
-                  NPM_AUTH_TOKEN: "${{ secrets.NPM_AUTH_TOKEN }}"
             - run: "make publish"
