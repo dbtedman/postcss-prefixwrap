@@ -37,7 +37,7 @@ jobs:
                   name: "SARIF file"
                   path: "results.sarif"
                   retention-days: 5
-            - uses: "github/codeql-action/upload-sarif@5d4e8d1aca955e8d8589aabd499c5cae939e33c7"
+            - uses: "github/codeql-action/upload-sarif@cdefb33c0f6224e58673d9004f47f7cb3e328b89"
               with:
                   sarif_file: "results.sarif"
 
@@ -51,7 +51,7 @@ jobs:
 
         steps:
             - uses: "actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8"
-            - uses: "github/codeql-action/init@5d4e8d1aca955e8d8589aabd499c5cae939e33c7"
+            - uses: "github/codeql-action/init@cdefb33c0f6224e58673d9004f47f7cb3e328b89"
               with:
                   languages: "typescript"
             - uses: "pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061"
@@ -62,4 +62,4 @@ jobs:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
             - run: "make install"
-            - uses: "github/codeql-action/analyze@5d4e8d1aca955e8d8589aabd499c5cae939e33c7"
+            - uses: "github/codeql-action/analyze@cdefb33c0f6224e58673d9004f47f7cb3e328b89"
