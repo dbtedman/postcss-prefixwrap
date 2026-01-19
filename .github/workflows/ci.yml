@@ -22,7 +22,7 @@ jobs:
         steps:
             - uses: "actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8"
             - name: "Use Bun ${{ matrix.bun-version }}"
-              uses: "oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76"
+              uses: "oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3"
               with: { bun-version: "${{ matrix.bun-version }}" }
             - run: "bun install"
             - run: "bun run lint"
@@ -59,7 +59,7 @@ jobs:
             - uses: "pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061"
               with: { version: "latest" }
             - name: "Use Node.js ${{ matrix.node-version }}"
-              uses: "actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f"
+              uses: "actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238"
               with:
                   node-version: "${{ matrix.node-version }}"
                   cache: "pnpm"
