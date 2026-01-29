@@ -20,9 +20,9 @@ jobs:
                 bun-version: ["latest"]
 
         steps:
-            - uses: "actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8"
+            - uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd"
             - name: "Use Bun ${{ matrix.bun-version }}"
-              uses: "oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76"
+              uses: "oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3"
               with: { bun-version: "${{ matrix.bun-version }}" }
             - run: "bun install"
             - run: "bun run lint"
@@ -37,7 +37,7 @@ jobs:
                 deno-version: ["2.x"]
 
         steps:
-            - uses: "actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8"
+            - uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd"
             - name: "Use Deno ${{ matrix.deno-version }}"
               uses: "denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb"
               with: { deno-version: "v${{ matrix.deno-version }}" }
@@ -55,11 +55,11 @@ jobs:
                 node-version: ["20.x", "22.x", "24.x"]
 
         steps:
-            - uses: "actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8"
+            - uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd"
             - uses: "pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061"
               with: { version: "latest" }
             - name: "Use Node.js ${{ matrix.node-version }}"
-              uses: "actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f"
+              uses: "actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238"
               with:
                   node-version: "${{ matrix.node-version }}"
                   cache: "pnpm"
