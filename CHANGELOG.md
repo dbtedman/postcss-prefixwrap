@@ -9,6 +9,7 @@ can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and
 ### 🔧 Maintenance
 
 - Apply dependency updates.
+- Remove NodeJS `20.x` support from pipelines.
 
 ## [1.57.2](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.57.2)
 
