@@ -17,10 +17,10 @@ jobs:
 
         steps:
             - uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd"
-            - uses: "pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320"
+            - uses: "pnpm/action-setup@078e9d416474b29c0c387560859308974f7e9c53"
               with:
                   version: "latest"
-            - uses: "actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f"
+            - uses: "actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e"
               with:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
