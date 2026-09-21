@@ -22,8 +22,7 @@ export default class PostCSSPrefixWrap {
     private readonly prefixRootTags: boolean;
     private readonly prefixSelector: string;
     private readonly prefixTransform:
-        | null
-        | ((selector: string, prefix: string) => string);
+        null | ((selector: string, prefix: string) => string);
     private readonly whitelist: Array<string>;
 
     constructor(
