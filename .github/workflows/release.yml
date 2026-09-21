@@ -31,4 +31,4 @@ jobs:
             - run: "make lint"
             - run: "make test"
             - run: "npm install -g npm@latest"
-            - run: "npm publish --no-git-checks"
+            - run: "npm publish"
