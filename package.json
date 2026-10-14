@@ -47,7 +47,7 @@
     "prettier": "3.9.8",
     "sort-package-json": "3.6.1",
     "source-map": "0.8.0",
-    "source-map-js": "1.2.1",
+    "source-map-js": "1.2.2",
     "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
     "typescript": "5.9.3"
