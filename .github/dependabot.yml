@@ -12,7 +12,3 @@ updates:
       directory: "/"
       schedule:
           interval: "weekly"
-      groups:
-          npm:
-              applies-to: "version-updates"
-              patterns: ["*"]
