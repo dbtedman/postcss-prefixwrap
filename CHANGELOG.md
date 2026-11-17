@@ -4,6 +4,16 @@ Releases ordered so that the most recent are displayed at the top, with the curr
 top, labeled as **🚧 In Development**. This release will be given a number once it is ready to be released. Each release
 can contain both a **💡 Features and Improvements**, **🔧 Maintenance**, and **🐛 Bug Fixes** sections.
 
+## [1.60.0](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.60.0)
+
+### 🐛 Bug Fixes
+
+- [#757](https://github.com/dbtedman/postcss-prefixwrap/issues/757) Correctly identify root tag by avoiding confusion with custom elements containing `html` or `body`.
+
+### 🔧 Maintenance
+
+- Apply dependency updates.
+
 ## [1.59.1](https://github.com/dbtedman/postcss-prefixwrap/releases/tag/1.59.1)
 
 ### 🔧 Maintenance

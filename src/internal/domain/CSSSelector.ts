@@ -1,7 +1,7 @@
 import { AtRule, Rule } from "postcss";
 
 const ANY_WHITESPACE_AT_BEGINNING_OR_END = /(^\s*|\s*$)/g;
-const IS_ROOT_TAG = /^(body|html|:root).*$/;
+const IS_ROOT_TAG = /^(body|html|:root)$/;
 
 export const isValidCSSSelector = (cssSelector: string | null): boolean => {
     return cssSelector !== null;
@@ -24,8 +24,10 @@ export const isKeyframes = (cssRule: Rule): boolean => {
     );
 };
 
-export const isNotRootTag = (cleanSelector: string): boolean => {
-    return !cleanSelector.match(IS_ROOT_TAG);
+const firstComponentOfSelector = (selector: string) => selector.split(/\s/)[0];
+
+export const isNotRootTag = (selector: string): boolean => {
+    return !firstComponentOfSelector(selector).match(IS_ROOT_TAG);
 };
 
 export const cssRuleMatchesPrefixSelector = (

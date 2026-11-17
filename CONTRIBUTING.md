@@ -17,7 +17,9 @@ Outlines how to contribute to the development of PostCSS Prefix Wrap.
 ## Thanks
 
 Thanks to all of the [Contributors](https://github.com/dbtedman/postcss-prefixwrap/graphs/contributors) who maintain
-PostCSS Prefix Wrap and [Jeff Teng](https://github.com/aj120426394) for contributing to the initial design.
+PostCSS Prefix Wrap, and [Jeff Teng](https://github.com/aj120426394) for contributing to the initial design.
+
+Thanks to everyone who has taken the time to [report an issue](https://github.com/dbtedman/postcss-prefixwrap/issues).
 
 ## Continuous Integration
 
