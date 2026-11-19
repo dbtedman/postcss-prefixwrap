@@ -45,7 +45,7 @@
     "jest": "30.5.2",
     "postcss": "8.5.33",
     "prettier": "3.10.1",
-    "sort-package-json": "3.6.1",
+    "sort-package-json": "4.1.0",
     "source-map": "0.8.0",
     "source-map-js": "1.2.2",
     "ts-jest": "29.4.15",

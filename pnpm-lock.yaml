@@ -39,8 +39,8 @@ importers:
         specifier: 3.10.1
         version: 3.10.1
       sort-package-json:
-        specifier: 3.6.1
-        version: 3.6.1
+        specifier: 4.1.0
+        version: 4.1.0
       source-map:
         specifier: 0.8.0
         version: 0.8.0
@@ -1350,9 +1350,9 @@ packages:
   sort-object-keys@2.1.0:
     resolution: {integrity: sha512-SOiEnthkJKPv2L6ec6HMwhUcN0/lppkeYuN1x63PbyPRrgSPIuBJCiYxYyvWRTtjMlOi14vQUCGUJqS6PLVm8g==}
 
-  sort-package-json@3.6.1:
-    resolution: {integrity: sha512-Chgejw1+10p2D0U2tB7au1lHtz6TkFnxmvZktyBCRyV0GgmF6nl1IxXxAsPtJVsUyg/fo+BfCMAVVFUVRkAHrQ==}
-    engines: {node: '>=20'}
+  sort-package-json@4.1.0:
+    resolution: {integrity: sha512-CI7HgkV5rCE5dbYYJMuXkxgiSLc3uJczff9ic3kHuY5QRYKUbfsDSKN4DjTpvqejdJEkKLusQ64ykTte5ypr1A==}
+    engines: {node: '>=22'}
     hasBin: true
 
   source-map-js@1.2.2:
@@ -1855,7 +1855,7 @@ snapshots:
 
   '@jest/pattern@30.5.0':
     dependencies:
-      '@types/node': 25.6.0
+      '@types/node': 26.6.6
       jest-regex-util: 30.5.0
 
   '@jest/reporters@30.5.2(supports-color@8.1.1)':
@@ -1943,7 +1943,7 @@ snapshots:
       '@jest/schemas': 30.5.0
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 25.6.0
+      '@types/node': 26.6.6
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
@@ -2782,7 +2782,7 @@ snapshots:
   jest-util@30.5.1:
     dependencies:
       '@jest/types': 30.5.1
-      '@types/node': 25.6.0
+      '@types/node': 26.6.6
       chalk: 4.1.2
       ci-info: 4.5.0
       graceful-fs: 4.2.12
@@ -3004,7 +3004,7 @@ snapshots:
 
   sort-object-keys@2.1.0: {}
 
-  sort-package-json@3.6.1:
+  sort-package-json@4.1.0:
     dependencies:
       detect-indent: 7.0.2
       detect-newline: 4.0.1
